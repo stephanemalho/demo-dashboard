@@ -19,7 +19,7 @@ const spaceGrotesk = grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "DevFlow",
+  title: "CARE",
   description:
     "DevFlow is a platform for developers to share their ideas and projects",
   icons: {
