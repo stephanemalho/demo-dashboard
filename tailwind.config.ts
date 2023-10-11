@@ -17,8 +17,8 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          500: "#FF7000",
-          100: "#FFF1E6",
+          500: "#bb1d3c",
+          100: "#b83e56",
         },
         dark: {
           100: "#000000",
@@ -36,7 +36,7 @@ module.exports = {
           400: "#858EAD",
         },
         logo: {
-          500: "#BB1D3C",
+          500: "#bb1d3c",
         },
         "accent-blue": "#1DA1F2",
       },
