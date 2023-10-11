@@ -39,7 +39,7 @@ export const sidebarLinks: SidebarLink[] = [
   },
   {
     imgURL: "/assets/icons/question.svg",
-    route:["/mapping/global"],
+    route:["/global"],
     label: "Mapping",
   },
 ];

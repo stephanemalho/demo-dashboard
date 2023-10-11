@@ -1,5 +1,4 @@
 "use client";
-import { Button } from "@/components/ui/button";
 import {
   Accordion,
   AccordionContent,
@@ -11,6 +10,7 @@ import { SignedOut } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 const LeftSideBar = () => {
   const pathname = usePathname();
@@ -19,9 +19,9 @@ const LeftSideBar = () => {
   console.log(secondSidebarLink);
 
   return (
-    <section className="background-light900_dark200 light-border custom-scrollbar sticky left-0 top-0 flex h-screen flex-col justify-between overflow-y-auto border-r p-6 pt-36 shadow-light-300 dark:shadow-none max-sm:hidden lg:w-[266px]">
+    <section className="background-light900_dark200 light-border custom-scrollbar sticky left-0 top-0 flex h-screen flex-col justify-between overflow-y-auto border-r p-6 pt-36 shadow-light-300 dark:shadow-none max-sm:hidden lg:w-[366px]">
       <nav className="flex flex-1 flex-col gap-6">
-        <h2 className="h3-bold text-dark100_light900">MONITORING</h2>
+        <h2 className="h3-bold text-dark500_light700">MONITORING</h2>
         {firstSidebarLink.map((item) => {
           const isActive =
             (pathname.includes(item.route) && item.route.length > 1) ||
@@ -37,8 +37,8 @@ const LeftSideBar = () => {
               className={`${
                 isActive
                   ? "primary-gradient rounded text-light-900"
-                  : "text-dark300_light900"
-              } flex items-center justify-start gap-4 bg-transparent p-4 hover:bg-primary-100`}
+                  : "text-dark500_light700"
+              } flex items-center justify-start gap-4 bg-transparent p-4 hover:bg-light-800  dark:hover:bg-dark-300`}
             >
               <Image
                 src={item.imgURL}
@@ -53,7 +53,7 @@ const LeftSideBar = () => {
             </Link>
           );
         })}
-        <h2 className="h3-bold text-dark100_light900">TM1 ADMINISTRATION</h2>
+        <h2 className="h3-bold text-dark500_light700">TM1 ADMINISTRATION</h2>
         {secondSidebarLink.map((item) => {
           const isActive =
             (pathname.includes(item.route) &&
@@ -75,7 +75,7 @@ const LeftSideBar = () => {
             <div key={item.label}>
               <Accordion type="single" collapsible>
                 <AccordionItem value="item-1">
-                  <AccordionTrigger className="p-4">
+                  <AccordionTrigger className="text-dark500_light700 p-4 hover:bg-light-800 dark:hover:bg-dark-300">
                     <Image
                       src={item.imgURL}
                       alt={item.label}
@@ -83,11 +83,15 @@ const LeftSideBar = () => {
                       height={20}
                       className={`${isActive ? " " : "invert-colors"}`}
                     />
-                    <p className={`${isActive ? "base-bold" : "base-medium"} w-full pl-[18px] text-left `}>
+                    <p
+                      className={`${
+                        isActive ? "base-bold" : "base-medium"
+                      } w-full pl-[18px] text-left `}
+                    >
                       {item.label}
                     </p>
                   </AccordionTrigger>
-                  <AccordionContent >
+                  <AccordionContent>
                     {Array.isArray(item.route) ? (
                       item.route.map((subRoute, subIndex) => (
                         <Link
@@ -95,15 +99,16 @@ const LeftSideBar = () => {
                           key={subIndex}
                           href={subRoute}
                           className={`${
-                            (isActive || pathname.includes(subRoute))
+                            isActive || pathname.includes(subRoute)
                               ? "primary-gradient rounded text-light-900"
-                              : "text-dark300_light900"
-                          } my-1 flex items-center justify-start gap-4 bg-transparent p-4 hover:bg-primary-100`}
+                              : "text-dark500_light700"
+                          } my-1 flex items-center justify-start gap-4 bg-transparent p-4 hover:bg-light-800  dark:hover:bg-dark-300`}
                         >
                           <p
                             className={`${
-                              (isActive || pathname.includes(subRoute))
-                               ? "base-bold" : "base-medium"
+                              isActive || pathname.includes(subRoute)
+                                ? "base-bold"
+                                : "base-medium"
                             }`}
                           >
                             {getLastSegment(subRoute)}
@@ -118,8 +123,8 @@ const LeftSideBar = () => {
                         className={`${
                           isActive
                             ? "primary-gradient rounded text-light-900"
-                            : "text-dark300_light900"
-                        } flex items-start justify-between gap-4 bg-transparent p-4 hover:bg-primary-100`}
+                            : "text-dark500_light700"
+                        } flex items-start justify-between gap-4 bg-transparent p-4   dark:hover:bg-dark-300`}
                       >
                         <p
                           className={`${

@@ -2,8 +2,8 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row">
-      <h1 className="h1-bold text-dark100_light900">Versionning Process</h1>
+    <div className="text-dark500_light700 flex w-full flex-col-reverse justify-between gap-4 sm:flex-row">
+      <h1 className="h1-bold">Versionning Process</h1>
     </div>
   )
 }
