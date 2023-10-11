@@ -1,9 +1,21 @@
 import { BADGE_CRITERIA } from "@/constants";
+import { IconType } from "react-icons";
 
 export interface SidebarLink {
   imgURL: string;
-  route: string;
+  route: Array | string;
   label: string;
+}
+
+export interface AccordionLink {
+  imgURL: string;
+  route: string;
+  routeLabel?: string | string[];
+  label: string;
+}
+
+export interface AdminSidebarLink extends SidebarLink {
+  icon: IconType ;
 }
 
 export interface Job {

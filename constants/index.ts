@@ -9,38 +9,38 @@ export const themes = [
 export const sidebarLinks: SidebarLink[] = [
   {
     imgURL: "/assets/icons/home.svg",
-    route: "/",
-    label: "Dashboard",
+    route: "/dashboard",
+    label: "Dashboard"
   },
   {
     imgURL: "/assets/icons/users.svg",
-    route: "/community",
-    label: "Community",
+    route: ["/live-delivery/create","/live-delivery/list"],
+    label: "Live Delivery",
   },
   {
     imgURL: "/assets/icons/star.svg",
-    route: "/collection",
-    label: "Collections",
+    route: ["/versionning/chore","/versionning/process","/versionning/rule"],
+    label: "Versionning",
   },
   {
     imgURL: "/assets/icons/suitcase.svg",
-    route: "/jobs",
-    label: "Find Jobs",
+    route: ["/query/chores","/query/process","/query/logs"],
+    label: "Query",
   },
   {
     imgURL: "/assets/icons/tag.svg",
-    route: "/tags",
-    label: "Tags",
+    route: ["/statistics/ressources","/statistics/process"],
+    label: "Statistics",
   },
   {
     imgURL: "/assets/icons/user.svg",
-    route: "/profile",
-    label: "Profile",
+    route: ["/alerts/management","/alerts/visualization"],
+    label: "Alerts",
   },
   {
     imgURL: "/assets/icons/question.svg",
-    route: "/ask-question",
-    label: "Ask a question",
+    route:["/mapping/global"],
+    label: "Mapping",
   },
 ];
 
