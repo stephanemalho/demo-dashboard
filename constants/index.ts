@@ -20,12 +20,12 @@ export const sidebarLinks: SidebarLink[] = [
   },
   {
     imgURL: "/assets/icons/versionning.svg",
-    route: ["/versionning/chore","/versionning/process","/versionning/rule"],
+    route: ["/versionning/chore","/versionning/process","/versionning/rule-page"],
     label: "Versionning",
   },
   {
     imgURL: "/assets/icons/suitcase.svg",
-    route: ["/query/chores","/query/process","/query/logs"],
+    route: ["/query/chores","/query/process","/query/logs-page"],
     label: "Query",
   },
   {
@@ -40,7 +40,7 @@ export const sidebarLinks: SidebarLink[] = [
   },
   {
     imgURL: "/assets/icons/question.svg",
-    route:["/mapping/global"],
+    route:["/mapping/globals-page"],
     label: "Mapping",
   },
 ];
