@@ -1,8 +1,10 @@
-import { SignedIn, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import React from "react";
 import Theme from "./Theme";
 import MobileNav from "./MobileNav";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 // import GlobalSearch from "../search/GlobalSearch";
 
 const Navbar = () => {
@@ -16,6 +18,34 @@ const Navbar = () => {
 
       {/* <GlobalSearch /> */}
       <div className="flex-between gap-5">
+      <SignedOut>
+        <div className="flex flex-row gap-3">
+          <Link href="/sign-in">
+            <Button className="small-medium btn-secondary min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none">
+              <Image
+                src="assets/icons/account.svg"
+                alt="login"
+                width={20}
+                height={20}
+                className="invert-colors lg:hidden"
+              />
+              <span className="primary-text-gradient ">Log In</span>
+            </Button>
+          </Link>
+          <Link href="/sign-up">
+            <Button className="small-medium light-border-2 btn-tertiary text-dark400_light900 min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none">
+              <Image
+                src="assets/icons/sign-up.svg"
+                alt="Sign-up"
+                width={20}
+                height={20}
+                className="invert-colors lg:hidden"
+              />
+              <span className="">Sign-up</span>
+            </Button>
+          </Link>
+        </div>
+      </SignedOut>
         <Theme />
         <SignedIn>
           <UserButton

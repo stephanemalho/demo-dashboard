@@ -1,5 +1,6 @@
 import { SidebarLink } from "@/types";
 
+
 export const themes = [
   { value: "light", label: "Light", icon: "/assets/icons/sun.svg" },
   { value: "dark", label: "Dark", icon: "/assets/icons/moon.svg" },
@@ -10,7 +11,7 @@ export const sidebarLinks: SidebarLink[] = [
   {
     imgURL: "/assets/icons/home.svg",
     route: "/dashboard",
-    label: "Dashboard"
+    label: "Dashboard",
   },
   {
     imgURL: "/assets/icons/users.svg",
@@ -18,7 +19,7 @@ export const sidebarLinks: SidebarLink[] = [
     label: "Live Delivery",
   },
   {
-    imgURL: "/assets/icons/star.svg",
+    imgURL: "/assets/icons/versionning.svg",
     route: ["/versionning/chore","/versionning/process","/versionning/rule"],
     label: "Versionning",
   },
@@ -39,7 +40,7 @@ export const sidebarLinks: SidebarLink[] = [
   },
   {
     imgURL: "/assets/icons/question.svg",
-    route:["/global"],
+    route:["/mapping/global"],
     label: "Mapping",
   },
 ];

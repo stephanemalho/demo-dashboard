@@ -5,6 +5,7 @@ export interface SidebarLink {
   imgURL: string;
   route: Array | string;
   label: string;
+  icon?: IconType;
 }
 
 export interface AccordionLink {
