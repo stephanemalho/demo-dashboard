@@ -1,5 +1,6 @@
 import { SidebarLink } from "@/types";
 
+
 export const themes = [
   { value: "light", label: "Light", icon: "/assets/icons/sun.svg" },
   { value: "dark", label: "Dark", icon: "/assets/icons/moon.svg" },
@@ -9,38 +10,38 @@ export const themes = [
 export const sidebarLinks: SidebarLink[] = [
   {
     imgURL: "/assets/icons/home.svg",
-    route: "/",
+    route: "/dashboard",
     label: "Dashboard",
   },
   {
     imgURL: "/assets/icons/users.svg",
-    route: "/community",
-    label: "Community",
+    route: ["/live-delivery/create","/live-delivery/list"],
+    label: "Live Delivery",
   },
   {
-    imgURL: "/assets/icons/star.svg",
-    route: "/collection",
-    label: "Collections",
+    imgURL: "/assets/icons/versionning.svg",
+    route: ["/versionning/chore","/versionning/process","/versionning/rule-page"],
+    label: "Versionning",
   },
   {
     imgURL: "/assets/icons/suitcase.svg",
-    route: "/jobs",
-    label: "Find Jobs",
+    route: ["/query/chores","/query/process","/query/logs-page"],
+    label: "Query",
   },
   {
     imgURL: "/assets/icons/tag.svg",
-    route: "/tags",
-    label: "Tags",
+    route: ["/statistics/ressources","/statistics/process"],
+    label: "Statistics",
   },
   {
     imgURL: "/assets/icons/user.svg",
-    route: "/profile",
-    label: "Profile",
+    route: ["/alerts/management","/alerts/visualization"],
+    label: "Alerts",
   },
   {
     imgURL: "/assets/icons/question.svg",
-    route: "/ask-question",
-    label: "Ask a question",
+    route:["/mapping/globals-page"],
+    label: "Mapping",
   },
 ];
 

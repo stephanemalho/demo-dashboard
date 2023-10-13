@@ -6,7 +6,7 @@ module.exports = {
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
   ],
-  theme: {
+  theme: { 
     container: {
       center: true,
       padding: "2rem",
@@ -18,7 +18,7 @@ module.exports = {
       colors: {
         primary: {
           500: "#bb1d3c",
-          100: "#b83e56",
+          100: "#ea8a9c",
         },
         dark: {
           100: "#000000",
@@ -76,4 +76,6 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+
+  
 };
