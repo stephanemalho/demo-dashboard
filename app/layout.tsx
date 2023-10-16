@@ -21,7 +21,7 @@ const spaceGrotesk = grotesk({
 export const metadata: Metadata = {
   title: "CARE",
   description:
-    "DevFlow is a platform for developers to share their ideas and projects",
+    "XCare is a SaaS platform that helps you manage data.",
   icons: {
     icon: "/assets/images/site-logo.svg",
   },
@@ -34,7 +34,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} custom-scrollbar`}>
         <ClerkProvider
           appearance={{
             elements: {
