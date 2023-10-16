@@ -38,36 +38,6 @@ export interface DashboardInterface {
   Logs: { [key: number]: LogEntry };
 }
 
-  
-  // export interface DashboardInterface {
-  //   State: {
-  //     Value: string;
-  //   };
-  //   RAM: {
-  //     Value: number;
-  //   };
-  //   Users: {
-  //     [key: string]: string;
-  //   };
-  //   Threads: { [key: number]: {
-  //     ID: number;
-  //     Type: string;
-  //     Name: string;
-  //     Context: string;
-  //     State: string;
-  //     Function: string;
-  //     ObjectType: string;
-  //     ObjectName: string;
-  //     RLocks: number;
-  //     IXLocks: number;
-  //     WLocks: number;
-  //     ElapsedTime: string;
-  //     WaitTime: string;
-  //     Info: string;
-  //   } };
-  //   Logs: { [key: number]: LogEntry };
-  // }
-  
   export const dashboard: DashboardInterface = {
     "State": {
       "Value": "Online"

@@ -14,7 +14,7 @@ export const sidebarLinks: SidebarLink[] = [
     label: "Dashboard",
   },
   {
-    imgURL: "/assets/icons/users.svg",
+    imgURL: "/assets/icons/delivery-box.svg",
     route: ["/live-delivery/create","/live-delivery/list"],
     label: "Live Delivery",
   },
@@ -24,23 +24,23 @@ export const sidebarLinks: SidebarLink[] = [
     label: "Versionning",
   },
   {
-    imgURL: "/assets/icons/suitcase.svg",
+    imgURL: "/assets/icons/query.svg",
     route: ["/query/chores","/query/process","/query/logs-page"],
     label: "Query",
   },
   {
-    imgURL: "/assets/icons/tag.svg",
+    imgURL: "/assets/icons/statistic.svg",
     route: ["/statistics/ressources","/statistics/process"],
     label: "Statistics",
   },
   {
-    imgURL: "/assets/icons/user.svg",
+    imgURL: "/assets/icons/alert.svg",
     route: ["/alerts/management","/alerts/visualization"],
     label: "Alerts",
   },
   {
-    imgURL: "/assets/icons/question.svg",
-    route:["/mapping/globals-page"],
+    imgURL: "/assets/icons/mapping.svg",
+    route:["/mapping-page/globals-page"],
     label: "Mapping",
   },
 ];

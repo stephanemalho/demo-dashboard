@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 
 import {
@@ -12,7 +12,7 @@ import Link from "next/link";
 import { SignedOut } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { sidebarLinks } from "@/constants";
-import { usePathname  } from 'next/navigation'
+import { usePathname } from "next/navigation";
 
 const NavContent = () => {
   const pathname = usePathname();
@@ -20,11 +20,20 @@ const NavContent = () => {
   return (
     <section className="flex h-full flex-col gap-6 pt-16">
       {sidebarLinks.map((item) => {
-        const isActive = (pathname.includes(item.route) && item.route.length > 1) || pathname === item.route;
+        const isActive =
+          (pathname.includes(item.route) && item.route.length > 1) ||
+          pathname === item.route;
 
         return (
           <SheetClose asChild key={item.route}>
-            <Link href={item.route} className={`${isActive ? "primary-gradient rounded text-light-900" :"text-dark300_light900"} flex items-center justify-start gap-4 bg-transparent p-4`}>
+            <Link
+              href={item.route}
+              className={`${
+                isActive
+                  ? "primary-gradient rounded text-light-900"
+                  : "text-dark300_light900"
+              } flex items-center justify-start gap-4 bg-transparent p-4`}
+            >
               <Image
                 src={item.imgURL}
                 alt={item.label}
@@ -32,7 +41,9 @@ const NavContent = () => {
                 height={20}
                 className={`${isActive ? " " : "invert-colors"}`}
               />
-              <p className={`${isActive ? 'base-bold' : 'base-medium'}`}>{item.label}</p>
+              <p className={`${isActive ? "base-bold" : "base-medium"}`}>
+                {item.label}
+              </p>
             </Link>
           </SheetClose>
         );
@@ -58,15 +69,17 @@ const MobileNav = () => {
         className="background-light900_dark200 border-none"
       >
         <Link href="/" className="flex items-center gap-1">
-          <Image
-            src="/assets/images/site-logo.svg"
-            width={23}
-            height={23}
-            alt="Devflow"
-          />
-          <p className="h2-bold text-dark100_light900 font-spaceGrotesk">
-            Dev <span className="text-primary-500">Overflow</span>
-          </p>
+          <div className="flex-center w-[250px]">
+            <Link href="/" className="flex items-center gap-1">
+              <p className="h2-bold relative font-spaceGrotesk font-black text-dark-100 dark:text-light-900 max-sm:hidden">
+                AE&nbsp;&nbsp;
+                <span className="absolute right-[25px] top-[-3px] text-3xl italic text-logo-500">
+                  X
+                </span>
+                IS
+              </p>
+            </Link>
+          </div>
         </Link>
         <div>
           <SheetClose asChild>
