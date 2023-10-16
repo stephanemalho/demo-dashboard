@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
 
 @import url("../styles/theme.css");
 
@@ -9,6 +10,10 @@ body {
 }
 
 @layer utilities {
+  .code-font {
+    font-family: "Fira Code", monospace;
+  }
+
   .flex-center {
     @apply flex justify-center items-center;
   }

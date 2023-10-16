@@ -8,7 +8,7 @@ interface ResizeLogProps {
   onClick: () => void;
 }
 
-const ResizeLog = ({ title, isFullScreen, onClick }: ResizeLogProps) => {
+const ResizeLog = ({ title, isFullScreen, onClick}: ResizeLogProps) => {
   return (
     <div className="flex-between flex-row py-2">
       <h3 className="h3-semibold">{title}</h3>{" "}

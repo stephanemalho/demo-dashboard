@@ -5,52 +5,40 @@ import {
   TableBody,
   TableCaption,
   TableCell,
-  TableHead,
-  TableHeader,
   TableRow,
 } from "@/components/ui/table";
 
-import LogContainer from "../boxContainer/LogContainer";
+import LiveContainer from "../boxContainer/LiveContainer";
 
 const Logs = () => {
   const data = dashboard;
   const logs = data.Logs;
 
   return (
-    <LogContainer>
-        <Table className="background-light800_dark300">
+    <LiveContainer logHeight="h-[50vh]" title="Live Logs">
+        <Table className="background-light800_dark400">
           <TableCaption>A list of recent Logs.</TableCaption>
-          <TableHeader>
-            <TableRow>
-              <TableHead>ThreadId</TableHead>
-              <TableHead>SessionID</TableHead>
-              <TableHead>Level</TableHead>
-              <TableHead>TimeStamp</TableHead>
-              <TableHead>Logger</TableHead>
-              <TableHead>Message</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
+          <TableBody className="code-font dark:text-slate-400">
             {Object.keys(logs).map((logKey) => {
               const logEntry = logs[logKey as unknown as keyof typeof logs];
               return (
                 <TableRow key={logKey}>
-                  <TableCell className="font-medium">
+                  <TableCell className="font-medium" title="ThreadId">
                     {logEntry.ThreadID}
                   </TableCell>
-                  <TableCell>{logEntry.SessionID}</TableCell>
-                  <TableCell>{logEntry.Level}</TableCell>
-                  <TableCell className="w-[80px]">
+                  <TableCell title="SessionID">{logEntry.SessionID}</TableCell>
+                  <TableCell title="Level">{logEntry.Level}</TableCell>
+                  <TableCell title="TimeStamp">
                     {logEntry.TimeStamp}
                   </TableCell>
-                  <TableCell>{logEntry.Logger}</TableCell>
-                  <TableCell>{logEntry.Message}</TableCell>
+                  <TableCell title="Logger">{logEntry.Logger}</TableCell>
+                  <TableCell title="Message">{logEntry.Message}</TableCell>
                 </TableRow>
               );
             })}
           </TableBody>
         </Table>
-    </LogContainer>
+    </LiveContainer>
   );
 };
 

@@ -13,7 +13,7 @@ export function ScreenProvider({ children }: { children: React.ReactNode }) {
     const [isFullScreen, setFullScreen] = useState(false);
 
   const toggleFullScreen = () => {
-    setFullScreen(!isFullScreen);
+      setFullScreen(!isFullScreen);
   };
 
     return (
