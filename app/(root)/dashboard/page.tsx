@@ -3,7 +3,7 @@ import ContentContainer from "@/components/shared/contentContainer/ContentContai
 import Threads from "@/components/shared/Threads/Threads";
 
 export default function Home() {
- 
+
   return (
     <div className="lg:w-[70vw]">
     <ContentContainer title="Dashboard">

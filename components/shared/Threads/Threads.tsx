@@ -6,6 +6,7 @@ import {
   TableBody,
   TableCaption,
   TableCell,
+  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
@@ -23,8 +24,20 @@ const Threads = () => {
 
   return (
     <LiveContainer logHeight="h-[30vh]" title="Live Threads">
-      <Table className="background-light800_dark400">
+      <Table className="background-light800_dark400 text-lg">
         <TableCaption>A list of recent threads.</TableCaption>
+        <TableFooter>
+          <TableRow>
+            <TableHead>Function</TableHead>
+            <TableHead>User</TableHead>
+            <TableHead>Type</TableHead>
+            <TableHead>Context</TableHead>
+            <TableHead>Wait Time</TableHead>
+            <TableHead>Elapsed Time</TableHead>
+            <TableHead>State</TableHead>
+            <TableHead>Action</TableHead>
+          </TableRow>
+        </TableFooter>
         <TableHeader>
           <TableRow>
             <TableHead>Function</TableHead>
@@ -42,16 +55,16 @@ const Threads = () => {
             const threadsEntry = threads[logKey as unknown as keyof typeof threads];
             return (
               <TableRow key={logKey}>
-                <TableCell className="font-medium"  title="Function" >
+                <TableCell className="max-w-[300px] truncate" title={threadsEntry.Function} >
                   {threadsEntry.Function}
                 </TableCell>
-                <TableCell title="User">{threadsEntry.Name}</TableCell>
-                <TableCell title="Type">{threadsEntry.Type}</TableCell>
-                <TableCell title="Context">{threadsEntry.Context}</TableCell>
-                <TableCell title="Wait Time">{threadsEntry.WaitTime}</TableCell>
-                <TableCell title="Elapsed Time">{threadsEntry.ElapsedTime}</TableCell>
-                <TableCell title="State">{threadsEntry.State}</TableCell>
-                <TableCell title="Action">
+                <TableCell title={threadsEntry.Name}>{threadsEntry.Name}</TableCell>
+                <TableCell title={threadsEntry.Type}>{threadsEntry.Type}</TableCell>
+                <TableCell title={threadsEntry.Context}>{threadsEntry.Context}</TableCell>
+                <TableCell title={threadsEntry.WaitTime}>{threadsEntry.WaitTime}</TableCell>
+                <TableCell title={threadsEntry.ElapsedTime}>{threadsEntry.ElapsedTime}</TableCell>
+                <TableCell title={threadsEntry.State}>{threadsEntry.State}</TableCell>
+                <TableCell title="Delete">
                   <Image
                     onClick={handleClick}
                     src="assets/icons/trash.svg"

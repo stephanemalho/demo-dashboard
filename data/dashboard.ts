@@ -75,7 +75,7 @@ export interface DashboardInterface {
         "Name": "DynamicConfig",
         "Context": "Tm1py",
         "State": "Idle",
-        "Function": "POST /api/v1/Processes(`Calc_Conso_Luxembourg`)/tm1.Execute",
+        "Function": "POST /api/v1/Processes(`Calc_Conso_Luxembourg`)/tm1.Execute tm1 Idriss Idrisss",
         "ObjectType": "",
         "ObjectName": "",
         "RLocks": 0,

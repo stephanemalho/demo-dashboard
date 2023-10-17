@@ -16,7 +16,7 @@ const Logs = () => {
 
   return (
     <LiveContainer logHeight="h-[50vh]" title="Live Logs">
-        <Table className="background-light800_dark400">
+        <Table className="background-light800_dark400 text-lg">
           <TableCaption>A list of recent Logs.</TableCaption>
           <TableBody className="code-font dark:text-slate-400">
             {Object.keys(logs).map((logKey) => {
