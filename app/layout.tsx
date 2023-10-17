@@ -5,7 +5,6 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "@/context/ThemeProvider";
 
 import "./globals.css";
-import { ScreenProvider } from "@/context/ScreenSizeContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -45,9 +44,7 @@ export default function RootLayout({
             },
           }}
         >
-          <ScreenProvider>
             <ThemeProvider>{children}</ThemeProvider>
-          </ScreenProvider>
         </ClerkProvider>
       </body>
     </html>
