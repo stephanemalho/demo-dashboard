@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
-import ResizeLog from "../../ResizeLog";
-
-import { useScreen } from "@/context/ScreenSizeContext";
+import LiveTitle from "../../LiveTitle";
 
 interface BoxLogsProps {
   children: React.ReactNode;
@@ -11,23 +9,16 @@ interface BoxLogsProps {
 }
 
 const LiveContainer = ({ children, title, logHeight }: BoxLogsProps) => {
-  const { isFullScreen, toggleFullScreen } = useScreen();
-
   return (
     <div
-      className={`w-full rounded-xl bg-light-850 p-8 dark:bg-dark-300 ${
-        isFullScreen ? "absolute right-3 top-[100px] h-[90vh] w-[99vw]" : ""
-      }`}
+      className="w-full rounded-xl bg-light-850 p-8 dark:bg-dark-300 "
     >
-      <ResizeLog
+      <LiveTitle
         title={title}
-        isFullScreen={isFullScreen}
-        onClick={toggleFullScreen}
+        className="flex-between h3-semibold flex-row pb-4"
       /> 
       <div
-        className={`custom-scrollbar ${
-          isFullScreen ? "h-screen" : `${logHeight}`
-        } overflow-y-auto border-t`}
+        className={`custom-scrollbar ${logHeight} overflow-y-auto border-t`}
       >
         {children}
       </div>
