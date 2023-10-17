@@ -55,15 +55,15 @@ const Threads = () => {
             const threadsEntry = threads[logKey as unknown as keyof typeof threads];
             return (
               <TableRow key={logKey}>
-                <TableCell className="max-w-[300px] truncate" title={threadsEntry.Function} >
+                <TableCell className="max-w-[300px] truncate" title={`Method: ${threadsEntry.Function}`} >
                   {threadsEntry.Function}
                 </TableCell>
-                <TableCell title={threadsEntry.Name}>{threadsEntry.Name}</TableCell>
-                <TableCell title={threadsEntry.Type}>{threadsEntry.Type}</TableCell>
-                <TableCell title={threadsEntry.Context}>{threadsEntry.Context}</TableCell>
-                <TableCell title={threadsEntry.WaitTime}>{threadsEntry.WaitTime}</TableCell>
-                <TableCell title={threadsEntry.ElapsedTime}>{threadsEntry.ElapsedTime}</TableCell>
-                <TableCell title={threadsEntry.State}>{threadsEntry.State}</TableCell>
+                <TableCell title={`Name: ${threadsEntry.Name}`}>{threadsEntry.Name}</TableCell>
+                <TableCell title={`Type: ${threadsEntry.Type}`}>{threadsEntry.Type}</TableCell>
+                <TableCell title={`Context: ${threadsEntry.Context}`}>{threadsEntry.Context}</TableCell>
+                <TableCell title={`WaitTime: ${threadsEntry.WaitTime}`}>{threadsEntry.WaitTime}</TableCell>
+                <TableCell title={`ElapsedTime: ${threadsEntry.ElapsedTime}`}>{threadsEntry.ElapsedTime}</TableCell>
+                <TableCell title={`State: ${threadsEntry.State}`}>{threadsEntry.State}</TableCell>
                 <TableCell title="Delete">
                   <Image
                     onClick={handleClick}

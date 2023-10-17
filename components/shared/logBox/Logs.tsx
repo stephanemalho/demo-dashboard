@@ -1,4 +1,3 @@
-"use client";
 import { dashboard } from "@/data/dashboard";
 import {
   Table,
