@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "@/context/ThemeProvider";
 
 import "./globals.css";
+import { ScreenProvider } from "@/context/ScreenSizeContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,8 +21,7 @@ const spaceGrotesk = grotesk({
 
 export const metadata: Metadata = {
   title: "CARE",
-  description:
-    "XCare is a SaaS platform that helps you manage data.",
+  description: "XCare is a SaaS platform that helps you manage data.",
   icons: {
     icon: "/assets/images/site-logo.svg",
   },
@@ -34,7 +34,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${spaceGrotesk.variable} custom-scrollbar`}>
+      <body
+        className={`${inter.variable} ${spaceGrotesk.variable} custom-scrollbar`}
+      >
         <ClerkProvider
           appearance={{
             elements: {
@@ -43,7 +45,9 @@ export default function RootLayout({
             },
           }}
         >
-          <ThemeProvider>{children}</ThemeProvider>
+          <ScreenProvider>
+            <ThemeProvider>{children}</ThemeProvider>
+          </ScreenProvider>
         </ClerkProvider>
       </body>
     </html>
