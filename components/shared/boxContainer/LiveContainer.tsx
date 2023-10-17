@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import LiveTitle from "../../LiveTitle";
 
@@ -11,7 +10,7 @@ interface BoxLogsProps {
 const LiveContainer = ({ children, title, logHeight }: BoxLogsProps) => {
   return (
     <div
-      className="w-full rounded-xl bg-light-850 p-8 dark:bg-dark-300 "
+      className="w-full rounded-xl bg-light-850 p-5 dark:bg-dark-300 "
     >
       <LiveTitle
         title={title}
