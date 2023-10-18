@@ -14,7 +14,7 @@ export const sidebarLinks: SidebarLink[] = [
     label: "Dashboard",
   },
   {
-    imgURL: "/assets/icons/delivery-box.svg",
+    imgURL: "/assets/icons/live-delivery.svg",
     route: ["/live-delivery/create","/live-delivery/list"],
     label: "Live Delivery",
   },

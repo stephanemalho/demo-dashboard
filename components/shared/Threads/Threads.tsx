@@ -4,9 +4,7 @@ import { dashboard } from "@/data/dashboard";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
@@ -24,22 +22,9 @@ const Threads = () => {
 
   return (
     <LiveContainer logHeight="h-[30vh]" title="Live Threads">
-      <Table className="background-light800_dark400 text-lg">
-        <TableCaption>A list of recent threads.</TableCaption>
-        <TableFooter>
-          <TableRow>
-            <TableHead>Function</TableHead>
-            <TableHead>User</TableHead>
-            <TableHead>Type</TableHead>
-            <TableHead>Context</TableHead>
-            <TableHead>Wait Time</TableHead>
-            <TableHead>Elapsed Time</TableHead>
-            <TableHead>State</TableHead>
-            <TableHead>Action</TableHead>
-          </TableRow>
-        </TableFooter>
+      <Table className="background-light800_dark400 text-[0.6rem] ">
         <TableHeader>
-          <TableRow>
+          <TableRow className="text-center max-2xl:text-[0.5rem]">
             <TableHead>Function</TableHead>
             <TableHead>User</TableHead>
             <TableHead>Type</TableHead>
@@ -50,19 +35,19 @@ const Threads = () => {
             <TableHead>Action</TableHead>
           </TableRow>
         </TableHeader>
-        <TableBody className=" dark:text-slate-400">
+        <TableBody className=" text-center dark:text-slate-400 max-2xl:text-[0.5rem]">
           {Object.keys(threads).map((logKey) => {
             const threadsEntry =
               threads[logKey as unknown as keyof typeof threads];
             return (
-              <TableRow key={logKey}>
+              <TableRow className="text-center" key={logKey}>
                 <TableCell
-                  className="max-w-[300px] truncate"
+                  className="max-w-[300px] text-left"
                   title={`Method: ${threadsEntry.Function}`}
                 >
                   {threadsEntry.Function}
                 </TableCell>
-                <TableCell title={`Name: ${threadsEntry.Name}`}>
+                <TableCell className="text-left" title={`Name: ${threadsEntry.Name}`}>
                   {threadsEntry.Name}
                 </TableCell>
                 <TableCell title={`Type: ${threadsEntry.Type}`}>

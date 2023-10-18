@@ -2,7 +2,6 @@ import { dashboard } from "@/data/dashboard";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableRow,
 } from "@/components/ui/table";
@@ -15,9 +14,8 @@ const Logs = () => {
   const logs = data.Logs;
 
   return (
-    <LiveContainer logHeight="h-[50vh]" title="Live Logs">
-      <Table className="background-light800_dark400 text-lg">
-        <TableCaption>A list of recent Logs.</TableCaption>
+    <LiveContainer logHeight="h-[40vh]" title="Live Logs">
+      <Table className="background-light800_dark400 text-sm max-2xl:text-[0.5rem]">
         <TableBody className="code-font dark:text-slate-400">
           {Object.keys(logs).map((logKey) => {
             const logEntry = logs[logKey as unknown as keyof typeof logs];

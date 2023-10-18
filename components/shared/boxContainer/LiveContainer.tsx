@@ -10,11 +10,11 @@ interface BoxLogsProps {
 const LiveContainer = ({ children, title, logHeight }: BoxLogsProps) => {
   return (
     <div
-      className="w-full rounded-xl bg-light-850 p-5 dark:bg-dark-300 "
+      className="w-full rounded-xl bg-light-850 p-5 dark:bg-dark-300 dark:text-slate-400  max-2xl:rounded-sm  max-2xl:p-2"
     >
       <LiveTitle
         title={title}
-        className="flex-between h3-semibold flex-row pb-4"
+        className="text-light400_light500 flex-between h3-semibold flex-row  max-2xl:text-[0.8rem]"
       /> 
       <div
         className={`custom-scrollbar ${logHeight} overflow-y-auto border-t`}

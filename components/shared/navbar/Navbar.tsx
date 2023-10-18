@@ -8,8 +8,8 @@ import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <nav className="flex-between background-light900_dark200 fixed z-50 w-full gap-5 p-6 shadow-light-300 dark:shadow-none sm:px-12">
-      <div className="flex-center w-[250px]">
+    <nav className="flex-between background-light900_dark200 fixed z-50 w-full gap-5 p-6 shadow-light-300 dark:shadow-none max-2xl:h-[50px] sm:px-12">
+      <div className="flex-center w-[250px] max-2xl:w-[130px]">
       <Link href="/" className="flex items-center gap-1">
         <p className="h2-bold relative font-spaceGrotesk font-black text-dark-100 dark:text-light-900 max-sm:w-[100px] max-sm:text-left">
           AE&nbsp;&nbsp;<span className="absolute right-[25px] top-[-3px] text-3xl italic text-logo-500 max-sm:left-[30px]">X</span>IS
@@ -27,7 +27,7 @@ const Navbar = () => {
                 alt="login"
                 width={20}
                 height={20}
-                className="invert-colors lg:hidden"
+                className="lg:hidden"
               />
               <span className="primary-text-gradient ">Log In</span>
             </Button>
@@ -39,7 +39,7 @@ const Navbar = () => {
                 alt="Sign-up"
                 width={20}
                 height={20}
-                className="invert-colors lg:hidden"
+                className="lg:hidden"
               />
               <span className="">Sign-up</span>
             </Button>
