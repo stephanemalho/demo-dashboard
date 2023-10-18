@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <div className="lg:w-[70vw]">
-    <ContentContainer title="Dashboard">
+    <ContentContainer >
       <ThreadsInfo />
       <Threads />
       <Logs />
