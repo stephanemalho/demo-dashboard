@@ -2,7 +2,6 @@ import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import React from "react";
 import Theme from "./Theme";
-import MobileNav from "./MobileNav";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 // import GlobalSearch from "../search/GlobalSearch";
@@ -61,7 +60,6 @@ const Navbar = () => {
             }}
           />
         </SignedIn>
-        <MobileNav />
       </div>
     </nav>
   );
