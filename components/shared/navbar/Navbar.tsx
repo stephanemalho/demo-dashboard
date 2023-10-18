@@ -17,7 +17,6 @@ const Navbar = () => {
         </p>
       </Link>
       </div>
-
       {/* <GlobalSearch /> */}
       <div className="flex-between gap-5">
       <SignedOut>
