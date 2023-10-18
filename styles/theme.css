@@ -35,6 +35,7 @@
     @apply bg-light-800 dark:bg-dark-400;
   }
 
+
   .background-light800_dark300 {
     @apply bg-light-800 dark:bg-dark-300 !important;
   }

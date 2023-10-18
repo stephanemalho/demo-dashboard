@@ -19,50 +19,56 @@ const ThreadsInfo = () => {
   const isConnected = isOnline ? "Connected" : "Not Connected";
 
   return (
-    <LiveContainer title="" logHeight="h-auto border-none flex">
+    <LiveContainer title="" logHeight="h-full border-none flex">
       <div className="h2-semibold flex h-full w-[50%] flex-row items-center justify-between pb-2 pl-6 font-inter">
-        <div>
+        <div title="connexion">
           <div
             aria-label={`${isConnected}`}
-            className={`h-6 w-6 rounded-full ${stateColorClass}`}
+            className={`h-5 w-5 rounded-full ${stateColorClass}`}
           >
             {""}
           </div>
         </div>
-        <div className="w-[150px] text-center">
+        <div title="Thread" className="text-center">
           {connectedThreads} {connectedThreads <= 1 ? "Thread" : "Threads"}
         </div>
-        <div className="w-[150px] text-center">{formattedRamValue} GB</div>
-        <div className="flex w-auto flex-row justify-between text-center">
+        <div title="RAM" className="flex h-auto w-auto text-center"><Image
+          className="invert-colors mr-3"
+          src="/assets/icons/ram.svg"
+          alt="user"
+          width={16}
+          height={16}
+        />{formattedRamValue}gb RAM</div>
+        <div title="Users Connected" className=" flex h-auto w-auto text-center">
           {connectedUsers <= 1 ? (
             <Image
               className="invert-colors mr-3"
               src="/assets/icons/user.svg"
               alt="user"
-              width={20}
-              height={20}
+              width={16}
+              height={16}
             />
           ) : (
             <Image
               className="invert-colors mr-3"
               src="/assets/icons/users.svg"
               alt="users"
-              width={20}
-              height={20}
+              width={16}
+              height={16}
             />
           )}
           {connectedUsers} {connectedUsers <= 1 ? "User" : "Users"}
         </div>
       </div>
-      <div className="code-font h2-semibold flex w-[50%] items-center justify-end text-center dark:text-slate-400">
-        Today:<div className=" w-[140px]">{dateNow}</div>
-        <Image
-          className="invert-colors"
+      <div title="last reload" className="code-font h2-semibold flex h-auto w-[50%] items-center justify-end text-center dark:text-slate-400">
+        Today:<div className="background-light800_dark400 flex w-[200px] flex-row rounded-lg pl-2">{dateNow} <Image
+          className="invert-colors ml-2"
           src="/assets/icons/clock.svg"
           alt="user"
           width={20}
           height={20}
-        />
+        /></div>
+       
       </div>
     </LiveContainer>
   );
