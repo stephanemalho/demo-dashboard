@@ -28,8 +28,8 @@ const LeftSideBar = () => {
         src={"/assets/icons/hamburger.svg"}
         alt={"menu"}
         onClick={handleClick}
-        width={20}
-        height={20}
+        width={toggleSideBar ? 20 : 20}
+        height={toggleSideBar ? 20 : 20}
         className={`text-light400_light500 absolute left-[20px] top-[100px] cursor-pointer max-2xl:right-[10px] max-2xl:top-[55px] max-2xl:text-[0.6rem]`}
       />
     <nav className={`absolute flex w-full flex-1 flex-col ease-in max-2xl:top-[80px]`}>
@@ -52,7 +52,7 @@ const LeftSideBar = () => {
                 isActive
                   ? "rounded bg-light-700 text-light-500 visited:hover:bg-light-700"
                   : "font-spaceGrotesk"
-              } text-light400_light500 flex items-center justify-start gap-4 p-4 no-underline hover:bg-light-800 dark:hover:bg-dark-300 max-2xl:text-[0.6rem]`}
+              } text-light400_light500 flex h-[50px] items-center justify-start gap-4 p-4 text-[0.6rem] no-underline hover:bg-light-800 dark:hover:bg-dark-300`}
             >
               <Image
                 src={item.imgURL}
@@ -65,7 +65,7 @@ const LeftSideBar = () => {
               <p
                 className={`${
           isActive ? "base-bold" : "base-medium"
-        } max-2xl:text-[0.6rem] ${
+        } whitespace-nowrap max-2xl:text-[0.6rem]	 ${
           toggleSideBar ? "hidden" : "" // Ajoutez la classe 'hidden' lorsque toggleSideBar est vrai
         }`}
               >
@@ -110,7 +110,7 @@ const LeftSideBar = () => {
                     <p
                       className={`${
                         isActive ? "base-bold" : "base-medium"
-                      } h-full w-full pl-[18px] text-left	max-2xl:text-[0.6rem]`}
+                      } h-full w-full whitespace-nowrap pl-[18px] text-left	max-2xl:text-[0.6rem]`}
                     >
                       {item.label}
                     </p>
@@ -124,16 +124,16 @@ const LeftSideBar = () => {
                           href={subRoute}
                           className={`${
                             isActive || pathname.includes(subRoute)
-                              ? "rounded bg-light-700 text-light-500 visited:hover:bg-light-700"
+                              ? " bg-light-700 text-light-500 visited:hover:bg-light-700"
                               : "text-light400_light500"
-                          } my-1 flex items-center justify-start gap-4 bg-transparent p-4 hover:bg-light-800  dark:hover:bg-dark-300`}
+                          } my-1 flex h-[50px] items-center justify-start p-4 hover:bg-light-800  dark:hover:bg-dark-300`}
                         >
                           <p
                             className={`${
                               isActive || pathname.includes(subRoute)
                                 ? "base-bold"
                                 : "base-medium"
-                            } max-2xl:text-[0.6rem]`}
+                            } whitespace-nowrap max-2xl:text-[0.6rem]`}
                           >
                             {getLastSegment(subRoute)}
                           </p>
@@ -148,13 +148,13 @@ const LeftSideBar = () => {
                           isActive
                             ? "background-light700_dark400 rounded text-light-900"
                             : "text-dark500_light700"
-                        } flex items-start justify-between gap-4 bg-transparent p-4   dark:hover:bg-dark-300`}
+                        } flex h-[50px] items-start justify-between gap-4 bg-transparent p-4   dark:hover:bg-dark-300`}
                       >
                          {/* parapraph to hideen when isToggleSideBar */}
                         <p
                           className={`${
                             isActive ? "base-bold" : "base-medium"
-                          }`}
+                          } whitespace-nowrap`}
                         >
                           {getLastSegment(item.route)}
                         </p>
