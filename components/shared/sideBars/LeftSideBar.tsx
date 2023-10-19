@@ -30,7 +30,7 @@ const LeftSideBar = () => {
         onClick={handleClick}
         width={20}
         height={20}
-        className={`text-light400_light500 absolute right-[10px] top-[100px] max-2xl:right-[10px] max-2xl:top-[55px] max-2xl:text-[0.6rem]`}
+        className={`text-light400_light500 absolute right-[10px] top-[100px] cursor-pointer max-2xl:right-[10px] max-2xl:top-[55px] max-2xl:text-[0.6rem]`}
       />
     <nav className={`flex w-full flex-1 flex-col transition-opacity ${toggleSideBar ? "hidden opacity-0" : ""} ease-in`}>
         <h2 className="h3-bold text-light400_light500 my-4 max-2xl:text-[0.6rem]">
