@@ -23,7 +23,7 @@ const LeftSideBar = () => {
   }
   
   return (
-    <section className={`background-light900_dark200 custom-scrollbar sticky left-0 top-0 flex h-screen ${toggleSideBar ? "w-[60px]" : "w-[280px] "} flex-col justify-between overflow-y-auto  p-2 pt-36 font-inter shadow-light-300 dark:shadow-none ${toggleSideBar ? "max-2xl:w-[60px]" : "max-2xl:w-[150px]"} text-light400_light500 transition-all ease-in max-2xl:pt-10`}>
+    <section className={`background-light900_dark200 custom-scrollbar sticky left-0 top-0 flex h-screen ${toggleSideBar ? "w-[70px]" : "w-[280px] "} flex-col justify-between overflow-y-auto  p-2 pt-36 font-inter shadow-light-300 dark:shadow-none ${toggleSideBar ? "max-2xl:w-[60px]" : "max-2xl:w-[150px]"} text-light400_light500 transition-all ease-in max-2xl:pt-10`}>
       <Image
         src={"/assets/icons/hamburger.svg"}
         alt={"menu"}
@@ -61,12 +61,11 @@ const LeftSideBar = () => {
                 height={20}
                 className={`text-light400_light500 max-2xl:h-[0.8rem] max-2xl:w-[0.8rem]`}
               />
-              {/* parapraph to hideen when isToggleSideBar */}
               <p
                 className={`${
           isActive ? "base-bold" : "base-medium"
         } whitespace-nowrap max-2xl:text-[0.6rem]	 ${
-          toggleSideBar ? "hidden" : "" // Ajoutez la classe 'hidden' lorsque toggleSideBar est vrai
+          toggleSideBar ? "opacity-0" : "" 
         }`}
               >
                 {item.label}
@@ -95,7 +94,7 @@ const LeftSideBar = () => {
           };
 
           return (
-            <div key={item.label} className={`${toggleSideBar ? "hidden" : "block"}`}>
+            <div key={item.label} >
               <Accordion type="single" className="h-full" collapsible>
                 <AccordionItem value="h-full item-1">
                   <AccordionTrigger className="text-light400_light500 h-full p-4 hover:bg-light-800 dark:hover:bg-dark-300">
@@ -110,7 +109,9 @@ const LeftSideBar = () => {
                     <p
                       className={`${
                         isActive ? "base-bold" : "base-medium"
-                      } h-full w-full whitespace-nowrap pl-[18px] text-left	max-2xl:text-[0.6rem]`}
+                      } h-full w-full whitespace-nowrap pl-[18px] text-left	max-2xl:text-[0.6rem]  ${
+                        toggleSideBar ? "opacity-0" : "" 
+                      }`}
                     >
                       {item.label}
                     </p>
@@ -133,7 +134,7 @@ const LeftSideBar = () => {
                               isActive || pathname.includes(subRoute)
                                 ? "base-bold"
                                 : "base-medium"
-                            } whitespace-nowrap max-2xl:text-[0.6rem]`}
+                            } whitespace-nowrap max-2xl:text-[0.6rem] `}
                           >
                             {getLastSegment(subRoute)}
                           </p>
