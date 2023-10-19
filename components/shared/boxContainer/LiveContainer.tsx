@@ -10,7 +10,7 @@ interface BoxLogsProps {
 const LiveContainer = ({ children, title, logHeight }: BoxLogsProps) => {
   return (
     <div
-      className="w-full rounded-xl bg-light-850 p-5 dark:bg-dark-300 dark:text-slate-400  max-2xl:rounded-sm  max-2xl:p-2"
+      className="shadow-light100_dark100 w-full rounded-xl bg-light-850 p-5 dark:bg-dark-300 dark:text-slate-400  max-2xl:rounded-sm  max-2xl:p-2"
     >
       <LiveTitle
         title={title}

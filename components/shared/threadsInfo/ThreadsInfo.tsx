@@ -18,7 +18,7 @@ const ThreadsInfo = () => {
   const isConnected = isOnline ? "Connected" : "Not Connected";
 
   return (
-    <div className="background-light900_dark200 flex w-full rounded-lg p-2 max-2xl:rounded-sm  max-2xl:p-2">
+    <div className="shadow-light100_dark100 background-light900_dark200 flex w-full rounded-lg p-2 max-2xl:rounded-sm  max-2xl:p-2">
       <div className="h3-semibold text-light400_light500 flex h-full w-[50%] flex-row items-center justify-between pl-6 font-inter max-2xl:pl-3 max-2xl:text-[0.6rem]">
         <div title="connexion">
           <div
