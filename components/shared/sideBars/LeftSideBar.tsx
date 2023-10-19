@@ -13,8 +13,8 @@ import { useState } from "react";
 
 const LeftSideBar = () => {
   const pathname = usePathname();
-  const firstSidebarLink = sidebarLinks.slice(0, 1);
-  const secondSidebarLink = sidebarLinks.slice(1);
+  const firstSidebarLink = sidebarLinks.slice(0, 2);
+  const secondSidebarLink = sidebarLinks.slice(2);
   const [toggleSideBar, setToggleSideBar] = useState(false)  
 
   const handleClick = () => {
@@ -23,19 +23,19 @@ const LeftSideBar = () => {
   }
   
   return (
-    <section className={`background-light900_dark200 light-border custom-scrollbar sticky left-0 top-0 flex h-screen ${toggleSideBar ? "w-[40px]" : "w-[366px] "} flex-col justify-between overflow-y-auto border-r p-6 pt-36 font-inter shadow-light-300 dark:shadow-none ${toggleSideBar ? "w-[40px]" : "max-2xl:w-[250px]"} transition-all ease-in max-2xl:pt-10`}>
+    <section className={`background-light900_dark200 custom-scrollbar sticky left-0 top-0 flex h-screen ${toggleSideBar ? "w-[60px]" : "w-[280px] "} flex-col justify-between overflow-y-auto  p-2 pt-36 font-inter shadow-light-300 dark:shadow-none ${toggleSideBar ? "max-2xl:w-[60px]" : "max-2xl:w-[150px]"} text-light400_light500 transition-all ease-in max-2xl:pt-10`}>
       <Image
         src={"/assets/icons/hamburger.svg"}
         alt={"menu"}
         onClick={handleClick}
         width={20}
         height={20}
-        className={`text-light400_light500 absolute right-[10px] top-[100px] cursor-pointer max-2xl:right-[10px] max-2xl:top-[55px] max-2xl:text-[0.6rem]`}
+        className={`text-light400_light500 absolute left-[20px] top-[100px] cursor-pointer max-2xl:right-[10px] max-2xl:top-[55px] max-2xl:text-[0.6rem]`}
       />
-    <nav className={`flex w-full flex-1 flex-col transition-opacity ${toggleSideBar ? "hidden opacity-0" : ""} ease-in`}>
-        <h2 className="h3-bold text-light400_light500 my-4 max-2xl:text-[0.6rem]">
+    <nav className={`absolute flex w-full flex-1 flex-col ease-in max-2xl:top-[80px]`}>
+        {/* <h2 className="h3-bold text-light400_light500 my-4 max-2xl:text-[0.6rem]">
           MONITORING
-        </h2>
+        </h2> */}
         {firstSidebarLink.map((item) => {
           const isActive =
             (pathname.includes(item.route) && item.route.length > 1) ||
@@ -50,32 +50,33 @@ const LeftSideBar = () => {
               href={item.route || "/"}
               className={`${
                 isActive
-                  ? "primary-gradient rounded text-light-900"
-                  : "text-light400_light500 font-spaceGrotesk"
-              } flex items-center justify-start gap-4 p-4 no-underline hover:bg-light-800 dark:hover:bg-dark-300 max-2xl:text-[0.6rem]`}
+                  ? "rounded bg-light-700 text-light-500 visited:hover:bg-light-700"
+                  : "font-spaceGrotesk"
+              } text-light400_light500 flex items-center justify-start gap-4 p-4 no-underline hover:bg-light-800 dark:hover:bg-dark-300 max-2xl:text-[0.6rem]`}
             >
               <Image
                 src={item.imgURL}
                 alt={item.label}
                 width={20}
                 height={20}
-                className={`text-light400_light500 ${
-                  isActive ? " " : ""
-                } max-2xl:h-[0.8rem] max-2xl:w-[0.8rem]`}
+                className={`text-light400_light500 max-2xl:h-[0.8rem] max-2xl:w-[0.8rem]`}
               />
+              {/* parapraph to hideen when isToggleSideBar */}
               <p
                 className={`${
-                  isActive ? "base-bold" : "base-medium"
-                } max-2xl:text-[0.6rem] `}
+          isActive ? "base-bold" : "base-medium"
+        } max-2xl:text-[0.6rem] ${
+          toggleSideBar ? "hidden" : "" // Ajoutez la classe 'hidden' lorsque toggleSideBar est vrai
+        }`}
               >
                 {item.label}
               </p>
             </Link>
           );
         })}
-        <h2 className="h3-bold text-light400_light500 my-3 max-2xl:text-[0.6rem]">
+        {/* <h2 className="h3-bold text-light400_light500 my-3 max-2xl:text-[0.6rem]">
           TM1 ADMINISTRATION
-        </h2>
+        </h2> */}
         {secondSidebarLink.map((item) => {
           const isActive =
             (pathname.includes(item.route) &&
@@ -94,7 +95,7 @@ const LeftSideBar = () => {
           };
 
           return (
-            <div key={item.label}>
+            <div key={item.label} className={`${toggleSideBar ? "hidden" : "block"}`}>
               <Accordion type="single" className="h-full" collapsible>
                 <AccordionItem value="h-full item-1">
                   <AccordionTrigger className="text-light400_light500 h-full p-4 hover:bg-light-800 dark:hover:bg-dark-300">
@@ -103,8 +104,9 @@ const LeftSideBar = () => {
                       alt={item.label}
                       width={20}
                       height={20}
-                      className={`${isActive ? "invert-colors " : "mb-1"} max-2xl:h-[0.8rem] max-2xl:w-[0.8rem]`}
+                      className={`${isActive ? "invert-colors " : "mb-1"}  max-2xl:w-[0.8rem]`}
                     />
+                     {/* parapraph to hideen when isToggleSideBar */}
                     <p
                       className={`${
                         isActive ? "base-bold" : "base-medium"
@@ -122,7 +124,7 @@ const LeftSideBar = () => {
                           href={subRoute}
                           className={`${
                             isActive || pathname.includes(subRoute)
-                              ? "primary-gradient rounded text-light-900"
+                              ? "rounded bg-light-700 text-light-500 visited:hover:bg-light-700"
                               : "text-light400_light500"
                           } my-1 flex items-center justify-start gap-4 bg-transparent p-4 hover:bg-light-800  dark:hover:bg-dark-300`}
                         >
@@ -144,10 +146,11 @@ const LeftSideBar = () => {
                         href={item.route || "/"}
                         className={`${
                           isActive
-                            ? "primary-gradient rounded text-light-900"
+                            ? "background-light700_dark400 rounded text-light-900"
                             : "text-dark500_light700"
                         } flex items-start justify-between gap-4 bg-transparent p-4   dark:hover:bg-dark-300`}
                       >
+                         {/* parapraph to hideen when isToggleSideBar */}
                         <p
                           className={`${
                             isActive ? "base-bold" : "base-medium"
