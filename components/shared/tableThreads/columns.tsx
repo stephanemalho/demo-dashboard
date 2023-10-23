@@ -1,7 +1,7 @@
 "use client";
 import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
-import { Checkbox } from "@/components/ui/checkbox";
+// import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -28,25 +28,25 @@ export type Threads = {
 };
 
 export const columns: ColumnDef<Threads>[] = [
-  {
-    id: "select",
-    header: ({ table }) => (
-      <Checkbox
-        checked={table.getIsAllPageRowsSelected()}
-        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-        aria-label="Select all"
-      />
-    ),
-    cell: ({ row }) => (
-      <Checkbox
-        checked={row.getIsSelected()}
-        onCheckedChange={(value) => row.toggleSelected(!!value)}
-        aria-label="Select row"
-      />
-    ),
-    enableSorting: false,
-    enableHiding: false,
-  },
+  // {
+  //   id: "select",
+  //   header: ({ table }) => (
+  //     <Checkbox
+  //       checked={table.getIsAllPageRowsSelected()}
+  //       onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+  //       aria-label="Select all"
+  //     />
+  //   ),
+  //   cell: ({ row }) => (
+  //     <Checkbox
+  //       checked={row.getIsSelected()}
+  //       onCheckedChange={(value) => row.toggleSelected(!!value)}
+  //       aria-label="Select row"
+  //     />
+  //   ),
+  //   enableSorting: false,
+  //   enableHiding: false,
+  // },
   {
     accessorKey: "function",
     header: ({ column }) => {
@@ -54,10 +54,24 @@ export const columns: ColumnDef<Threads>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          className="p-0"
         >
           Function
-          <ArrowUpDown className="ml-2 h-4 w-4" />
+          <ArrowUpDown className="ml-2 h-3 w-3" />
+        </Button>
+      );
+    },
+  },
+  {
+    accessorKey: "state",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className="p-0"
+        >
+          State
+          <ArrowUpDown className="ml-2 h-3 w-3" />
         </Button>
       );
     },
@@ -76,7 +90,7 @@ export const columns: ColumnDef<Threads>[] = [
           className="p-0"
         >
           Type
-          <ArrowUpDown className="ml-2 h-4 w-4" />
+          <ArrowUpDown className="ml-2 h-3 w-3" />
         </Button>
       );
     },
@@ -91,7 +105,7 @@ export const columns: ColumnDef<Threads>[] = [
           className="p-0"
         >
           Context
-          <ArrowUpDown className="ml-2 h-4 w-4" />
+          <ArrowUpDown className="ml-2 h-3 w-3" />
         </Button>
       );
     },
@@ -106,7 +120,7 @@ export const columns: ColumnDef<Threads>[] = [
           className="p-0"
         >
           Wait Time
-          <ArrowUpDown className="ml-2 h-4 w-4" />
+          <ArrowUpDown className="ml-2 h-3 w-3" />
         </Button>
       );
     },
@@ -121,22 +135,7 @@ export const columns: ColumnDef<Threads>[] = [
           className="p-0"
         >
           Elapsed Time
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      );
-    },
-  },
-  {
-    accessorKey: "state",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          className="p-0"
-        >
-          State
-          <ArrowUpDown className="ml-2 h-4 w-4" />
+          <ArrowUpDown className="ml-2 h-3 w-3" />
         </Button>
       );
     },
@@ -174,9 +173,10 @@ export const columns: ColumnDef<Threads>[] = [
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="background-light800_dark400 capitalize dark:text-white">
-            <DropdownMenuLabel>More actions</DropdownMenuLabel>
+            <DropdownMenuLabel className="text-[10px]">More actions</DropdownMenuLabel>
             <DropdownMenuItem
               onClick={() => copyRowToExcel(threads)} // Appel de la fonction pour copier la ligne au format Excel.
+              className="cursor-pointer text-[10px] hover:bg-[#1E40AF] hover:text-white"
             >
               Copy Line to Excel
             </DropdownMenuItem>

@@ -1,5 +1,5 @@
 import ContentContainer from "@/components/shared/contentContainer/ContentContainer";
-import { Threads, columns } from "./columns";
+import { Threads , columns } from "./columns";
 import { DataTable } from "./data-table";
 import LiveContainer from "@/components/shared/boxContainer/LiveContainer";
 import { dashboard } from "@/data/dashboard";
@@ -25,13 +25,13 @@ async function getData(): Promise<Threads[]> {
   });
 }
 
-export default async function Threads() {
+export default async function LiveThreads() {
   const data = await getData();
 
   return (
-    <div className="text-[0.6rem] lg:w-[70vw]">
+    <div className="text-[0.6rem]">
       <ContentContainer>
-        <LiveContainer title="Live Threads" logHeight="h-[auto]">
+        <LiveContainer title="Live Threads" logHeight="h-[auto] max-2xl:h-[35vh]">
           <DataTable columns={columns} data={data} />
         </LiveContainer>
       </ContentContainer>

@@ -57,7 +57,7 @@ const ThreadsInfo = () => {
           title="Users Connected"
           className="ml-10 flex h-auto w-[100px]"
         >
-          {connectedUsers <= 1 ? (
+          {/* {connectedUsers <= 1 ? (
             <Image
               className="mr-3"
               src="/assets/icons/user.svg"
@@ -73,7 +73,7 @@ const ThreadsInfo = () => {
               width={16}
               height={16}
             />
-          )}
+          )} */}
           <div className=" flex h-[40px] w-[auto] flex-col justify-center p-0 text-left">
             <p className="text-xs">{connectedUsers <= 1 ? "User" : "Users"}</p>
             <p className="text-sm font-bold text-gray-600">{connectedUsers} </p>

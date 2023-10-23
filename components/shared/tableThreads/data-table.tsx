@@ -78,15 +78,25 @@ export function DataTable<TData, TValue>({
       <div className="flex h-[36px] items-center py-4">
         <Input
           placeholder="Filter functions..."
-          value={(table.getColumn("function")?.getFilterValue() as string) ?? ""}
+          value={
+            (table.getColumn("function")?.getFilterValue() as string) ?? ""
+          }
           onChange={(event) =>
             table.getColumn("function")?.setFilterValue(event.target.value)
           }
-          className="h-[28px] max-w-sm text-sm"
+          className="ml-1 h-[28px] max-w-sm text-sm"
+        />
+        <Input
+          placeholder="Filter Wait..."
+          value={(table.getColumn("state")?.getFilterValue() as string) ?? ""}
+          onChange={(event) =>
+            table.getColumn("state")?.setFilterValue(event.target.value)
+          }
+          className="ml-1 h-[28px] max-w-sm text-sm"
         />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto text-sm">
+            <Button variant="outline" className="ml-auto h-[28px] text-sm">
               Columns
             </Button>
           </DropdownMenuTrigger>
@@ -112,13 +122,13 @@ export function DataTable<TData, TValue>({
         </DropdownMenu>
       </div>
       <div className="rounded-md border">
-        <Table className="background-light800_dark400 text-left text-[0.6rem] text-black dark:text-white">
-          <TableHeader className="h-[20px] text-left">
+        <Table className="background-light800_dark400 text-[0.6rem] text-black dark:text-white">
+          <TableHeader className="h-[20px] ">
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}  >
+              <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id}>
+                    <TableHead key={header.id} className="text-left">
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -130,7 +140,8 @@ export function DataTable<TData, TValue>({
                 })}
               </TableRow>
             ))}
-          </TableHeader> <TableBody>
+          </TableHeader>{" "}
+          <TableBody>
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow
@@ -138,7 +149,10 @@ export function DataTable<TData, TValue>({
                   data-state={row.getIsSelected() && "selected"}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
+                    <TableCell
+                      key={cell.id}
+                      className="w-[100px]  max-w-[200px] overflow-hidden text-ellipsis"
+                    >
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()
@@ -149,10 +163,7 @@ export function DataTable<TData, TValue>({
               ))
             ) : (
               <TableRow>
-                <TableCell
-                  colSpan={columns.length}
-                  className="h-24 text-left"
-                >
+                <TableCell colSpan={columns.length} className="h-24 text-left">
                   No results.
                 </TableCell>
               </TableRow>
