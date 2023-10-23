@@ -70,8 +70,8 @@ const Threads = () => {
                     onClick={handleClick}
                     src="assets/icons/trash.svg"
                     alt="trash"
-                    width={20}
-                    height={20}
+                    width={13}
+                    height={13}
                   />
                 </TableCell>
               </TableRow>
