@@ -1,10 +1,10 @@
 import ContentContainer from "@/components/shared/contentContainer/ContentContainer";
-import { Payment, columns } from "./columns";
+import { Threads, columns } from "./columns";
 import { DataTable } from "./data-table";
 import LiveContainer from "@/components/shared/boxContainer/LiveContainer";
 import { dashboard } from "@/data/dashboard";
 
-async function getData(): Promise<Payment[]> {
+async function getData(): Promise<Threads[]> {
   const data = dashboard;
   const threads = data.Threads;
 
@@ -19,6 +19,8 @@ async function getData(): Promise<Payment[]> {
       waitTime: threadsEntry.WaitTime,
       elapsedTime: threadsEntry.ElapsedTime,
       state : threadsEntry.State,
+      delete : threadsEntry.ID,
+      actions: [],
     };
   });
 }

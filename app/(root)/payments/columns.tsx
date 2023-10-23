@@ -1,5 +1,4 @@
 "use client";
-
 import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -12,10 +11,12 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { copyRowToExcel } from "@/utils/formatTable";
+import DeleteButton from "@/components/shared/deleteBtn/DeleteButton";
 
 // shape of data.
 // @todo use Zod.
-export type Payment = {
+export type Threads = {
   id: string;
   user: string;
   function: string;
@@ -26,7 +27,7 @@ export type Payment = {
   state: string;
 };
 
-export const columns: ColumnDef<Payment>[] = [
+export const columns: ColumnDef<Threads>[] = [
   {
     id: "select",
     header: ({ table }) => (
@@ -140,7 +141,55 @@ export const columns: ColumnDef<Payment>[] = [
       );
     },
   },
- 
+  {
+    accessorKey: "delete",
+    header: "Delete Line",
+    cell : ({ row }) => {
+      return (
+        <DeleteButton id={row.original.id} onDelete={
+           // filter the id of the row to delete
+          (id: string) => {
+            const confirm = window.confirm(
+              "Are you sure you want to delete this thread?"
+            );
+            if (confirm) {
+              console.log("thread deleted");
+              // onDelete();
+            }
+          }
+        }/>
+      )
+  },
+},
+  {
+    accessorKey: "More actions",
+    cell: ({ row }) => {
+      const threads = row.original;
+      return (
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button title="More actions" variant="ghost" className=" h-8 w-8 p-0 text-[0.6rem]">
+              <span className="sr-only">Open menu</span>
+              <MoreHorizontal className="h-4 w-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="background-light800_dark400 capitalize dark:text-white">
+            <DropdownMenuLabel>More actions</DropdownMenuLabel>
+            <DropdownMenuItem
+              onClick={() => copyRowToExcel(threads)} // Appel de la fonction pour copier la ligne au format Excel.
+            >
+              Copy Line to Excel
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+          </DropdownMenuContent>
+        </DropdownMenu>
+      );
+    },
+  }
+];
+
+
+
 //   {
 //     accessorKey: "amount",
 //     header: () => <div className="text-right">Amount</div>,
@@ -154,31 +203,30 @@ export const columns: ColumnDef<Payment>[] = [
 //       return <div className="text-right font-medium">{formatted}</div>;
 //     },
 //   },
-  {
-    id: "actions",
-    cell: ({ row }) => {
-      const payment = row.original;
+  // {
+  //   id: "actions",
+  //   cell: ({ row }) => {
+  //     const payment = row.original;
 
-      return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className=" h-8 w-8 p-0 text-[0.6rem]">
-              <span className="sr-only">Open menu</span>
-              <MoreHorizontal className="h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="background-light800_dark400 capitalize dark:text-white">
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
-            >
-              Copy ID
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>Copy Line to Excel</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      );
-    },
-  },
-];
+  //     return (
+  //       <DropdownMenu>
+  //         <DropdownMenuTrigger asChild>
+  //           <Button variant="ghost" className=" h-8 w-8 p-0 text-[0.6rem]">
+  //             <span className="sr-only">Open menu</span>
+  //             <MoreHorizontal className="h-4 w-4" />
+  //           </Button>
+  //         </DropdownMenuTrigger>
+  //         <DropdownMenuContent align="end" className="background-light800_dark400 capitalize dark:text-white">
+  //           <DropdownMenuLabel>Actions</DropdownMenuLabel>
+  //           <DropdownMenuItem
+  //             onClick={() => navigator.clipboard.writeText(payment.id)}
+  //           >
+  //             Copy ID
+  //           </DropdownMenuItem>
+  //           <DropdownMenuSeparator />
+  //           <DropdownMenuItem>Copy Line to Excel</DropdownMenuItem>
+  //         </DropdownMenuContent>
+  //       </DropdownMenu>
+  //     );
+  //   },
+  // },
