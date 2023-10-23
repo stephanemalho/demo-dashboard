@@ -6,32 +6,20 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { sidebarLinks } from "@/constants";
+import { useSidebar } from "@/context/ScreenSizeContext";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 
 const LeftSideBar = () => {
   const pathname = usePathname();
   const firstSidebarLink = sidebarLinks.slice(0, 2);
   const secondSidebarLink = sidebarLinks.slice(2);
-  const [toggleSideBar, setToggleSideBar] = useState(false)  
 
-  const handleClick = () => {
-    setToggleSideBar(!toggleSideBar)
-    console.log("houhouhuouhouhuoh");
-  }
+  const { toggleSideBar } = useSidebar();// sideBar Context
   
   return (
     <section className={`background-light900_dark200 custom-scrollbar sticky left-0 top-0 flex h-screen ${toggleSideBar ? "w-[70px]" : "w-[280px] "} flex-col justify-between overflow-y-auto  p-2 pt-36 font-inter shadow-light-300 dark:shadow-none ${toggleSideBar ? "max-2xl:w-[60px]" : "max-2xl:w-[150px]"} text-light400_light500 transition-all ease-in max-2xl:pt-10`}>
-      <Image
-        src={"/assets/icons/hamburger.svg"}
-        alt={"menu"}
-        onClick={handleClick}
-        width={toggleSideBar ? 20 : 20}
-        height={toggleSideBar ? 20 : 20}
-        className={`text-light400_light500 absolute left-[20px] top-[100px] cursor-pointer max-2xl:right-[10px] max-2xl:top-[55px] max-2xl:text-[0.6rem]`}
-      />
     <nav className={`absolute flex w-full flex-1 flex-col ease-in max-2xl:top-[80px]`}>
         {/* <h2 className="h3-bold text-light400_light500 my-4 max-2xl:text-[0.6rem]">
           MONITORING

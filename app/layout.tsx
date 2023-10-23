@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "@/context/ThemeProvider";
 
 import "./globals.css";
+import { SidebarProvider } from "@/context/ScreenSizeContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -44,7 +45,9 @@ export default function RootLayout({
             },
           }}
         >
-            <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider>
+            <SidebarProvider>{children}</SidebarProvider>
+          </ThemeProvider>
         </ClerkProvider>
       </body>
     </html>
