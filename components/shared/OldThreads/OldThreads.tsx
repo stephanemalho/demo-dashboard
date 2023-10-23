@@ -10,15 +10,14 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import LiveContainer from "../boxContainer/LiveContainer";
-import TableHandleDelete from "./TableHandleDelete";
+import TableHandleDelete from "../tableThreads/TableHandleDelete";
 
-const Threads = () => {
+const OldThreads = () => {
   const data = dashboard;
   const threads = data.Threads;
 
   const handleThreadDelete = () => {
     console.log();
-    
   };
   
 
@@ -67,7 +66,7 @@ const Threads = () => {
                 <TableCell title={`State: ${threadsEntry.State}`}>
                   {threadsEntry.State}
                 </TableCell>
-                <TableHandleDelete onDelete={handleThreadDelete} />
+                <TableHandleDelete onDelete={handleThreadDelete} id={threadsEntry.ID} />
               </TableRow>
             );
           })}
@@ -77,4 +76,4 @@ const Threads = () => {
   );
 };
 
-export default Threads;
+export default OldThreads;

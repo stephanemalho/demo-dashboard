@@ -5,7 +5,7 @@ import DeleteButton from "../deleteBtn/DeleteButton";
 
 interface Props {
   onDelete: () => void;
-  id: string;
+  id: number;
 }
 
 const TableHandleDelete = ({onDelete, id}: Props) => {

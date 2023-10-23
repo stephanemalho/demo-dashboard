@@ -12,12 +12,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { copyRowToExcel } from "@/utils/formatTable";
-import DeleteButton from "@/components/shared/deleteBtn/DeleteButton";
+import DeleteButton from "../deleteBtn/DeleteButton";
 
 // shape of data.
 // @todo use Zod.
 export type Threads = {
-  id: string;
+  id: number;
   user: string;
   function: string;
   type: string;
@@ -146,9 +146,9 @@ export const columns: ColumnDef<Threads>[] = [
     header: "Delete Line",
     cell : ({ row }) => {
       return (
-        <DeleteButton id={row.original.id} onDelete={
+        <DeleteButton id={row.original.id } onDelete={
            // filter the id of the row to delete
-          (id: string) => {
+          (id: number) => {
             const confirm = window.confirm(
               "Are you sure you want to delete this thread?"
             );

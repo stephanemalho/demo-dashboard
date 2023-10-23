@@ -3,8 +3,8 @@ import Image from "next/image";
 import React from "react";
 
 interface Props {
-  id : string;
-  onDelete: (id: string) => void;
+  id : number;
+  onDelete: (id: number) => void;
 }
 
 const DeleteButton = ({id, onDelete} : Props ) => {
