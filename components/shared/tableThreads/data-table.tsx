@@ -75,28 +75,28 @@ export function DataTable<TData, TValue>({
 
   return (
     <div>
-      <div className="flex h-[36px] items-center py-4">
+      <div className="flex h-[36px] items-center py-4 dark:border-slate-700 ">
         <Input
-          placeholder="Filter functions..."
+          placeholder="Filter Function..."
           value={
             (table.getColumn("function")?.getFilterValue() as string) ?? ""
           }
           onChange={(event) =>
             table.getColumn("function")?.setFilterValue(event.target.value)
           }
-          className="ml-1 h-[28px] max-w-sm text-sm"
+          className="ml-1 h-[28px] max-w-sm text-sm dark:border-slate-700 dark:bg-slate-700 "
         />
         <Input
-          placeholder="Filter Wait..."
+          placeholder="Filter State..."
           value={(table.getColumn("state")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
             table.getColumn("state")?.setFilterValue(event.target.value)
           }
-          className="ml-1 h-[28px] max-w-sm text-sm"
+          className="ml-1 h-[28px] max-w-sm text-sm dark:border-slate-700 dark:bg-slate-700 "
         />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto h-[28px] text-sm">
+            <Button variant="outline" className="ml-auto h-[28px] text-sm dark:border-slate-700 ">
               Columns
             </Button>
           </DropdownMenuTrigger>
@@ -108,7 +108,7 @@ export function DataTable<TData, TValue>({
                 return (
                   <DropdownMenuCheckboxItem
                     key={column.id}
-                    className="background-light800_dark400 capitalize dark:text-white"
+                    className="background-light800_dark400 capitalize dark:border-slate-700 dark:text-slate-400"
                     checked={column.getIsVisible()}
                     onCheckedChange={(value) =>
                       column.toggleVisibility(!!value)
@@ -121,14 +121,14 @@ export function DataTable<TData, TValue>({
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className="rounded-md border">
-        <Table className="background-light800_dark400 text-[0.6rem] text-black dark:text-white">
-          <TableHeader className="h-[20px] ">
+      <div>
+        <Table className="background-light800_dark400 text-[0.6rem] text-black dark:border-slate-700 dark:text-white">
+          <TableHeader className="h-[20px] dark:border-slate-700 dark:text-slate-400">
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
+              <TableRow key={headerGroup.id} className="dark:border-slate-700">
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id} className="text-left">
+                    <TableHead key={header.id} className="text-left dark:border-slate-700 ">
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -147,11 +147,12 @@ export function DataTable<TData, TValue>({
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
+                  className="dark:border-slate-700 dark:text-slate-400"
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className="w-[100px]  max-w-[200px] overflow-hidden text-ellipsis"
+                      className="w-[100px]  max-w-[200px] overflow-hidden text-ellipsis dark:border-slate-700 "
                     >
                       {flexRender(
                         cell.column.columnDef.cell,

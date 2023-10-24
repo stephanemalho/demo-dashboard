@@ -20,10 +20,10 @@ const spaceGrotesk = grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "CARE",
+  title: "X-CARE",
   description: "XCare is a SaaS platform that helps you manage data.",
   icons: {
-    icon: "/assets/images/site-logo.svg",
+    icon: "/assets/images/logo-aexis.png",
   },
 };
 

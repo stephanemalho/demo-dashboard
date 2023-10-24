@@ -38,7 +38,7 @@ const LeftSideBar = () => {
               href={item.route || "/"}
               className={`${
                 isActive
-                  ? "rounded bg-light-700 text-light-500 visited:hover:bg-light-700"
+                  ? "bg-light-700 text-light-500  visited:hover:bg-light-700 dark:visited:bg-dark-400"
                   : "font-spaceGrotesk"
               } text-light400_light500 flex h-[50px] items-center justify-start gap-4 p-4 text-[0.6rem] no-underline hover:bg-light-800 dark:hover:bg-dark-300`}
             >
