@@ -16,10 +16,11 @@ const LeftSideBar = () => {
   const firstSidebarLink = sidebarLinks.slice(0, 2);
   const secondSidebarLink = sidebarLinks.slice(2);
 
-  const { toggleSideBar } = useSidebar();// sideBar Context
+  const { toggleSideBar , handleHover } = useSidebar();// sideBar Context
   
   return (
-    <section className={`background-light900_dark200 custom-scrollbar sticky left-0 top-0 flex h-screen ${toggleSideBar ? "w-[70px]" : "w-[280px] "} flex-col justify-between overflow-y-auto  p-2 pt-36 font-inter shadow-light-300 dark:shadow-none ${toggleSideBar ? "max-2xl:w-[60px]" : "max-2xl:w-[150px]"} text-light400_light500 transition-all ease-in max-2xl:pt-10`}>
+    <section
+    className={`background-light900_dark200 custom-scrollbar sticky left-0 top-0 flex h-screen ${toggleSideBar ? "w-[70px]" : "w-[280px] "} flex-col justify-between overflow-y-auto  p-2 pt-36 font-inter shadow-light-300 dark:shadow-none ${toggleSideBar ? "max-2xl:w-[60px]" : "max-2xl:w-[150px]"} text-light400_light500 transition-all ease-in max-2xl:pt-10`}>
     <nav className={`absolute flex w-full flex-1 flex-col ease-in max-2xl:top-[80px]`}>
         {/* <h2 className="h3-bold text-light400_light500 my-4 max-2xl:text-[0.6rem]">
           MONITORING
@@ -83,7 +84,7 @@ const LeftSideBar = () => {
 
           return (
             <div key={item.label} >
-              <Accordion type="single" className="h-full" collapsible>
+              <Accordion type="single" className="h-full" collapsible title={item.label}>
                 <AccordionItem value="h-full item-1">
                   <AccordionTrigger className="text-light400_light500 h-full p-4 hover:bg-light-800 dark:hover:bg-dark-300">
                     <Image
@@ -108,9 +109,11 @@ const LeftSideBar = () => {
                     {Array.isArray(item.route) ? (
                       item.route.map((subRoute, subIndex) => (
                         <Link
-                          title={item.label}
+                        // show the label.value of the route
+                          title={subRoute.split("/")[2]}
                           key={subIndex}
                           href={subRoute}
+                          onMouseOver={handleHover}
                           className={`${
                             isActive || pathname.includes(subRoute)
                               ? " bg-light-700 text-light-500 visited:hover:bg-light-700"
@@ -124,7 +127,7 @@ const LeftSideBar = () => {
                                 : "base-medium"
                             } whitespace-nowrap max-2xl:text-[0.6rem] `}
                           >
-                            {getLastSegment(subRoute)}
+                            {toggleSideBar ? subRoute[0] : getLastSegment(subRoute)}
                           </p>
                         </Link>
                       ))
@@ -145,7 +148,8 @@ const LeftSideBar = () => {
                             isActive ? "base-bold" : "base-medium"
                           } whitespace-nowrap`}
                         >
-                          {getLastSegment(item.route)}
+                                {toggleSideBar ? item.route[0] : getLastSegment(item.route)}
+
                         </p>
                       </Link>
                     )}
