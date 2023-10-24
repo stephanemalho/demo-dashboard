@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { copyRowToExcel } from "@/utils/formatTable";
 import DeleteButton from "../deleteBtn/DeleteButton";
+import { Badge } from "@/components/ui/badge";
 
 // shape of data.
 // @todo use Zod.
@@ -25,7 +26,7 @@ export type Threads = {
   waitTime: string;
   elapsedTime: string;
   state: string;
-};
+};  
 
 export const columns: ColumnDef<Threads>[] = [
   // {
@@ -75,6 +76,24 @@ export const columns: ColumnDef<Threads>[] = [
         </Button>
       );
     },
+    cell: ({ row }) => {
+      const state = row.original.state;
+      return (
+        <Badge
+          variant={
+            state === "Run"
+              ? "default"
+              : state === "Idle"
+              ? "secondary"
+              : state === "Wait"
+              ? "destructive"
+              : "outline"
+          }
+        >
+          {state === "" ? "N/A" : state}
+        </Badge>
+      );
+    }
   },
   {
     accessorKey: "user",

@@ -260,7 +260,7 @@ export interface DashboardInterface {
         "Type": "System",
         "Name": "DynamicConfig",
         "Context": "Tm1py",
-        "State": "Idle",
+        "State": "Wait",
         "Function": "POST /api/v1/Processes(`Calc_Conso_Luxembourg`)/tm1.Execute",
         "ObjectType": "",
         "ObjectName": "",
