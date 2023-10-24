@@ -15,14 +15,14 @@ const Logs = () => {
 
   return (
     <LiveContainer logHeight="h-[40vh]" title="Live Logs">
-      <Table className="background-light800_dark400 text-sm max-2xl:text-[0.5rem]">
+      <Table className="background-light800_dark400 text-sm dark:border-slate-700 max-2xl:text-[0.5rem] ">
         <TableBody className="code-font dark:text-slate-400">
           {Object.keys(logs).map((logKey) => {
             const logEntry = logs[logKey as unknown as keyof typeof logs];
             const formattedTimestamp = moment(logEntry.TimeStamp).format(' h:mm:ss a, MMMM Do YYYY');
 
             return (
-              <TableRow key={logKey}>
+              <TableRow key={logKey} className="dark:border-slate-700">
                 <TableCell className="font-medium" title="ThreadId">
                   {logEntry.ThreadID}
                 </TableCell>

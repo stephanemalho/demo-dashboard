@@ -1,34 +1,40 @@
-// "use client";
-// import React, { createContext, useState } from "react";
+"use client";
+import React, { createContext, useState } from "react";
 
-// interface ScreenContextProps {
-//     isFullScreen: boolean,
-//     toggleFullScreen: () => void,
-// };
+interface SideBarContextProps {
+    toggleSideBar: boolean;
+    setToggleSideBar: (toggleSideBar: boolean) => void;
+    handleClick: () => void;
+};
 
-// export const ScreenContext = createContext<ScreenContextProps | undefined>(undefined);
+export const SideBarContext = createContext<SideBarContextProps | undefined>(undefined);
 
-// export function ScreenProvider({ children }: { children: React.ReactNode }) {
+export function SidebarProvider({ children }: { children: React.ReactNode }) {
     
-//     const [isFullScreen, setFullScreen] = useState(false);
+    const [toggleSideBar, setToggleSideBar] = useState(false)  
 
-//   const toggleFullScreen = () => {
-//       setFullScreen(!isFullScreen);
-//   };
+    const handleClick = () => {
+      setToggleSideBar(!toggleSideBar)
+      console.log("houhouhuouhouhuoh");
+    }
 
-//     return (
-//         <ScreenContext.Provider value={{ isFullScreen, toggleFullScreen }}>
-//             {children}
-//         </ScreenContext.Provider>
-//     );
-// }
+    return (
+        <SideBarContext.Provider value={{
+            toggleSideBar,
+            setToggleSideBar,
+            handleClick
+        }}>
+            {children}
+        </SideBarContext.Provider>
+    );
+}
 
-// export const useScreen = () => {
-//     const context = React.useContext(ScreenContext);
+export const useSidebar = () => {
+    const context = React.useContext(SideBarContext);
 
-//     if (context === undefined) {
-//         throw new Error("useScreen must be used within a ScreenProvider");
-//     }
+    if (context === undefined) {
+        throw new Error("useScreen must be used within a ScreenProvider");
+    }
 
-//     return context;
-// };
+    return context;
+};

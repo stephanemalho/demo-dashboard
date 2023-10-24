@@ -17,7 +17,7 @@ const LiveContainer = ({ children, title, logHeight }: BoxLogsProps) => {
         className="text-light400_light500 flex-between h3-semibold flex-row  max-2xl:text-[0.8rem]"
       /> 
       <div
-        className={`custom-scrollbar ${logHeight} overflow-y-auto border-t`}
+        className={`custom-scrollbar ${logHeight} overflow-y-auto border-t dark:border-slate-700`}
       >
         {children}
       </div>

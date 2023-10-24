@@ -1,14 +1,29 @@
+"use client";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import React from "react";
 import Theme from "./Theme";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useSidebar } from "@/context/ScreenSizeContext";
 // import GlobalSearch from "../search/GlobalSearch";
 
 const Navbar = () => {
+  
+  const { handleClick } = useSidebar();// sideBar Context
+
   return (
-    <nav className="flex-between background-light900_dark200 fixed z-50 w-full gap-5 p-6 shadow-light-300 dark:shadow-none max-2xl:h-[50px] sm:px-12">
+    <nav className="flex-between background-light900_dark200 fixed z-10 w-full gap-5 p-6 shadow-light-300 dark:shadow-none max-2xl:h-[50px] sm:px-12">
+      <SignedIn>
+        <Image
+        src={"/assets/icons/hamburger.svg"}
+        alt={"menu"}
+        onClick={handleClick}
+        width={28}
+        height={28}
+        className={`text-light400_light500 absolute left-[20px] top-[30px] cursor-pointer max-2xl:right-[10px] max-2xl:top-[12px] max-2xl:text-[0.6rem]`}
+      />
+      </SignedIn>
       <div className="flex-center w-[250px] max-2xl:w-[130px]">
       <Link href="/" className="flex items-center gap-1">
         <p className="h2-bold relative font-spaceGrotesk font-black text-dark-100 dark:text-light-900 max-sm:w-[100px] max-sm:text-left">

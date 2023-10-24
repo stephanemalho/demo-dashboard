@@ -18,28 +18,46 @@ const ThreadsInfo = () => {
   const isConnected = isOnline ? "Connected" : "Not Connected";
 
   return (
-    <div className="shadow-light100_dark100 background-light900_dark200 flex w-full rounded-lg p-2 max-2xl:rounded-sm  max-2xl:p-2">
-      <div className="h3-semibold text-light400_light500 flex h-full w-[50%] flex-row items-center justify-between pl-6 font-inter max-2xl:pl-3 max-2xl:text-[0.6rem]">
+    <div className="shadow-light100_dark100 background-light900_dark200 relative flex h-[40px] w-full rounded-lg p-2 max-2xl:rounded-sm  max-2xl:p-2">
+      <div className="text-light400_light500 flex h-full basis-1/3 flex-row items-center justify-between pl-2 font-inter max-2xl:pl-0 max-2xl:text-[0.6rem]">
         <div title="connexion">
           <div
             aria-label={`${isConnected}`}
-            className={`h-5 w-5 rounded-full ${stateColorClass} max-2xl:h-2 max-2xl:w-2`}
+            className={`mr-6 h-4 w-4 rounded-full ${stateColorClass} max-2xl:h-3 max-2xl:w-3`}
           >
             {""}
           </div>
         </div>
-        <div title="Thread" className="text-center">
-          {connectedThreads} {connectedThreads <= 1 ? "Thread" : "Threads"}
+        <div
+          title="Thread"
+          className="ml-5 flex h-[40px] w-[80px] flex-col justify-center p-0 text-left "
+        >
+          <p className="text-xs">
+            {" "}
+            {connectedThreads <= 1 ? "Thread" : "Threads"}
+          </p>
+          <p className="text-sm font-bold text-gray-600">{connectedThreads}</p>
         </div>
-        <div title="RAM" className="flex h-auto w-auto text-center"><Image
-          className="mr-3"
-          src="/assets/icons/ram.svg"
-          alt="user"
-          width={16}
-          height={16}
-        />{formattedRamValue}gb RAM</div>
-        <div title="Users Connected" className=" flex h-auto w-auto text-center">
-          {connectedUsers <= 1 ? (
+        <div title="RAM" className="flex h-auto w-[100px] text-center">
+          {/* <Image
+            className="mr-3"
+            src="/assets/icons/ram.svg"
+            alt="user"
+            width={16}
+            height={16}
+          /> */}
+          <div className="ml-5 flex h-[40px]  flex-col justify-center p-0 text-left">
+            <p className="text-xs">GB - RAM</p>
+            <p className="text-sm font-bold text-gray-600">
+              {formattedRamValue}
+            </p>
+          </div>
+        </div>
+        <div
+          title="Users Connected"
+          className="ml-10 flex h-auto w-[100px]"
+        >
+          {/* {connectedUsers <= 1 ? (
             <Image
               className="mr-3"
               src="/assets/icons/user.svg"
@@ -55,18 +73,27 @@ const ThreadsInfo = () => {
               width={16}
               height={16}
             />
-          )}
-          {connectedUsers} {connectedUsers <= 1 ? "User" : "Users"}
+          )} */}
+          <div className=" flex h-[40px] w-[auto] flex-col justify-center p-0 text-left">
+            <p className="text-xs">{connectedUsers <= 1 ? "User" : "Users"}</p>
+            <p className="text-sm font-bold text-gray-600">{connectedUsers} </p>
+          </div>
         </div>
       </div>
-      <div title="last reload" className="code-font h3-semibold flex h-auto w-[50%] items-center justify-end text-center dark:text-slate-400 max-2xl:text-sm">
-        <div className="background-light800_dark400 flex w-[auto] flex-row rounded-sm pl-2">{dateNow} <Image
-          className="invert-colors ml-2"
-          src="/assets/icons/clock.svg"
-          alt="user"
-          width={20}
-          height={20}
-        /></div>
+      <div
+        title="last reload"
+        className="code-font h3-semibold flex h-auto w-[50%] basis-2/3 items-center justify-end text-center dark:text-slate-400 max-2xl:text-sm"
+      >
+        <div className="background-light800_dark400 flex w-[auto] flex-row rounded-sm pl-2 text-sm">
+          {dateNow}{" "}
+          <Image
+            className="invert-colors ml-2"
+            src="/assets/icons/clock.svg"
+            alt="user"
+            width={20}
+            height={20}
+          />
+        </div>
       </div>
     </div>
   );

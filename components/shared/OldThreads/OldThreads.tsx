@@ -10,18 +10,19 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import LiveContainer from "../boxContainer/LiveContainer";
-import Image from "next/image";
+import TableHandleDelete from "../tableThreads/TableHandleDelete";
 
-const Threads = () => {
+const OldThreads = () => {
   const data = dashboard;
   const threads = data.Threads;
 
-  const handleClick = () => {
-    console.log("clicked");
+  const handleThreadDelete = () => {
+    console.log();
   };
+  
 
   return (
-    <LiveContainer logHeight="h-[30vh]" title="Live Threads">
+    <LiveContainer logHeight="h-[30vh]" title="Live Threads 1">
       <Table className="background-light800_dark400 text-[0.6rem] ">
         <TableHeader>
           <TableRow className="text-center max-2xl:text-[0.5rem]">
@@ -65,15 +66,7 @@ const Threads = () => {
                 <TableCell title={`State: ${threadsEntry.State}`}>
                   {threadsEntry.State}
                 </TableCell>
-                <TableCell title="Delete">
-                  <Image
-                    onClick={handleClick}
-                    src="assets/icons/trash.svg"
-                    alt="trash"
-                    width={20}
-                    height={20}
-                  />
-                </TableCell>
+                <TableHandleDelete onDelete={handleThreadDelete} id={threadsEntry.ID} />
               </TableRow>
             );
           })}
@@ -83,4 +76,4 @@ const Threads = () => {
   );
 };
 
-export default Threads;
+export default OldThreads;
