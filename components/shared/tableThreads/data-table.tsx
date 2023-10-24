@@ -75,7 +75,27 @@ export function DataTable<TData, TValue>({
 
   return (
     <div>
-      <div className="flex h-[36px] items-center py-4 dark:border-slate-700 ">
+      <div className=" mt-2 flex h-[36px] w-full dark:border-slate-700">
+        <div className="flex h-[30px] space-x-2 text-[0.6rem]">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => table.previousPage()}
+            disabled={!table.getCanPreviousPage()}
+            className="h-[28px] text-sm active:text-light-500 dark:border-slate-700"
+          >
+            Previous
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => table.nextPage()}
+            disabled={!table.getCanNextPage()}
+            className="h-[28px] text-sm active:text-light-500 dark:border-slate-700"
+          >
+            Next
+          </Button>
+        </div>
         <Input
           placeholder="Filter Function..."
           value={
@@ -96,7 +116,10 @@ export function DataTable<TData, TValue>({
         />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto h-[28px] text-sm dark:border-slate-700 ">
+            <Button
+              variant="outline"
+              className="ml-auto h-[28px] text-sm active:text-light-500 dark:border-slate-700 "
+            >
               Columns
             </Button>
           </DropdownMenuTrigger>
@@ -108,7 +131,7 @@ export function DataTable<TData, TValue>({
                 return (
                   <DropdownMenuCheckboxItem
                     key={column.id}
-                    className="background-light800_dark400 capitalize dark:border-slate-700 dark:text-slate-400"
+                    className="background-light800_dark400 cursor-pointer capitalize  dark:border-slate-700 dark:text-slate-400"
                     checked={column.getIsVisible()}
                     onCheckedChange={(value) =>
                       column.toggleVisibility(!!value)
@@ -128,7 +151,10 @@ export function DataTable<TData, TValue>({
               <TableRow key={headerGroup.id} className="dark:border-slate-700">
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id} className="text-left dark:border-slate-700 ">
+                    <TableHead
+                      key={header.id}
+                      className="text-left dark:border-slate-700 "
+                    >
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -203,24 +229,6 @@ export function DataTable<TData, TValue>({
             )}
           </TableBody> */}
         </Table>
-      </div>
-      <div className="flex items-center justify-end space-x-2 py-4 text-[0.6rem]">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}
-        >
-          Previous
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}
-        >
-          Next
-        </Button>
       </div>
     </div>
   );
