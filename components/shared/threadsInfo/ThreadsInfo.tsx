@@ -21,12 +21,14 @@ const ThreadsInfo = () => {
     <div className="shadow-light100_dark100 background-light900_dark200 relative flex h-[40px] w-full rounded-lg p-2 max-2xl:rounded-sm  max-2xl:p-2">
       <div className="text-light400_light500 flex h-full basis-1/3 flex-row items-center justify-between pl-2 font-inter max-2xl:pl-0 max-2xl:text-[0.6rem]">
         <div title="connexion">
-          <div
-            aria-label={`${isConnected}`}
-            className={`mr-6 h-4 w-4 rounded-full ${stateColorClass} max-2xl:h-3 max-2xl:w-3`}
-          >
-            {""}
-          </div>
+          <span  aria-label={`${isConnected}`} className="relative flex h-3 w-3">
+            <span
+              className={`absolute inline-flex h-full w-full animate-ping rounded-full ${stateColorClass} opacity-75`}
+            ></span>
+            <span
+              className={`relative inline-flex h-3 w-3 rounded-full ${stateColorClass}`}
+            ></span>
+          </span>
         </div>
         <div
           title="Thread"
@@ -53,10 +55,7 @@ const ThreadsInfo = () => {
             </p>
           </div>
         </div>
-        <div
-          title="Users Connected"
-          className="ml-10 flex h-auto w-[100px]"
-        >
+        <div title="Users Connected" className="ml-10 flex h-auto w-[100px]">
           {/* {connectedUsers <= 1 ? (
             <Image
               className="mr-3"
