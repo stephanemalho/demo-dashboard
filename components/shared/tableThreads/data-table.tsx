@@ -33,6 +33,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { exportTableToExcel } from "@/utils/formatTable";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -114,6 +115,14 @@ export function DataTable<TData, TValue>({
           }
           className="ml-1 h-[28px] max-w-sm text-sm dark:border-slate-700 dark:bg-slate-700 "
         />
+        <Button
+            variant="outline"
+            size="sm"
+            onClick={() => exportTableToExcel({data} as any)}
+            className="ml-1 h-[28px] text-sm active:text-light-500 dark:border-slate-700"
+          >
+          Copy all to Excel
+        </Button>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
@@ -178,7 +187,7 @@ export function DataTable<TData, TValue>({
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className="w-[100px]  max-w-[200px] overflow-hidden text-ellipsis dark:border-slate-700 "
+                      className="w-[100px] max-w-[200px] truncate dark:border-slate-700"
                     >
                       {flexRender(
                         cell.column.columnDef.cell,
