@@ -6,11 +6,10 @@ import Theme from "./Theme";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useSidebar } from "@/context/ScreenSizeContext";
-// import GlobalSearch from "../search/GlobalSearch";
 
 const Navbar = () => {
   
-  const { handleClick } = useSidebar();// sideBar Context
+  const { handleClick } = useSidebar(); // sideBar Context
 
   return (
     <nav className="flex-between background-light900_dark200 fixed z-10 w-full gap-5 p-6 shadow-light-300 dark:shadow-none max-2xl:h-[50px] sm:px-12">
@@ -21,17 +20,16 @@ const Navbar = () => {
         onClick={handleClick}
         width={28}
         height={28}
-        className={`text-light400_light500 absolute left-[20px] top-[30px] cursor-pointer max-2xl:right-[10px] max-2xl:top-[12px] max-2xl:text-[0.6rem]`}
+        className={`text-light400_light500 absolute left-[20px] top-[30px] cursor-pointer max-2xl:right-[10px] max-2xl:top-[15px] max-2xl:h-[18px] max-2xl:w-[18px]`}
       />
       </SignedIn>
-      <div className="flex-center w-[250px] max-2xl:w-[130px]">
+      <div className="flex-center w-[200px] max-2xl:w-[70px]">
       <Link href="/" className="flex items-center gap-1">
-        <p className="h2-bold relative font-spaceGrotesk font-black text-dark-100 dark:text-light-900 max-sm:w-[100px] max-sm:text-left">
-          AE&nbsp;&nbsp;<span className="absolute right-[25px] top-[-3px] text-3xl italic text-logo-500 max-sm:left-[30px]">X</span>IS
+        <p className="h2-bold relative font-spaceGrotesk font-black text-dark-100 dark:text-light-900 max-2xl:text-[12px] max-sm:w-[90px] max-sm:text-left">
+          AE&nbsp;&nbsp;<span className="absolute right-[25px] top-[-3px] text-3xl italic text-logo-500 max-2xl:left-[15px] max-2xl:text-[15px] max-sm:left-[30px]">X</span>IS
         </p>
       </Link>
       </div>
-      {/* <GlobalSearch /> */}
       <div className="flex-between gap-5">
       <SignedOut>
         <div className="flex flex-row gap-3">
