@@ -23,8 +23,8 @@ const TotalUsers = () => {
 
   return (
     <div className="flex w-[4vw] font-bold text-black sm:text-sm">
-          <Image src={"/assets/icons/users.svg"} alt="User" width={20} height={20} />
-          <p className="ml-4 flex w-full dark:text-slate-400">
+          <Image src={"/assets/icons/users.svg"} alt="User" width={20} height={20} className="max-2xl:hidden" />
+          <p className="ml-4 flex w-full dark:text-slate-400 max-2xl:m-0 max-2xl:justify-center max-2xl:text-[10px] ">
             {compareUsersCount()}
           </p>
     </div>
