@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   title: "X-CARE",
   description: "XCare is a SaaS platform that helps you manage data.",
   icons: {
-    icon: "/assets/images/logo-aexis.png",
+    icon: "/assets/images/aexis.png",
   },
 };
 

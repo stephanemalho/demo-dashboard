@@ -1,29 +1,8 @@
 import ContentContainer from "@/components/shared/contentContainer/ContentContainer";
-import { Threads , columns } from "./columns";
+import { columns } from "./columns";
 import { DataTable } from "./data-table";
 import LiveContainer from "@/components/shared/boxContainer/LiveContainer";
-import { dashboard } from "@/data/dashboard";
-
-async function getData(): Promise<Threads[]> {
-  const data = dashboard;
-  const threads = data.Threads;
-
-  return Object.keys(threads).map((logKey) => {
-    const threadsEntry = threads[logKey as unknown as keyof typeof threads];
-    return {
-      id: threadsEntry.ID,
-      function: threadsEntry.Function,
-      user: threadsEntry.Name,
-      type: threadsEntry.Type,
-      context: threadsEntry.Context,
-      waitTime: threadsEntry.WaitTime,
-      elapsedTime: threadsEntry.ElapsedTime,
-      state: threadsEntry.State,
-      delete: threadsEntry.ID,
-      actions: [],
-    };
-  });
-}
+import { getData } from "@/app/(root)/dashboard/page";
 
 export default async function LiveThreads() {
   const data = await getData();

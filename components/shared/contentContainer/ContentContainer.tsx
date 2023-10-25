@@ -6,12 +6,10 @@ interface ContentContainerProps {
 }
 
 const ContentContainer = ({ children }: ContentContainerProps) => {
-
   const { toggleSideBar } = useSidebar();
-
   return (
     <div
-      className={`text-dark500_light700 flex transition-all  ${toggleSideBar ? "w-[90vw]" : "w-[75vw]"} flex-col justify-between gap-4 dark:border-slate-700 `}
+      className={`text-dark500_light700 mr-5 flex transition-all  ${toggleSideBar ? "w-[95vw]" : "w-[75vw]"} flex-col justify-between gap-4 dark:border-slate-700 `}
     >
       {children}
     </div>
