@@ -20,7 +20,7 @@ const LeftSideBar = () => {
   
   return (
     <section
-    className={`background-light900_dark200 custom-scrollbar sticky left-0 top-0 flex h-screen ${toggleSideBar ? "w-[70px]" : "w-[280px] "} flex-col justify-between overflow-y-auto  p-2 pt-36 font-inter shadow-light-300 dark:shadow-none ${toggleSideBar ? "max-2xl:w-[60px]" : "max-2xl:w-[150px]"} text-light400_light500 transition-all ease-in max-2xl:pt-10`}>
+    className={`background-light900_dark200 custom-scrollbar sticky left-0 top-0 flex h-screen ${toggleSideBar ? "w-[70px]" : "w-[280px] "} flex-col justify-between overflow-y-auto  p-2 pt-36 font-inter shadow-light-300 dark:shadow-none ${toggleSideBar ? "max-2xl:w-[70px]" : "max-2xl:w-[150px]"} text-light400_light500 transition-all ease-in max-2xl:pt-10`}>
     <nav className={`absolute flex w-full flex-1 flex-col ease-in max-2xl:top-[80px]`}>
         {/* <h2 className="h3-bold text-light400_light500 my-4 max-2xl:text-[0.6rem]">
           MONITORING
@@ -41,8 +41,9 @@ const LeftSideBar = () => {
                 isActive
                   ? "bg-light-700 text-light-500  visited:hover:bg-light-700 dark:visited:bg-dark-400"
                   : "font-spaceGrotesk"
-              } text-light400_light500 flex h-[50px] items-center justify-start gap-4 p-4 text-[0.6rem] no-underline hover:bg-light-800 dark:hover:bg-dark-300`}
+              } text-light400_light500 flex h-[60px] items-center justify-start p-4 text-[0.6rem] no-underline hover:bg-light-800 dark:hover:bg-dark-300 ${toggleSideBar ? "w-[70px]" : "w-[280px] "}`}
             >
+               <div className="flex  min-w-[30px] justify-start">
               <Image
                 src={item.imgURL}
                 alt={item.label}
@@ -50,11 +51,12 @@ const LeftSideBar = () => {
                 height={20}
                 className={`text-light400_light500 max-2xl:h-[0.8rem] max-2xl:w-[0.8rem]`}
               />
+              </div>
               <p
                 className={`${
           isActive ? "base-bold" : "base-medium"
-        } whitespace-nowrap max-2xl:text-[0.6rem]	 ${
-          toggleSideBar ? "opacity-0" : "" 
+        } w-full whitespace-nowrap max-2xl:text-[0.6rem] ${
+          toggleSideBar ? "hidden" : "" 
         }`}
               >
                 {item.label}
@@ -62,9 +64,6 @@ const LeftSideBar = () => {
             </Link>
           );
         })}
-        {/* <h2 className="h3-bold text-light400_light500 my-3 max-2xl:text-[0.6rem]">
-          TM1 ADMINISTRATION
-        </h2> */}
         {secondSidebarLink.map((item) => {
           const isActive =
             (pathname.includes(item.route) &&
@@ -86,7 +85,8 @@ const LeftSideBar = () => {
             <div key={item.label} >
               <Accordion type="single" className="h-full" collapsible title={item.label}>
                 <AccordionItem value="h-full item-1">
-                  <AccordionTrigger className="text-light400_light500 h-full p-4 hover:bg-light-800 dark:hover:bg-dark-300">
+                  <AccordionTrigger className="text-light400_light500 h-[60px] p-4 hover:bg-light-800 dark:hover:bg-dark-300">
+                    <div className="flex h-[60px] min-w-[30px] justify-start">
                     <Image
                       src={item.imgURL}
                       alt={item.label}
@@ -94,12 +94,13 @@ const LeftSideBar = () => {
                       height={20}
                       className={`${isActive ? "invert-colors " : "mb-1"}  max-2xl:w-[0.8rem]`}
                     />
+                    </div>
                      {/* parapraph to hideen when isToggleSideBar */}
                     <p
                       className={`${
                         isActive ? "base-bold" : "base-medium"
-                      } h-full w-full whitespace-nowrap pl-[18px] text-left	max-2xl:text-[0.6rem]  ${
-                        toggleSideBar ? "opacity-0" : "" 
+                      } h-full w-full whitespace-nowrap  text-left	max-2xl:text-[0.6rem]  ${
+                        toggleSideBar ? "hidden" : "" 
                       }`}
                     >
                       {item.label}
@@ -127,7 +128,7 @@ const LeftSideBar = () => {
                                 : "base-medium"
                             } whitespace-nowrap max-2xl:text-[0.6rem] `}
                           >
-                            {toggleSideBar ? subRoute[0] : getLastSegment(subRoute)}
+                            {toggleSideBar ? subRoute[-1] : getLastSegment(subRoute)}
                           </p>
                         </Link>
                       ))
