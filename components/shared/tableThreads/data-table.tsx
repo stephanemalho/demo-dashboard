@@ -196,38 +196,6 @@ export function DataTable<TData, TValue>({
               </TableRow>
             )}
           </TableBody>
-          {/* <TableBody>
-          {table.getRowModel().rows?.length ? (
-    table.getRowModel().rows.map((row) => {
-      let displayedColumns = 0; // Compteur pour les colonnes affichées
-
-      return (
-        <TableRow key={row.id} data-state={row.getIsSelected() && "selected"} className=" text-black dark:text-white">
-          {row.getVisibleCells().map((cell) => {
-            if (displayedColumns < 7) { // Vérifie le nombre de colonnes affichées
-              displayedColumns++;
-              return (
-                <TableCell key={cell.id}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </TableCell>
-              );
-            }
-            return null; // N'affiche pas les colonnes supplémentaires
-          })}
-        </TableRow>
-      );
-    })
-  ): (
-              <TableRow>
-                <TableCell
-                  colSpan={columns.length}
-                  className="h-24 text-left"
-                >
-                  No results.
-                </TableCell>
-              </TableRow>
-            )}
-          </TableBody> */}
         </Table>
       </div>
     </div>
