@@ -15,7 +15,7 @@ const TableHandleDelete = ({onDelete, id}: Props) => {
           "Are you sure you want to delete this thread?"
         );
         if (confirm) {
-          console.log("thread deleted");
+          console.log("the thread as been deleted");
           onDelete();
         }
       };

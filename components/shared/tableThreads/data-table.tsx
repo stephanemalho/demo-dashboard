@@ -116,11 +116,11 @@ export function DataTable<TData, TValue>({
           className="ml-1 h-[20px] max-w-sm text-sm dark:border-slate-700 dark:bg-slate-700 max-2xl:text-[8px]"
         />
         <Button
-            variant="outline"
-            size="sm"
-            onClick={() => exportTableToExcel({data} as any)}
-            className="mx-1 h-[20px] truncate text-sm active:text-light-500 dark:border-slate-700 max-2xl:text-[8px]"
-          >
+          variant="outline"
+          size="sm"
+          onClick={() => exportTableToExcel(data)}
+          className="mx-1 h-[20px] truncate text-sm active:text-light-500 dark:border-slate-700 max-2xl:text-[8px]"
+        >
           Excel
         </Button>
         <DropdownMenu>

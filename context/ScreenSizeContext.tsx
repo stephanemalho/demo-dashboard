@@ -17,7 +17,6 @@ export function SidebarProvider({ children }: { children: React.ReactNode }) {
 
   const handleClick = () => {
     setToggleSideBar(!toggleSideBar);
-    console.log("houhouhuouhouhuoh");
   };
 
   const handleHover = () => {
