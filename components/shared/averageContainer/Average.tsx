@@ -7,9 +7,10 @@ import {
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { getData } from "@/app/(root)/dashboard/page";
+
 import { getUnique } from "@/utils/arrays";
 import { useSidebar } from "@/context/ScreenSizeContext";
+import { getData } from "@/api/getData";
 
 const Average = () => {
   const [data, setData] = useState([]);

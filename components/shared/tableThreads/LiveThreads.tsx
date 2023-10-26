@@ -2,7 +2,8 @@ import ContentContainer from "@/components/shared/contentContainer/ContentContai
 import { columns } from "./columns";
 import { DataTable } from "./data-table";
 import LiveContainer from "@/components/shared/boxContainer/LiveContainer";
-import { getData } from "@/app/(root)/dashboard/page";
+import { getData } from "@/api/getData";
+
 
 export default async function LiveThreads() {
   const data = await getData();

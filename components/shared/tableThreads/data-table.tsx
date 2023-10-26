@@ -35,10 +35,12 @@ import {
 } from "@/components/ui/table";
 import { exportTableToExcel } from "@/utils/formatTable";
 
-interface DataTableProps<TData, TValue> {
+
+export interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
 }
+
 
 export function DataTable<TData, TValue>({
   columns,

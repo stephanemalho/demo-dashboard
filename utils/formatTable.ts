@@ -1,3 +1,4 @@
+import { DataTableProps } from "@/components/shared/tableThreads/data-table";
 import * as XLSX from "xlsx";
 
 interface RowData {
@@ -23,7 +24,7 @@ export function copyRowToExcel(rowData: RowData) {
   a.click();
 }
 
-export function exportTableToExcel(data: RowData[]) {
+export function exportTableToExcel(data: DataTableProps<any, any>["data"] | any[]) {
   // Collect all data from the table
   const allData = data;
 
@@ -45,3 +46,4 @@ export function exportTableToExcel(data: RowData[]) {
   a.download = "tableData.xlsx";
   a.click();
 }
+
