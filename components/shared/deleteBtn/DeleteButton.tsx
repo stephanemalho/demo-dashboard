@@ -10,9 +10,7 @@ interface Props {
 const DeleteButton = ({id, onDelete} : Props ) => {
 
   const handleClick = () => {
-    console.log("delete button clicked");
     onDelete(id);
-    console.log("delete button clicked", id);
   };
 
   return (

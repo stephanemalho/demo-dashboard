@@ -1,17 +1,8 @@
-"use client";
 import { dashboard } from "@/data/dashboard";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React from "react";
 
 const TotalUsers = () => {
-  useEffect(() => {
-    async function fetchData() {
-      const data = dashboard;
-      console.log("TotalUsers: ", data.AllUsers);
-      console.log("Users: ", data.Users);
-    }
-    fetchData();
-  }, []);
 
   const compareUsersCount = () => {
     const data = dashboard;

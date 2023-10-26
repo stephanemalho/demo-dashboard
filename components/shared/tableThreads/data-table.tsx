@@ -76,14 +76,14 @@ export function DataTable<TData, TValue>({
 
   return (
     <div>
-      <div className=" mt-2 flex h-[36px] w-full dark:border-slate-700">
-        <div className="flex h-[30px] space-x-2 text-[0.6rem]">
+      <div className=" my-1 flex w-full dark:border-slate-700">
+        <div className="flex h-[20px] space-x-2 text-[0.6rem]">
           <Button
             variant="outline"
             size="sm"
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
-            className="h-[28px] text-sm active:text-light-500 dark:border-slate-700"
+            className="h-[20px] text-sm active:text-light-500 dark:border-slate-700 max-2xl:text-[8px]"
           >
             Previous
           </Button>
@@ -92,7 +92,7 @@ export function DataTable<TData, TValue>({
             size="sm"
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
-            className="h-[28px] text-sm active:text-light-500 dark:border-slate-700"
+            className="h-[20px] text-sm active:text-light-500 dark:border-slate-700 max-2xl:text-[8px]"
           >
             Next
           </Button>
@@ -105,7 +105,7 @@ export function DataTable<TData, TValue>({
           onChange={(event) =>
             table.getColumn("function")?.setFilterValue(event.target.value)
           }
-          className="ml-1 h-[28px] max-w-sm text-sm dark:border-slate-700 dark:bg-slate-700 "
+          className="ml-1 h-[20px] max-w-sm text-sm dark:border-slate-700 dark:bg-slate-700 max-2xl:text-[8px] "
         />
         <Input
           placeholder="Filter State..."
@@ -113,21 +113,21 @@ export function DataTable<TData, TValue>({
           onChange={(event) =>
             table.getColumn("state")?.setFilterValue(event.target.value)
           }
-          className="ml-1 h-[28px] max-w-sm text-sm dark:border-slate-700 dark:bg-slate-700 "
+          className="ml-1 h-[20px] max-w-sm text-sm dark:border-slate-700 dark:bg-slate-700 max-2xl:text-[8px]"
         />
         <Button
-            variant="outline"
-            size="sm"
-            onClick={() => exportTableToExcel({data} as any)}
-            className="ml-1 h-[28px] text-sm active:text-light-500 dark:border-slate-700"
-          >
-          Copy all to Excel
+          variant="outline"
+          size="sm"
+          onClick={() => exportTableToExcel(data)}
+          className="mx-1 h-[20px] truncate text-sm active:text-light-500 dark:border-slate-700 max-2xl:text-[8px]"
+        >
+          Excel
         </Button>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
               variant="outline"
-              className="ml-auto h-[28px] text-sm active:text-light-500 dark:border-slate-700 "
+              className="ml-auto h-[20px] text-sm active:text-light-500 dark:border-slate-700 max-2xl:text-[8px]"
             >
               Columns
             </Button>
@@ -155,7 +155,7 @@ export function DataTable<TData, TValue>({
       </div>
       <div>
         <Table className="background-light800_dark400 text-[0.6rem] text-black dark:border-slate-700 dark:text-white">
-          <TableHeader className="h-[20px] dark:border-slate-700 dark:text-slate-400">
+          <TableHeader className="dark:border-slate-700 dark:text-slate-400 max-2xl:text-[8px]">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id} className="dark:border-slate-700">
                 {headerGroup.headers.map((header) => {

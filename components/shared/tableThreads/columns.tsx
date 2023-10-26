@@ -68,7 +68,7 @@ export const columns: ColumnDef<Threads>[] = [
               ? "destructive"
               : "outline"
           }
-          className="max-2xl:py-[2px] max-2xl:text-[10px]"
+          className=" max-2xl:text-[6px]"
         >
           {state === "" ? "N/A" : state}
         </Badge>
@@ -145,7 +145,7 @@ export const columns: ColumnDef<Threads>[] = [
     cell : ({ row }) => {
       return (
         <DeleteButton id={row.original.id } onDelete={
-           // filter the id of the row to delete
+           // @todo filter the id of the row to delete
           (id: number) => {
             const confirm = window.confirm(
               "Are you sure you want to delete this thread?"

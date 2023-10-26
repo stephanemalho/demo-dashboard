@@ -18,7 +18,6 @@ const Average = () => {
   useEffect(() => {
     async function fetchData() {
       const result = await getData();
-      console.log("result: ", result);
       setData(result as any);
     }
 
@@ -48,8 +47,6 @@ const Average = () => {
               const threadsByUser = data.filter(
                 (e: any) => e.user === user.user
               );
-
-              console.log("threadsByUser: ", threadsByUser.length);
               const totalUsers = data.length;
 
               return (
