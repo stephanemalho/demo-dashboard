@@ -119,9 +119,9 @@ export function DataTable<TData, TValue>({
             variant="outline"
             size="sm"
             onClick={() => exportTableToExcel({data} as any)}
-            className="ml-1 h-[28px] text-sm active:text-light-500 dark:border-slate-700"
+            className="ml-1 h-[28px] truncate text-sm active:text-light-500 dark:border-slate-700"
           >
-          Copy all to Excel
+          Copy to Excel
         </Button>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
