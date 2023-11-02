@@ -20,18 +20,12 @@ const LeftSideBar = () => {
   
   return (
     <section
-    className={`background-light900_dark200 custom-scrollbar sticky left-0 top-0 flex h-screen ${toggleSideBar ? "w-[75px]" : "w-[280px] "} flex-col justify-between overflow-y-auto  p-2 pt-36 font-inter shadow-light-300 dark:shadow-none ${toggleSideBar ? "max-2xl:w-[75px]" : "max-2xl:w-[150px]"} text-light400_light500 transition-all ease-in max-2xl:pt-10`}>
+    className={`background-light900_dark200 custom-scrollbar sticky left-0 top-0 flex h-screen ${toggleSideBar ? "w-[75px]" : "w-[280px] "} flex-col justify-between overflow-y-auto  p-2 pt-[85px] font-inter shadow-light-300 dark:shadow-none ${toggleSideBar ? "max-2xl:w-[75px]" : "max-2xl:w-[150px]"} text-light400_light500 transition-all ease-in max-2xl:pt-10`}>
     <nav className={`absolute flex w-full flex-1 flex-col ease-in max-2xl:top-[80px]`}>
-        {/* <h2 className="h3-bold text-light400_light500 my-4 max-2xl:text-[0.6rem]">
-          MONITORING
-        </h2> */}
         {firstSidebarLink.map((item) => {
           const isActive =
             (pathname.includes(item.route) && item.route.length > 1) ||
             pathname === item.route;
-
-          // @Todo add spécial route for profile link
-
           return (
             <Link
               title={item.label}
@@ -43,7 +37,7 @@ const LeftSideBar = () => {
                   : "font-spaceGrotesk"
               } text-light400_light500 flex h-[60px] items-center justify-start p-4 text-[0.6rem] no-underline hover:bg-light-800 dark:hover:bg-dark-300 ${toggleSideBar ? "w-[70px]" : "w-[280px] "}`}
             >
-               <div className="flex  min-w-[30px] justify-start">
+              <div className="flex  min-w-[30px] justify-start">
               <Image
                 src={item.imgURL}
                 alt={item.label}
@@ -73,8 +67,6 @@ const LeftSideBar = () => {
           const getLastSegment = (url: string) => {
             const segments = url.split("/");
             const lastSegment = segments[segments.length - 1];
-
-            // Capitalize the first letter
             const capitalizedLastSegment =
               lastSegment.charAt(0).toUpperCase() + lastSegment.slice(1);
 
@@ -95,7 +87,6 @@ const LeftSideBar = () => {
                       className={`${isActive ? "invert-colors " : "mb-1"}  max-2xl:w-[0.8rem]`}
                     />
                     </div>
-                     {/* parapraph to hideen when isToggleSideBar */}
                     <p
                       className={`${
                         isActive ? "base-bold" : "base-medium"
@@ -119,16 +110,16 @@ const LeftSideBar = () => {
                             isActive || pathname.includes(subRoute)
                               ? " bg-light-700 text-light-500 visited:hover:bg-light-700"
                               : "text-light400_light500"
-                          } my-1 flex h-[50px] items-center justify-start p-4 hover:bg-light-800  dark:hover:bg-dark-300`}
+                          } my-1 flex h-[50px] items-center justify-start p-4 hover:bg-light-800  dark:hover:bg-dark-300 ${toggleSideBar ? "flex" :""}`}
                         >
                           <p
                             className={`${
                               isActive || pathname.includes(subRoute)
                                 ? "base-bold"
                                 : "base-medium"
-                            } whitespace-nowrap max-2xl:text-[0.6rem] `}
+                            } whitespace-nowrap max-2xl:text-[0.6rem] ${toggleSideBar ? "truncate" :""}`}
                           >
-                            {toggleSideBar ? subRoute[-1] : getLastSegment(subRoute)}
+                            {getLastSegment(subRoute)}
                           </p>
                         </Link>
                       ))
@@ -147,9 +138,9 @@ const LeftSideBar = () => {
                         <p
                           className={`${
                             isActive ? "base-bold" : "base-medium"
-                          } whitespace-nowrap`}
+                          } whitespace-nowrap  ${toggleSideBar ? "truncate" :""}`}
                         >
-                                {toggleSideBar ? item.route[0] : getLastSegment(item.route)}
+                                {getLastSegment(item.route)}
 
                         </p>
                       </Link>

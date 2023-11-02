@@ -12,21 +12,21 @@ const Navbar = () => {
   const { handleClick } = useSidebar(); // sideBar Context
 
   return (
-    <nav className="flex-between background-light900_dark200 fixed z-10 w-full gap-5 p-6 shadow-light-300 dark:shadow-none max-2xl:h-[50px] sm:px-12">
+    <nav className="flex-between background-light900_dark200 fixed z-10 h-[50px] w-full gap-5 border-b-[1px] border-grey-border p-6 shadow-light-300 dark:shadow-none sm:px-12">
       <SignedIn>
         <Image
         src={"/assets/icons/hamburger.svg"}
         alt={"menu"}
         onClick={handleClick}
-        width={28}
-        height={28}
-        className={`text-light400_light500 absolute left-[20px] top-[30px] cursor-pointer max-2xl:right-[10px] max-2xl:top-[15px] max-2xl:h-[18px] max-2xl:w-[18px]`}
+        width={20}
+        height={20}
+        className={`text-light400_light500 invert-colors absolute left-[14px] top-[12px] cursor-pointer max-2xl:right-[10px] max-2xl:top-[12px] `}
       />
       </SignedIn>
-      <div className="flex-center w-[200px] max-2xl:w-[70px]">
+      <div className="flex w-[119px] border-r-[1px] border-grey-border pl-[5px]">
       <Link href="/" className="flex items-center gap-1">
-        <p className="h2-bold relative font-spaceGrotesk font-black text-dark-100 dark:text-light-900 max-2xl:text-[12px] max-sm:w-[90px] max-sm:text-left">
-          AE&nbsp;&nbsp;<span className="absolute right-[25px] top-[-3px] text-3xl italic text-logo-500 max-2xl:left-[15px] max-2xl:text-[15px] max-sm:left-[30px]">X</span>IS
+        <span>IBM</span><p className="h2-bold relative font-spaceGrotesk text-[12px] font-black text-dark-100 dark:text-light-900 max-sm:w-[90px] max-sm:text-left">
+          AE&nbsp;&nbsp;<span className="absolute left-[15px] top-[0px] text-[15px] italic text-logo-500">X</span>IS
         </p>
       </Link>
       </div>
