@@ -7,9 +7,10 @@ import {
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { getData } from "@/app/(root)/dashboard/page";
+
 import { getUnique } from "@/utils/arrays";
 import { useSidebar } from "@/context/ScreenSizeContext";
+import { getData } from "@/api/getData";
 
 const Average = () => {
   const [data, setData] = useState([]);
@@ -52,7 +53,7 @@ const Average = () => {
               return (
                 <div
                   key={user.id}
-                  className="background-light850_dark100 text-light400_light500 m-3 scroll-auto rounded-sm border-t-[2px] border-green-500 p-2"
+                  className="background-light850_dark100 text-light400_light500 m-1 scroll-auto rounded-sm border-t-[2px] border-green-500 p-2"
                 >
                   <p>
                     {user.user}:{" "}

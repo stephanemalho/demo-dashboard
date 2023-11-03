@@ -81,7 +81,7 @@ body {
 }
 
 .primary-text-gradient {
-  background: linear-gradient(129deg, #bb1d3c 70%, #bc4b60 100%);
+  background: linear-gradient(129deg,#6b99ed  70%, #0f62fe 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -130,7 +130,7 @@ code {
   hyphens: auto;
 
   padding: 2px;
-  color: #bb1d3c !important;
+  color: #0f62fe !important;
 }
 
 .markdown pre {
@@ -149,7 +149,7 @@ code {
 
 /* Clerk */
 .cl-internal-b3fm6y {
-  background: linear-gradient(129deg, #bb1d3c 50%, #bc4b60 100%) !important;
+  background: linear-gradient(129deg, #0f62fe 50%, #7ca8fa 100%) !important;
 }
 
 .hash-span {
@@ -167,4 +167,47 @@ code {
 .no-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+/* Feuille de style Tailwind personnalisée */
+
+.slide-in-right {
+  animation: slideInRight 800ms ease-in-out;
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%); /* Démarre depuis la droite (100% de la largeur) */
+  }
+  100% {
+    transform: translateX(0); /* Arrive à 0% de la largeur */
+  }
+}
+
+.slide-in-sidebar {
+  animation: slideInSidebar 400ms ease-in-out;
+}
+
+@keyframes slideInSidebar {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slide-out-sidebar {
+  animation: slideOutSidebar 400ms ease-in-out;
+}
+
+@keyframes slideOutSidebar {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }

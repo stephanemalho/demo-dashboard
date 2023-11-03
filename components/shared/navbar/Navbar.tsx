@@ -2,76 +2,114 @@
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import React from "react";
-import Theme from "./Theme";
+// import Theme from "./Theme";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useSidebar } from "@/context/ScreenSizeContext";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+
+  DropdownMenuTrigger,
+} from "@radix-ui/react-dropdown-menu";
 
 const Navbar = () => {
-  
-  const { handleClick } = useSidebar(); // sideBar Context
+  const { handleClick, toggleSideBar } = useSidebar(); // sideBar Context
 
   return (
-    <nav className="flex-between background-light900_dark200 fixed z-10 w-full gap-5 p-6 shadow-light-300 dark:shadow-none max-2xl:h-[50px] sm:px-12">
+    <nav className="background-light900_dark200 fixed z-10 flex h-[50px] w-full border-b-[1px] border-grey-border  shadow-light-300 dark:shadow-none ">
       <SignedIn>
-        <Image
-        src={"/assets/icons/hamburger.svg"}
-        alt={"menu"}
-        onClick={handleClick}
-        width={28}
-        height={28}
-        className={`text-light400_light500 absolute left-[20px] top-[30px] cursor-pointer max-2xl:right-[10px] max-2xl:top-[15px] max-2xl:h-[18px] max-2xl:w-[18px]`}
-      />
-      </SignedIn>
-      <div className="flex-center w-[200px] max-2xl:w-[70px]">
-      <Link href="/" className="flex items-center gap-1">
-        <p className="h2-bold relative font-spaceGrotesk font-black text-dark-100 dark:text-light-900 max-2xl:text-[12px] max-sm:w-[90px] max-sm:text-left">
-          AE&nbsp;&nbsp;<span className="absolute right-[25px] top-[-3px] text-3xl italic text-logo-500 max-2xl:left-[15px] max-2xl:text-[15px] max-sm:left-[30px]">X</span>IS
-        </p>
-      </Link>
-      </div>
-      <div className="flex-between gap-5">
-      <SignedOut>
-        <div className="flex flex-row gap-3">
-          <Link href="/sign-in">
-            <Button className="small-medium btn-secondary min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none">
-              <Image
-                src="assets/icons/account.svg"
-                alt="login"
-                width={20}
-                height={20}
-                className="lg:hidden"
-              />
-              <span className="primary-text-gradient ">Log In</span>
-            </Button>
-          </Link>
-          <Link href="/sign-up">
-            <Button className="small-medium light-border-2 btn-tertiary text-dark400_light900 min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none">
-              <Image
-                src="assets/icons/sign-up.svg"
-                alt="Sign-up"
-                width={20}
-                height={20}
-                className="lg:hidden"
-              />
-              <span className="">Sign-up</span>
-            </Button>
-          </Link>
+        <div
+          className="flex h-[49px] w-[50px] cursor-pointer justify-center pb-1 hover:bg-[#f4f4f4] active:bg-[#e0e0e0]"
+          onClick={handleClick}
+        >
+          {toggleSideBar ? (
+            <Image
+              src={"/assets/icons/close.svg"}
+              alt={"menu"}
+              width={20}
+              height={20}
+            />
+          ) : (
+            <Image
+              src={"/assets/icons/hamburger.svg"}
+              alt={"menu"}
+              width={20}
+              height={20}
+            />
+          )}
         </div>
-      </SignedOut>
-        <Theme />
+      </SignedIn>
+      <div className="flex h-[49px] w-[119px] hover:bg-[#f4f4f4] active:bg-[#e0e0e0]">
+        <Link href="/" className="flex w-full items-center gap-2">
+          <span className="ml-3 dark:text-white">IBM</span>
+          <p className="h2-bold relative w-full border-r-[1px] border-grey-border font-spaceGrotesk text-[12px] font-black text-dark-100 ">
+            <span className="text-[15px] italic text-logo-500">X</span>
+            Care
+          </p>
+        </Link>
+      </div>
+      <div className="flex-between ml-auto">
+        <SignedOut>
+          <div
+            className="flex h-[49px] w-[50px] cursor-pointer justify-center pb-1 hover:bg-[#f4f4f4] active:bg-[#e0e0e0]"
+            onClick={handleClick}
+          >
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex h-full w-full items-center justify-center rounded-none focus:rounded-none focus:border-[#0f62fe] ">
+                <Image
+                  src={"/assets/icons/user.svg"}
+                  alt={"menu"}
+                  width={20}
+                  height={20}
+                />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem>
+                  <Link href="/sign-in">
+                    <Button className="h-[49px] w-full rounded-none border-[1px] border-slate-900 bg-white hover:bg-[#f4f4f4]">
+                      <span className="font-semibold text-[#0f62fe]">
+                        Log In
+                      </span>
+                    </Button>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/sign-up">
+                    <Button className="h-[49px] w-[120px] rounded-none border-0 border-transparent bg-[#060606] hover:border-[#0f62fe] hover:bg-[#353535]">
+                      <span className="font-semibold text-[#0f62fe]">Sign-up</span>
+                    </Button>
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+          
+        </SignedOut>
+        {/* <Theme /> */}
         <SignedIn>
-          <UserButton
-            afterSignOutUrl="/"
-            appearance={{
-              elements: {
-                avatarBox: "h-10 w-10",
-              },
-              variables: {
-                colorPrimary: "#bb1d3c",
-              },
-            }}
-          />
+          <div className="flex h-[49px] w-[50px] cursor-pointer items-center justify-center hover:bg-[#f4f4f4] active:bg-[#e0e0e0]">
+            <UserButton
+              afterSignOutUrl="/"
+              appearance={{
+                elements: {
+                  avatarBox: "h-6 w-6",
+                },
+                variables: {
+                  colorPrimary: "#bb1d3c",
+                },
+              }}
+            />
+          </div>
+          <div className="flex h-[49px] w-[50px] cursor-pointer justify-center pb-1 hover:bg-[#f4f4f4] active:bg-[#e0e0e0]">
+            <Image
+              src={"/assets/icons/menu-left.svg"}
+              alt={"menu"}
+              width={20}
+              height={20}
+            />
+          </div>
         </SignedIn>
       </div>
     </nav>

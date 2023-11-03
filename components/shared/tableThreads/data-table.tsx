@@ -35,10 +35,12 @@ import {
 } from "@/components/ui/table";
 import { exportTableToExcel } from "@/utils/formatTable";
 
-interface DataTableProps<TData, TValue> {
+
+export interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
 }
+
 
 export function DataTable<TData, TValue>({
   columns,
@@ -155,7 +157,7 @@ export function DataTable<TData, TValue>({
       </div>
       <div>
         <Table className="background-light800_dark400 text-[0.6rem] text-black dark:border-slate-700 dark:text-white">
-          <TableHeader className="dark:border-slate-700 dark:text-slate-400 max-2xl:text-[8px]">
+          <TableHeader className="text-[12px] dark:border-slate-700 dark:text-slate-400 max-2xl:text-[8px]">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id} className="dark:border-slate-700">
                 {headerGroup.headers.map((header) => {
@@ -187,7 +189,7 @@ export function DataTable<TData, TValue>({
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className="w-[100px] max-w-[200px] truncate dark:border-slate-700"
+                      className="w-[100px] max-w-[200px] truncate text-[12px] dark:border-slate-700 max-2xl:text-[6px]"
                     >
                       {flexRender(
                         cell.column.columnDef.cell,

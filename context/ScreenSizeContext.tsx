@@ -5,7 +5,6 @@ interface SideBarContextProps {
   toggleSideBar: boolean;
   setToggleSideBar: (toggleSideBar: boolean) => void;
   handleClick: () => void;
-  handleHover: () => void;
 }
 
 export const SideBarContext = createContext<SideBarContextProps | undefined>(
@@ -19,11 +18,6 @@ export function SidebarProvider({ children }: { children: React.ReactNode }) {
     setToggleSideBar(!toggleSideBar);
   };
 
-  const handleHover = () => {
-    if (toggleSideBar === true) {
-      setToggleSideBar(false);
-    }
-  };
 
   return (
     <SideBarContext.Provider
@@ -31,7 +25,6 @@ export function SidebarProvider({ children }: { children: React.ReactNode }) {
         toggleSideBar,
         setToggleSideBar,
         handleClick,
-        handleHover,
       }}
     >
       {children}

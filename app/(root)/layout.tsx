@@ -7,7 +7,7 @@ import PageContainer from "@/components/shared/pageContainer/PageContainer";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-      <main className="background-light700_dark400">
+      <main className="bg-[#F4F4F4]">
         <Navbar />
         <div className="flex">
           <SignedIn>

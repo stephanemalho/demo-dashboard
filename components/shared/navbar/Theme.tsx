@@ -20,26 +20,25 @@ const Theme = () => {
     <div>
       <Menubar className="relative border-none bg-transparent shadow-none">
         <MenubarMenu>
-          <MenubarTrigger className="cursor-pointer focus:bg-light-900 data-[state=open]:bg-light-900 dark:focus:bg-dark-200 dark:data-[state=open]:bg-dark-200">
+          <MenubarTrigger className="cursor-pointer focus:bg-light-900  data-[state=open]:bg-light-900 dark:focus:bg-dark-200 dark:data-[state=open]:bg-dark-200">
             {mode === "light" ? (
               <Image
-                src="/assets/icons/sun.svg"
+                src="/assets/icons/light.svg"
                 alt="sun"
                 width={20}
                 height={20}
-                // className="active-theme"
               />
             ) : (
               <Image
-                src="/assets/icons/moon.svg"
+                src="/assets/icons/asleep.svg"
                 alt="moon"
                 width={20}
                 height={20}
-                // className="active-theme"
+                className="active-theme"
               />
             )}
           </MenubarTrigger>
-          <MenubarContent className="background-light900_dark300 absolute right-[-3rem] mt-3 min-w-[120px] cursor-pointer rounded border  py-2 dark:border-dark-400">
+          <MenubarContent className="background-light800_dark400 absolute right-[-3rem] mt-3 min-w-[120px] cursor-pointer rounded border  py-2 dark:border-dark-400">
             {themes.map((item) => (
               <MenubarItem
                 key={item.value}
@@ -52,14 +51,14 @@ const Theme = () => {
                         localStorage.removeItem('theme');
                     }
                 }}
-                className="flex items-center gap-4 px-2.5 py-2 dark:focus:bg-dark-400"             >
+                className={`flex items-center gap-4 px-2.5 py-2 dark:focus:bg-dark-400 ${mode === item.value ? 'bg-white ': ' ' }`}>
                 <Image
                   src={item.icon}
                   alt={item.value}
                   width={16}
                   height={16}
                 />
-                <p className={`body-semibold cursor-pointer text-light-500 ${mode === item.value ? 'text-primary-500': 'text-dark100_light900 ' }`}>{item.label}</p>
+                <p className={`cursor-pointer ${mode === item.value ? 'font-bold': 'text-dark100_light900 ' }`}>{item.label}</p>
               </MenubarItem>
             ))}
           </MenubarContent>

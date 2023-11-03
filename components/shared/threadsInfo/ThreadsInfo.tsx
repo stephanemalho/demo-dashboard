@@ -18,7 +18,7 @@ const ThreadsInfo = () => {
   const isConnected = isOnline ? "Connected" : "Not Connected";
 
   return (
-    <div className="shadow-light100_dark100 background-light900_dark200 relative flex h-[40px] w-full rounded-lg p-2 max-2xl:rounded-sm  max-2xl:p-2">
+    <div className="shadow-light100_dark100 background-light900_dark200 relative flex h-[30px] w-full max-2xl:rounded-sm  max-2xl:p-2">
       <div className="text-light400_light500 flex h-full basis-1/3 flex-row items-center justify-between pl-2 font-inter max-2xl:pl-0 max-2xl:text-[0.6rem]">
         <div title="connexion">
           <span  aria-label={`${isConnected}`} className="relative flex h-3 w-3">
@@ -32,13 +32,13 @@ const ThreadsInfo = () => {
         </div>
         <div
           title="Thread"
-          className="ml-5 flex h-[40px] w-[80px] flex-col justify-center p-0 text-left "
+          className="ml-5 flex h-[30px] w-[80px] flex-col justify-center p-0 text-left "
         >
-          <p className="text-xs">
+          <p className="text-sm max-2xl:text-[0.6rem]">
             {" "}
             {connectedThreads <= 1 ? "Thread" : "Threads"}
           </p>
-          <p className="text-sm font-bold text-gray-600">{connectedThreads}</p>
+          <p className="text-xs font-bold text-gray-600 max-2xl:text-[0.5rem]">{connectedThreads}</p>
         </div>
         <div title="RAM" className="flex h-auto w-[100px] text-center">
           {/* <Image
@@ -49,8 +49,8 @@ const ThreadsInfo = () => {
             height={16}
           /> */}
           <div className="ml-5 flex h-[40px]  flex-col justify-center p-0 text-left">
-            <p className="text-xs">GB - RAM</p>
-            <p className="text-sm font-bold text-gray-600">
+            <p className="text-sm max-2xl:text-[0.6rem]">GB - RAM</p>
+            <p className="text-xs font-bold text-gray-600 max-2xl:text-[0.5rem]">
               {formattedRamValue}
             </p>
           </div>
@@ -74,8 +74,8 @@ const ThreadsInfo = () => {
             />
           )} */}
           <div className=" flex h-[40px] w-[auto] flex-col justify-center p-0 text-left">
-            <p className="text-xs">{connectedUsers <= 1 ? "User" : "Users"}</p>
-            <p className="text-sm font-bold text-gray-600">{connectedUsers} </p>
+            <p className="text-sm max-2xl:text-[0.6rem]">{connectedUsers <= 1 ? "User" : "Users"}</p>
+            <p className="text-xs font-bold text-gray-600 max-2xl:text-[0.5rem]">{connectedUsers} </p>
           </div>
         </div>
       </div>
@@ -83,7 +83,7 @@ const ThreadsInfo = () => {
         title="last reload"
         className="code-font h3-semibold flex h-auto w-[50%] basis-2/3 items-center justify-end text-center dark:text-slate-400 max-2xl:text-sm"
       >
-        <div className="background-light800_dark400 flex w-[auto] flex-row rounded-sm pl-2 text-sm">
+        <div className="background-light800_dark400 flex w-[auto] flex-row rounded-sm pl-2 text-[0.6rem]">
           {dateNow}{" "}
           <Image
             className="invert-colors ml-2"
