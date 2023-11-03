@@ -111,7 +111,6 @@ const LeftSideBar = () => {
                     {Array.isArray(item.route) ? (
                       item.route.map((subRoute, subIndex) => (
                         <Link
-                        // show the label.value of the route
                           title={subRoute.split("/")[2]}
                           key={subIndex}
                           href={subRoute}
