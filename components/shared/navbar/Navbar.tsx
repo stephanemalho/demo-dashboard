@@ -6,6 +6,13 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useSidebar } from "@/context/ScreenSizeContext";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+
+  DropdownMenuTrigger,
+} from "@radix-ui/react-dropdown-menu";
 
 const Navbar = () => {
   const { handleClick, toggleSideBar } = useSidebar(); // sideBar Context
@@ -35,47 +42,50 @@ const Navbar = () => {
         </div>
       </SignedIn>
       <div className="flex h-[49px] w-[119px] hover:bg-[#f4f4f4] active:bg-[#e0e0e0]">
-        <Link
-          href="/"
-          className="flex w-full items-center gap-2"
-        >
+        <Link href="/" className="flex w-full items-center gap-2">
           <span className="ml-3 dark:text-white">IBM</span>
           <p className="h2-bold relative w-full border-r-[1px] border-grey-border font-spaceGrotesk text-[12px] font-black text-dark-100 ">
-            <span className="text-[15px] italic text-logo-500">
-              X
-            </span>
+            <span className="text-[15px] italic text-logo-500">X</span>
             Care
           </p>
         </Link>
       </div>
-      <div className="flex-between ml-auto gap-5">
+      <div className="flex-between ml-auto">
         <SignedOut>
-          <div className="flex flex-row gap-3">
-            <Link href="/sign-in">
-              <Button className="small-medium btn-secondary min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none">
+          <div
+            className="flex h-[49px] w-[50px] cursor-pointer justify-center pb-1 hover:bg-[#f4f4f4] active:bg-[#e0e0e0]"
+            onClick={handleClick}
+          >
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex h-full w-full items-center justify-center rounded-none focus:rounded-none focus:border-[#0f62fe] ">
                 <Image
-                  src="assets/icons/account.svg"
-                  alt="login"
+                  src={"/assets/icons/user.svg"}
+                  alt={"menu"}
                   width={20}
                   height={20}
-                  className="lg:hidden"
                 />
-                <span className="primary-text-gradient ">Log In</span>
-              </Button>
-            </Link>
-            <Link href="/sign-up">
-              <Button className="small-medium light-border-2 btn-tertiary text-dark400_light900 min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none">
-                <Image
-                  src="assets/icons/sign-up.svg"
-                  alt="Sign-up"
-                  width={20}
-                  height={20}
-                  className="lg:hidden"
-                />
-                <span className="">Sign-up</span>
-              </Button>
-            </Link>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem>
+                  <Link href="/sign-in">
+                    <Button className="h-[49px] w-full rounded-none border-[1px] border-slate-900 bg-white hover:bg-[#f4f4f4]">
+                      <span className="font-semibold text-[#0f62fe]">
+                        Log In
+                      </span>
+                    </Button>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/sign-up">
+                    <Button className="h-[49px] w-[120px] rounded-none border-0 border-transparent bg-[#060606] hover:border-[#0f62fe] hover:bg-[#353535]">
+                      <span className="font-semibold text-[#0f62fe]">Sign-up</span>
+                    </Button>
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
+          
         </SignedOut>
         {/* <Theme /> */}
         <SignedIn>
@@ -90,6 +100,14 @@ const Navbar = () => {
                   colorPrimary: "#bb1d3c",
                 },
               }}
+            />
+          </div>
+          <div className="flex h-[49px] w-[50px] cursor-pointer justify-center pb-1 hover:bg-[#f4f4f4] active:bg-[#e0e0e0]">
+            <Image
+              src={"/assets/icons/menu-left.svg"}
+              alt={"menu"}
+              width={20}
+              height={20}
             />
           </div>
         </SignedIn>
