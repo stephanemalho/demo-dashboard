@@ -3,6 +3,19 @@
 @tailwind utilities;
 
 @layer utilities {
+
+  .ibm-text-black {
+    @apply text-[#161616] ;
+  }
+
+  .ibm-bg:hover {
+    @apply hover:bg-[#f4f4f4];
+  }
+
+  .ibm-bg:active {
+    @apply active:bg-[#e0e0e0];
+  }
+
   .background-light850_dark100 {
     @apply bg-light-850 dark:bg-dark-100;
   }

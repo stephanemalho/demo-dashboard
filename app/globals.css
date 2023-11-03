@@ -168,3 +168,46 @@ code {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+/* Feuille de style Tailwind personnalisée */
+
+.slide-in-right {
+  animation: slideInRight 800ms ease-in-out;
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%); /* Démarre depuis la droite (100% de la largeur) */
+  }
+  100% {
+    transform: translateX(0); /* Arrive à 0% de la largeur */
+  }
+}
+
+.slide-in-sidebar {
+  animation: slideInSidebar 400ms ease-in-out;
+}
+
+@keyframes slideInSidebar {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slide-out-sidebar {
+  animation: slideOutSidebar 400ms ease-in-out;
+}
+
+@keyframes slideOutSidebar {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}

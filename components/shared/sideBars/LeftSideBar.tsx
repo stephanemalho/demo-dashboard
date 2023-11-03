@@ -16,12 +16,25 @@ const LeftSideBar = () => {
   const firstSidebarLink = sidebarLinks.slice(0, 2);
   const secondSidebarLink = sidebarLinks.slice(2);
 
-  const { toggleSideBar , handleHover } = useSidebar();// sideBar Context
+  const { toggleSideBar, setToggleSideBar  } = useSidebar(); // sideBar Context
+
+  const handleClick = () => {
+    setToggleSideBar(false);
+  };
   
+  if (!toggleSideBar) {
+    return null; // don't render anything if the sidebar is closed
+  }
   return (
+   <>
     <section
-    className={`background-light900_dark200 custom-scrollbar sticky left-0 top-0 flex h-screen ${toggleSideBar ? "w-[75px]" : "w-[280px] "} flex-col justify-between overflow-y-auto  p-2 pt-[85px] font-inter shadow-light-300 dark:shadow-none ${toggleSideBar ? "max-2xl:w-[75px]" : "max-2xl:w-[150px]"} text-light400_light500 transition-all ease-in max-2xl:pt-10`}>
-    <nav className={`absolute flex w-full flex-1 flex-col ease-in max-2xl:top-[80px]`}>
+      className={`${
+        toggleSideBar
+          ? "slide-in-sidebar"
+          : ""
+      } background-light900_dark200 custom-scrollbar ibm-text-black fixed left-0 top-[50px] z-50 flex h-[95vh] w-[280px] flex-col justify-between overflow-y-auto font-ibmPlexSans shadow-light-300 dark:shadow-none`}
+      >
+    <nav className={`absolute top-[50px] flex w-[280px] flex-1 flex-col scroll-auto ease-in`}>
         {firstSidebarLink.map((item) => {
           const isActive =
             (pathname.includes(item.route) && item.route.length > 1) ||
@@ -33,25 +46,24 @@ const LeftSideBar = () => {
               href={item.route || "/"}
               className={`${
                 isActive
-                  ? "bg-light-700 text-light-500  visited:hover:bg-light-700 dark:visited:bg-dark-400"
-                  : "font-spaceGrotesk"
-              } text-light400_light500 flex h-[60px] items-center justify-start p-4 text-[0.6rem] no-underline hover:bg-light-800 dark:hover:bg-dark-300 ${toggleSideBar ? "w-[70px]" : "w-[280px] "}`}
+                ? "bg-blue-500 font-bold text-white  hover:bg-blue-700"
+                : "hover:border-2 hover:border-[#0f62fe] hover:bg-[rgb(244,244,244)] visited:hover:bg-[#f4f4f4] active:bg-[#e0e0e0]"
+              } ibm-text-black flex h-[49px] w-[280px] items-center justify-start border-2 border-transparent p-4 font-ibmPlexSans text-[0.6rem] no-underline transition-all ease-in `}
             >
-              <div className="flex  min-w-[30px] justify-start">
+              <div className="flex min-w-[30px] justify-start">
               <Image
                 src={item.imgURL}
                 alt={item.label}
                 width={20}
                 height={20}
-                className={`text-light400_light500 max-2xl:h-[0.8rem] max-2xl:w-[0.8rem]`}
+                className={` max-2xl:h-[0.8rem] max-2xl:w-[0.8rem] ${isActive ? "invert-colors " : "mb-1"}`}
               />
               </div>
               <p
                 className={`${
           isActive ? "base-bold" : "base-medium"
-        } w-full whitespace-nowrap max-2xl:text-[0.6rem] ${
-          toggleSideBar ? "hidden" : "" 
-        }`}
+        } w-full whitespace-nowrap max-2xl:text-[0.8rem]
+        `}
               >
                 {item.label}
               </p>
@@ -74,25 +86,23 @@ const LeftSideBar = () => {
           };
 
           return (
-            <div key={item.label} >
-              <Accordion type="single" className="h-full" collapsible title={item.label}>
+            <div key={item.label}>
+              <Accordion type="single" className="h-full w-[280px]" collapsible title={item.label}>
                 <AccordionItem value="h-full item-1">
-                  <AccordionTrigger className="text-light400_light500 h-[60px] p-4 hover:bg-light-800 dark:hover:bg-dark-300">
-                    <div className="flex h-[60px] min-w-[30px] justify-start">
+                  <AccordionTrigger className="h-[49px] border-2 border-transparent p-4 font-ibmPlexSans transition-all ease-in hover:border-2 hover:border-[#0f62fe] hover:bg-[#f4f4f4] visited:hover:bg-[#f4f4f4] active:bg-[#e0e0e0]">
+                    <div className="flex h-[49px] min-w-[30px] justify-start">
                     <Image
                       src={item.imgURL}
                       alt={item.label}
                       width={20}
                       height={20}
-                      className={`${isActive ? "invert-colors " : "mb-1"}  max-2xl:w-[0.8rem]`}
+                      className={`${isActive ? "invert-colors " : ""}  max-2xl:w-[0.8rem]`}
                     />
                     </div>
                     <p
                       className={`${
                         isActive ? "base-bold" : "base-medium"
-                      } h-full w-full whitespace-nowrap  text-left	max-2xl:text-[0.6rem]  ${
-                        toggleSideBar ? "hidden" : "" 
-                      }`}
+                      } flex h-full  w-full items-center whitespace-nowrap text-left font-ibmPlexSans text-[0.8rem]`}
                     >
                       {item.label}
                     </p>
@@ -105,19 +115,18 @@ const LeftSideBar = () => {
                           title={subRoute.split("/")[2]}
                           key={subIndex}
                           href={subRoute}
-                          onMouseOver={handleHover}
                           className={`${
                             isActive || pathname.includes(subRoute)
-                              ? " bg-light-700 text-light-500 visited:hover:bg-light-700"
-                              : "text-light400_light500"
-                          } my-1 flex h-[50px] items-center justify-start p-4 hover:bg-light-800  dark:hover:bg-dark-300 ${toggleSideBar ? "flex" :""}`}
+                            ? "bg-blue-500 font-bold text-white  hover:bg-blue-700"
+                            : "hover:border-2 hover:border-[#0f62fe] hover:bg-[rgb(244,244,244)] visited:hover:bg-[#f4f4f4] active:bg-[#e0e0e0]"
+                          }  flex h-[49px] items-center justify-start border-2 border-transparent px-4 transition-all ease-in`}
                         >
                           <p
                             className={`${
                               isActive || pathname.includes(subRoute)
                                 ? "base-bold"
                                 : "base-medium"
-                            } whitespace-nowrap max-2xl:text-[0.6rem] ${toggleSideBar ? "truncate" :""}`}
+                            } flex h-full w-full items-center whitespace-nowrap font-ibmPlexSans max-2xl:text-[0.8rem] `}
                           >
                             {getLastSegment(subRoute)}
                           </p>
@@ -130,15 +139,14 @@ const LeftSideBar = () => {
                         href={item.route || "/"}
                         className={`${
                           isActive
-                            ? "background-light700_dark400 rounded text-light-900"
+                            ? "rounded hover:bg-[#f4f4f4] visited:hover:bg-[#f4f4f4] active:bg-[#e0e0e0]"
                             : "text-dark500_light700"
-                        } flex h-[50px] items-start justify-between gap-4 bg-transparent p-4   dark:hover:bg-dark-300`}
+                        } flex h-[49px] items-start justify-between bg-transparent px-4 dark:hover:bg-dark-300`}
                       >
-                         {/* parapraph to hideen when isToggleSideBar */}
                         <p
                           className={`${
                             isActive ? "base-bold" : "base-medium"
-                          } whitespace-nowrap  ${toggleSideBar ? "truncate" :""}`}
+                          } whitespace-nowrap `}
                         >
                                 {getLastSegment(item.route)}
 
@@ -152,7 +160,11 @@ const LeftSideBar = () => {
           );
         })}
       </nav>
-    </section>
+    </section> 
+      <div onClick={handleClick} className="fixed top-[50px] z-40 h-[95vh] w-[100vw] bg-black opacity-[60%]">
+
+      </div>
+      </>
   );
 };
 

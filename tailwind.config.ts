@@ -32,7 +32,7 @@ module.exports = {
           800: "#F4F6F8",
           850: "#FDFDFD",
           700: "#DCE3F1",
-          500: "#7B8EC8",
+          500: "#000",
           400: "#858EAD",
         },
         logo: {
@@ -44,6 +44,7 @@ module.exports = {
       fontFamily: {
         inter: ["var(--font-inter)"],
         spaceGrotesk: ["var(--font-spaceGrotesk)"],
+        ibmPlexSans: ["var(--font-ibmPlexSans)"],
       },
       boxShadow: {
         "light-100":
