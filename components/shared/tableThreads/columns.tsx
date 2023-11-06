@@ -1,6 +1,7 @@
 "use client";
 import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
+// import { AiFillFileExcel } from "react-icons/ai";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -177,55 +178,13 @@ export const columns: ColumnDef<Threads>[] = [
               onClick={() => copyRowToExcel(threads)} // Appel de la fonction pour copier la ligne au format Excel.
               className="cursor-pointer text-[10px] hover:bg-[#1E40AF] hover:text-white"
             >
-              Copy Line to Excel
+              {/* <AiFillFileExcel className="mr-1 fill-lime-700" /> */}
+               Export Line to Excel
             </DropdownMenuItem>
             <DropdownMenuSeparator />
           </DropdownMenuContent>
         </DropdownMenu>
       );
     },
-  }
+  },
 ];
-
-
-
-//   {
-//     accessorKey: "amount",
-//     header: () => <div className="text-right">Amount</div>,
-//     cell: ({ row }) => {
-//       const amount = parseFloat(row.getValue("amount"));
-//       const formatted = new Intl.NumberFormat("en-US", {
-//         style: "currency",
-//         currency: "USD",
-//       }).format(amount);
-
-//       return <div className="text-right font-medium">{formatted}</div>;
-//     },
-//   },
-  // {
-  //   id: "actions",
-  //   cell: ({ row }) => {
-  //     const payment = row.original;
-
-  //     return (
-  //       <DropdownMenu>
-  //         <DropdownMenuTrigger asChild>
-  //           <Button variant="ghost" className=" h-8 w-8 p-0 text-[0.6rem]">
-  //             <span className="sr-only">Open menu</span>
-  //             <MoreHorizontal className="h-4 w-4" />
-  //           </Button>
-  //         </DropdownMenuTrigger>
-  //         <DropdownMenuContent align="end" className="background-light800_dark400 capitalize dark:text-white">
-  //           <DropdownMenuLabel>Actions</DropdownMenuLabel>
-  //           <DropdownMenuItem
-  //             onClick={() => navigator.clipboard.writeText(payment.id)}
-  //           >
-  //             Copy ID
-  //           </DropdownMenuItem>
-  //           <DropdownMenuSeparator />
-  //           <DropdownMenuItem>Copy Line to Excel</DropdownMenuItem>
-  //         </DropdownMenuContent>
-  //       </DropdownMenu>
-  //     );
-  //   },
-  // },

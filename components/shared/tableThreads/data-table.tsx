@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+// import { SiMicrosoftexcel } from "react-icons/si";
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -86,9 +87,10 @@ export function DataTable<TData, TValue>({
           variant="outline"
           size="sm"
           onClick={() => exportTableToExcel(data)}
-          className="mx-1 h-[20px] truncate text-sm active:text-light-500 dark:border-slate-700 max-2xl:text-[8px]"
+          className="mx-1 h-[20px] truncate text-sm hover:bg-[#f4f4f4] active:text-light-500 dark:border-slate-700 max-2xl:text-[8px]"
         >
-          Excel
+        {/* <SiMicrosoftexcel className="mr-2 fill-lime-700" /> */}
+         Export table
         </Button>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
