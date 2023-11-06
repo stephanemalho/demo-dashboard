@@ -18,7 +18,7 @@ const ThreadsInfo = () => {
   const isConnected = isOnline ? "Connected" : "Not Connected";
 
   return (
-    <div className="shadow-light100_dark100 background-light900_dark200 relative flex h-[30px] w-full max-2xl:rounded-sm  max-2xl:p-2">
+    <div className="shadow-light100_dark100 relative flex h-[50px] w-full max-2xl:h-[30px]  max-2xl:rounded-sm max-2xl:p-2">
       <div className="text-light400_light500 flex h-full basis-1/3 flex-row items-center justify-between pl-2 font-inter max-2xl:pl-0 max-2xl:text-[0.6rem]">
         <div title="connexion">
           <span  aria-label={`${isConnected}`} className="relative flex h-3 w-3">
