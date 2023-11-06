@@ -14,7 +14,7 @@ const Logs = () => {
   const logs = data.Logs;
 
   return (
-    <LiveContainer logHeight="h-[33vh]" title="Live Logs">
+    <LiveContainer logHeight="h-[40vh] max-2xl:h-[33vh]" title="Live Logs">
       <Table className="background-light800_dark400 text-sm dark:border-slate-700 max-2xl:text-[0.5rem] ">
         <TableBody className="code-font dark:text-slate-400">
           {Object.keys(logs).map((logKey) => {

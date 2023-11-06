@@ -1,6 +1,6 @@
 "use client";
-import * as React from "react";
 
+import * as React from "react";
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -9,22 +9,18 @@ import {
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
-  getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
 
 import { Button } from "@/components/ui/button";
-
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
 import { Input } from "@/components/ui/input";
-
 import {
   Table,
   TableBody,
@@ -35,33 +31,24 @@ import {
 } from "@/components/ui/table";
 import { exportTableToExcel } from "@/utils/formatTable";
 
-
 export interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
 }
-
 
 export function DataTable<TData, TValue>({
   columns,
   data,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
-
-  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-    []
-  );
-
-  const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({});
-
+  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);
+  const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = React.useState({});
 
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
     onColumnFiltersChange: setColumnFilters,
@@ -79,31 +66,9 @@ export function DataTable<TData, TValue>({
   return (
     <div>
       <div className=" my-1 flex w-full dark:border-slate-700">
-        <div className="flex h-[20px] space-x-2 text-[0.6rem]">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
-            className="h-[20px] text-sm active:text-light-500 dark:border-slate-700 max-2xl:text-[8px]"
-          >
-            Previous
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
-            className="h-[20px] text-sm active:text-light-500 dark:border-slate-700 max-2xl:text-[8px]"
-          >
-            Next
-          </Button>
-        </div>
         <Input
           placeholder="Filter Function..."
-          value={
-            (table.getColumn("function")?.getFilterValue() as string) ?? ""
-          }
+          value={(table.getColumn("function")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
             table.getColumn("function")?.setFilterValue(event.target.value)
           }
@@ -177,7 +142,7 @@ export function DataTable<TData, TValue>({
                 })}
               </TableRow>
             ))}
-          </TableHeader>{" "}
+          </TableHeader>
           <TableBody>
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
@@ -189,7 +154,7 @@ export function DataTable<TData, TValue>({
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className="w-[100px] max-w-[200px] truncate text-[12px] dark:border-slate-700 max-2xl:text-[6px]"
+                      className="w-[100px] max-w-[200px] truncate text-[11px] dark:border-slate-700 max-2xl:text-[8px]"
                     >
                       {flexRender(
                         cell.column.columnDef.cell,
