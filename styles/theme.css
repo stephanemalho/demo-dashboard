@@ -5,7 +5,7 @@
 @layer utilities {
 
   .ibm-text-black {
-    @apply text-[#161616] ;
+    @apply text-[#393939] ;
   }
 
   .ibm-bg:hover {

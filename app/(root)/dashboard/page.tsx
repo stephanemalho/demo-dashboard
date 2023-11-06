@@ -6,7 +6,7 @@ import LiveThreads from "@/components/shared/tableThreads/LiveThreads";
 
 export default function Home() {
   return (
-    <div className="slide-in-right m-auto flex lg:w-[98vw]">
+    <div className="slide-in-right m-auto flex flex-col lg:w-[98vw]">
       <ContentContainer>
         <ThreadsInfo />
         <LiveThreads />
