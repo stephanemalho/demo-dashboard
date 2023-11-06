@@ -48,7 +48,7 @@ const LeftSideBar = () => {
                 isActive
                 ? "bg-blue-500 font-bold text-white  hover:bg-blue-700"
                 : "hover:border-2 hover:border-[#0f62fe] hover:bg-[rgb(244,244,244)] visited:hover:bg-[#f4f4f4] active:bg-[#e0e0e0]"
-              } ibm-text-black flex h-[49px] w-[280px] items-center justify-start border-2 border-transparent p-4 font-ibmPlexSans text-[0.6rem] no-underline transition-all ease-in `}
+              } ibm-text-black flex h-[49px] w-[280px] items-center justify-start border-2 border-transparent p-4 font-ibmPlexSans text-[1rem] no-underline transition-all ease-in`}
             >
               <div className="flex min-w-[30px] justify-start">
               <Image
@@ -89,7 +89,7 @@ const LeftSideBar = () => {
             <div key={item.label}>
               <Accordion type="single" className="h-full w-[280px]" collapsible title={item.label}>
                 <AccordionItem value="h-full item-1">
-                  <AccordionTrigger className="h-[49px] border-2 border-transparent p-4 font-ibmPlexSans transition-all ease-in hover:border-2 hover:border-[#0f62fe] hover:bg-[#f4f4f4] visited:hover:bg-[#f4f4f4] active:bg-[#e0e0e0]">
+                  <AccordionTrigger className="h-[49px] border-2 border-transparent p-4 font-ibmPlexSans text-[1rem] transition-all ease-in hover:border-2 hover:border-[#0f62fe] hover:bg-[#f4f4f4] visited:hover:bg-[#f4f4f4] active:bg-[#e0e0e0] max-2xl:text-[0.8rem]">
                     <div className="flex h-[49px] min-w-[30px] justify-start">
                     <Image
                       src={item.imgURL}
@@ -102,7 +102,7 @@ const LeftSideBar = () => {
                     <p
                       className={`${
                         isActive ? "base-bold" : "base-medium"
-                      } flex h-full  w-full items-center whitespace-nowrap text-left font-ibmPlexSans text-[0.8rem]`}
+                      } flex h-full  w-full items-center whitespace-nowrap text-left font-ibmPlexSans text-[1rem] max-2xl:text-[0.8rem]`}
                     >
                       {item.label}
                     </p>
@@ -118,14 +118,14 @@ const LeftSideBar = () => {
                             isActive || pathname.includes(subRoute)
                             ? "bg-blue-500 font-bold text-white  hover:bg-blue-700"
                             : "hover:border-2 hover:border-[#0f62fe] hover:bg-[rgb(244,244,244)] visited:hover:bg-[#f4f4f4] active:bg-[#e0e0e0]"
-                          }  flex h-[49px] items-center justify-start border-2 border-transparent px-4 transition-all ease-in`}
+                          }  text-[0.9rem]max-2xl:text-[0.8rem] flex h-[49px] items-center justify-start border-2 border-transparent px-4 transition-all ease-in`}
                         >
                           <p
                             className={`${
                               isActive || pathname.includes(subRoute)
                                 ? "base-bold"
                                 : "base-medium"
-                            } flex h-full w-full items-center whitespace-nowrap font-ibmPlexSans max-2xl:text-[0.8rem] `}
+                            } flex h-full w-full items-center whitespace-nowrap font-ibmPlexSans text-[0.9rem] max-2xl:text-[0.7rem]`}
                           >
                             {getLastSegment(subRoute)}
                           </p>

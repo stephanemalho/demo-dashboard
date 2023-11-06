@@ -18,7 +18,7 @@ const Navbar = () => {
   const { handleClick, toggleSideBar } = useSidebar(); // sideBar Context
 
   return (
-    <nav className="background-light900_dark200 fixed z-10 flex h-[50px] w-full border-b-[1px] border-grey-border  shadow-light-300 dark:shadow-none ">
+    <nav className="fixed z-10 flex h-[50px] w-full border-b-[1px] border-grey-border bg-[#f4f4f4]  shadow-light-300 ">
       <SignedIn>
         <div
           className="flex h-[49px] w-[50px] cursor-pointer justify-center pb-1 hover:bg-[#f4f4f4] active:bg-[#e0e0e0]"
@@ -57,7 +57,7 @@ const Navbar = () => {
             onClick={handleClick}
           >
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex h-full w-full items-center justify-center rounded-none focus:rounded-none focus:border-[#0f62fe] ">
+              <DropdownMenuTrigger className="flex h-full w-full items-center justify-center rounded-none focus:border-none ">
                 <Image
                   src={"/assets/icons/user.svg"}
                   alt={"menu"}
