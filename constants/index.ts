@@ -9,42 +9,42 @@ export const themes = [
 
 export const sidebarLinks: SidebarLink[] = [
   {
-    imgURL: "/assets/icons/chart.svg",
+    imgURL: "/assets/icons/chart--multitype.svg",
     route: "/",
     label: "Cockpit",
   },
   {
-    imgURL: "/assets/icons/pie.svg",
+    imgURL: "/assets/icons/dashboard--reference.svg",
     route: "/dashboard",
     label: "Dashboard",
   },
   {
-    imgURL: "/assets/icons/live-delivery.svg",
+    imgURL: "/assets/icons/delivery.svg",
     route: ["/live-delivery/create","/live-delivery/list"],
     label: "Live Delivery",
   },
   {
-    imgURL: "/assets/icons/versionning.svg",
+    imgURL: "/assets/icons/branch.svg",
     route: ["/versionning/chore","/versionning/process","/versionning/rule-page"],
     label: "Versionning",
   },
   {
-    imgURL: "/assets/icons/query.svg",
+    imgURL: "/assets/icons/ibm-watson--query.svg",
     route: ["/query/chores","/query/process","/query/logs-page"],
     label: "Query",
   },
   {
-    imgURL: "/assets/icons/statistic.svg",
+    imgURL: "/assets/icons/analytics.svg",
     route: ["/statistics/ressources","/statistics/process"],
     label: "Statistics",
   },
   {
-    imgURL: "/assets/icons/alert.svg",
+    imgURL: "/assets/icons/warning--alt.svg",
     route: ["/alerts/management","/alerts/visualization"],
     label: "Alerts",
   },
   {
-    imgURL: "/assets/icons/mapping.svg",
+    imgURL: "/assets/icons/plan.svg",
     route:["/mapping-page/globals-page"],
     label: "Mapping",
   },

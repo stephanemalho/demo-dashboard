@@ -84,8 +84,8 @@ const Navbar = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <Link href="/sign-up">
-                    <Button className="h-[49px] w-[120px] rounded-none border-0 border-transparent bg-[#060606] hover:border-[#0f62fe] hover:bg-[#353535]">
-                      <span className="font-semibold text-[#0f62fe]">Sign-up</span>
+                    <Button className="h-[49px] w-[120px] rounded-none border-0 border-transparent bg-[#303030] hover:bg-[#353535]">
+                      <span className="font-semibold text-[#fff]">Sign-up</span>
                     </Button>
                   </Link>
                 </DropdownMenuItem>
