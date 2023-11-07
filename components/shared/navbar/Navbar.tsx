@@ -13,12 +13,13 @@ import {
 
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
+import ThreadsInfo from "../threadsInfo/ThreadsInfo";
 
 const Navbar = () => {
   const { handleClick, toggleSideBar } = useSidebar(); // sideBar Context
 
   return (
-    <nav className="fixed z-10 flex h-[50px] w-full border-b-[1px] border-grey-border bg-[#f4f4f4]  shadow-light-300 ">
+    <nav className="fixed z-10 flex h-[50px] w-full border-b-[1px] border-grey-border bg-[white]  shadow-light-300 ">
       <SignedIn>
         <div
           className="flex h-[49px] w-[50px] cursor-pointer justify-center pb-1 hover:bg-[#f4f4f4] active:bg-[#e0e0e0]"
@@ -50,6 +51,12 @@ const Navbar = () => {
           </p>
         </Link>
       </div>
+      <SignedIn>
+        {/* remove this block to test  */}
+        <div className="flex w-full items-center"> 
+        <ThreadsInfo />
+        </div>
+      </SignedIn>
       <div className="flex-between ml-auto">
         <SignedOut>
           <div

@@ -16,14 +16,14 @@ const DeleteButton = ({id, onDelete} : Props ) => {
   return (
     <div>
       <button
-        className="rounded-full px-4 py-2 font-bold text-white hover:bg-red-200"
+        className="flex h-[15px] items-center rounded-full border p-1.5 text-xs hover:bg-red-200 max-2xl:text-[6px]"
         onClick={handleClick}
       >
         <Image
           src="assets/icons/trash.svg"
           alt="trash"
-          width={13}
-          height={13}
+          width={10}
+          height={10}
         />
       </button>
     </div>

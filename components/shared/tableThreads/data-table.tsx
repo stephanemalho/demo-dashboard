@@ -1,6 +1,6 @@
 "use client";
-import * as React from "react";
 
+import * as React from "react";
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -9,22 +9,17 @@ import {
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
-  getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
 
 import { Button } from "@/components/ui/button";
-
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
-import { Input } from "@/components/ui/input";
-
 import {
   Table,
   TableBody,
@@ -35,33 +30,24 @@ import {
 } from "@/components/ui/table";
 import { exportTableToExcel } from "@/utils/formatTable";
 
-
 export interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
 }
-
 
 export function DataTable<TData, TValue>({
   columns,
   data,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
-
-  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-    []
-  );
-
-  const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({});
-
+  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);
+  const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = React.useState({});
 
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
     onColumnFiltersChange: setColumnFilters,
@@ -78,58 +64,20 @@ export function DataTable<TData, TValue>({
 
   return (
     <div>
-      <div className=" my-1 flex w-full dark:border-slate-700">
-        <div className="flex h-[20px] space-x-2 text-[0.6rem]">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
-            className="h-[20px] text-sm active:text-light-500 dark:border-slate-700 max-2xl:text-[8px]"
-          >
-            Previous
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
-            className="h-[20px] text-sm active:text-light-500 dark:border-slate-700 max-2xl:text-[8px]"
-          >
-            Next
-          </Button>
-        </div>
-        <Input
-          placeholder="Filter Function..."
-          value={
-            (table.getColumn("function")?.getFilterValue() as string) ?? ""
-          }
-          onChange={(event) =>
-            table.getColumn("function")?.setFilterValue(event.target.value)
-          }
-          className="ml-1 h-[20px] max-w-sm text-sm dark:border-slate-700 dark:bg-slate-700 max-2xl:text-[8px] "
-        />
-        <Input
-          placeholder="Filter State..."
-          value={(table.getColumn("state")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("state")?.setFilterValue(event.target.value)
-          }
-          className="ml-1 h-[20px] max-w-sm text-sm dark:border-slate-700 dark:bg-slate-700 max-2xl:text-[8px]"
-        />
+      <div className="my-1 flex w-full">
         <Button
           variant="outline"
           size="sm"
           onClick={() => exportTableToExcel(data)}
-          className="mx-1 h-[20px] truncate text-sm active:text-light-500 dark:border-slate-700 max-2xl:text-[8px]"
+          className="h-[20px] truncate rounded-none text-[10px]  hover:bg-[#f4f4f4] active:text-light-500 max-2xl:h-[15px]  max-2xl:text-[6px]"
         >
-          Excel
+        Export table
         </Button>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
               variant="outline"
-              className="ml-auto h-[20px] text-sm active:text-light-500 dark:border-slate-700 max-2xl:text-[8px]"
+              className="ml-auto h-[20px]  truncate rounded-none text-[10px] hover:bg-[#f4f4f4] active:text-light-500 max-2xl:h-[15px] max-2xl:text-[6px]"
             >
               Columns
             </Button>
@@ -142,7 +90,7 @@ export function DataTable<TData, TValue>({
                 return (
                   <DropdownMenuCheckboxItem
                     key={column.id}
-                    className="background-light800_dark400 cursor-pointer capitalize  dark:border-slate-700 dark:text-slate-400"
+                    className="background-light800_dark400 cursor-pointer capitalize"
                     checked={column.getIsVisible()}
                     onCheckedChange={(value) =>
                       column.toggleVisibility(!!value)
@@ -156,15 +104,15 @@ export function DataTable<TData, TValue>({
         </DropdownMenu>
       </div>
       <div>
-        <Table className="background-light800_dark400 text-[0.6rem] text-black dark:border-slate-700 dark:text-white">
-          <TableHeader className="text-[12px] dark:border-slate-700 dark:text-slate-400 max-2xl:text-[8px]">
+        <Table className="background-light800_dark400  text-black">
+          <TableHeader className="bg-[#e2e2e2] text-[12px] max-2xl:text-[8px]">
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id} className="dark:border-slate-700">
+              <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead
                       key={header.id}
-                      className="text-left dark:border-slate-700 "
+                      className="h-[10px] text-left max-2xl:h-[7px] "
                     >
                       {header.isPlaceholder
                         ? null
@@ -177,19 +125,19 @@ export function DataTable<TData, TValue>({
                 })}
               </TableRow>
             ))}
-          </TableHeader>{" "}
+          </TableHeader>
           <TableBody>
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
-                  className="dark:border-slate-700 dark:text-slate-400"
+                  className="hover:bg-slate-200"
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className="w-[100px] max-w-[200px] truncate text-[12px] dark:border-slate-700 max-2xl:text-[6px]"
+                      className="h-[8px] w-[100px] max-w-[200px] truncate text-[10px] max-2xl:h-[6px] max-2xl:text-[6px]"
                     >
                       {flexRender(
                         cell.column.columnDef.cell,
