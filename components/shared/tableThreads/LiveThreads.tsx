@@ -7,7 +7,7 @@ import { getData } from "@/api/getData";
 
 export default async function LiveThreads() {
   const data = await getData();
-
+  
   return (
     <div className="text-[0.6rem] dark:border-slate-700 ">
       <ContentContainer>
