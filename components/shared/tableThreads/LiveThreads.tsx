@@ -11,7 +11,7 @@ export default async function LiveThreads() {
   return (
     <div className="text-[0.6rem] dark:border-slate-700 ">
       <ContentContainer>
-        <LiveContainer logHeight="h-[40vh] max-2xl:h-[36vh]" title="Live Threads">
+        <LiveContainer logHeight="h-[44vh] max-2xl:h-[40vh]" title="Live Threads">
           <DataTable columns={columns} data={data} />
         </LiveContainer>
       </ContentContainer>
