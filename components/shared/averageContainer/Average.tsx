@@ -9,7 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 
 import { getUnique } from "@/utils/arrays";
-import { useSidebar } from "@/context/ScreenSizeContext";
+import { useSidebar } from "@/context/SideBarProvider";
 import { getData } from "@/api/getData";
 
 const Average = () => {
@@ -37,7 +37,7 @@ const Average = () => {
             <Button
               variant="outline"
               className=" h-full text-sm  hover:bg-slate-100 active:text-light-500 dark:border-slate-700 "
-              >
+            >
               <TotalUsers />
             </Button>
           </DropdownMenuTrigger>

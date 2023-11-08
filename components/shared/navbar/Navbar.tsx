@@ -5,7 +5,7 @@ import React from "react";
 // import Theme from "./Theme";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { useSidebar } from "@/context/ScreenSizeContext";
+import { useSidebar } from "@/context/SideBarProvider";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -53,8 +53,8 @@ const Navbar = () => {
       </div>
       <SignedIn>
         {/* remove this block to test  */}
-        <div className="flex w-full items-center"> 
-        <ThreadsInfo />
+        <div className="flex w-full items-center">
+          <ThreadsInfo />
         </div>
       </SignedIn>
       <div className="flex-between ml-auto">
@@ -92,7 +92,7 @@ const Navbar = () => {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-          
+
         </SignedOut>
         {/* <Theme /> */}
         <SignedIn>

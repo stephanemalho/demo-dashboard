@@ -6,7 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { sidebarLinks } from "@/constants";
-import { useSidebar } from "@/context/ScreenSizeContext";
+import { useSidebar } from "@/context/SideBarProvider";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -144,7 +144,7 @@ const LeftSideBar = () => {
                           key={item.route}
                           href={item.route || "/"}
                           className={`${
-                            isActive 
+                            isActive
                               ? "border-l-[5px] border-l-[#0f62fe] bg-[#e0e0e0] font-bold"
                               : "hover:border-2  hover:bg-[rgb(244,244,244)] visited:hover:bg-[#f4f4f4] active:bg-[#e0e0e0]"
                           } text-[0.9rem]max-2xl:text-[0.8rem] flex h-[49px] items-center justify-start border-2 border-transparent px-4 transition-all ease-in hover:border-[#0f62fe]`}
@@ -169,7 +169,9 @@ const LeftSideBar = () => {
       <div
         onClick={handleClick}
         className="fixed top-[50px] z-40 h-[95vh] w-[100vw] bg-black opacity-[60%]"
-      >{""}</div>
+      >
+        {""}
+      </div>
     </>
   );
 };
