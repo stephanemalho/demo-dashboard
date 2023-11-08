@@ -18,7 +18,7 @@ const LiveContainer = ({ children, logHeight, title, label }: BoxLogsProps) => {
   // context
   const { isFullscreen }: any = useFullscreen();
   // variables
-  const containerClasses = `shadow-light100_dark100 w-full border-b-[5px] border-[#e4e4e4] ${
+  const containerClasses = `w-full border-b-[5px] border-[#e4e4e4] ${
     isFullscreen === title
       ? "z-10 fixed top-50px left-0 right-0 h-[100vh] w-[100vw]"
       : ""
@@ -36,7 +36,7 @@ const LiveContainer = ({ children, logHeight, title, label }: BoxLogsProps) => {
       </div>
       <div
         className={`custom-scrollbar ${
-          isFullscreen === title ? `h-[90vh] ` : `h-[30vh] ${logHeight}`
+          isFullscreen === title ? `h-[90vh] max-2xl:h-[84vh]` : `h-[30vh] ${logHeight}`
         }  overflow-y-auto bg-[#fff] p-1`}
       >
         {children}
