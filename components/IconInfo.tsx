@@ -10,10 +10,10 @@ const IconInfo = ({title}: IconInfoProps) => {
     <Image
       src="/assets/icons/information.svg"
       alt="info icon"
-      width={10}
-      height={10}
+      width={20}
+      height={20}
       title={title}
-      className="ml-auto flex cursor-help pb-1"
+      className="mr-2 flex cursor-help pb-1 max-2xl:h-[14px] max-2xl:w-[14px]"
     />
   )
 }

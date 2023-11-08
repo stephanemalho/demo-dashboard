@@ -22,7 +22,7 @@ const OldThreads = () => {
   
 
   return (
-    <LiveContainer logHeight="h-[30vh]" title="Live Threads 1">
+    <LiveContainer logHeight="h-[30vh]" title="Live Threads 1" label="old">
       <Table className="background-light800_dark400 text-[0.6rem] ">
         <TableHeader>
           <TableRow className="text-center max-2xl:text-[0.5rem]">
