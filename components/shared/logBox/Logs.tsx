@@ -7,14 +7,11 @@ import {
 } from "@/components/ui/table";
 import moment from "moment";
 
-import LiveContainer from "../boxContainer/LiveContainer";
-
 const Logs = () => {
   const data = dashboard;
   const logs = data.Logs;
 
   return (
-    <LiveContainer logHeight="h-[44vh] max-2xl:h-[38vh]" title="Live Logs">
       <Table className="background-light800_dark400 text-[0.7rem] dark:border-slate-700 max-2xl:text-[0.5rem] ">
         <TableBody className="code-font ">
           {Object.keys(logs).map((logKey) => {
@@ -36,7 +33,6 @@ const Logs = () => {
           })}
         </TableBody>
       </Table>
-    </LiveContainer>
   );
 };
 

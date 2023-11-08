@@ -3,25 +3,14 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { IBM_Plex_Sans as IbmPlexSans } from "next/font/google";
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/context/ThemeProvider";
+import { FullscreenProvider } from "@/context/ScreenSizeProvider";
 
 import "./globals.css";
-import { SidebarProvider } from "@/context/ScreenSizeContext";
-
-// const inter = Inter({
-//   subsets: ["latin"],
-//   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-//   variable: "--font-inter",
-// });
-
-// const spaceGrotesk = grotesk({
-//   subsets: ["latin"],
-//   weight: ["300", "400", "500", "600", "700"],
-//   variable: "--font-space-grotestk",
-// });
+import { SidebarProvider } from "@/context/SideBarProvider";
 
 const ibmPlexSans = IbmPlexSans({
   subsets: ["latin"],
-  weight: ["100", "200", "400",   "700"],
+  weight: ["100", "200", "400", "700"],
   variable: "--font-ibm-plex-sans",
 });
 
@@ -40,9 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${ibmPlexSans.variable}  custom-scrollbar`}
-      >
+      <body className={`${ibmPlexSans.variable}  custom-scrollbar`}>
         <ClerkProvider
           appearance={{
             elements: {
@@ -52,7 +39,9 @@ export default function RootLayout({
           }}
         >
           <ThemeProvider>
-            <SidebarProvider>{children}</SidebarProvider>
+            <SidebarProvider>
+              <FullscreenProvider>{children}</FullscreenProvider>
+            </SidebarProvider>
           </ThemeProvider>
         </ClerkProvider>
       </body>

@@ -40,8 +40,11 @@ export function DataTable<TData, TValue>({
   data,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
-  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);
-  const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({});
+  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
+    []
+  );
+  const [columnVisibility, setColumnVisibility] =
+    React.useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = React.useState({});
 
   const table = useReactTable({
@@ -71,7 +74,7 @@ export function DataTable<TData, TValue>({
           onClick={() => exportTableToExcel(data)}
           className="h-[20px] truncate rounded-none text-[10px]  hover:bg-[#f4f4f4] active:text-light-500 max-2xl:h-[15px]  max-2xl:text-[6px]"
         >
-        Export table
+          Export table
         </Button>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -105,7 +108,7 @@ export function DataTable<TData, TValue>({
       </div>
       <div>
         <Table className="background-light800_dark400  text-black">
-          <TableHeader className="bg-[#e2e2e2] text-[12px] max-2xl:text-[8px]">
+          <TableHeader className="bg-[#e0e0e0] text-[12px] max-2xl:text-[8px]">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
@@ -128,11 +131,13 @@ export function DataTable<TData, TValue>({
           </TableHeader>
           <TableBody>
             {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
+              table.getRowModel().rows.map((row, index) => (
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
-                  className="hover:bg-slate-200"
+                  className={`hover:bg-slate-200 ${
+                    index % 2 === 1 ? "bg-[f4f4f4]" : "bg-[#fff]"
+                  }`}
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell

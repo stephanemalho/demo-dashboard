@@ -15,7 +15,11 @@ export function SidebarProvider({ children }: { children: React.ReactNode }) {
   const [toggleSideBar, setToggleSideBar] = useState(false);
 
   const handleClick = () => {
-    setToggleSideBar(!toggleSideBar);
+    if (toggleSideBar) {
+      setToggleSideBar(false);
+    } else {
+      setToggleSideBar(true);
+    }
   };
 
 
