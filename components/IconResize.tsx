@@ -7,12 +7,12 @@ const IconResize = () => {
   const handleScreenResize = () => {
     const elem = document.querySelector(".slide-in-right");
     if (elem) {
-      if (elem.classList.contains("w-[70vw]")) {
-        elem.classList.remove("w-[70vw]");
+      if (elem.classList.contains("w-[60vw]")) {
+        elem.classList.remove("w-[60vw]");
         elem.classList.add("w-full");
       } else {
         elem.classList.remove("w-full");
-        elem.classList.add("w-[70vw]");
+        elem.classList.add("w-[60vw]");
       }
     }
   };
