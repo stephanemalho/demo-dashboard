@@ -44,8 +44,8 @@ const Navbar = () => {
       </SignedIn>
       <div className="flex h-[49px] w-[119px] hover:bg-[#f4f4f4] active:bg-[#e0e0e0]">
         <Link href="/" className="flex w-full items-center gap-2">
-          <span className="ml-3 dark:text-white">IBM</span>
-          <p className="h2-bold relative w-full border-r-[1px] border-grey-border font-spaceGrotesk text-[12px] font-black text-dark-100 ">
+          <span className="ml-3  dark:text-white">IBM</span>
+          <p className="h2-bold relative mr-2 w-full border-r-[1px] border-grey-border font-spaceGrotesk text-[12px] font-black text-dark-100">
             <span className="text-[15px] italic text-logo-500">X</span>
             Care
           </p>
@@ -53,7 +53,7 @@ const Navbar = () => {
       </div>
       <SignedIn>
         {/* remove this block to test  */}
-        <div className="flex w-full items-center">
+        <div className="flex">
           <ThreadsInfo />
         </div>
       </SignedIn>
