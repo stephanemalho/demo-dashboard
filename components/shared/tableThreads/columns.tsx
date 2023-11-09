@@ -1,7 +1,7 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-import { ArrowUpDown, MoreHorizontal } from "lucide-react";
+import { MoreHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -14,7 +14,7 @@ import {
 import { copyRowToExcel } from "@/utils/formatTable";
 import DeleteButton from "../deleteBtn/DeleteButton";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
+import FilterBouton from "./FilterBouton";
 
 // shape of data.
 export type Threads = {
@@ -30,46 +30,10 @@ export type Threads = {
 
 export const columns: ColumnDef<Threads>[] = [
   {
-    accessorKey: "function", 
+    accessorKey: "function",
     header: ({ column }) => {
       return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="outline"
-              className="flex h-full w-full cursor-pointer justify-start border-none bg-[#e2e2e2]  p-0 text-[12px]  hover:bg-[white] active:text-light-500 max-2xl:text-[8px]"
-            >
-              Function
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent
-            align="end"
-            className="flex w-full flex-col bg-[#f4f4f4]"
-          >
-            <Button
-              variant="ghost"
-              onClick={() =>
-                column.toggleSorting(column.getIsSorted() === "asc")
-              }
-              className="w-full bg-[#f4f4f4] p-0 hover:bg-[#eaeaea] active:bg-[#e0e0e0]"
-            >
-              Filter asc <ArrowUpDown className="ml-2 h-3 w-3" />
-            </Button>
-            <Input
-              placeholder="Filter Function..."
-              value={(column.getFilterValue() as string | undefined) ?? ""}
-              onChange={(event) => column.setFilterValue(event.target.value)}
-              className=" h-[30px] max-w-sm border-none text-sm max-2xl:text-[8px]"
-            />
-            <Button
-              variant="ghost"
-              onClick={() => column.setFilterValue("")}
-              className="mt-2 h-5 p-0 text-[12px] hover:bg-[#eaeaea] active:bg-[#e0e0e0] "
-            >
-              Reset filter
-            </Button>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <FilterBouton column={column} label={"Function"} />
       );
     },
   },
@@ -77,45 +41,7 @@ export const columns: ColumnDef<Threads>[] = [
     accessorKey: "state",
     header: ({ column }) => {
       return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="outline"
-              className="flex h-full w-full cursor-pointer justify-start border-none bg-[#e2e2e2]  p-0 text-[12px] hover:bg-[white] active:text-light-500 max-2xl:text-[8px]"
-            >
-              State
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent
-            align="end"
-            className="flex w-full flex-col bg-[#f4f4f4]"
-          >
-            <Button
-              variant="ghost"
-              onClick={() =>
-                column.toggleSorting(column.getIsSorted() === "asc")
-              }
-              className="p-0 text-[12px] hover:bg-[#eaeaea] active:bg-[#e0e0e0]"
-            >
-              Filter asc
-              <ArrowUpDown className="ml-2 h-3 w-3" />
-            </Button>
-            {/* reset the sorting on click */}
-            <Input
-              placeholder="Filter State..."
-              value={(column.getFilterValue() as string | undefined) ?? ""}
-              onChange={(event) => column.setFilterValue(event.target.value)}
-              className=" h-[30px] max-w-sm border-none text-sm max-2xl:text-[8px]"
-            />
-            <Button
-              variant="ghost"
-              onClick={() => column.setFilterValue("")}
-              className="mt-2 h-5 p-0 text-[12px] hover:bg-[#eaeaea] active:bg-[#e0e0e0] "
-            >
-              Reset filter
-            </Button>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <FilterBouton column={column} label={"State"} />
       );
     },
     cell: ({ row }) => {
@@ -142,41 +68,7 @@ export const columns: ColumnDef<Threads>[] = [
     accessorKey: "user",
     header: ({ column }) => {
       return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="outline"
-              className="flex h-full w-full cursor-pointer justify-start border-none bg-[#e2e2e2] p-0 text-[12px]  hover:bg-[white] active:text-light-500 max-2xl:text-[8px]"
-            >
-              User
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="flex w-full flex-col bg-[#f4f4f4]">
-          <Button
-              variant="ghost"
-              onClick={() =>
-                column.toggleSorting(column.getIsSorted() === "asc")
-              }
-              className="p-0 text-[12px] hover:bg-[#eaeaea] active:bg-[#e0e0e0]"
-            >
-              Filter asc
-              <ArrowUpDown className="ml-2 h-3 w-3" />
-            </Button>
-            <Input
-              placeholder="Filter User..."
-              value={(column.getFilterValue() as string | undefined) ?? ""}
-              onChange={(event) => column.setFilterValue(event.target.value)}
-              className="h-[30px] max-w-sm border-none text-sm max-2xl:text-[8px]"
-            />
-            <Button
-              variant="ghost"
-              onClick={() => column.setFilterValue("")}
-              className="mt-2 h-5 p-0 text-[12px] hover:bg-[#eaeaea] active:bg-[#e0e0e0] "
-            >
-              Reset filter
-            </Button>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <FilterBouton column={column} label={"User"} />
       );
     },
   },
@@ -184,38 +76,7 @@ export const columns: ColumnDef<Threads>[] = [
     accessorKey: "type",
     header: ({ column }) => {
       return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="outline"
-              className="flex h-full w-full cursor-pointer justify-start border-none bg-[#e2e2e2] p-0 text-[12px]  hover:bg-[white] active:text-light-500 max-2xl:text-[8px]"
-            >
-              Type
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="flex w-full flex-col bg-[#f4f4f4]">
-            <Button
-              variant="ghost"
-              onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-              className="p-0 text-[12px] hover:bg-[#eaeaea] active:bg-[#e0e0e0]"
-            >
-              Filter asc <ArrowUpDown className="ml-2 h-3 w-3" />
-            </Button>
-            <Input
-              placeholder="Filter Type..."
-              value={(column.getFilterValue() as string | undefined) ?? ""}
-              onChange={(event) => column.setFilterValue(event.target.value)}
-              className="h-[30px] max-w-sm border-none text-sm max-2xl:text-[8px]"
-            />
-            <Button
-              variant="ghost"
-              onClick={() => column.setFilterValue("")}
-              className="mt-2 h-5 p-0 text-[12px] hover:bg-[#eaeaea] active:bg-[#e0e0e0] "
-            >
-              Reset filter
-            </Button>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <FilterBouton column={column} label={"Type"} />
       );
     },
   },
@@ -223,38 +84,7 @@ export const columns: ColumnDef<Threads>[] = [
     accessorKey: "context",
     header: ({ column }) => {
       return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="outline"
-              className="flex h-full w-full cursor-pointer justify-start border-none bg-[#e2e2e2] p-0 text-[12px]  hover:bg-[white] active:text-light-500 max-2xl:text-[8px]"
-            >
-              Context
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="flex w-full flex-col bg-[#f4f4f4]">
-            <Button
-              variant="ghost"
-              onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-              className="p-0 text-[12px] hover:bg-[#eaeaea] active:bg-[#e0e0e0]"
-            >
-              Filter asc <ArrowUpDown className="ml-2 h-3 w-3" />
-            </Button>
-            <Input
-              placeholder="Filter Context..."
-              value={(column.getFilterValue() as string | undefined) ?? ""}
-              onChange={(event) => column.setFilterValue(event.target.value)}
-              className="h-[30px] max-w-sm border-none text-sm max-2xl:text-[8px]"
-            />
-            <Button
-              variant="ghost"
-              onClick={() => column.setFilterValue("")}
-              className="mt-2 h-5 p-0 text-[12px] hover:bg-[#eaeaea] active:bg-[#e0e0e0] "
-            >
-              Reset filter
-            </Button>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <FilterBouton column={column} label={"Context"} />
       );
     },
   },
@@ -262,38 +92,7 @@ export const columns: ColumnDef<Threads>[] = [
     accessorKey: "waitTime",
     header: ({ column }) => {
       return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="outline"
-              className="flex h-full w-full cursor-pointer justify-start border-none bg-[#e2e2e2] p-0 text-[12px]  hover:bg-[white] active:text-light-500 max-2xl:text-[8px]"
-            >
-              Wait Time
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="flex w-full flex-col bg-[#f4f4f4]">
-            <Button
-              variant="ghost"
-              onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-              className="p-0 text-[12px] hover:bg-[#eaeaea] active:bg-[#e0e0e0]"
-            >
-              Filter asc <ArrowUpDown className="ml-2 h-3 w-3" />
-            </Button>
-            <Input
-              placeholder="Filter Wait Time..."
-              value={(column.getFilterValue() as string | undefined) ?? ""}
-              onChange={(event) => column.setFilterValue(event.target.value)}
-              className="h-[30px] max-w-sm border-none text-sm max-2xl:text-[8px]"
-            />
-            <Button
-              variant="ghost"
-              onClick={() => column.setFilterValue("")}
-              className="mt-2 h-5 p-0 text-[12px] hover:bg-[#eaeaea] active:bg-[#e0e0e0] "
-            >
-              Reset filter
-            </Button>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <FilterBouton column={column} label={"Wait Time"} />
       );
     },
   },
@@ -302,38 +101,7 @@ export const columns: ColumnDef<Threads>[] = [
 
     header: ({ column }) => {
       return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="outline"
-              className="flex h-full w-full cursor-pointer justify-start border-none bg-[#e2e2e2] p-0 text-[12px]  hover:bg-[white] active:text-light-500 max-2xl:text-[8px]"
-            >
-              Elapsed Time
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="flex w-full flex-col bg-[#f4f4f4]">
-            <Button
-              variant="ghost"
-              onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-              className="p-0 text-[12px] hover:bg-[#eaeaea] active:bg-[#e0e0e0]"
-            >
-              Filter asc <ArrowUpDown className="ml-2 h-3 w-3" />
-            </Button>
-            <Input
-              placeholder="Filter Wait Time..."
-              value={(column.getFilterValue() as string | undefined) ?? ""}
-              onChange={(event) => column.setFilterValue(event.target.value)}
-              className="h-[30px] max-w-sm border-none text-sm max-2xl:text-[8px]"
-            />
-            <Button
-              variant="ghost"
-              onClick={() => column.setFilterValue("")}
-              className="mt-2 h-5 p-0 text-[12px] hover:bg-[#eaeaea] active:bg-[#e0e0e0] "
-            >
-              Reset filter
-            </Button>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <FilterBouton column={column} label={"Elapsed Time"} />
       );
     },
   },
@@ -370,7 +138,7 @@ export const columns: ColumnDef<Threads>[] = [
             <Button
               title="More actions"
               variant="ghost"
-              className="flex h-8 w-8 p-0 text-[0.6rem] max-2xl:h-[5px]" 
+              className="flex h-8 w-8 p-0 text-[0.6rem] max-2xl:h-[5px]"
             >
               <span className="sr-only">Open menu</span>
               <MoreHorizontal className="h-4 w-4" />

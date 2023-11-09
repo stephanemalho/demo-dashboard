@@ -108,7 +108,7 @@ export function DataTable<TData, TValue>({
       </div>
       <div>
         <Table className="background-light800_dark400  text-black">
-          <TableHeader className="bg-[#e0e0e0] text-[12px] max-2xl:text-[8px]">
+          <TableHeader className="bg-[#e0e0e0] text-[12px] max-2xl:text-[12px]">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
@@ -142,7 +142,7 @@ export function DataTable<TData, TValue>({
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className="h-[8px] w-[100px] max-w-[200px] truncate text-[10px] max-2xl:h-[6px] max-2xl:text-[6px]"
+                      className="h-[8px] w-[100px] max-w-[400px] truncate text-[10px] max-2xl:h-[6px] max-2xl:text-[11px]"
                     >
                       {flexRender(
                         cell.column.columnDef.cell,
