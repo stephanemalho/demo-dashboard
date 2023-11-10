@@ -138,7 +138,7 @@ export const columns: ColumnDef<Threads>[] = [
             <Button
               title="More actions"
               variant="ghost"
-              className="flex h-8 w-8 p-0 text-[0.6rem] max-2xl:h-[5px]"
+              className="flex h-8 w-8 truncate p-0 text-[0.6rem] max-2xl:h-[5px]"
             >
               <span className="sr-only">Open menu</span>
               <MoreHorizontal className="h-4 w-4" />

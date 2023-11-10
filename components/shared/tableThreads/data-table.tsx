@@ -66,21 +66,22 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div>
-      <div className="my-1 flex w-full">
+    <div className="flex flex-col">
+      <div className="flex h-[25px] w-full ">
+        <div className="ml-auto flex w-[140px] flex-row">
         <Button
           variant="outline"
           size="sm"
           onClick={() => exportTableToExcel(data)}
-          className="h-[20px] truncate rounded-none text-[10px]  hover:bg-[#f4f4f4] active:text-light-500 max-2xl:h-[15px]  max-2xl:text-[6px]"
+          className="ml-auto flex h-[25px] w-[70px] truncate rounded-none bg-[#0f62fe] text-[10px] font-bold text-[#fff] hover:bg-[#4589ff] active:bg-[#0043ce]  max-2xl:text-[8px]"
         >
           Export table
         </Button>
         <DropdownMenu>
-          <DropdownMenuTrigger asChild>
+          <DropdownMenuTrigger asChild  className="ml-auto">
             <Button
               variant="outline"
-              className="ml-auto h-[20px]  truncate rounded-none text-[10px] hover:bg-[#f4f4f4] active:text-light-500 max-2xl:h-[15px] max-2xl:text-[6px]"
+              className="h-[25px] w-[70px] truncate rounded-none bg-[#f4f4f4] text-[10px] font-bold hover:bg-[#e2e2e2] max-2xl:text-[8px]"
             >
               Columns
             </Button>
@@ -93,7 +94,7 @@ export function DataTable<TData, TValue>({
                 return (
                   <DropdownMenuCheckboxItem
                     key={column.id}
-                    className="background-light800_dark400 cursor-pointer capitalize"
+                    className="cursor-pointer bg-[#f4f4f4] capitalize"
                     checked={column.getIsVisible()}
                     onCheckedChange={(value) =>
                       column.toggleVisibility(!!value)
@@ -105,17 +106,18 @@ export function DataTable<TData, TValue>({
               })}
           </DropdownMenuContent>
         </DropdownMenu>
+        </div>
       </div>
       <div>
-        <Table className="background-light800_dark400  text-black">
-          <TableHeader className="bg-[#e0e0e0] text-[12px] max-2xl:text-[12px]">
+        <Table className="bg-[#f4f4f4] ">
+          <TableHeader className="bg-[#e2e2e2] text-[12px] max-2xl:text-[12px]">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead
                       key={header.id}
-                      className="h-[10px] text-left max-2xl:h-[7px] "
+                      className="h-[10px]  text-left hover:bg-[#e2e2e2] max-2xl:h-[7px]"
                     >
                       {header.isPlaceholder
                         ? null
@@ -142,7 +144,7 @@ export function DataTable<TData, TValue>({
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className="h-[8px] w-[100px] max-w-[400px] truncate text-[10px] max-2xl:h-[6px] max-2xl:text-[11px]"
+                      className="h-[8px]  w-[100px] max-w-[400px] truncate text-[10px] max-2xl:h-[6px] max-2xl:text-[11px]"
                     >
                       {flexRender(
                         cell.column.columnDef.cell,

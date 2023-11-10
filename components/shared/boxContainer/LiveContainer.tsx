@@ -18,7 +18,7 @@ const LiveContainer = ({ children, logHeight, title, label }: BoxLogsProps) => {
   // context
   const { isFullscreen }: any = useFullscreen();
   // variables
-  const containerClasses = `w-full border-[1px] border-[#0f0f0f] ${
+  const containerClasses = `w-full ${
     isFullscreen === title
       ? " z-10 fixed top-50px left-0 right-0 h-[100vh] w-[100vw]"
       : ""
@@ -26,7 +26,7 @@ const LiveContainer = ({ children, logHeight, title, label }: BoxLogsProps) => {
   // TSX
   return (
     <div className={containerClasses}>
-      <div className="base-bold flex  h-[auto] items-center border-b-[1px] border-[#0f0f0f] bg-[#edf4ff] text-[12px] max-2xl:text-[8px]">
+      <div className="base-bold flex  h-[auto] items-center border-b-[1px] border-[#f2f2f2] bg-[#edf4ff] text-[12px] max-2xl:text-[8px]">
         <IconInfo title={title} />
         {label}
         <div className="ml-auto flex px-1">
