@@ -30,7 +30,7 @@ const LeftSideBar = () => {
       <section
         className={`${
           toggleSideBar ? "slide-in-sidebar" : ""
-        } background-light900_dark200 custom-scrollbar ibm-text-black fixed left-0 top-[50px] z-50 flex h-[95vh] w-[280px] flex-col justify-between overflow-y-auto font-ibmPlexSans shadow-light-300  max-2xl:w-[200px]`}
+        } custom-scrollbar ibm-text-black fixed left-0 top-[50px] z-50 flex h-[95vh] w-[280px] flex-col justify-between overflow-y-auto bg-[#fff] font-ibmPlexSans shadow-light-300  max-2xl:w-[200px]`}
       >
         <nav
           className={`absolute top-[1px] flex w-[280px] flex-1 flex-col scroll-auto ease-in max-2xl:w-[200px]`}
@@ -48,7 +48,7 @@ const LeftSideBar = () => {
                   isActive
                     ? "border-l-[5px] border-l-[#0f62fe] bg-[#e0e0e0] font-bold"
                     : "hover:border-2  hover:bg-[rgb(244,244,244)] visited:hover:bg-[#f4f4f4] active:bg-[#e0e0e0]"
-                } ibm-text-black flex h-[49px] w-[280px] items-center justify-start border-2 border-transparent p-4 font-ibmPlexSans text-[1rem] no-underline transition-all ease-in hover:border-[#0f62fe] max-2xl:w-[200px]`}
+                } ibm-text-black flex h-[49px] w-[280px] items-center justify-start border-2 border-transparent p-4 font-ibmPlexSans text-[1rem] no-underline transition-all ease-in  max-2xl:w-[200px]`}
               >
                 <div className="flex min-w-[30px] justify-start">
                   <Image
@@ -93,8 +93,9 @@ const LeftSideBar = () => {
                   collapsible
                   title={item.label}
                 >
-                  <AccordionItem value="h-full item-1">
-                    <AccordionTrigger className="h-[49px] border-2 border-transparent p-4 font-ibmPlexSans text-[1rem] transition-all ease-in hover:border-2 hover:border-[#0f62fe] hover:bg-[#f4f4f4] visited:hover:bg-[#f4f4f4] active:bg-[#e0e0e0] max-2xl:text-[0.8rem]">
+                  <AccordionItem  
+                  value="h-full item-1">
+                    <AccordionTrigger className="active:border-[#0f62fe]max-2xl:text-[0.8rem] h-[49px] border-2 border-transparent p-4 font-ibmPlexSans text-[1rem] transition-all ease-in hover:border-2 hover:border-[#0f62fe] hover:bg-[#f4f4f4] visited:hover:bg-[#f4f4f4]">
                       <div className="flex h-[49px] min-w-[30px] justify-start">
                         <Image
                           src={item.imgURL}
@@ -125,7 +126,7 @@ const LeftSideBar = () => {
                               isActive || pathname.includes(subRoute)
                                 ? "border-l-[5px] border-l-[#0f62fe] bg-[#e0e0e0] font-bold"
                                 : "hover:border-2  hover:bg-[rgb(244,244,244)] visited:hover:bg-[#f4f4f4] active:bg-[#e0e0e0]"
-                            } text-[0.9rem]max-2xl:text-[0.8rem] flex h-[49px] items-center justify-start border-2 border-transparent px-4 transition-all ease-in hover:border-[#0f62fe]`}
+                            } text-[0.9rem]max-2xl:text-[0.8rem] flex h-[49px] items-center justify-start border-2 border-transparent px-4 transition-all ease-in`}
                           >
                             <p
                               className={`${
