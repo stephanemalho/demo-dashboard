@@ -18,10 +18,10 @@ const Navbar = () => {
   const { handleClick, toggleSideBar } = useSidebar(); // sideBar Context
 
   return (
-    <nav className="fixed z-10 flex h-[50px] w-full border-b-[1px] border-[#000] bg-[#000]  shadow-light-300 ">
+    <nav className="fixed z-10 flex h-[50px] w-full border-b-[1px] border-[#262626] bg-[#000]  shadow-light-300 ">
       <SignedIn>
         <div
-          className="flex h-[49px] w-[50px] cursor-pointer justify-center hover:bg-[rgb(38,38,38)] active:border-[2px] active:border-[#fff]"
+          className="flex h-[49px] w-[50px] cursor-pointer justify-center hover:bg-[#262626] active:border-[2px] active:border-[#fff]"
           onClick={handleClick}
         >
           {toggleSideBar ? (
