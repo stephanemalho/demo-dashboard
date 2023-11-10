@@ -14,10 +14,9 @@ const DeleteButton = ({id, onDelete} : Props ) => {
   };
 
   return (
-    <div>
+    <div className="flex flex-row " onClick={handleClick} >
       <button
-        className="flex h-[15px] items-center rounded-full border p-1.5 text-xs hover:bg-red-200 max-2xl:text-[6px]"
-        onClick={handleClick}
+        className="flex h-[15px] items-center py-1.5 text-xs max-2xl:text-[6px] "
       >
         <Image
           src="assets/icons/trash.svg"
@@ -26,6 +25,7 @@ const DeleteButton = ({id, onDelete} : Props ) => {
           height={10}
         />
       </button>
+        <span className="ml-2">Delete this line</span>
     </div>
   );
 };
