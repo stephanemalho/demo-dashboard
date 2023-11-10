@@ -30,7 +30,7 @@ const LeftSideBar = () => {
       <section
         className={`${
           toggleSideBar ? "slide-in-sidebar" : ""
-        } custom-scrollbar ibm-text-black fixed left-0 top-[50px] z-50 flex h-[95vh] w-[300px] flex-col justify-between overflow-y-auto bg-[#000] font-ibmPlexSans shadow-light-300  max-2xl:w-[210px]`}
+        } custom-scrollbar ibm-text-black fixed left-0 top-[50px] z-50 flex h-[95vh] w-[300px] flex-col justify-between overflow-y-auto bg-[#000] font-ibmPlexSans shadow-light-300 max-2xl:w-[210px]`}
       >
         <nav
           className={`absolute top-[1px] m-1 flex w-[280px] flex-1 flex-col scroll-auto bg-[#262626] ease-in max-2xl:w-[200px]`}
@@ -46,9 +46,9 @@ const LeftSideBar = () => {
                 href={item.route || "/"}
                 className={`${
                   isActive
-                    ? "border-l-[5px] border-l-[#0f62fe] bg-[#262626] font-bold"
-                    : "hover:border-2  hover:bg-[#262626] visited:hover:bg-[#262626] active:bg-[#e0e0e0]"
-                } ibm-text-black flex h-[49px] w-[280px] items-center justify-start border-2 border-transparent border-b-[#000] p-4 font-ibmPlexSans text-[1rem] text-[#fff] no-underline transition-all ease-in  max-2xl:w-[200px]`}
+                    ? "border-l-[5px] border-l-[#0f62fe] bg-[#262626] font-bold hover:bg-[#393939]"
+                    : "hover:border-2  hover:bg-[#393939] visited:hover:bg-[#393939] active:bg-[#393939]"
+                } ibm-text-black flex h-[49px] w-[280px] items-center justify-start border-2 border-transparent border-b-[#000] p-4 font-ibmPlexSans text-[1rem] text-[#fff] no-underline transition-all ease-in max-2xl:w-[200px]`}
               >
                 <div className="flex min-w-[30px] justify-start">
                   <Image
@@ -125,7 +125,7 @@ const LeftSideBar = () => {
                             className={`${
                               isActive || pathname.includes(subRoute)
                                 ? "border-l-[5px] border-l-[#0f62fe] bg-[#393939] font-bold"
-                                : "hover:border-2  hover:bg-[rgb(244,244,244)] visited:hover:bg-[#393939] active:bg-[#393939]"
+                                : "hover:border-2  hover:bg-[#393939] visited:hover:bg-[#393939] active:bg-[#393939]"
                             } flex h-[49px] items-center justify-start border-2 border-transparent px-4 text-[0.9rem] text-[#fff] transition-all ease-in max-2xl:text-[0.8rem]`}
                           >
                             <p
@@ -146,8 +146,8 @@ const LeftSideBar = () => {
                           href={item.route || "/"}
                           className={`${
                             isActive
-                              ? "border-l-[5px] border-l-[#0f62fe] bg-[#e0e0e0] font-bold"
-                              : "hover:border-2  hover:bg-[rgb(244,244,244)] visited:hover:bg-[#f4f4f4] active:bg-[#e0e0e0]"
+                              ? "border-l-[5px] border-l-[#0f62fe] bg-[#262626] font-bold"
+                              : "hover:border-2  hover:bg-[#393939] visited:hover:bg-[#393939] active:bg-[#393939]"
                           } text-[0.9rem]max-2xl:text-[0.8rem] flex h-[49px] items-center justify-start border-2 border-transparent px-4 transition-all ease-in hover:border-[#0f62fe]`}
                         >
                           <p
