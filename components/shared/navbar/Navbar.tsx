@@ -45,7 +45,7 @@ const Navbar = () => {
       <div className="flex h-[49px] w-[119px] border-[2px] border-[#000] hover:bg-[#262626] active:border-[2px] active:border-[#fff]">
         <Link href="/" className="flex w-full items-center gap-2">
           <span className="ml-3  text-white">IBM</span>
-          <h2 className="mr-2 w-full border-r-[1px] border-grey-border font-bold  text-white">
+          <h2 className="mr-2 w-full border-r-[1px] border-[#393939] font-bold  text-white">
             X-Care
           </h2>
         </Link>
@@ -72,11 +72,13 @@ const Navbar = () => {
                   className="invert-colors"
                 />
               </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem>
+              <DropdownMenuContent
+                className=" w-[150px] bg-[#000] p-1"
+              >
+                <DropdownMenuItem className="border-none">
                   <Link href="/sign-in">
-                    <Button className="h-[49px] w-full rounded-none border-[1px] border-slate-900 bg-white hover:bg-[#262626]">
-                      <span className="font-semibold text-[#0f62fe]">
+                    <Button className="h-[49px] w-full rounded-none border-[1px] border-slate-900 bg-[#0f62fE] hover:bg-[#78a9ff] active:bg-[#0043ce]">
+                      <span className="font-semibold text-[#fff] ">
                         Log In
                       </span>
                     </Button>
@@ -84,7 +86,7 @@ const Navbar = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <Link href="/sign-up">
-                    <Button className="h-[49px] w-[120px] rounded-none border-0 border-transparent bg-[#303030] hover:bg-[#353535]">
+                    <Button className="h-[49px] w-full rounded-none bg-[#303030] outline-none hover:bg-[#353535]">
                       <span className="font-semibold text-[#fff]">Sign-up</span>
                     </Button>
                   </Link>
