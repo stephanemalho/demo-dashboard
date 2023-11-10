@@ -16,7 +16,7 @@ const Logs = () => {
         <TableBody className="code-font ">
           {Object.keys(logs).map((logKey) => {
             const logEntry = logs[logKey as unknown as keyof typeof logs];
-            const formattedTimestamp = moment(logEntry.TimeStamp).format(' h:mm:ss a, MMMM Do YYYY');
+            const formattedTimestamp = moment(logEntry.TimeStamp).format('h:mm:ss a, MMMM');
 
             return (
               <TableRow key={logKey} className=" py-0 hover:bg-slate-200">
@@ -25,7 +25,7 @@ const Logs = () => {
                 </TableCell>
                 <TableCell title="SessionID">{logEntry.SessionID}</TableCell>
                 <TableCell title="Level">{logEntry.Level}</TableCell>
-                <TableCell className="w-[110px] truncate" title="TimeStamp">{formattedTimestamp}</TableCell>
+                <TableCell className="max-w-[80px] truncate" title="TimeStamp">{formattedTimestamp}</TableCell>
                 <TableCell title="Logger">{logEntry.Logger}</TableCell>
                 <TableCell  className="w-[50%] truncate" title="Message">{logEntry.Message}</TableCell>
               </TableRow>
