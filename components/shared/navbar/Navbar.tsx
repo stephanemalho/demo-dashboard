@@ -69,6 +69,7 @@ const Navbar = () => {
                   alt={"menu"}
                   width={20}
                   height={20}
+                  className="invert-colors"
                 />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
