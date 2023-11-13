@@ -63,7 +63,7 @@ const Navbar = () => {
             onClick={handleClick}
           >
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex h-full w-full items-center justify-center rounded-none focus:border-none ">
+              <DropdownMenuTrigger className="flex h-full w-full items-center justify-center rounded-none focus:border-none focus:outline-none">
                 <Image
                   src={"/assets/icons/user.svg"}
                   alt={"menu"}
@@ -73,20 +73,20 @@ const Navbar = () => {
                 />
               </DropdownMenuTrigger>
               <DropdownMenuContent
-                className=" w-[150px] bg-[#000] p-1"
+                className=" mt-[5px] w-[220px] border-none bg-[#000] p-1  focus:outline-none"
               >
-                <DropdownMenuItem className="border-none">
+                <DropdownMenuItem className="mb-1 border-none focus:outline-none">
                   <Link href="/sign-in">
-                    <Button className="h-[49px] w-full rounded-none border-[1px] border-slate-900 bg-[#0f62fE] hover:bg-[#78a9ff] active:bg-[#0043ce]">
+                    <Button className="h-[39px] w-full rounded-none  bg-[#0f62fE] hover:bg-[#78a9ff] active:bg-[#0043ce]">
                       <span className="font-semibold text-[#fff] ">
                         Log In
                       </span>
                     </Button>
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem>
+                <DropdownMenuItem  className=" focus:outline-none">
                   <Link href="/sign-up">
-                    <Button className="h-[49px] w-full rounded-none bg-[#303030] outline-none hover:bg-[#353535]">
+                    <Button className="h-[39px] w-full rounded-none bg-[#303030] outline-none hover:bg-[#474646]">
                       <span className="font-semibold text-[#fff]">Sign-up</span>
                     </Button>
                   </Link>
