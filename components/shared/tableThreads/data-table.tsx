@@ -69,43 +69,43 @@ export function DataTable<TData, TValue>({
     <div className="flex flex-col">
       <div className="flex h-[25px] w-full ">
         <div className="ml-auto flex w-[140px] flex-row">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => exportTableToExcel(data)}
-          className="ml-auto flex h-[25px] w-[70px] truncate rounded-none bg-[#0f62fe] text-[10px] font-bold text-[#fff] hover:bg-[#4589ff] active:bg-[#0043ce]  max-2xl:text-[8px]"
-        >
-          Export table
-        </Button>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild  className="ml-auto">
-            <Button
-              variant="outline"
-              className="h-[25px] w-[70px] truncate rounded-none bg-[#f4f4f4] text-[10px] font-bold hover:bg-[#e2e2e2] max-2xl:text-[8px]"
-            >
-              Columns
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            {table
-              .getAllColumns()
-              .filter((column) => column.getCanHide())
-              .map((column) => {
-                return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="cursor-pointer bg-[#f4f4f4] capitalize"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
-                  >
-                    {column.id}
-                  </DropdownMenuCheckboxItem>
-                );
-              })}
-          </DropdownMenuContent>
-        </DropdownMenu>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => exportTableToExcel(data)}
+            className="ml-auto flex h-[25px] w-[70px] truncate rounded-none bg-[#0f62fe] text-[10px] font-bold text-[#fff] hover:bg-[#4589ff] active:bg-[#0043ce]  max-2xl:text-[8px]"
+          >
+            Export table
+          </Button>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild className="ml-auto">
+              <Button
+                variant="outline"
+                className="h-[25px] w-[70px] truncate rounded-none bg-[#f4f4f4] text-[10px] font-bold hover:bg-[#e2e2e2] max-2xl:text-[8px]"
+              >
+                Columns
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              {table
+                .getAllColumns()
+                .filter((column) => column.getCanHide())
+                .map((column) => {
+                  return (
+                    <DropdownMenuCheckboxItem
+                      key={column.id}
+                      className="cursor-pointer bg-[#f4f4f4] capitalize"
+                      checked={column.getIsVisible()}
+                      onCheckedChange={(value) =>
+                        column.toggleVisibility(!!value)
+                      }
+                    >
+                      {column.id}
+                    </DropdownMenuCheckboxItem>
+                  );
+                })}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
       <div>
@@ -146,10 +146,11 @@ export function DataTable<TData, TValue>({
                       key={cell.id}
                       className="h-[8px]  w-[100px] max-w-[400px] truncate text-[10px] max-2xl:h-[6px] max-2xl:text-[11px]"
                     >
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
+                      {cell.column &&
+                        flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext()
+                        )}
                     </TableCell>
                   ))}
                 </TableRow>
