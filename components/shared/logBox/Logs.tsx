@@ -19,7 +19,7 @@ const Logs = () => {
             const formattedTimestamp = moment(logEntry.TimeStamp).format('h:mm:ss a, MMMM');
 
             return (
-              <TableRow key={logKey} className=" py-0 hover:bg-slate-200">
+              <TableRow key={logKey} className=" py-0 hover:bg-[#E0E0E1]">
                 <TableCell className="font-medium" title="ThreadId">
                   {logEntry.ThreadID}
                 </TableCell>
