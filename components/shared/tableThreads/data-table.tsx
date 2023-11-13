@@ -29,6 +29,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { exportTableToExcel } from "@/utils/formatTable";
+import { toLowerCaseText } from "@/utils/formatText";
 
 export interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -110,7 +111,7 @@ export function DataTable<TData, TValue>({
       </div>
       <div>
         <Table className="bg-[#f4f4f4] ">
-          <TableHeader className="bg-[#E0E0E1] text-[12px] max-2xl:text-[12px]">
+          <TableHeader className=" bg-[#E0E0E1] text-[12px] max-2xl:text-[12px]">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
@@ -144,13 +145,18 @@ export function DataTable<TData, TValue>({
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className="h-[8px]  w-[100px] max-w-[400px] truncate text-[10px] max-2xl:h-[6px] max-2xl:text-[11px]"
+                      className="h-[6px] w-[100px] max-w-[400px] truncate text-[10px] max-2xl:h-[6px] max-2xl:text-[11px]"
                     >
-                      {cell.column &&
-                        flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext()
-                        )}
+                      {cell.column.id !== "state" &&
+                      typeof cell.getValue() === "string"
+                        ? flexRender(
+                            toLowerCaseText(cell.getValue() as string),
+                            cell.getContext()
+                          )
+                        : flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext()
+                          )}
                     </TableCell>
                   ))}
                 </TableRow>

@@ -32,13 +32,13 @@ export const columns: ColumnDef<Threads>[] = [
   {
     accessorKey: "function",
     header: ({ column }) => {
-      return <FilterBouton column={column} label={"Function"} />;
+      return <FilterBouton minSize="min-w-[300px]" column={column} label={"Function"} />;
     },
   },
   {
     accessorKey: "state",
     header: ({ column }) => {
-      return <FilterBouton column={column} label={"State"} />;
+      return <FilterBouton minSize="min-w-[100px]" column={column} label={"State"} />;
     },
     cell: ({ row }) => {
       const state = row.original.state;
@@ -63,32 +63,32 @@ export const columns: ColumnDef<Threads>[] = [
   {
     accessorKey: "user",
     header: ({ column }) => {
-      return <FilterBouton column={column} label={"User"} />;
+      return <FilterBouton minSize="min-w-[100px]" column={column} label={"User"} />;
     },
   },
   {
     accessorKey: "type",
     header: ({ column }) => {
-      return <FilterBouton column={column} label={"Type"} />;
+      return <FilterBouton minSize="min-w-[100px]" column={column} label={"Type"} />;
     },
   },
   {
     accessorKey: "context",
     header: ({ column }) => {
-      return <FilterBouton column={column} label={"Context"} />;
+      return <FilterBouton minSize="min-w-[100px]" column={column} label={"Context"} />;
     },
   },
   {
     accessorKey: "waitTime",
     header: ({ column }) => {
-      return <FilterBouton column={column} label={"Wait Time"} />;
+      return <FilterBouton minSize="min-w-[100px]" column={column} label={"Wait Time"} />;
     },
   },
   {
     accessorKey: "elapsedTime",
 
     header: ({ column }) => {
-      return <FilterBouton column={column} label={"Elapsed Time"} />;
+      return <FilterBouton minSize="min-w-[100px]" column={column} label={"Elapsed Time"} />;
     },
   },
   // {

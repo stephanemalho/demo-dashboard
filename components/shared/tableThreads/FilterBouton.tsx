@@ -14,9 +14,10 @@ import IconInfo from "@/components/IconInfo";
 interface Props {
   column: any;
   label: string;
+  minSize?: string;
 }
 
-const FilterBouton = ({ column, label }: Props) => {
+const FilterBouton = ({ column, label, minSize }: Props) => {
   const [clickCount, setClickCount] = useState(0);
   const [clickCountUpDown, setClickCountUpDown] = useState(0);
   const [clickCountDownUp, setClickCountDownUp] = useState(0);
@@ -28,7 +29,7 @@ const FilterBouton = ({ column, label }: Props) => {
       <DropdownMenuTrigger asChild>
         <Button
           variant="outline"
-          className="flex h-[20px] w-full cursor-pointer justify-start truncate rounded-none border-none  bg-[#e2e2e2] pl-[7px]  font-ibmPlexSans text-[12px] hover:bg-[#f2f2f2] active:text-light-500 max-2xl:text-[12px]"
+          className={`${minSize} flex h-[20px] w-full cursor-pointer justify-start truncate rounded-none border-none  bg-[#e2e2e2] pl-[7px]  font-ibmPlexSans text-[12px] hover:bg-[#f2f2f2] active:text-light-500 max-2xl:text-[12px]`}
         >
           {label}
         </Button>
