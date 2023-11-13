@@ -18,7 +18,11 @@ interface Props {
 
 const FilterBouton = ({ column, label }: Props) => {
   const [clickCount, setClickCount] = useState(0);
+  const [clickCountUpDown , setClickCountUpDown] = useState(0);
+  const [clickCountDownUp , setClickCountDownUp] = useState(0);
   const icons = [ArrowUpDown, ArrowUp, ArrowDown];
+  const iconUpDown = [ArrowDown, ArrowUp];
+  const iconDownUp = [ArrowUp, ArrowDown]
   return (
     
     <DropdownMenu>
@@ -32,7 +36,7 @@ const FilterBouton = ({ column, label }: Props) => {
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="end"
-        className="flex h-[110px] w-full flex-col border-[1px] border-[#a8a8a8] bg-[#edf4ff]"
+        className="flex h-auto w-full flex-col border-[1px] border-[#a8a8a8] bg-[#edf4ff]"
       >
         <div className="flex">
         <IconInfo title="Filter by columns" />
@@ -41,14 +45,38 @@ const FilterBouton = ({ column, label }: Props) => {
         <div className="relative mt-auto flex h-[70%] flex-col justify-end bg-[#e2e2e2] ">
         <Button
           variant="ghost"
+          onClick={() =>  {
+            setClickCountUpDown((prevClickCount) => (prevClickCount + 1) % 2);
+            column.toggleSorting(column.getIsSorted() === "asc")}}
+          className="mb-1 flex h-[40px] justify-start rounded-none pl-2 text-left text-[12px] font-bold text-[#000] hover:bg-[#c6c6c6] active:bg-[#a8a8a8]"
+        >
+          Filter asc{" "}
+          {React.createElement(iconUpDown[clickCountUpDown], {
+            className: "ml-2 h-3 w-3",
+          })}
+        </Button>
+        <Button
+          variant="ghost"
+          onClick={() => {
+            setClickCountDownUp((prevClickCount) => (prevClickCount + 1) % 2);
+            column.toggleSorting(column.getIsSorted())}}
+          className="mb-1 flex h-[40px] justify-start rounded-none pl-2 text-left text-[12px] font-bold text-[#000] hover:bg-[#c6c6c6] active:bg-[#a8a8a8]"
+        >
+          Filter desc{" "}
+          {React.createElement(iconDownUp[clickCountDownUp], {
+            className: "ml-2 h-3 w-3",
+          })}
+        </Button>
+        <Button
+          variant="ghost"
           onClick={() => {
             // Incrémentez le compteur de clics
             setClickCount((prevClickCount) => (prevClickCount + 1) % 3);
             column.toggleSorting();
           }}
-          className="mb-1 mt-auto flex h-[40px] justify-center rounded-none p-0 text-[12px] font-bold text-[#000] hover:bg-[#c6c6c6] active:bg-[#a8a8a8]"
+          className="mb-1 flex h-[40px] justify-start rounded-none pl-2 text-left text-[12px] font-bold text-[#000] hover:bg-[#c6c6c6] active:bg-[#a8a8a8]"
         >
-          Filter asc{" "}
+          Filter all{" "}
           {React.createElement(icons[clickCount], {
             className: "ml-2 h-3 w-3",
           })}

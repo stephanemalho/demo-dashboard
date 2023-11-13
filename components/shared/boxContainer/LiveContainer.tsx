@@ -20,13 +20,13 @@ const LiveContainer = ({ children, logHeight, title, label }: BoxLogsProps) => {
   // variables
   const containerClasses = `w-full ${
     isFullscreen === title
-      ? " z-10 fixed top-50px left-0 right-0 h-[100vh] w-[100vw]"
+      ? "z-10 fixed top-50px left-0 right-0 h-[100vh] w-[100vw]"
       : ""
   }`;
   // TSX
   return (
     <div className={containerClasses}>
-      <div className="base-bold flex  h-[auto] items-center border-b-[1px] border-[#f2f2f2] bg-[#edf4ff] text-[12px] max-2xl:text-[8px]">
+      <div className="base-bold flex  h-[auto] items-center border-b-[1px] border-[#f2f2f2] bg-[#82CF8A] text-[12px] max-2xl:text-[8px]">
         <IconInfo title={title} />
         {label}
         <div className="ml-auto flex px-1">
@@ -37,7 +37,7 @@ const LiveContainer = ({ children, logHeight, title, label }: BoxLogsProps) => {
       <div
         className={`custom-scrollbar ${
           isFullscreen === title ? `h-[90vh] max-2xl:h-[84vh]` : `h-[30vh] ${logHeight}`
-        }  overflow-y-auto bg-[#fff] p-1`}
+        }  overflow-y-auto bg-[#f2f2f2] p-1`}
       >
         {children}
       </div>

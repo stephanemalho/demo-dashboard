@@ -110,14 +110,14 @@ export function DataTable<TData, TValue>({
       </div>
       <div>
         <Table className="bg-[#f4f4f4] ">
-          <TableHeader className="bg-[#e2e2e2] text-[12px] max-2xl:text-[12px]">
+          <TableHeader className="bg-[#E0E0E1] text-[12px] max-2xl:text-[12px]">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead
                       key={header.id}
-                      className="h-[10px]  text-left hover:bg-[#e2e2e2] max-2xl:h-[7px]"
+                      className="h-[10px] bg-[#E0E0E1] text-left hover:bg-[#e2e2e2] max-2xl:h-[7px]"
                     >
                       {header.isPlaceholder
                         ? null
@@ -137,8 +137,8 @@ export function DataTable<TData, TValue>({
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
-                  className={`hover:bg-slate-200 ${
-                    index % 2 === 1 ? "bg-[f4f4f4]" : "bg-[#fff]"
+                  className={`hover:bg-[#e0e0e0] ${
+                    index % 2 === 1 ? "bg-[#f3f3f3]" : "bg-[#fff]"
                   }`}
                 >
                   {row.getVisibleCells().map((cell) => (
