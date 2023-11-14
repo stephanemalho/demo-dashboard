@@ -15,7 +15,7 @@ import {
 import ThreadsInfo from "../threadsInfo/ThreadsInfo";
 
 const Navbar = () => {
-  const { handleClick, toggleSideBar } = useSidebar(); // sideBar Context
+  const { handleClick, toggleSideBar, handleClickRightSideBar, toggleRightSideBar } = useSidebar(); // sideBar Context
 
   return (
     <nav className="fixed z-10 flex h-[50px] w-full border-b-[1px] border-[#262626] bg-[#000]  shadow-light-300 ">
@@ -111,13 +111,22 @@ const Navbar = () => {
               }}
             />
           </div>
-          <div className="flex h-[49px] w-[50px] cursor-pointer justify-center hover:bg-[#262626] active:border-[2px] active:border-[#fff]">
+          <div onClick={handleClickRightSideBar} className="flex h-[49px] w-[50px] cursor-pointer justify-center hover:bg-[#262626] active:border-[2px] active:border-[#fff]">
+            {toggleRightSideBar ? (
             <Image
-              src={"/assets/icons/menu-left.svg"}
+              src={"/assets/icons/close.svg"}
               alt={"menu"}
-              width={20}
-              height={20}
+              width={22}
+              height={22}
             />
+          ) : (
+            <Image
+            src={"/assets/icons/menu-left.svg"}
+            alt={"menu"}
+            width={20}
+            height={20}
+          />
+          )}
           </div>
         </SignedIn>
       </div>

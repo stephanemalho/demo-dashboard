@@ -5,6 +5,9 @@ interface SideBarContextProps {
   toggleSideBar: boolean;
   setToggleSideBar: (toggleSideBar: boolean) => void;
   handleClick: () => void;
+  toggleRightSideBar: boolean;
+  setToggleRightSideBar: (toggleRightSideBar: boolean) => void;
+  handleClickRightSideBar: () => void;
 }
 
 export const SideBarContext = createContext<SideBarContextProps | undefined>(
@@ -13,12 +16,21 @@ export const SideBarContext = createContext<SideBarContextProps | undefined>(
 
 export function SidebarProvider({ children }: { children: React.ReactNode }) {
   const [toggleSideBar, setToggleSideBar] = useState(false);
+  const [toggleRightSideBar, setToggleRightSideBar] = useState(false);
 
   const handleClick = () => {
     if (toggleSideBar) {
       setToggleSideBar(false);
     } else {
       setToggleSideBar(true);
+    }
+  };
+
+  const handleClickRightSideBar = () => {
+    if (toggleRightSideBar) {
+      setToggleRightSideBar(false);
+    } else {
+      setToggleRightSideBar(true);
     }
   };
 
@@ -29,6 +41,9 @@ export function SidebarProvider({ children }: { children: React.ReactNode }) {
         toggleSideBar,
         setToggleSideBar,
         handleClick,
+        toggleRightSideBar,
+        setToggleRightSideBar,
+        handleClickRightSideBar,
       }}
     >
       {children}

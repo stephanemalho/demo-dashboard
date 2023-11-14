@@ -198,16 +198,17 @@ code {
   }
 }
 
-.slide-out-sidebar {
+.slide-in-rightSidebar {
   animation: slideOutSidebar 400ms ease-in-out;
 }
 
 @keyframes slideOutSidebar {
   0% {
-    transform: translateX(0);
+    transform: translateX(+100%);
   }
 
   100% {
-    transform: translateX(-100%);
+    transform: translateX(0%);
   }
 }
+
