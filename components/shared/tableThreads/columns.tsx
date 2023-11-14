@@ -1,7 +1,6 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-import { MoreHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -15,6 +14,7 @@ import {
 import DeleteButton from "../deleteBtn/DeleteButton";
 import { Badge } from "@/components/ui/badge";
 import FilterBouton from "./FilterBouton";
+import Image from "next/image";
 
 // shape of data.
 export type Threads = {
@@ -32,13 +32,21 @@ export const columns: ColumnDef<Threads>[] = [
   {
     accessorKey: "function",
     header: ({ column }) => {
-      return <FilterBouton minSize="min-w-[300px]" column={column} label={"Function"} />;
+      return (
+        <FilterBouton
+          minSize="min-w-[300px]"
+          column={column}
+          label={"Function"}
+        />
+      );
     },
   },
   {
     accessorKey: "state",
     header: ({ column }) => {
-      return <FilterBouton minSize="min-w-[100px]" column={column} label={"State"} />;
+      return (
+        <FilterBouton minSize="min-w-[100px]" column={column} label={"State"} />
+      );
     },
     cell: ({ row }) => {
       const state = row.original.state;
@@ -63,32 +71,54 @@ export const columns: ColumnDef<Threads>[] = [
   {
     accessorKey: "user",
     header: ({ column }) => {
-      return <FilterBouton minSize="min-w-[100px]" column={column} label={"User"} />;
+      return (
+        <FilterBouton minSize="min-w-[100px]" column={column} label={"User"} />
+      );
     },
   },
   {
     accessorKey: "type",
     header: ({ column }) => {
-      return <FilterBouton minSize="min-w-[100px]" column={column} label={"Type"} />;
+      return (
+        <FilterBouton minSize="min-w-[100px]" column={column} label={"Type"} />
+      );
     },
   },
   {
     accessorKey: "context",
     header: ({ column }) => {
-      return <FilterBouton minSize="min-w-[100px]" column={column} label={"Context"} />;
+      return (
+        <FilterBouton
+          minSize="min-w-[100px]"
+          column={column}
+          label={"Context"}
+        />
+      );
     },
   },
   {
     accessorKey: "waitTime",
     header: ({ column }) => {
-      return <FilterBouton minSize="min-w-[100px]" column={column} label={"Wait Time"} />;
+      return (
+        <FilterBouton
+          minSize="min-w-[100px]"
+          column={column}
+          label={"Wait Time"}
+        />
+      );
     },
   },
   {
     accessorKey: "elapsedTime",
 
     header: ({ column }) => {
-      return <FilterBouton minSize="min-w-[100px]" column={column} label={"Elapsed Time"} />;
+      return (
+        <FilterBouton
+          minSize="min-w-[100px]"
+          column={column}
+          label={"Elapsed Time"}
+        />
+      );
     },
   },
   // {
@@ -115,7 +145,7 @@ export const columns: ColumnDef<Threads>[] = [
   //   },
   // },
   {
-    accessorKey: "More actions",
+    accessorKey: "Delete",
     cell: ({ row }) => {
       return (
         <DropdownMenu>
@@ -126,7 +156,13 @@ export const columns: ColumnDef<Threads>[] = [
               className="flex h-8 w-8 truncate p-0 text-[0.6rem] max-2xl:h-[5px]"
             >
               <span className="sr-only">Open menu</span>
-              <MoreHorizontal className="h-4 w-4" />
+              <Image
+                src="assets/icons/trash.svg"
+                alt="trash"
+                width={10}
+                height={10}
+                className="fill-[#da1e28]"
+              />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent
@@ -134,7 +170,7 @@ export const columns: ColumnDef<Threads>[] = [
             className="background-light800_dark400 capitalize dark:text-white"
           >
             <DropdownMenuLabel className="text-[10px]">
-              More actions
+              Delete:
             </DropdownMenuLabel>
             <DropdownMenuItem className="cursor-pointer bg-[#da1e28] text-[10px] text-white hover:bg-[#ba1b23] active:bg-[#750e13]">
               {/* <AiFillFileExcel className="mr-1 fill-lime-700" /> */}
@@ -153,7 +189,6 @@ export const columns: ColumnDef<Threads>[] = [
                   }
                 }
               />
-              
             </DropdownMenuItem>
             <DropdownMenuSeparator />
           </DropdownMenuContent>
