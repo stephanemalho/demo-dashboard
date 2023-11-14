@@ -87,10 +87,10 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
           </Button>
           <div className="mx-[3px] h-[40px]">
             <Input
-              placeholder="Filter Function..."
+              placeholder={`Filter ${label}`}
               value={(column.getFilterValue() as string | undefined) ?? ""}
               onChange={(event) => column.setFilterValue(event.target.value)}
-              className="m-1 h-[30px] w-[96%] max-w-sm rounded-none border-none text-sm max-2xl:text-[12px]"
+              className="m-1 h-[30px] w-[96%] max-w-sm truncate rounded-none border-none text-sm max-2xl:text-[12px]"
             />
             <div
               onClick={() => column.setFilterValue("")}
