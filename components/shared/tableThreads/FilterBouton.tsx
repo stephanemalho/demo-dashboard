@@ -29,7 +29,7 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
       <DropdownMenuTrigger asChild>
         <Button
           variant="outline"
-          className={`${minSize} flex h-[20px] w-full cursor-pointer justify-start truncate rounded-none border-none  bg-[#e2e2e2] pl-[7px]  font-ibmPlexSans text-[12px] hover:bg-[#f2f2f2] active:text-light-500 max-2xl:text-[12px]`}
+          className={`${minSize} flex h-[20px] w-full cursor-pointer justify-start truncate rounded-none border-none  bg-[#e2e2e2] pl-[7px]  font-regular text-[12px] hover:bg-[#f2f2f2] active:text-light-500 max-2xl:text-[12px]`}
         >
           {label}
         </Button>
@@ -40,7 +40,7 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
       >
         <div className="flex">
           <IconInfo title="Filter by columns" />
-          <h4 className="mr-auto flex items-center pl-2 text-center font-bold">
+          <h4 className="mr-auto flex items-center text-center font-bold">
             Filter by colomns
           </h4>
         </div>
@@ -51,7 +51,7 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
               setClickCountUpDown((prevClickCount) => (prevClickCount + 1) % 2);
               column.toggleSorting(column.getIsSorted() === "asc");
             }}
-            className="mx-2 my-1 flex h-[40px] justify-start rounded-none border-[1px] border-[#fff] pl-2 text-left text-[12px] font-bold text-[#000] hover:bg-[#c6c6c6] active:bg-[#a8a8a8]"
+            className="mx-2 my-1 flex h-[40px] justify-start rounded-none border-[1px] border-[#fff] pl-2 text-left font-regular text-[12px] text-[#000] hover:bg-[#c6c6c6] active:bg-[#a8a8a8]"
           >
             Filter asc{" "}
             {React.createElement(iconUpDown[clickCountUpDown], {
@@ -64,7 +64,7 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
               setClickCountDownUp((prevClickCount) => (prevClickCount + 1) % 2);
               column.toggleSorting(column.getIsSorted() !== "desc");
             }}
-            className="mx-2 mb-1 flex h-[40px] justify-start rounded-none border-[1px] border-[#fff] pl-2 text-left text-[12px] font-bold text-[#000] hover:bg-[#c6c6c6] active:bg-[#a8a8a8]"
+            className="mx-2 mb-1 flex h-[40px] justify-start rounded-none border-[1px] border-[#fff] pl-2 text-left font-regular text-[12px] text-[#000] hover:bg-[#c6c6c6] active:bg-[#a8a8a8]"
           >
             Filter desc{" "}
             {React.createElement(iconDownUp[clickCountDownUp], {
@@ -78,7 +78,7 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
               setClickCount((prevClickCount) => (prevClickCount + 1) % 3);
               column.toggleSorting();
             }}
-            className="mx-2 flex h-[40px] justify-start rounded-none border-[1px] border-[#fff] pl-2 text-left text-[12px] font-bold text-[#000] hover:bg-[#c6c6c6] active:bg-[#a8a8a8]"
+            className="mx-2 flex h-[40px] justify-start rounded-none border-[1px] border-[#fff] pl-2 text-left font-regular text-[12px] text-[#000] hover:bg-[#c6c6c6] active:bg-[#a8a8a8]"
           >
             Filter all{" "}
             {React.createElement(icons[clickCount], {
@@ -90,11 +90,11 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
               placeholder={`Filter ${label}`}
               value={(column.getFilterValue() as string | undefined) ?? ""}
               onChange={(event) => column.setFilterValue(event.target.value)}
-              className="m-1 h-[30px] w-[96%] max-w-sm truncate rounded-none border-none text-sm max-2xl:text-[12px]"
+              className="m-1 h-[30px] w-[96%] max-w-sm truncate rounded-none border-none font-light text-sm placeholder:font-light placeholder:text-[10px] max-2xl:text-[12px]"
             />
             <div
               onClick={() => column.setFilterValue("")}
-              className="absolute bottom-[6px] right-[6px] flex h-[30px] w-[30px] items-center justify-center rounded-none p-0 text-center text-[12px] font-bold text-[#000] hover:bg-[#f4f4f4] active:bg-[#e0e0e0]"
+              className="absolute bottom-[6px] right-[6px] flex h-[30px] w-[30px] items-center justify-center rounded-none p-0 text-center font-bold text-[12px] text-[#000] hover:bg-[#f4f4f4] active:bg-[#e0e0e0]"
             >
               <AiOutlineClose size={14} />
             </div>

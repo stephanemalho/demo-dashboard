@@ -43,8 +43,7 @@ const Navbar = () => {
         </div>
       </SignedIn>
       <div className="flex h-[49px] w-[119px] border-[2px] border-[#000] hover:bg-[#262626] active:border-[2px] active:border-[#fff]">
-        <Link href="/" className="flex w-full items-center gap-2">
-          <span className="ml-3  text-white">IBM</span>
+        <Link href="/" className="flex w-full items-center gap-2 text-center">
           <h2 className="mr-2 w-full border-r-[1px] border-[#393939] font-bold  text-white">
             X-Care
           </h2>
@@ -94,7 +93,6 @@ const Navbar = () => {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-
         </SignedOut>
         {/* <Theme /> */}
         <SignedIn>

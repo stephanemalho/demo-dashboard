@@ -16,7 +16,7 @@ const MainInfo = ({ infoTitle, data }: MainInfoProps) => {
           {" "}
           {infoTitle}
         </p>
-        <p className="text-xs font-bold text-[#fff] max-2xl:text-[0.7rem]">
+        <p className="font-bold text-xs text-[#fff] max-2xl:text-[0.7rem]">
           {data}
         </p>
       </div>

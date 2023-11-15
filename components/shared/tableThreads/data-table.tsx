@@ -74,7 +74,7 @@ export function DataTable<TData, TValue>({
             variant="outline"
             size="sm"
             onClick={() => exportTableToExcel(data)}
-            className="ml-auto flex h-[25px] w-[70px] truncate rounded-none bg-[#0f62fe] text-[10px] font-bold text-[#fff] hover:bg-[#4589ff] active:bg-[#0043ce]  max-2xl:text-[8px]"
+            className="ml-auto flex h-[25px] w-[70px] truncate rounded-none bg-[#0f62fe] font-regular text-[10px] text-[#fff] hover:bg-[#4589ff] active:bg-[#0043ce]  max-2xl:text-[8px]"
           >
             Export table
           </Button>
@@ -82,7 +82,7 @@ export function DataTable<TData, TValue>({
             <DropdownMenuTrigger asChild className="ml-auto">
               <Button
                 variant="outline"
-                className="h-[25px] w-[70px] truncate rounded-none bg-[#f4f4f4] text-[10px] font-bold hover:bg-[#e2e2e2] max-2xl:text-[8px]"
+                className="h-[25px] w-[70px] truncate rounded-none bg-[#f4f4f4] font-bold text-[10px] hover:bg-[#e2e2e2] max-2xl:text-[8px]"
               >
                 Columns
               </Button>
@@ -95,7 +95,7 @@ export function DataTable<TData, TValue>({
                   return (
                     <DropdownMenuCheckboxItem
                       key={column.id}
-                      className="cursor-pointer bg-[#f4f4f4] capitalize"
+                      className="cursor-pointer bg-[#f4f4f4] text-[10px] capitalize"
                       checked={column.getIsVisible()}
                       onCheckedChange={(value) =>
                         column.toggleVisibility(!!value)

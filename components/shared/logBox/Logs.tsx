@@ -12,15 +12,15 @@ const Logs = () => {
   const logs = data.Logs;
 
   return (
-      <Table className="background-light800_dark400 text-[0.7rem] dark:border-slate-700 max-2xl:text-[0.5rem] ">
+      <Table className="text-[0.7rem] max-2xl:text-[0.5rem] ">
         <TableBody className="code-font ">
           {Object.keys(logs).map((logKey) => {
             const logEntry = logs[logKey as unknown as keyof typeof logs];
             const formattedTimestamp = moment(logEntry.TimeStamp).format('h:mm:ss a, MMMM');
 
             return (
-              <TableRow key={logKey} className=" py-0 hover:bg-[#E0E0E1]">
-                <TableCell className="font-medium" title="ThreadId">
+              <TableRow key={logKey} className="py-0 font-bold hover:bg-[#E0E0E1]">
+                <TableCell title="ThreadId">
                   {logEntry.ThreadID}
                 </TableCell>
                 <TableCell title="SessionID">{logEntry.SessionID}</TableCell>

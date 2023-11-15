@@ -26,7 +26,7 @@ const LiveContainer = ({ children, logHeight, title, label }: BoxLogsProps) => {
   // TSX
   return (
     <div className={containerClasses}>
-      <div className="base-bold flex  h-[auto] items-center border-b-[1px] border-[#f2f2f2] bg-[#63D1D4] text-[12px] max-2xl:text-[8px]">
+      <div className="base-bold flex h-[auto] items-center border-b-[1px] border-[#f2f2f2] bg-[#63D1D4] font-bold text-[12px] max-2xl:text-[8px]">
         <IconInfo title={title} />
         {label}
         <div className="ml-auto flex px-1">
