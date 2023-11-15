@@ -25,8 +25,8 @@ const LiveContainer = ({ children, logHeight, title, label }: BoxLogsProps) => {
   }`;
   // TSX
   return (
-    <div className={containerClasses}>
-      <div className="base-bold flex h-[auto] items-center border-b-[1px] border-[#f2f2f2] bg-[#63D1D4] font-bold text-[12px] max-2xl:text-[8px]">
+    <div className={containerClasses} >
+      <div className="flex h-[auto] items-center border-b-[1px] border-[#f2f2f2] bg-[#63D1D4] font-bold text-[12px] max-2xl:text-[10px]">
         <IconInfo title={title} />
         {label}
         <div className="ml-auto flex px-1">
@@ -39,7 +39,7 @@ const LiveContainer = ({ children, logHeight, title, label }: BoxLogsProps) => {
           isFullscreen === title
             ? `h-[90vh] max-2xl:h-[84vh]`
             : `h-[30vh] ${logHeight}`
-        }  overflow-y-auto bg-[#f2f2f2] p-1`}
+        }  overflow-y-auto bg-[#f2f2f2] p-2`}
       >
         {children}
       </div>

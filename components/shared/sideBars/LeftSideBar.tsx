@@ -48,7 +48,7 @@ const LeftSideBar = () => {
                   isActive
                     ? "border-l-[5px] border-l-[#0f62fe] bg-[#262626] font-bold hover:bg-[#393939]"
                     : "hover:border-2  hover:bg-[#393939] visited:hover:bg-[#393939]  active:bg-[#393939] "
-                } ibm-text-black flex h-[49px] w-[280px] items-center justify-start border-2 border-transparent border-b-[#000] p-4 font-regular text-[1rem] text-[#fff] no-underline transition-all ease-in max-2xl:w-[200px]`}
+                } flex h-[49px] w-[280px] items-center justify-start border-2 border-transparent border-b-[#000] py-4 pl-[10px] font-regular text-[1rem] text-[#fff] no-underline transition-all ease-in max-2xl:w-[200px]`}
               >
                 <div className="flex min-w-[30px] justify-start">
                   <Image
@@ -56,7 +56,7 @@ const LeftSideBar = () => {
                     alt={item.label}
                     width={20}
                     height={20}
-                    className={` invert-colors  max-2xl:h-[0.8rem] max-2xl:w-[0.8rem]`}
+                    className={` invert-colors mb-[2px] max-2xl:h-[0.8rem] max-2xl:w-[0.8rem]`}
                   />
                 </div>
                 <p
@@ -95,7 +95,7 @@ const LeftSideBar = () => {
                 >
                   <AccordionItem  
                   value="h-full item-1 ">
-                    <AccordionTrigger className="active:border-[#0f62fe]max-2xl:text-[0.8rem] h-[49px] border-2 border-transparent p-4 font-regular text-[1rem] text-[#fff] transition-all ease-in hover:border-2 hover:border-[#fff] hover:bg-[#393939] visited:hover:bg-[#393939]">
+                    <AccordionTrigger className="active:border-[#0f62fe]max-2xl:text-[0.8rem] h-[49px] border-2 border-transparent py-4 pl-[10px] pr-2 font-regular text-[1rem] text-[#fff] transition-all ease-in hover:border-2 hover:border-[#fff] hover:bg-[#393939] visited:hover:bg-[#393939]">
                       <div className="flex h-[49px] min-w-[30px] justify-start">
                         <Image
                           src={item.imgURL}
@@ -104,7 +104,7 @@ const LeftSideBar = () => {
                           height={20}
                           className={`${
                             isActive ? "invert-colors " : ""
-                          } invert-colors max-2xl:w-[0.8rem]`}
+                          } invert-colors mb-[2px] max-2xl:w-[0.8rem]`}
                         />
                       </div>
                       <p

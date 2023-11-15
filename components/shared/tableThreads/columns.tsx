@@ -151,16 +151,16 @@ export const columns: ColumnDef<Threads>[] = [
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
-              title="More actions"
+              title="Delete the line"
               variant="ghost"
-              className="flex h-8 w-8 truncate p-0 text-[0.6rem] max-2xl:h-[5px]"
+              className="flex h-[8px] w-[70%] justify-start truncate p-1"
             >
               <span className="sr-only">Open menu</span>
               <Image
                 src="assets/icons/trash.svg"
                 alt="trash"
-                width={10}
-                height={10}
+                width={8}
+                height={8}
                 className="fill-[#da1e28]"
               />
             </Button>
