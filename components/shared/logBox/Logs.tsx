@@ -6,6 +6,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import moment from "moment";
+import TableRows from "./logs-components/TableRows";
 
 const Logs = () => {
   const data = dashboard;
@@ -13,6 +14,7 @@ const Logs = () => {
 
   return (
       <Table className="text-[0.7rem] max-2xl:text-[0.5rem] ">
+        <TableRows className="bg-[#e2e2e2]" />
         <TableBody className="code-font ">
           {Object.keys(logs).map((logKey) => {
             const logEntry = logs[logKey as unknown as keyof typeof logs];

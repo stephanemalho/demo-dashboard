@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { TableHead, TableRow } from "@/components/ui/table";
 
