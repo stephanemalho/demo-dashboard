@@ -39,7 +39,7 @@ const LiveContainer = ({ children, logHeight, title, label }: BoxLogsProps) => {
           isFullscreen === title
             ? `h-[90vh] max-2xl:h-[84vh]`
             : `h-[30vh] ${logHeight}`
-        }  overflow-y-auto bg-[#f2f2f2] p-2`}
+        }  overflow-y-auto bg-[#f2f2f2] px-2`}
       >
         {children}
       </div>

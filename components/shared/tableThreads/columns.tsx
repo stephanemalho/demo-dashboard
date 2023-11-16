@@ -167,12 +167,12 @@ export const columns: ColumnDef<Threads>[] = [
           </DropdownMenuTrigger>
           <DropdownMenuContent
             align="end"
-            className="background-light800_dark400 capitalize dark:text-white"
+            className="bg-[#e4e4e4] capitalize"
           >
             <DropdownMenuLabel className="text-[10px]">
-              Delete:
+              remove this line?:
             </DropdownMenuLabel>
-            <DropdownMenuItem className="cursor-pointer bg-[#da1e28] text-[10px] text-white hover:bg-[#ba1b23] active:bg-[#750e13]">
+            <DropdownMenuItem className="cursor-pointer bg-[#da1e28]  text-white hover:bg-[#ba1b23] active:bg-[#750e13]">
               {/* <AiFillFileExcel className="mr-1 fill-lime-700" /> */}
               <DeleteButton
                 id={row.original.id}

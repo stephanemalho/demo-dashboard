@@ -3,6 +3,7 @@ import {
   Table,
   TableBody,
   TableCell,
+  TableHeader,
   TableRow,
 } from "@/components/ui/table";
 import moment from "moment";
@@ -14,14 +15,16 @@ const Logs = () => {
 
   return (
       <Table className="text-[0.7rem] max-2xl:text-[0.5rem] ">
+        <TableHeader>
         <TableRows className="bg-[#e2e2e2]" />
+        </TableHeader>
         <TableBody className="code-font ">
           {Object.keys(logs).map((logKey) => {
             const logEntry = logs[logKey as unknown as keyof typeof logs];
             const formattedTimestamp = moment(logEntry.TimeStamp).format('h:mm:ss a, MMMM');
 
             return (
-              <TableRow key={logKey} className="py-0 font-bold hover:bg-[#E0E0E1]">
+              <TableRow key={logKey} className=" font-bold hover:bg-[#E0E0E1]">
                 <TableCell title="ThreadId">
                   {logEntry.ThreadID}
                 </TableCell>
