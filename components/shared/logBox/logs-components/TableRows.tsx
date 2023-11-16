@@ -1,19 +1,16 @@
 import React from 'react';
-import { LogEntry, dashboard } from "@/data/dashboard";
+import { dashboard } from "@/data/dashboard";
 import { TableHead, TableRow } from "@/components/ui/table";
+import { getLogEntryKeys } from '@/utils/logUtils';
 
 interface TableRowsProps {
   className?: string | undefined;
 }
 
 const TableRows = ({ className }: TableRowsProps) => {
-  if (!dashboard.Logs || Object.keys(dashboard.Logs).length === 0) {
-    return null;
-  }
-  const firstLogKey = Object.keys(dashboard.Logs)[0] as unknown as keyof typeof dashboard.Logs;
-  const firstLogEntry = dashboard.Logs[firstLogKey];
+  const logKeys = getLogEntryKeys(dashboard.Logs);
 
-  const logKeys = Object.keys(firstLogEntry).filter(key => key !== 'ID') as (keyof LogEntry)[];
+  if (!logKeys) return null;
 
   return (
     <TableRow className={className}>

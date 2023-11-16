@@ -8,6 +8,8 @@ export interface LogEntry {
   Message: string;
 }
 
+export type LogsRecord = { [key: string]: LogEntry };
+
 export interface DashboardInterface {
   State: {
     Value: string;
