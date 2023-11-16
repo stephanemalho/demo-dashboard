@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import WrapIcon from "./WrapIcon";
 
 const IconResize = () => {
   const handleScreenResize = () => {
@@ -18,7 +17,7 @@ const IconResize = () => {
   };
 
   return (
-    <WrapIcon>
+    <div className="flex h-[30px] w-[30px] cursor-pointer items-center hover:bg-[#90d7da] max-2xl:hidden">
       <Image
         src="/assets/icons/screen.svg"
         alt="Resize"
@@ -27,7 +26,7 @@ const IconResize = () => {
         className={`m-auto block cursor-pointer max-2xl:hidden`}
         onClick={handleScreenResize}
       />
-    </WrapIcon>
+    </div>
   );
 };
 
