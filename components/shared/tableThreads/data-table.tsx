@@ -82,7 +82,7 @@ export function DataTable<TData, TValue>({
             <DropdownMenuTrigger asChild className="ml-auto">
               <Button
                 variant="outline"
-                className="h-[25px] w-[100px] truncate rounded-none bg-[#f4f4f4] font-bold text-[10px] hover:bg-[#e2e2e2] max-2xl:text-[8px]"
+                className="h-[25px] w-[100px] truncate rounded-none bg-[#f4f4f4] font-medium text-[10px] hover:bg-[#e2e2e2] max-2xl:text-[8px]"
               >
                 Columns
               </Button>
@@ -118,7 +118,7 @@ export function DataTable<TData, TValue>({
                   return (
                     <TableHead
                       key={header.id}
-                      className="h-[10px] bg-[#E0E0E1] text-left font-bold hover:bg-[#e2e2e2] max-2xl:h-[7px]"
+                      className="h-[10px] bg-[#E0E0E1] text-left font-medium hover:bg-[#e2e2e2] max-2xl:h-[7px]"
                     >
                       {header.isPlaceholder
                         ? null
@@ -138,7 +138,7 @@ export function DataTable<TData, TValue>({
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
-                  className={`h-[20px] bg-[#f4f4f4] font-bold hover:bg-[#e0e0e0] max-2xl:h-[15px] `}
+                  className={`h-[20px] bg-[#f4f4f4] font-medium hover:bg-[#e0e0e0] max-2xl:h-[15px] `}
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
