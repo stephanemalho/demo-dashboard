@@ -29,7 +29,7 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
       <DropdownMenuTrigger asChild>
         <Button
           variant="outline"
-          className={`${minSize} flex h-[20px] w-full cursor-pointer justify-start truncate rounded-none border-none  bg-[#e2e2e2] pl-[7px]  font-black text-[12px] hover:bg-[#f2f2f2] active:text-light-500 max-2xl:text-[9px]`}
+          className={`${minSize} flex h-[20px] w-full cursor-pointer justify-start truncate rounded-none border-[1px] border-[#f2f2f2] bg-[#e2e2e2] pl-[7px]  font-black text-[12px] hover:bg-[#f2f2f2] active:text-light-500 max-2xl:text-[9px]`}
         >
           {label}
         </Button>

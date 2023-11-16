@@ -121,29 +121,6 @@ export const columns: ColumnDef<Threads>[] = [
       );
     },
   },
-  // {
-  //   accessorKey: "delete",
-  //   header: "Delete Line",
-  //   cell: ({ row }) => {
-  //     return (
-  //       <DeleteButton
-  //         id={row.original.id}
-  //         onDelete={
-  //           // @todo filter the id of the row to delete
-  //           (id: number) => {
-  //             const confirm = window.confirm(
-  //               "Are you sure you want to delete this thread?"
-  //             );
-  //             if (confirm) {
-  //               console.log("thread deleted");
-  //               // onDelete();
-  //             }
-  //           }
-  //         }
-  //       />
-  //     );
-  //   },
-  // },
   {
     accessorKey: "Delete",
     cell: ({ row }) => {
@@ -155,7 +132,7 @@ export const columns: ColumnDef<Threads>[] = [
               variant="ghost"
               className="flex h-[8px] w-[70%] justify-start truncate p-1"
             >
-              <span className="sr-only">Open menu</span>
+              <span className="sr-only">Open to delete the line</span>
               <Image
                 src="assets/icons/trash.svg"
                 alt="trash"
@@ -173,7 +150,6 @@ export const columns: ColumnDef<Threads>[] = [
               remove this line?:
             </DropdownMenuLabel>
             <DropdownMenuItem className="cursor-pointer bg-[#da1e28]  text-white hover:bg-[#ba1b23] active:bg-[#750e13]">
-              {/* <AiFillFileExcel className="mr-1 fill-lime-700" /> */}
               <DeleteButton
                 id={row.original.id}
                 onDelete={
@@ -196,40 +172,4 @@ export const columns: ColumnDef<Threads>[] = [
       );
     },
   },
-  // {
-  //   accessorKey: "More actions",
-  //   cell: ({ row }) => {
-  //     const threads = row.original;
-  //     return (
-  //       <DropdownMenu>
-  //         <DropdownMenuTrigger asChild>
-  //           <Button
-  //             title="More actions"
-  //             variant="ghost"
-  //             className="flex h-8 w-8 truncate p-0 text-[0.6rem] max-2xl:h-[5px]"
-  //           >
-  //             <span className="sr-only">Open menu</span>
-  //             <MoreHorizontal className="h-4 w-4" />
-  //           </Button>
-  //         </DropdownMenuTrigger>
-  //         <DropdownMenuContent
-  //           align="end"
-  //           className="background-light800_dark400 capitalize dark:text-white"
-  //         >
-  //           <DropdownMenuLabel className="text-[10px]">
-  //             More actions
-  //           </DropdownMenuLabel>
-  //           <DropdownMenuItem
-  //             onClick={() => copyRowToExcel(threads)} // Appel de la fonction pour copier la ligne au format Excel.
-  //             className="cursor-pointer text-[10px] hover:bg-[#1E40AF] hover:text-white"
-  //           >
-  //             {/* <AiFillFileExcel className="mr-1 fill-lime-700" /> */}
-  //             Export Line to Excel
-  //           </DropdownMenuItem>
-  //           <DropdownMenuSeparator />
-  //         </DropdownMenuContent>
-  //       </DropdownMenu>
-  //     );
-  //   },
-  // },
 ];

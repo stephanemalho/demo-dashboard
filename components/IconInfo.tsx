@@ -9,7 +9,7 @@ interface IconInfoProps {
 const IconInfo = ({title}: IconInfoProps) => {
   return (
 
-    <WrapIcon>
+    <WrapIcon bgColorHover='hover:bg-[#90d7da]'>
     <Image
       src="/assets/icons/information.svg"
       alt="info icon"

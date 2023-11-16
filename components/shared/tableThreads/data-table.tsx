@@ -30,6 +30,8 @@ import {
 } from "@/components/ui/table";
 import { exportTableToExcel } from "@/utils/formatTable";
 import { toLowerCaseText } from "@/utils/formatText";
+import Image from "next/image";
+import WrapIcon from "@/components/WrapIcon";
 
 export interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -69,15 +71,17 @@ export function DataTable<TData, TValue>({
   return (
     <div className="flex flex-col">
       <div className="flex h-[25px] w-full ">
-        <div className="ml-auto flex w-[200px] flex-row">
-          <Button
-            variant="outline"
-            size="sm"
+            <WrapIcon bgColorHover="hover:bg-[#e2e2e2]" >
+            <Image 
+            src="/assets/icons/download.svg"
+            width={15}
+            height={15}
+            alt="download"
             onClick={() => exportTableToExcel(data)}
-            className="ml-auto flex h-[25px] w-[100px] truncate rounded-none bg-[#0f62fe] font-regular text-[10px] text-[#fff] hover:bg-[#4589ff] active:bg-[#0043ce]  max-2xl:text-[8px]"
-          >
-            Export table
-          </Button>
+            className="m-auto pb-[1px]"
+            />
+            </WrapIcon>
+        <div className="ml-auto flex w-[200px] flex-row">
           <DropdownMenu>
             <DropdownMenuTrigger asChild className="ml-auto">
               <Button
@@ -118,7 +122,7 @@ export function DataTable<TData, TValue>({
                   return (
                     <TableHead
                       key={header.id}
-                      className="h-[10px] bg-[#E0E0E1] text-left font-medium hover:bg-[#e2e2e2] max-2xl:h-[7px]"
+                      className="h-[10px] bg-[#E0E0E1] text-left font-bold hover:bg-[#e2e2e2] max-2xl:h-[7px]"
                     >
                       {header.isPlaceholder
                         ? null
@@ -134,16 +138,16 @@ export function DataTable<TData, TValue>({
           </TableHeader>
           <TableBody>
             {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row, index) => (
+              table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
-                  className={`h-[20px] bg-[#f4f4f4] font-medium hover:bg-[#e0e0e0] max-2xl:h-[15px] `}
+                  className={`h-[20px]  bg-[#f4f4f4] font-medium hover:bg-[#e0e0e0] max-2xl:h-[15px] `}
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className="w-[100px] max-w-[400px] truncate text-[10px] max-2xl:text-[10px]"
+                      className=" truncate text-[10px] max-2xl:text-[10px]"
                     >
                       {cell.column.id !== "state" &&
                       typeof cell.getValue() === "string"
