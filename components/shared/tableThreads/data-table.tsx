@@ -70,7 +70,7 @@ export function DataTable<TData, TValue>({
 
   return (
     <div className="flex flex-col">
-      <div className="flex h-[25px] w-full ">
+      <div className="sticky top-0 z-10 flex h-[26px] w-full bg-[#f4f4f4] ">
             <WrapIcon bgColorHover="hover:bg-[#e2e2e2]" >
             <Image 
             src="/assets/icons/download.svg"

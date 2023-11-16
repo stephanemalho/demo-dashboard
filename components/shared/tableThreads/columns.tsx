@@ -61,7 +61,7 @@ export const columns: ColumnDef<Threads>[] = [
               ? "destructive"
               : "outline"
           }
-          className="text-[8px] max-2xl:text-[6px]"
+          className="max-2xl:[46px] flex w-[36px] items-center justify-center text-center text-[8px] max-2xl:text-[6px]"
         >
           {state === "" ? "N/A" : state}
         </Badge>
@@ -130,14 +130,14 @@ export const columns: ColumnDef<Threads>[] = [
             <Button
               title="Delete the line"
               variant="ghost"
-              className="flex h-[8px] w-[70%] justify-start truncate p-1"
+              className="flex h-[10px] w-[70%] justify-start truncate p-1"
             >
               <span className="sr-only">Open to delete the line</span>
               <Image
                 src="assets/icons/trash.svg"
                 alt="trash"
-                width={8}
-                height={8}
+                width={10}
+                height={10}
                 className="fill-[#da1e28]"
               />
             </Button>
