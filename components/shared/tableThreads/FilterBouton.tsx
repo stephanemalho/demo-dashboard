@@ -8,8 +8,9 @@ import {
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
 import { ArrowDown, ArrowUp, ArrowUpDown } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import IconInfo from "@/components/IconInfo";
+import { getData } from "@/api/getData";
 
 interface Props {
   column: any;
@@ -24,6 +25,29 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
   const icons = [ArrowUpDown, ArrowUp, ArrowDown];
   const iconUpDown = [ArrowUp, ArrowDown];
   const iconDownUp = [ArrowDown, ArrowUp];
+  const [filterPreview, setFilterPreview] = useState<string[]>([]);
+  const [allValues, setAllValues] = useState<string[]>([]);
+
+  useEffect(() => {
+    const loadData = async () => {
+      const data = await getData();
+      const columnValues = data.map((item) => item[column.id]); // Utilisez l'ID de la colonne pour déterminer la propriété à charger
+      console.log('columnValues', columnValues);
+      
+      setAllValues(columnValues);
+    };
+
+    loadData();
+  }, [column.id]); // Dépendance à l'ID de la colonne
+
+  const updateFilterPreview = (text: string) => {
+    const filteredValues = allValues.filter((value) => {
+      return value.toLowerCase().includes(text.toLowerCase());
+    });
+    setFilterPreview(filteredValues);
+  };
+
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -89,7 +113,11 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
             <Input
               placeholder={`Filter ${label}`}
               value={(column.getFilterValue() as string | undefined) ?? ""}
-              onChange={(event) => column.setFilterValue(event.target.value)}
+              // onChange={(event) => column.setFilterValue(event.target.value)}
+              onChange={(event) => {
+                column.setFilterValue(event.target.value);
+                updateFilterPreview(event.target.value);
+              }}
               className="m-1 h-[30px] w-[96%] max-w-sm truncate rounded-none border-none font-light text-sm placeholder:font-light placeholder:text-[10px] max-2xl:h-[20px] max-2xl:text-[12px]"
             />
             <div
@@ -97,6 +125,17 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
               className="absolute bottom-[6px] right-[6px] flex h-[30px] w-[30px] items-center justify-center rounded-none p-0 text-center font-bold text-[12px] text-[#000] hover:bg-[#f4f4f4] active:bg-[#e0e0e0] max-2xl:bottom-[18px] max-2xl:right-[8px] max-2xl:h-[15px] max-2xl:w-[15px]"
             >
               <AiOutlineClose size={14} />
+            </div>
+            <div className="bg-slate-200 p-2">
+              {filterPreview.map((value, index) => (
+                <div
+                  key={index}
+                  onClick={() => column.setFilterValue(value)}
+                  // Style pour votre liste déroulante
+                >
+                  {value}
+                </div>
+              ))}
             </div>
           </div>
         </div>
