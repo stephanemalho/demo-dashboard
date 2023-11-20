@@ -81,7 +81,7 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
             Filter by colomns
           </h4>
         </div>
-        <div className="relative mt-auto flex h-[70%] flex-col justify-end bg-[#e2e2e2] ">
+        <div className="relative mt-auto flex h-[70%] flex-col justify-end bg-[#e2e2e2]">
           <Button
             variant="ghost"
             onClick={() => {
@@ -128,21 +128,21 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
               placeholder={`Filter ${label}`}
               // Enlevez la mise à jour du filtre du tableau ici
               onChange={(event) => updateFilterPreview(event.target.value)}
-              className="m-1 h-[30px] w-[96%] max-w-sm truncate rounded-none border-none font-light text-sm placeholder:font-light placeholder:text-[10px] max-2xl:h-[20px] max-2xl:text-[12px]"
+              className="m-1 h-[30px] w-[94%] max-w-sm truncate rounded-none border-none font-light text-sm placeholder:font-light placeholder:text-[10px] max-2xl:h-[20px] max-2xl:text-[12px]"
             />
             <div
               onClick={resetFilter}
-              className="absolute right-[6px] top-[136px] z-[1000] flex h-[30px] w-[30px] items-center justify-center rounded-none p-0 text-center font-bold text-[12px] text-[#000] hover:bg-[#f4f4f4] active:bg-[#e0e0e0] max-2xl:right-[8px] max-2xl:top-[78px] max-2xl:h-[15px] max-2xl:w-[15px]"
+              className="absolute right-[6px] top-[136px] flex h-[30px] w-[30px] items-center justify-center rounded-none p-0 text-center font-bold text-[12px] text-[#000] hover:bg-[#f4f4f4] active:bg-[#e0e0e0] max-2xl:right-[8px] max-2xl:top-[78px] max-2xl:h-[15px] max-2xl:w-[15px]"
             >
               <AiOutlineClose size={14} />
             </div>
-            <div className=" m-1 border-[1px] border-white">
-              <ul className="h-full w-full">
+            <div className=" m-1 h-[70px] overflow-hidden border-[1px] border-white">
+              <ul className=" custom-scrollbar  h-[100%] w-full overflow-y-scroll">
                 {filterPreview.map((value, index) => (
                   <li
                     key={index}
                     onClick={() => handleValueClick(value)}
-                    className="z-[1000] h-auto cursor-pointer truncate p-2 text-[9px] hover:bg-[#c6c6c6] active:bg-[#a8a8a8] max-2xl:text-[8px]"
+                    className="z-[10000] cursor-pointer truncate bg-[#e2e2e2] p-2 text-[9px] hover:bg-[#c6c6c6] active:bg-[#a8a8a8] max-2xl:text-[8px]"
                     title={value}
                   >
                     {value === "" ? "n/a" : value}{" "}
