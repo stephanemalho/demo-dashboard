@@ -30,6 +30,13 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
   const [inputValue, setInputValue] = useState("");
   const [allValues, setAllValues] = useState<string[]>([]);
 
+  const getContentHeightClass = () => {
+    const itemCount = filterPreview.length;
+    if (itemCount === 0) return "h-[0px]"; 
+    if (itemCount === 1) return "h-[30px]";
+    return "h-[75px]"; 
+  };
+
   useEffect(() => {
     const loadData = async () => {
       const data = await getData();
@@ -88,7 +95,7 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
               setClickCountUpDown((prevClickCount) => (prevClickCount + 1) % 2);
               column.toggleSorting(column.getIsSorted() === "asc");
             }}
-            className="mx-2 my-1 flex  h-[40px] justify-start rounded-none border-[1px] border-[#fff] pl-2 text-left font-regular text-[12px] text-[#000] hover:bg-[#c6c6c6] active:bg-[#a8a8a8] max-2xl:h-[20px]"
+            className="mx-2 my-1 flex h-[40px] justify-start rounded-none border-[1px] border-[#fff] pl-2 text-left font-regular text-[10px] text-[#000] hover:bg-[#c6c6c6] active:bg-[#a8a8a8] max-2xl:h-[20px]"
           >
             Filter asc{" "}
             {React.createElement(iconUpDown[clickCountUpDown], {
@@ -101,7 +108,7 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
               setClickCountDownUp((prevClickCount) => (prevClickCount + 1) % 2);
               column.toggleSorting(column.getIsSorted() !== "desc");
             }}
-            className="mx-2 mb-1 flex h-[40px] justify-start rounded-none border-[1px] border-[#fff] pl-2 text-left font-regular text-[12px] text-[#000] hover:bg-[#c6c6c6] active:bg-[#a8a8a8] max-2xl:h-[20px]"
+            className="mx-2 mb-1 flex h-[40px] justify-start rounded-none border-[1px] border-[#fff] pl-2 text-left font-regular text-[10px] text-[#000] hover:bg-[#c6c6c6] active:bg-[#a8a8a8] max-2xl:h-[20px]"
           >
             Filter desc{" "}
             {React.createElement(iconDownUp[clickCountDownUp], {
@@ -115,7 +122,7 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
               setClickCount((prevClickCount) => (prevClickCount + 1) % 3);
               column.toggleSorting();
             }}
-            className="mx-2 flex h-[40px] justify-start rounded-none border-[1px] border-[#fff] pl-2 text-left font-regular text-[12px] text-[#000] hover:bg-[#c6c6c6] active:bg-[#a8a8a8] max-2xl:h-[20px]"
+            className="mx-2 flex h-[40px] justify-start rounded-none border-[1px] border-[#fff] pl-2 text-left font-regular text-[10px] text-[#000] hover:bg-[#c6c6c6] active:bg-[#a8a8a8] max-2xl:h-[20px]"
           >
             Filter all{" "}
             {React.createElement(icons[clickCount], {
@@ -128,25 +135,24 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
               placeholder={`Filter ${label}`}
               // Enlevez la mise à jour du filtre du tableau ici
               onChange={(event) => updateFilterPreview(event.target.value)}
-              className="m-1 h-[30px] w-[94%] max-w-sm truncate rounded-none border-none font-light text-sm placeholder:font-light placeholder:text-[10px] max-2xl:h-[20px] max-2xl:text-[12px]"
+              className="m-1 h-[30px] w-[94%] max-w-sm truncate rounded-none border-none font-light text-sm placeholder:font-light placeholder:text-[10px] max-2xl:h-[20px] max-2xl:text-[10px] max-2xl:placeholder:text-[8px]"
             />
             <div
               onClick={resetFilter}
-              className="absolute right-[6px] top-[136px] flex h-[30px] w-[30px] items-center justify-center rounded-none p-0 text-center font-bold text-[12px] text-[#000] hover:bg-[#f4f4f4] active:bg-[#e0e0e0] max-2xl:right-[8px] max-2xl:top-[78px] max-2xl:h-[15px] max-2xl:w-[15px]"
+              className="absolute right-[6px] top-[136px] flex h-[30px] w-[30px] items-center justify-center rounded-none p-0 text-center font-bold text-[12px] text-[#000] hover:bg-[#f4f4f4] active:bg-[#e0e0e0] max-2xl:right-[10px] max-2xl:top-[78px] max-2xl:h-[15px] max-2xl:w-[15px]"
             >
               <AiOutlineClose size={14} />
             </div>
-            <div className=" m-1 h-[70px] overflow-hidden border-[1px] border-white">
-              <ul className=" custom-scrollbar  h-[100%] w-full overflow-y-scroll">
+            <div className={`m-1 ${getContentHeightClass()} overflow-hidden border-[1px] border-white`}>
+              <ul className="custom-scrollbar h-full w-full overflow-y-scroll">
                 {filterPreview.map((value, index) => (
                   <li
                     key={index}
                     onClick={() => handleValueClick(value)}
-                    className="z-[10000] cursor-pointer truncate bg-[#e2e2e2] p-2 text-[9px] hover:bg-[#c6c6c6] active:bg-[#a8a8a8] max-2xl:text-[8px]"
+                    className="z-[10000] cursor-pointer truncate bg-[#e2e2e2] p-2 text-[10px] hover:bg-[#c6c6c6] active:bg-[#a8a8a8] max-2xl:text-[9px]"
                     title={value}
                   >
                     {value === "" ? "n/a" : value}{" "}
-                    {/* Ici, la modification a été apportée */}
                   </li>
                 ))}
               </ul>
