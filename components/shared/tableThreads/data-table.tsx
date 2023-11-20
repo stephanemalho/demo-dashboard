@@ -69,7 +69,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className="flex flex-col">
+    <div className="m-auto flex h-full w-full flex-col overflow-hidden">
       <div className="sticky top-0 z-10 flex h-[26px] w-full bg-[#f4f4f4] ">
             <WrapIcon bgColorHover="hover:bg-[#e2e2e2]" >
             <Image 
@@ -113,9 +113,9 @@ export function DataTable<TData, TValue>({
           </DropdownMenu>
         </div>
       </div>
-      <div>
+      <div className="m-auto flex h-full w-full overflow-hidden">
         <Table className="bg-[#f4f4f4]">
-          <TableHeader className="bg-[#E0E0E1] text-[12px] max-2xl:text-[10px]">
+          <TableHeader className="sticky top-0 bg-[#E0E0E1] text-[12px] max-2xl:text-[10px]">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
@@ -136,7 +136,8 @@ export function DataTable<TData, TValue>({
               </TableRow>
             ))}
           </TableHeader>
-          <TableBody>
+          
+          <TableBody className="overflow-y-scroll">
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow

@@ -14,17 +14,17 @@ const Logs = () => {
   const logs = data.Logs;
 
   return (
+    <div className="m-auto flex h-full w-full overflow-hidden">
     <Table className="z-[1] text-[0.7rem] max-2xl:text-[0.5rem]">
-      <TableHeader>
+      <TableHeader className="sticky top-0">
         <TableRows className="bg-[#e2e2e2]" />
       </TableHeader>
-      <TableBody className="code-font ">
+      <TableBody className="code-font">
         {Object.keys(logs).map((logKey) => {
           const logEntry = logs[logKey as unknown as keyof typeof logs];
           const formattedTimestamp = moment(logEntry.TimeStamp).format(
             "h:mm:ss a, MMMM"
           );
-
           return (
             <TableRow key={logKey} className="font-bold hover:bg-[#E0E0E1]">
               <TableCell title="ThreadId">{logEntry.ThreadID}</TableCell>
@@ -42,6 +42,7 @@ const Logs = () => {
         })}
       </TableBody>
     </Table>
+    </div>
   );
 };
 
