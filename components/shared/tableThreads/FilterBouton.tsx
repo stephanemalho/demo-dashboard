@@ -99,7 +99,7 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
           >
             Filter asc{" "}
             {React.createElement(iconUpDown[clickCountUpDown], {
-              className: "ml-2 h-3 w-3",
+              className: "ml-2 h-3 w-3 max-2xl:h-[10px] max-2xl:w-[10px]",
             })}
           </Button>
           <Button
@@ -112,7 +112,7 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
           >
             Filter desc{" "}
             {React.createElement(iconDownUp[clickCountDownUp], {
-              className: "ml-2 h-3 w-3",
+              className: "ml-2 h-3 w-3 max-2xl:h-[10px] max-2xl:w-[10px]",
             })}
           </Button>
           <Button
@@ -126,20 +126,19 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
           >
             Filter all{" "}
             {React.createElement(icons[clickCount], {
-              className: "ml-2 h-3 w-3",
+              className: "ml-2 h-3 w-3 max-2xl:h-[10px] max-2xl:w-[10px]",
             })}
           </Button>
           <div className="mx-[3px]">
             <Input
               value={inputValue}
               placeholder={`Filter ${label}`}
-              // Enlevez la mise à jour du filtre du tableau ici
               onChange={(event) => updateFilterPreview(event.target.value)}
               className="m-1 h-[30px] w-[94%] max-w-sm truncate rounded-none border-none font-light text-sm placeholder:font-light placeholder:text-[10px] max-2xl:h-[20px] max-2xl:text-[10px] max-2xl:placeholder:text-[8px]"
             />
             <div
               onClick={resetFilter}
-              className="absolute right-[6px] top-[136px] flex h-[30px] w-[30px] items-center justify-center rounded-none p-0 text-center font-bold text-[12px] text-[#000] hover:bg-[#f4f4f4] active:bg-[#e0e0e0] max-2xl:right-[10px] max-2xl:top-[78px] max-2xl:h-[15px] max-2xl:w-[15px]"
+              className="absolute right-[6px] top-[136px] flex h-[30px] w-[30px] items-center justify-center rounded-none p-0 text-center font-bold text-[12px] text-[#000] hover:bg-[#f4f4f4] active:bg-[#e0e0e0] max-2xl:right-[10px] max-2xl:top-[81px] max-2xl:h-[10px] max-2xl:w-[10px]"
             >
               <AiOutlineClose size={14} />
             </div>
@@ -149,7 +148,7 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
                   <li
                     key={index}
                     onClick={() => handleValueClick(value)}
-                    className="z-[10000] cursor-pointer truncate bg-[#e2e2e2] p-2 text-[10px] hover:bg-[#c6c6c6] active:bg-[#a8a8a8] max-2xl:text-[9px]"
+                    className="z-[10000] cursor-pointer truncate bg-[#e2e2e2] p-2 text-[9px] hover:bg-[#c6c6c6] active:bg-[#a8a8a8] max-2xl:text-[8px]"
                     title={value}
                   >
                     {value === "" ? "n/a" : value}{" "}
