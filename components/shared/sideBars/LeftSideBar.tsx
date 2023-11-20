@@ -15,16 +15,14 @@ const LeftSideBar = () => {
   const pathname = usePathname();
   const firstSidebarLink = sidebarLinks.slice(0, 2);
   const secondSidebarLink = sidebarLinks.slice(2);
-
   const { toggleSideBar, setToggleSideBar } = useSidebar(); // sideBar Context
 
   const handleClick = () => {
     setToggleSideBar(false);
   };
 
-  if (!toggleSideBar) {
-    return null; // don't render anything if the sidebar is closed
-  }
+
+  if (!toggleSideBar) return null; // don't render anything if the sidebar is closed
   return (
     <>
       <section
@@ -56,7 +54,7 @@ const LeftSideBar = () => {
                     alt={item.label}
                     width={20}
                     height={20}
-                    className={` invert-colors mb-[2px] max-2xl:h-[0.8rem] max-2xl:w-[0.8rem]`}
+                    className={` invert-colors mb-[2px] max-2xl:h-[15px] max-2xl:w-[15px]`}
                   />
                 </div>
                 <p
@@ -96,7 +94,7 @@ const LeftSideBar = () => {
                   <AccordionItem  
                   value="h-full item-1 ">
                     <AccordionTrigger className="active:border-[#0f62fe]max-2xl:text-[0.8rem] h-[49px] border-2 border-transparent py-4 pl-[10px] pr-2 font-regular text-[1rem] text-[#fff] transition-all ease-in hover:border-2 hover:border-[#fff] hover:bg-[#393939] visited:hover:bg-[#393939]">
-                      <div className="flex h-[49px] min-w-[30px] justify-start">
+                      <div className="flex h-[auto] min-w-[30px]  justify-center">
                         <Image
                           src={item.imgURL}
                           alt={item.label}
@@ -104,7 +102,7 @@ const LeftSideBar = () => {
                           height={20}
                           className={`${
                             isActive ? "invert-colors " : ""
-                          } invert-colors mb-[2px] max-2xl:w-[0.8rem]`}
+                          } invert-colors  mb-1 mr-3 max-2xl:mr-4 max-2xl:h-[15px] max-2xl:w-[15px]`}
                         />
                       </div>
                       <p

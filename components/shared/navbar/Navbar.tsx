@@ -30,6 +30,7 @@ const Navbar = () => {
               alt={"menu"}
               width={22}
               height={22}
+              className="my-auto flex max-2xl:h-[18px] max-2xl:w-[18px]"
             />
           ) : (
             <Image
@@ -37,7 +38,7 @@ const Navbar = () => {
               alt={"menu"}
               width={20}
               height={20}
-              className="pb-1"
+              className="my-auto flex max-2xl:h-[18px] max-2xl:w-[18px]"
             />
           )}
         </div>
