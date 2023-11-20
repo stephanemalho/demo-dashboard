@@ -11,6 +11,7 @@ import { ArrowDown, ArrowUp, ArrowUpDown } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import IconInfo from "@/components/IconInfo";
 import { getData } from "@/api/getData";
+import { Threads } from "./columns";
 
 interface Props {
   column: any;
@@ -26,34 +27,46 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
   const iconUpDown = [ArrowUp, ArrowDown];
   const iconDownUp = [ArrowDown, ArrowUp];
   const [filterPreview, setFilterPreview] = useState<string[]>([]);
+  const [inputValue, setInputValue] = useState("");
   const [allValues, setAllValues] = useState<string[]>([]);
 
   useEffect(() => {
     const loadData = async () => {
       const data = await getData();
-      const columnValues = data.map((item) => item[column.id]); // Utilisez l'ID de la colonne pour déterminer la propriété à charger
-      console.log('columnValues', columnValues);
-      
-      setAllValues(columnValues);
+      const columnValues = data.map(
+        (item) => item[column.id as keyof Threads]
+      ) as string[];
+      setAllValues([...new Set(columnValues)]);
     };
-
     loadData();
-  }, [column.id]); // Dépendance à l'ID de la colonne
+  }, [column.id]);
 
   const updateFilterPreview = (text: string) => {
+    setInputValue(text);
     const filteredValues = allValues.filter((value) => {
       return value.toLowerCase().includes(text.toLowerCase());
     });
     setFilterPreview(filteredValues);
   };
 
+  const handleValueClick = (value: string) => {
+    column.setFilterValue(value);
+  };
+
+  const resetFilter = () => {
+    setInputValue(""); // Réinitialiser la valeur de l'input
+    setFilterPreview(allValues); // Réinitialiser filterPreview
+    column.setFilterValue(""); // Réinitialiser le filtre de la colonne
+  };
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
           variant="outline"
-          className={`${minSize} flex h-[20px] w-full cursor-pointer justify-start truncate rounded-none border-[1px] border-[#f2f2f2] bg-[#e2e2e2] pl-[7px]  font-black text-[12px] hover:bg-[#f2f2f2] active:text-light-500 max-2xl:text-[9px]`}
+          className={`${minSize} flex h-[20px] w-full cursor-pointer justify-start truncate rounded-none border-[1px] border-[#f2f2f2] ${
+            inputValue ? "bg-[#d1d1d1]" : "bg-[#e2e2e2]" // Classe conditionnelle basée sur inputValue
+          } pl-[7px] font-black text-[12px] hover:bg-[#f2f2f2] active:text-light-500 max-2xl:text-[9px]`}
         >
           {label}
         </Button>
@@ -109,33 +122,34 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
               className: "ml-2 h-3 w-3",
             })}
           </Button>
-          <div className="mx-[3px] h-[40px]">
+          <div className="mx-[3px]">
             <Input
+              value={inputValue}
               placeholder={`Filter ${label}`}
-              value={(column.getFilterValue() as string | undefined) ?? ""}
-              // onChange={(event) => column.setFilterValue(event.target.value)}
-              onChange={(event) => {
-                column.setFilterValue(event.target.value);
-                updateFilterPreview(event.target.value);
-              }}
+              // Enlevez la mise à jour du filtre du tableau ici
+              onChange={(event) => updateFilterPreview(event.target.value)}
               className="m-1 h-[30px] w-[96%] max-w-sm truncate rounded-none border-none font-light text-sm placeholder:font-light placeholder:text-[10px] max-2xl:h-[20px] max-2xl:text-[12px]"
             />
             <div
-              onClick={() => column.setFilterValue("")}
-              className="absolute bottom-[6px] right-[6px] flex h-[30px] w-[30px] items-center justify-center rounded-none p-0 text-center font-bold text-[12px] text-[#000] hover:bg-[#f4f4f4] active:bg-[#e0e0e0] max-2xl:bottom-[18px] max-2xl:right-[8px] max-2xl:h-[15px] max-2xl:w-[15px]"
+              onClick={resetFilter}
+              className="absolute right-[6px] top-[136px] z-[1000] flex h-[30px] w-[30px] items-center justify-center rounded-none p-0 text-center font-bold text-[12px] text-[#000] hover:bg-[#f4f4f4] active:bg-[#e0e0e0] max-2xl:right-[8px] max-2xl:top-[78px] max-2xl:h-[15px] max-2xl:w-[15px]"
             >
               <AiOutlineClose size={14} />
             </div>
-            <div className="bg-slate-200 p-2">
-              {filterPreview.map((value, index) => (
-                <div
-                  key={index}
-                  onClick={() => column.setFilterValue(value)}
-                  // Style pour votre liste déroulante
-                >
-                  {value}
-                </div>
-              ))}
+            <div className=" m-1 border-[1px] border-white">
+              <ul className="h-full w-full">
+                {filterPreview.map((value, index) => (
+                  <li
+                    key={index}
+                    onClick={() => handleValueClick(value)}
+                    className="z-[1000] h-auto cursor-pointer truncate p-2 text-[9px] hover:bg-[#c6c6c6] active:bg-[#a8a8a8] max-2xl:text-[8px]"
+                    title={value}
+                  >
+                    {value === "" ? "n/a" : value}{" "}
+                    {/* Ici, la modification a été apportée */}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
