@@ -11,7 +11,7 @@ const OnlineUser = () => {
   return (
     <div
       title="connexion"
-      className="flex h-[49px] w-[50px] cursor-pointer items-center justify-center pb-1 hover:bg-[#f4f4f4] active:bg-[#e0e0e0]"
+      className="flex h-[49px] w-[50px]  items-center justify-center pb-1 hover:bg-[#262626] "
     >
       <span aria-label={`${isConnected}`} className="relative flex h-3 w-3">
         <span

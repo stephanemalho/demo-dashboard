@@ -29,6 +29,9 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { exportTableToExcel } from "@/utils/formatTable";
+import { toLowerCaseText } from "@/utils/formatText";
+import Image from "next/image";
+import WrapIcon from "@/components/WrapIcon";
 
 export interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -66,56 +69,60 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div>
-      <div className="my-1 flex w-full">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => exportTableToExcel(data)}
-          className="h-[20px] truncate rounded-none text-[10px]  hover:bg-[#f4f4f4] active:text-light-500 max-2xl:h-[15px]  max-2xl:text-[6px]"
-        >
-          Export table
-        </Button>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="outline"
-              className="ml-auto h-[20px]  truncate rounded-none text-[10px] hover:bg-[#f4f4f4] active:text-light-500 max-2xl:h-[15px] max-2xl:text-[6px]"
-            >
-              Columns
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            {table
-              .getAllColumns()
-              .filter((column) => column.getCanHide())
-              .map((column) => {
-                return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="background-light800_dark400 cursor-pointer capitalize"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
-                  >
-                    {column.id}
-                  </DropdownMenuCheckboxItem>
-                );
-              })}
-          </DropdownMenuContent>
-        </DropdownMenu>
+    <div className="m-auto flex h-full w-full flex-col overflow-hidden">
+      <div className="sticky top-0 z-10 flex h-[26px] w-full bg-[#f4f4f4] ">
+            <WrapIcon bgColorHover="hover:bg-[#e2e2e2]" >
+            <Image 
+            src="/assets/icons/download.svg"
+            width={15}
+            height={15}
+            alt="download"
+            onClick={() => exportTableToExcel(data)}
+            className="m-auto pb-[1px]"
+            />
+            </WrapIcon>
+        <div className="ml-auto flex w-[200px] flex-row">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild className="ml-auto">
+              <Button
+                variant="outline"
+                className="h-[25px] w-[100px] truncate rounded-none bg-[#f4f4f4] font-medium text-[10px] hover:bg-[#e2e2e2] max-2xl:text-[8px]"
+              >
+                Columns
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              {table
+                .getAllColumns()
+                .filter((column) => column.getCanHide())
+                .map((column) => {
+                  return (
+                    <DropdownMenuCheckboxItem
+                      key={column.id}
+                      className="cursor-pointer bg-[#f4f4f4] font-regular text-[12px] capitalize"
+                      checked={column.getIsVisible()}
+                      onCheckedChange={(value) =>
+                        column.toggleVisibility(!!value)
+                      }
+                    >
+                      {column.id}
+                    </DropdownMenuCheckboxItem>
+                  );
+                })}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
       </div>
-      <div>
-        <Table className="background-light800_dark400  text-black">
-          <TableHeader className="bg-[#e0e0e0] text-[12px] max-2xl:text-[8px]">
+      <div className="m-auto flex h-full w-full overflow-hidden">
+        <Table className="bg-[#f4f4f4]">
+          <TableHeader className="sticky top-0 bg-[#E0E0E1] text-[12px] max-2xl:text-[10px]">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead
                       key={header.id}
-                      className="h-[10px] text-left max-2xl:h-[7px] "
+                      className="z-[1] h-[10px] bg-[#E0E0E1] text-left font-bold hover:bg-[#e2e2e2] max-2xl:h-[7px]"
                     >
                       {header.isPlaceholder
                         ? null
@@ -129,25 +136,30 @@ export function DataTable<TData, TValue>({
               </TableRow>
             ))}
           </TableHeader>
-          <TableBody>
+          
+          <TableBody className="overflow-y-scroll">
             {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row, index) => (
+              table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
-                  className={`hover:bg-slate-200 ${
-                    index % 2 === 1 ? "bg-[f4f4f4]" : "bg-[#fff]"
-                  }`}
+                  className={`h-[20px]  bg-[#f4f4f4] font-medium hover:bg-[#e0e0e0] max-2xl:h-[15px] `}
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className="h-[8px] w-[100px] max-w-[200px] truncate text-[10px] max-2xl:h-[6px] max-2xl:text-[6px]"
+                      className=" truncate text-[10px] max-2xl:text-[10px]"
                     >
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
+                      {cell.column.id !== "state" &&
+                      typeof cell.getValue() === "string"
+                        ? flexRender(
+                            toLowerCaseText(cell.getValue() as string),
+                            cell.getContext()
+                          )
+                        : flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext()
+                          )}
                     </TableCell>
                   ))}
                 </TableRow>

@@ -1,12 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap'); */
 
 @import url("../styles/theme.css");
 
+@font-face {
+  font-family: 'now-regular';
+  src: url('/assets/font/Now-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'now-black';
+  src: url('/assets/font/Now-Black.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'now-bold';
+  src: url('/assets/font/Now-Bold.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'now-light';
+  src: url('/assets/font/Now-Light.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'now-medium';
+  src: url('/assets/font/Now-Medium.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'now-thin';
+  src: url('/assets/font/Now-Thin.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'now-regular';
 }
 
 @layer utilities {
@@ -198,16 +240,17 @@ code {
   }
 }
 
-.slide-out-sidebar {
+.slide-in-rightSidebar {
   animation: slideOutSidebar 400ms ease-in-out;
 }
 
 @keyframes slideOutSidebar {
   0% {
-    transform: translateX(0);
+    transform: translateX(+100%);
   }
 
   100% {
-    transform: translateX(-100%);
+    transform: translateX(0%);
   }
 }
+

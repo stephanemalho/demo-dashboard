@@ -9,14 +9,14 @@ interface IconInfoProps {
 const IconInfo = ({title}: IconInfoProps) => {
   return (
 
-    <WrapIcon>
+    <WrapIcon bgColorHover='hover:bg-[#90d7da]'>
     <Image
       src="/assets/icons/information.svg"
       alt="info icon"
-      width={20}
-      height={20}
+      width={16}
+      height={16}
       title={title}
-      className="m-auto flex cursor-help justify-center max-2xl:h-[16px] max-2xl:w-[16px]"
+      className="m-auto flex cursor-help justify-center fill-[#0043ce] max-2xl:h-[14px] max-2xl:w-[14px]"
     />
     </WrapIcon>
   )

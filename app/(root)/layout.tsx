@@ -4,19 +4,20 @@ import LeftSideBar from "@/components/shared/sideBars/LeftSideBar";
 import { SignedIn } from "@clerk/nextjs";
 import React from "react";
 import PageContainer from "@/components/shared/pageContainer/PageContainer";
+import RightSideBar from "@/components/shared/sideBars/RightSideBar";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-      <main className="bg-[#F4F4F4]">
+      <main className="bg-[#fff]">
         <Navbar />
         <div className="flex">
           <SignedIn>
             <LeftSideBar />
           </SignedIn>
           <PageContainer>{children}</PageContainer>
-          {/* <SignedIn>
+          <SignedIn>
           <RightSideBar />
-        </SignedIn> */}
+        </SignedIn>
         </div>
       </main>
   );

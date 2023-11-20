@@ -17,7 +17,7 @@ const IconMaximize = ({ title }: { title: string }) => {
   };
 
   return (
-    <WrapIcon>
+    <WrapIcon bgColorHover='hover:bg-[#90d7da]'>
       <Image
         src="/assets/icons/maximize.svg"
         alt="resize"

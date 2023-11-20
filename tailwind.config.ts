@@ -42,9 +42,12 @@ module.exports = {
         "grey-border": "#C6C6C6",
       },
       fontFamily: {
-        inter: ["var(--font-inter)"],
-        spaceGrotesk: ["var(--font-spaceGrotesk)"],
-        ibmPlexSans: ["var(--font-ibmPlexSans)"],
+        regular: ["var(--font-now-regular)"],
+        bold: ["var(--font-now-bold)"],
+        black: ["var(--font-now-black)"],
+        light: ["var(--font-now-light)"],
+        medium: ["var(--font-now-medium)"],
+        thin : ["var(--font-now-thin)"],
       },
       boxShadow: {
         "light-100":

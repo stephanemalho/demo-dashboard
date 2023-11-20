@@ -2,11 +2,13 @@ import React from 'react'
 
 interface WrapIconProps {
   children: React.ReactNode
+  bgColorHover: string
 }
 
-const WrapIcon = ({ children } : WrapIconProps) => {
+const WrapIcon = ({ children, bgColorHover } : WrapIconProps) => {
   return (
-    <div className="flex h-[30px] w-[30px] cursor-pointer items-center hover:bg-[#c9deff]">
+    // eslint-disable-next-line tailwindcss/no-custom-classname
+    <div className={`${bgColorHover} flex h-[30px] w-[30px] cursor-pointer items-center `}>
       {children}
     </div>
   )
