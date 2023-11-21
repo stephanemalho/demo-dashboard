@@ -38,11 +38,7 @@ const RenderMenu: React.FC<{ item: MenuItemInterface; level: number }> = ({
       <div
         onClick={toggleOpen}
         style={{ paddingLeft: `${level * 20}px` }} // ajustez le multiplicateur selon vos besoins
-        className={`flex cursor-pointer items-center border-2 p-1 ${
-          isOpen
-            ? "border-[#64d1d4] bg-[#a1ebed] hover:bg-[#64d1d4] active:bg-[#a1ebed]"
-            : "border-white hover:bg-[#e2e2e2] active:border-[#e2e2e2]"
-        }`}
+        className={`mx-1 flex cursor-pointer items-center p-1 text-[12px] hover:bg-[#e2e2e2] active:border-[#e2e2e2] `}
       >
         {item.children && (
           <MdChevronRight
