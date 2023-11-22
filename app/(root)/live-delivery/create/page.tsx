@@ -18,9 +18,9 @@ export default function page() {
           ))}
         </LiveContainer>
       </div>
-      <div className=" flex w-[60vw] flex-col text-[10px]">
+      <div className="ml-1 flex w-[80vw] flex-col text-[10px]">
         <LiveContainer
-          logHeight="h-[90vh] max-2xl:h-[80vh] w-[60vw]"
+          logHeight="h-[90vh] max-2xl:h-[80vh] w-[80vw] "
           title="Compare"
           label="Compare"
         >
