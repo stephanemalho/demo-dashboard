@@ -1,4 +1,5 @@
 import { BADGE_CRITERIA } from "@/constants";
+import React from "react";
 import { IconType } from "react-icons";
 
 export interface SidebarLink {
@@ -59,3 +60,15 @@ export interface BadgeCounts {
 }
 
 export type BadgeCriteriaType = keyof typeof BADGE_CRITERIA;
+
+export interface IconProps {
+  handleDeleteElement: (event: React.MouseEvent<HTMLSpanElement>) => void;
+}
+export interface DiffFile {
+  document: string;
+  content: string[];
+}
+export interface DiffViewerProps {
+  oldText: DiffFile;
+  newText: DiffFile;
+}
