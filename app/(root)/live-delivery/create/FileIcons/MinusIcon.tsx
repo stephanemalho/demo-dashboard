@@ -1,12 +1,10 @@
-import { IconProps } from '@/types'
 import Image from 'next/image'
 import React from 'react'
 
-const MinusIcon = ({handleDeleteElement} : IconProps ) => {
+const MinusIcon = () => {
   return (
     <span
-    onClick={handleDeleteElement}
-    className="relative flex h-[14px] w-[14px] cursor-pointer items-center justify-center rounded-full bg-[#f7a8a8] p-2 text-center"
+    className="relative flex h-[14px] w-[14px] items-center justify-center rounded-full bg-[#f7a8a8] p-2 text-center"
   >
     <Image
       className="absolute"

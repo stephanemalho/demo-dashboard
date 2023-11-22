@@ -3,11 +3,10 @@ import React from "react";
 import { diffWordsWithSpace } from "diff";
 import { DiffViewerProps } from "@/types";
 
-import DiffLine from "./DiffLine/DiffLine";
+import DiffLine from "./Diff/DiffLine";
 import { lineHasChanges, newLinesCount, totalLines } from "@/utils/arrays";
 
 const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
-
   const numberOfModifiedLines = newLinesCount(oldText, newText, lineHasChanges);
   const numberOfTotalNewLines = totalLines(newText);
 
@@ -38,19 +37,17 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
   });
 
   return (
-    <div className="flex flex-col">
-      <div className="flex flex-row justify-start">
+    <>
+      <div className="flex flex-row justify-between">
         <div className="pr-2 text-[15px] text-[#f7a8a8]">
           Total of modified lines: {numberOfModifiedLines}
         </div>
-        <div className="text-[15px] text-[#89dcc0]">
+        <div className="text-[15px] text-[#6FDC8C]">
           Total of lines: {numberOfTotalNewLines}
         </div>
       </div>
-        <div className="flex-col">
-        {diffElements}
-        </div>
-    </div>
+      <div className="flex-col">{diffElements}</div>
+    </>
   );
 };
 
