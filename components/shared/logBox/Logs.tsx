@@ -19,14 +19,14 @@ const Logs = () => {
       <TableHeader className="sticky top-0">
         <TableRows className="bg-[#e2e2e2]" />
       </TableHeader>
-      <TableBody className="code-font">
+      <TableBody >
         {Object.keys(logs).map((logKey) => {
           const logEntry = logs[logKey as unknown as keyof typeof logs];
           const formattedTimestamp = moment(logEntry.TimeStamp).format(
             "h:mm:ss a, MMMM"
           );
           return (
-            <TableRow key={logKey} className="font-bold hover:bg-[#E0E0E1]">
+            <TableRow key={logKey} className="font-thin hover:bg-[#E0E0E1]">
               <TableCell title="ThreadId">{logEntry.ThreadID}</TableCell>
               <TableCell title="SessionID">{logEntry.SessionID}</TableCell>
               <TableCell title="Level">{logEntry.Level}</TableCell>

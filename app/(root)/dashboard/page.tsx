@@ -1,7 +1,7 @@
 import ContentContainer from "@/components/shared/contentContainer/ContentContainer";
 import DashBoardTables from "./DashBoardTables";
 
-export default function Home() {
+export default function page() {
   return (
     <ContentContainer>
       <DashBoardTables />
