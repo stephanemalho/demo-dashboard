@@ -15,12 +15,12 @@ const DiffLine = ({ changes, lineNum, isOld }: DiffLineProps) => {
     (change) => change.added || change.removed
   );
   const lineBackgroundColor = isOld
-    ? "bg-[rgba(255,179,184,0.5)] hover:bg-[rgba(255,179,184,0.2)]" // Light red with 50% transparency
-    : "";
+    ? "bg-[rgba(255,179,184,0.5)] hover:bg-[rgba(255,179,184,0.2)] border-b-[1px] border-[#510305]" // Light red with 50% transparency
+    : "bg-[rgba(111,220,140,0.1)] hover:bg-[rgba(22,27,34,0.2)] border-b-[1px] border-[#161B22]";
 
   return (
     <div
-      className={`flex h-[30px] items-center text-center text-[15px] hover:bg-[#161B22] max-2xl:text-[10px] ${
+      className={`flex h-[30px] items-center text-center text-[15px] hover:bg-[rgb(22,27,34)] max-2xl:text-[10px] ${
         lineIsModified ? lineBackgroundColor : ""
       }`}
     >

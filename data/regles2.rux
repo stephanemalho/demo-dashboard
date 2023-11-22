@@ -1,0 +1,236 @@
+Skipcheck ;
+
+
+#-- on neutralise les phases de réel
+['Value']=N:
+#If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu' % SUBST ( !Yearly phases,1  , 2 ) @= 'TC',
+If (SUBST ( !Yearly phases,1  , 2 ) @= 'TC',
+
+	stet ,
+	continue
+);
+
+
+['Actual and TC Es1 19/20','Total_Period']=['TC_Es1_19_20','Adjust']+['Actual_19_20','Q1'];
+['Actual and TC Es2 19/20','Total_Period']=['TC_Es2_19_20','Adjust']+['Actual_19_20','YTD_Apr'];
+
+#-- Calcul des écarts:
+['Var_Actua_19_20_vs_Esti_2_19_20_%']=C:
+(['Actual_19_20']-['Esti_2_19_20'])\['Esti_2_19_20'];
+
+['Var_Actua_19_20_vs_Actual_18_19_%']=C:
+(['Actual_19_20']-['Actual_18_19'])\['Actual_18_19'];
+
+['Var_Esti_1_19_20_vs_Budg_Fin_19_20_%']=C:
+(['Esti_1_19_20']-['Budg_Fin_19_20'])\['Budg_Fin_19_20'];
+
+['Var_Esti_2_19_20_vs_Esti_1_19_20_%']=C:
+(['Esti_2_19_20']-['Esti_1_19_20'])\['Esti_1_19_20'];
+
+
+['Var_Budg_Pre_19_20_vs_Budg_Fin_19_20_%']=C:
+(['Budg_Pre_19_20']-['Budg_Fin_19_20'])\['Budg_Fin_19_20'];
+
+['Var_Budg_Fin_19_20_vs_Budg_Pre_19_20_%']=C:
+(['Budg_Fin_19_20']-['Budg_Pre_19_20'])\['Budg_Pre_19_20'];
+
+
+
+
+#-- Récupération du réel dans le cube GL_Import
+
+#-- pour actual 18_19, on ne récupère pas le GL sur NAT2
+['Value','NAT2','N_A','Actual_18_19']=N:
+If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu' & Elisanc ( 'Period', 'Total_Per_Exc_Aju' , !Period ) = 1 ,
+	DB('Staff Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12
+#	+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') / 12 ,
+    + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12 ,
+	continue
+);
+
+
+# NCE - Evol récupération du réel dans Carl Cost Analysis
+#-- Pour staff cost, on ajoute la saisie issue du cube staff cost input (en 1/12)
+['Value','NAT2','N_A','Actual_20_21']=N:
+If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu' & Elisanc ( 'Period', 'Total_Per_Exc_Aju' , !Period ) = 1 ,
+#	DB('GL Import','Total clef','Total journal','Total Entity',!Yearly phases,!Period,'Total Accounts',!Cost Nature,!Management Unit,'Total Supplier','All Projects','Signed_amt')
+	 DB('Staff Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12
+#	+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') / 12 ,
+     + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12 ,
+    
+	continue
+);
+
+# CRO : 20230925 : on a la notion de projet désormais, Sur le NA on recupere Staff Cost Input + manuel input du projet NA et on fait un 2e pavé pour les autres projet
+#['Value','NAT2','N_A',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:
+#DB('Staff Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12
+##+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') / 12
+# + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12
+# ;
+['Value','NAT2','N_A',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:
+DB('Staff Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12
+ + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12;
+ 
+['Value','NAT2',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:
+DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12;
+
+
+['Value','NAT2',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:
+IF ( !Yearly phases @<> 'Actual_18_19' ,
+	0 ,
+	continue
+) ;
+
+
+
+#-- pour actual 18_19, on ne récupère pas le GL sur NAT1
+['Value','NAT1','N_A','Actual_18_19']=N:
+If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu' & Elisanc ( 'Period', 'Total_Per_Exc_Aju' , !Period ) = 1 ,
+	+ DB('Partner Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12
+#	+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') / 12 ,
+     + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12 ,
+	continue
+);
+
+
+
+# CRO : 20230925 : on a la notion de projet désormais, Sur le NA on recupere Staff Cost Input + manuel input du projet NA et on fait un 2e pavé pour les autres projet
+#['Value','NAT1','N_A',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:
+# DB('Partner Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12
+##+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') / 12
+# + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12
+#;
+['Value','NAT1','N_A',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:
+ DB('Partner Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12
+ + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12;
+
+['Value','NAT1',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:
+DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12;
+
+
+
+
+['Value','NAT1',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:
+IF ( !Yearly phases @<> 'Actual_18_19' ,
+	0 ,
+	continue
+) ;
+
+
+# CRO : 20230925 : on a la notion de projet désormais, Sur le NA on recupere Staff Cost Input + manuel input du projet NA et on fait un 2e pavé pour les autres projet
+#['Value',{'NAT5','NAT6'},'N_A']=N:
+#If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu'  & Elisanc ( 'Period', 'Total_Per_Exc_Aju' , !Period ) = 1 ,
+#	DB('GL Import','Total clef','Total journal','Total Entity',!Yearly phases,!Period,'Total Accounts',!Cost Nature,!Management Unit,'Total Supplier',!Projects,'Signed_amt')
+##	+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') / 12 ,
+#     + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12 ,   
+#	continue
+#) ;
+['Value',{'NAT5','NAT6'},'N_A']=N:
+If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu'  & Elisanc ( 'Period', 'Total_Per_Exc_Aju' , !Period ) = 1 ,
+	DB('GL Import','Total clef','Total journal','Total Entity',!Yearly phases,!Period,'Total Accounts',!Cost Nature,!Management Unit,'Total Supplier',!Projects,'Signed_amt')
+     + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12 ,   
+	continue
+) ;
+['Value',{'NAT5','NAT6'}]=N:
+If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu'  & Elisanc ( 'Period', 'Total_Per_Exc_Aju' , !Period ) = 1 ,
+DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12 ,   
+	continue
+) ;
+
+
+['Value']=N:
+If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu' ,
+	DB('GL Import','Total clef','Total journal','Total Entity',!Yearly phases,!Period,'Total Accounts',!Cost Nature,!Management Unit,'Total Supplier',!Projects,'Signed_amt') ,
+	continue
+);
+sdc
+#-- récupération des carl fees sur annuel, other, MU CARL FEES
+['CARL FEES','FullYear','N_A','NAT6']=N:
+DB('Carl Fees',!Yearly phases,'CTRY0','SRCKPI5');
+
+# PYB 03 12 , spread full year cost per month
+[{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=
+N:IF(ATTRS('Yearly phases',!Yearly phases,'Phasetype') @= 'yearly' & ['FullYear'] <> 0,
+ ['FullYear']/12, continue);
+
+ # PYB 05 03 montant doucles car Adjust contient aussi le total cost - uniquement sur Full year
+# NCE 01.05.2020 -- on récupère les élément du manual input aussi pour les autres phases
+ ['NAT1','Value','FullYear']=N:
+DB('Partner Cost Input',!Yearly phases,!Management Unit,'All Staff','COST')
+#+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value')  ;
+ + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') ;
+
+
+
+
+
+
+ # PYB 05 03 montant doucles car Adjust contient aussi le total cost - uniquement sur Full year
+# NCE 01.05.2020 -- on récupère les élément du manual input aussi pour les autres phases
+['NAT2','Value','FullYear']=N:
+DB('Staff Cost Input',!Yearly phases,!Management Unit,'All Staff','COST')
+#+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') ;
+ + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') ;
+
+
+
+# NCE 01.05.2020 -- on récupère les élément du manual input aussi pour les autres phases
+# ['NAT5','Value','fullyear','N_A']=N:
+# # DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') ;
+#   DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') ;
+
+# ['NAT5','Value','fullyear']=N:
+# DB('Project Cost Analysis',!Yearly phases,!Period,!Management Unit,'All Projects',!Projects,'TRAVEL');
+['NAT5','Value','fullyear']=N:
+  DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') 
+	+
+	DB('Project Cost Analysis',!Yearly phases,!Period,!Management Unit,'All Projects',!Projects,'TRAVEL');
+
+
+
+
+# NCE 01.05.2020 -- on récupère les élément du manual input aussi pour les autres phases
+# NCE 01.05.2020 -- on récupère les élément du manual input aussi pour les autres phases
+['NAT6','Value','fullyear','N_A','Mandagement Unit':'REDEVANCE']=N:
+If ( !Yearly Phases @<> 'Budg_Fin_19_20'
+	& !Yearly Phases @<> 'Esti_1_1cd9_20'
+	& !Yearly Phases @<> 'Esti_2_19_20'
+ 	& !Yearly Phases @<> 'Actual_22_23',
+#	DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value')
+     DB('Manual Input Projeccdts',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value')
+	+ DB('Carl Fees',!Yearly phases,'CTRYcd0','CTRY_Fee_Income') ,
+	continue )cs
+;
+
+
+
+# ['NAT6','Value','fullyear','N_A']=N:
+# # DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') ;
+#   DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') ;
+
+# ['NAT6','Value','fullyear']=N:
+# DB('Project Cost Analysis',!Yearly phases,!Period,!Management Unit,'All Projects',!Projects,'OTHER');
+
+['NAT6','Value','fullyear']=N:
+  DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') 
++DB('Project Cost Analysis',!Yearly phases,!Period,!Management Unit,'All Projects',!Projects,'OTHER');
+
+
+# ['NAT7','Value','fullyear','N_A']=N:cd
+# # DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') ;
+#   DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') ;
+ 
+
+# ['NAT7','Value','fullyear']=N:
+# DB('Project Cost Analysis',!Yearly phases,!Period,!Management Unit,'All Projects',!Projects,'REBILLING');
+
+
+['NAT7','Value','fullyear']=N:
+  DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') 
++DB('Project Cost Analysis',!Yearly phases,!Period,!Management Unit,'All Projects',!Projects,'REBILLING');
+cd
+
+Feeders;
+
+['FullYear']=>['Total_Per_Exc_Aju'];
+
