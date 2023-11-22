@@ -24,7 +24,7 @@ export default function page() {
           title="Compare"
           label="Compare"
         >
-          <div className="m-4 whitespace-nowrap">
+          <div className="m-4 whitespace-nowrap bg-[#0d1117] p-1 text-[#dde1e6]">
             <DiffViewer oldText={newFile} newText={oldFile} />
           </div>
         </LiveContainer>
