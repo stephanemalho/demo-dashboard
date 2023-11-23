@@ -29,7 +29,7 @@ export const oldFile = {
         "The cube is the only regular hexahedron and is one of the five Platonic solids.",
         "It has 12 edges, 6 faces and 8 vertices.",
         "The cube is also a square parallelepiped, an equilateral cuboid and a right rhombohedron.",
-        "It is a regular square prism in three orientations, and a trigonal trapezohedron in four orientations.",
+        "It is a regular square prism in three orientations, and a exagonal trapezohedron in four orientation.",
         "The cube is dual to the octahedron.",
     ]
 }
