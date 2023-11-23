@@ -80,18 +80,22 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
 
       return (
         <>
-          <div className="flex w-full flex-row overflow-x-hidden truncate">
-            <div className="flex basis-[50%] flex-col overflow-x-auto">
-              <div className="pr-2 text-[15px] text-[#e4e4e4]">
+          <div className="flex h-[84vh] w-full flex-col overflow-y-auto">
+            <div className="sticky top-0 z-10 flex h-[30px] w-full flex-row bg-[rgba(0,0,0,0.7)]">
+              <div className="basis-[50%] pr-2 text-[15px] text-[#e4e4e4]">
                 Total of lines: {numberOfTotalNewLines}
               </div>
-              {newTextElements}
-            </div>
-            <div className="flex basis-[50%] flex-col overflow-x-auto">
-              <div className="text-[15px] text-[#6FDC8C]">
+              <div className="basis-[50%] text-[15px] text-[#6FDC8C]">
                 Total of modified lines: {numberOfModifiedLines}
               </div>
-              {oldTextElements}
+            </div>
+            <div className="flex w-full flex-row">
+              <div className="flex basis-[50%] flex-col overflow-x-auto">
+                {newTextElements}
+              </div>
+              <div className="flex basis-[50%] flex-col overflow-x-auto">
+                {oldTextElements}
+              </div>
             </div>
           </div>
         </>
@@ -100,13 +104,13 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
   };
 
   return (
-    <>
+    <div className="overflow-y-scroll max-2xl:h-[70vh]">
       {isLargeScreen && (
-        <div className="flex justify-between">
-          <div className="text-[15px]  text-[#f7a8a8]">
+        <div className="sticky top-0 flex justify-between bg-[rgba(0,0,0,0.7)]">
+          <div className="text-[12px] text-[#f7a8a8]">
             Total of modified lines: {numberOfModifiedLines}, <span className="text-[#6FDC8C]">added lines: {numberOfModifiedLines}</span>
           </div>
-          <div className="pr-2 text-[15px] text-[#e4e4e4]">
+          <div className="pr-2 text-[12px] text-[#e4e4e4]">
             Total of lines: {numberOfTotalNewLines}
           </div>
         </div>
@@ -120,7 +124,7 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
           {renderDiffElements()}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default DiffViewer;

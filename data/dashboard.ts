@@ -1,3 +1,4 @@
+
 export interface LogEntry {
   ID: number;
   ThreadID: number;
@@ -60,7 +61,16 @@ export const menuItems: MenuItemInterface[] = [
     children: [
       {
         title: "Dimension",
-        children: [{ title: "Subset" }]
+        children: [{ title: "Subset",
+        children: [{ title: "View" },
+        { title: "Rules" },
+        { title: "Rules" },
+        { title: "Rules" },
+        { title: "Rules" },
+        { title: "Rules" },
+        { title: "Rules" },
+      ]
+        }]
       },
       { title: "View" },
       { title: "Rules" },
