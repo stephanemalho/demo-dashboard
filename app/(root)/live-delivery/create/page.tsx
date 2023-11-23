@@ -12,6 +12,7 @@ export default function page() {
           logHeight="h-[90vh] max-2xl:h-[80vh] w-[15vw] pt-1"
           title="Create"
           label="Create"
+          showIcons={false}
         >
                     {menuItems.map((item) => (
             <RenderMenu key={item.title} item={item} level={0} />
