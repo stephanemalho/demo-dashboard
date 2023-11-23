@@ -19,13 +19,13 @@ export default function page() {
           ))}
         </LiveContainer>
       </div>
-      <div className="ml-1 flex h-[90vh] w-[96vw] flex-col text-[10px] max-2xl:h-[80vh]">
+      <div className="ml-1 flex h-[90vh] w-[88vw] flex-col text-[10px] max-2xl:h-[80vh]">
         <LiveContainer
           logHeight="h-[90vh] max-2xl:h-[80vh] w-full"
           title="Compare"
           label="Compare"
         >
-          <div className=" m-4 whitespace-nowrap bg-[#0d1117] p-1 text-[#dde1e6]">
+          <div className=" custom-scrollbar m-4 whitespace-nowrap bg-[#0d1117] p-1 text-[#dde1e6]">
             <DiffViewer oldText={newFile} newText={oldFile} />
           </div>
         </LiveContainer>
