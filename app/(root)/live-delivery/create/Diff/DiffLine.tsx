@@ -10,7 +10,7 @@ interface DiffLineProps {
 }
 
 const DiffLine = ({ changes, lineNum, isOld }: DiffLineProps) => {
-  // Déterminez si la ligne a été modifiée
+// Déterminez si la ligne a été modifiée
   const lineIsModified = changes.some(
     (change) => change.added || change.removed
   );

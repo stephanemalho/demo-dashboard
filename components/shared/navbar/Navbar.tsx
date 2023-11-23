@@ -1,5 +1,5 @@
 "use client";
-import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton, useUser } from "@clerk/nextjs";
 import Link from "next/link";
 import React from "react";
 // import Theme from "./Theme";
@@ -16,6 +16,7 @@ import ThreadsInfo from "../threadsInfo/ThreadsInfo";
 
 const Navbar = () => {
   const { handleClick, toggleSideBar, handleClickRightSideBar, toggleRightSideBar } = useSidebar(); // sideBar Context
+  const { user } = useUser(); 
 
   return (
     <nav className="fixed z-10 flex h-[50px] w-full border-b-[1px] border-[#262626] bg-[#000]  shadow-light-300 ">
@@ -46,7 +47,7 @@ const Navbar = () => {
       <div className="flex h-[49px] w-[119px] border-[2px] border-[#000] hover:bg-[#262626] active:border-[2px] active:border-[#fff]">
         <Link href="/" className="flex w-full items-center gap-2 text-center">
           <h2 className="mr-2 w-full border-r-[1px] border-[#393939] font-bold  text-white">
-            X-Care
+            X-Care 
           </h2>
         </Link>
       </div>
@@ -69,7 +70,7 @@ const Navbar = () => {
                   alt={"menu"}
                   width={20}
                   height={20}
-                  className="invert-colors"
+                  className="text-[#fff]"
                 />
               </DropdownMenuTrigger>
               <DropdownMenuContent
@@ -97,7 +98,14 @@ const Navbar = () => {
         </SignedOut>
         {/* <Theme /> */}
         <SignedIn>
-          <div className="flex h-[49px] w-[50px] cursor-pointer items-center justify-center hover:bg-[#262626] active:border-[2px] active:border-[#fff]">
+          <div className="flex h-[49px] w-full cursor-pointer items-center justify-center hover:bg-[#262626] active:border-[2px] active:border-[#fff]">
+          {user && (
+            <span className="p-2 text-[12px] text-white">
+              {user.firstName} {user.lastName} {/* Affiche le nom et le prénom de l'utilisateur */}
+            </span>
+          )}
+          </div>
+          <div className="flex h-[49px] min-w-[50px] cursor-pointer items-center justify-center hover:bg-[#262626] active:border-[2px] active:border-[#fff]">      
             <UserButton
               afterSignOutUrl="/"
               appearance={{
@@ -110,7 +118,7 @@ const Navbar = () => {
               }}
             />
           </div>
-          <div onClick={handleClickRightSideBar} className="flex h-[49px] w-[50px] cursor-pointer justify-center hover:bg-[#262626] active:border-[2px] active:border-[#fff]">
+          <div onClick={handleClickRightSideBar} className="flex h-[49px] min-w-[50px] cursor-pointer justify-center hover:bg-[#262626] active:border-[2px] active:border-[#fff]">
             {toggleRightSideBar ? (
             <Image
               src={"/assets/icons/close.svg"}

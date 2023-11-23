@@ -6,7 +6,7 @@ import { newFile, oldFile } from "@/data/compareFile";
 
 export default function page() {
   return (
-    <div className=" flex w-[90vw] flex-row justify-between">
+    <div className=" flex w-[98vw] flex-row justify-between">
       <div className=" flex w-[15vw] flex-col text-[10px]">
         <LiveContainer
           logHeight="h-[90vh] max-2xl:h-[80vh] w-[15vw] pt-1"
@@ -21,7 +21,7 @@ export default function page() {
       </div>
       <div className="ml-1 flex w-[80vw] flex-col text-[10px]">
         <LiveContainer
-          logHeight="h-[90vh] max-2xl:h-[80vh] w-[80vw] "
+          logHeight="h-[90vh] max-2xl:h-[80vh] w-full"
           title="Compare"
           label="Compare"
         >
