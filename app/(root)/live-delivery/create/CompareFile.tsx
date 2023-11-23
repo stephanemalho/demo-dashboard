@@ -7,7 +7,7 @@ import DiffLine from "./Diff/DiffLine";
 import { lineHasChanges, newLinesCount, totalLines } from "@/utils/arrays";
 
 const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
-
+  
   const numberOfModifiedLines = newLinesCount(oldText, newText, lineHasChanges);
   const numberOfTotalNewLines = totalLines(newText);
 
@@ -38,13 +38,13 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
   return (
     <div className="flex flex-row">
       <div className="flex w-1/2 flex-col">
-        <div className="text-[15px] text-[#6FDC8C]">
+      <div className="pr-2 text-[15px] text-[#f7a8a8]">
           Total of lines: {numberOfTotalNewLines}
         </div>
         {newTextElements}
       </div>
       <div className="flex w-1/2 flex-col">
-        <div className="pr-2 text-[15px] text-[#f7a8a8]">
+      <div className="text-[15px] text-[#6FDC8C]">
           Total of modified lines: {numberOfModifiedLines}
         </div>
         {oldTextElements}
