@@ -80,7 +80,7 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="end"
-        className="flex h-auto w-[150px] flex-col border-[1px] border-[#a8a8a8] bg-[#63D1D4]"
+        className="flex h-auto w-[150px] flex-col border-[1px] border-[rgb(61,199,98)] bg-[rgb(161,233,180)]"
       >
         <div className="flex">
           <IconInfo title="Filter by columns" />
