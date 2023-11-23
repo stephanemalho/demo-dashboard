@@ -9,6 +9,7 @@ import { lineHasChanges, newLinesCount, totalLines } from "@/utils/arrays";
 const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
   const numberOfModifiedLines = newLinesCount(oldText, newText, lineHasChanges);
   const numberOfTotalNewLines = totalLines(newText);
+
   const [isLargeScreen, setIsLargeScreen] = useState(false);
 
   useEffect(() => {
@@ -37,6 +38,7 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
                 changes={changes}
                 lineNum={lineNumber}
                 isOld={true}
+                isVisible={true}
               />
             )}
             <DiffLine
@@ -44,6 +46,7 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
               changes={changes}
               lineNum={lineNumber}
               isOld={false}
+              isVisible={true}
             />
           </React.Fragment>
         );
@@ -57,6 +60,7 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
             changes={changes}
             lineNum={index + 1}
             isOld={true}
+            isVisible={true}
           />
         );
       });
@@ -69,6 +73,7 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
             changes={changes}
             lineNum={index + 1}
             isOld={false}
+            isVisible={true}
           />
         );
       });
