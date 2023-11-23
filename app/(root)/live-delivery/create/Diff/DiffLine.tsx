@@ -11,8 +11,12 @@ interface DiffLineProps {
 
 const DiffLine = ({ changes, lineNum, isOld }: DiffLineProps) => {
   // Déterminez si la ligne a été modifiée
-  const lineIsModified = changes.some(change => change.added || change.removed);
-  const lineIsUnchanged = changes.every(change => !change.added && !change.removed);
+  const lineIsModified = changes.some(
+    (change) => change.added || change.removed
+  );
+  const lineIsUnchanged = changes.every(
+    (change) => !change.added && !change.removed
+  );
 
   const lineBackgroundColor = isOld
     ? "bg-[rgba(111,220,140,0.1)] hover:bg-[rgba(22,27,34,0.2)] border-b-[1px] border-[#161B22]"
@@ -28,7 +32,13 @@ const DiffLine = ({ changes, lineNum, isOld }: DiffLineProps) => {
         {lineNum}
       </span>
       <div className="m-1 pb-1 pl-1">
-        {lineIsUnchanged ? null : isOld ? <AddIcon /> : <MinusIcon />}
+        {lineIsUnchanged ? (
+          <span className="relative flex h-[14px] w-[14px] items-center justify-center rounded-full bg-transparent p-2 text-center">{""}</span>
+        ) : isOld ? (
+          <AddIcon />
+        ) : (
+          <MinusIcon />
+        )}
       </div>
       <div className={`pl-2 `}>
         {changes.map((part, index) => {
