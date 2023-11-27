@@ -6,25 +6,26 @@ import { newFile, oldFile } from "@/data/compareFile";
 
 export default function page() {
   return (
-    <div className=" flex w-[90vw] flex-row justify-between">
-      <div className=" flex w-[15vw] flex-col text-[10px]">
+    <div className=" flex w-[98vw] flex-row justify-between">
+      <div className=" flex w-[10vw] flex-col text-[10px]">
         <LiveContainer
-          logHeight="h-[90vh] max-2xl:h-[80vh] w-[15vw] pt-1"
+          logHeight="h-[90vh] max-2xl:h-[80vh] w-[10vw] pt-1"
           title="Create"
           label="Create"
+          showIcons={false}
         >
-          {menuItems.map((item) => (
+                    {menuItems.map((item) => (
             <RenderMenu key={item.title} item={item} level={0} />
           ))}
         </LiveContainer>
       </div>
-      <div className=" flex w-[60vw] flex-col text-[10px]">
+      <div className="ml-1 flex h-[90vh] w-[88vw] flex-col text-[10px] max-2xl:h-[80vh]">
         <LiveContainer
-          logHeight="h-[90vh] max-2xl:h-[80vh] w-[60vw]"
+          logHeight="h-[90vh] max-2xl:h-[80vh] w-full"
           title="Compare"
           label="Compare"
         >
-          <div className="m-4 whitespace-nowrap bg-[#0d1117] p-1 text-[#dde1e6]">
+          <div className=" custom-scrollbar m-4 whitespace-nowrap bg-[#0d1117] p-1 text-[#dde1e6]">
             <DiffViewer oldText={newFile} newText={oldFile} />
           </div>
         </LiveContainer>

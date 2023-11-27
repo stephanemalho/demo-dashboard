@@ -10,9 +10,10 @@ interface BoxLogsProps {
   title: string;
   logHeight: string;
   label: string;
+  showIcons?: boolean; 
 }
 
-const LiveContainer = ({ children, logHeight, title, label }: BoxLogsProps) => {
+const LiveContainer = ({ children, logHeight, title, label, showIcons = true }: BoxLogsProps) => {
   // state
 
   // context
@@ -26,13 +27,15 @@ const LiveContainer = ({ children, logHeight, title, label }: BoxLogsProps) => {
   // TSX
   return (
     <div className={containerClasses} >
-      <div className="flex h-[auto] w-[auto] items-center border-b-[1px] border-[#f2f2f2] bg-[#63D1D4] font-bold text-[12px] max-2xl:text-[10px]">
+      <div className="flex h-[auto] w-[auto] items-center border-[2px] border-[rgb(61,199,98)] bg-[rgb(161,233,180)] font-bold text-[12px] max-2xl:text-[10px]">
         <IconInfo title={title} />
         {label}
-        <div className="ml-auto flex px-1">
-          {isFullscreen === null ? <IconResize /> : ""}
-          <IconMaximize title={title} />
-        </div>
+        {showIcons && (
+          <div className="ml-auto flex px-1">
+            {isFullscreen === null ? <IconResize /> : ""}
+            <IconMaximize title={title} />
+          </div>
+        )}
       </div>
       <div
         className={`custom-scrollbar ${
