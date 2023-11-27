@@ -47,6 +47,7 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
                 lineNum={lineNumber}
                 isOld={true}
                 isVisible={true} 
+                isSmallScreen={isSmallScreen}
               />
               <DiffLine
                 key={`new-${fragmentKey}`}
@@ -54,6 +55,7 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
                 lineNum={lineNumber}
                 isOld={false}
                 isVisible={true} 
+                isSmallScreen={isSmallScreen}
               />
             </React.Fragment>
           );
@@ -65,6 +67,7 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
               lineNum={lineNumber}
               isOld={false} 
               isVisible={true}
+              isSmallScreen={isSmallScreen}
             />
           );
         }
@@ -84,6 +87,7 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
               lineNum={index + 1}
               isOld={isOld}
               isVisible={true}
+              isSmallScreen={isSmallScreen}
             />
           );
         }
@@ -114,7 +118,7 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
               toggleShowAllLines={toggleShowAllLines}
             />
             <div className="flex w-full flex-row">
-              <div className="flex basis-[50%] flex-col overflow-x-auto overscroll-y-none ">
+              <div className="flex basis-[50%] flex-col overflow-x-auto overscroll-y-none">
                 {oldTextElements}
               </div>
               <div className="flex basis-[50%] flex-col overflow-x-auto overscroll-y-none">
