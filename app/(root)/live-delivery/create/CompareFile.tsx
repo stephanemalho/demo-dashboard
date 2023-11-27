@@ -39,7 +39,6 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
         const lineChanged = lineHasChanges(changes);
     
         if (lineChanged) {
-          // Doublons les lignes modifiées
           return (
             <React.Fragment key={fragmentKey}>
               <DiffLine
@@ -47,30 +46,29 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
                 changes={changes}
                 lineNum={lineNumber}
                 isOld={true}
-                isVisible={true} // Toujours visible car la ligne a changé
+                isVisible={true} 
               />
               <DiffLine
                 key={`new-${fragmentKey}`}
                 changes={changes}
                 lineNum={lineNumber}
                 isOld={false}
-                isVisible={true} // Toujours visible car la ligne a changé
+                isVisible={true} 
               />
             </React.Fragment>
           );
         } else if (showAllLines) {
-          // N'affichez les lignes non modifiées qu'une seule fois
           return (
             <DiffLine
               key={fragmentKey}
               changes={changes}
               lineNum={lineNumber}
-              isOld={false} // ou true, selon la manière dont vous souhaitez l'afficher
-              isVisible={true} // Visible seulement si showAllLines est true
+              isOld={false} 
+              isVisible={true}
             />
           );
         }
-        return null; // Ne rien rendre si la ligne n'a pas changé et showAllLines est false
+        return null;
       });
     } else {
       const renderLine = (line: string, index: number, isOld: boolean) => {
