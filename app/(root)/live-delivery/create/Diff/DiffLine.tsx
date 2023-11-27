@@ -20,7 +20,7 @@ const DiffLine = ({ changes, lineNum, isOld, isVisible }: DiffLineProps) => {
 
   return (
     <div
-      className={`flex h-[30px] items-center text-center text-[15px] hover:bg-[rgb(22,27,34)] max-2xl:text-[10px] ${
+      className={` flex h-[30px] items-center text-center text-[15px] hover:bg-[rgb(22,27,34)] max-2xl:text-[10px] ${
         lineIsModified ? lineBackgroundColor : ""
       }`}
     >
