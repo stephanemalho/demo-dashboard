@@ -64,16 +64,21 @@ export const menuItems: MenuItemInterface[] = [
         children: [{ title: "Subset",
         children: [{ title: "View" },
         { title: "Rules" },
-        { title: "Rules" },
-        { title: "Rules" },
-        { title: "Rules" },
-        { title: "Rules" },
-        { title: "Rules" },
+        { title: "Rules1" },
+        { title: "Rules2" },
+        { title: "Rules3" },
+        { title: "Rules4" },
+        { title: "Rules5" },
+        { title: "Rules6" },
+        { title: "Rules7" },
+        { title: "Rules8" },
+        { title: "Rules9" },
+        { title: "Rules10" },
       ]
         }]
       },
-      { title: "View" },
-      { title: "Rules" },
+      { title: "S-View" },
+      { title: "S-Rules" },
     ]
   },
   {

@@ -16,30 +16,23 @@ const DiffLine = ({
   isVisible,
   isSmallScreen,
 }: DiffLineProps) => {
-  // Déterminez si la ligne a été modifiée
+
   const lineIsModified = changes.some(
     (change) => change.added || change.removed
   );
 
-  const lineBackgroundColor =
-    !isOld && isSmallScreen
-      ? "bg-[rgba(255,179,184,0.2)] hover:bg-[rgba(255,179,184,0.1)] border-b-[1px] border-[#161B22] "
-      : "bg-[rgba(111,220,140,0.1)] hover:bg-[rgba(22,27,34,0.2)] border-b-[1px] border-[#161B22]";
-
-  const lineBackgroundColorLarge = !isOld
-    ? "bg-[rgba(111,220,140,0.1)] hover:bg-[rgba(22,27,34,0.2)] border-b-[1px] border-[#161B22]"
-    : "bg-[rgba(255,179,184,0.2)] hover:bg-[rgba(255,179,184,0.1)] border-b-[1px] border-[#161B22] ";
+  const lineBackgroundColor = isBGColor();
 
   return (
     <div
-      className={` flex h-[30px] items-center text-center text-[15px] hover:bg-[rgb(22,27,34)] max-2xl:text-[10px] ${
+      className={` flex h-[30px] items-center text-center text-[15px] text-[#000] hover:bg-[rgb(240,241,242)] max-2xl:text-[10px] ${
         lineIsModified ? lineBackgroundColor : ""
-      } ${!isSmallScreen && lineIsModified ? lineBackgroundColorLarge : ""}`}
+      } `}
     >
-      <span className={`min-w-[30px] border-r-[1px] border-[#dde1e6] pr-1 `}>
+      <span className={`min-w-[30px] border-r-[1px] border-[#f1f8ff] pr-1 `}>
         {!isOld && isVisible && lineNum}
       </span>
-      <span className={`min-w-[30px] border-r-[1px] border-[#dde1e6] pr-1 `}>
+      <span className={`min-w-[30px] border-r-[1px] border-[#f1f8ff] pr-1 `}>
         {isOld && isVisible && lineNum}
       </span>
       <div className={`pl-2 `}>
@@ -53,8 +46,8 @@ const DiffLine = ({
                 key={index}
                 className={
                   part.added && isOld
-                    ? "rounded-sm bg-[#A2191F] px-1"
-                    : "rounded-sm bg-[rgba(111,220,140,0.8)] px-1 text-[#000]"
+                    ? "z-10 rounded-sm bg-[#ffbdc5] px-1"
+                    : "z-10 rounded-sm bg-[#87e39f] px-1 text-[#000]"
                 }
               >
                 {part.value}
@@ -69,8 +62,8 @@ const DiffLine = ({
                 key={index}
                 className={
                   part.removed && isOld
-                    ? "rounded-sm bg-[rgba(111,220,140,0.8)] px-1 text-[#000]"
-                    : "rounded-sm bg-[#A2191F] px-1"
+                    ? "z-10 rounded-sm bg-[#87e39f] px-1 text-[#000]"
+                    : "z-10 rounded-sm bg-[#ffbdc5] px-1"
                 }
               >
                 {part.value}
@@ -84,6 +77,17 @@ const DiffLine = ({
       </div>
     </div>
   );
+  
+  function isBGColor() {
+    if (isOld  && isSmallScreen) {
+      return " bg-[#e6ffed] border-b-[1px] border-[#FFF] ";
+    } else if (!isOld && !isSmallScreen) {
+      return "bg-[#e6ffed] border-b-[1px] border-[#FFF] ";
+    } else if (!isOld && isSmallScreen) {
+      return "bg-[#ffeef0] border-b-[1px] border-[#FFF] ";
+    }
+    return "bg-[#ffeef0]  border-b-[1px] border-[#FFF]";
+  }
 };
 
 export default DiffLine;

@@ -15,7 +15,7 @@ export default function page() {
           showIcons={false}
         >
                     {menuItems.map((item) => (
-            <RenderMenu key={item.title} item={item} level={0} />
+            <RenderMenu key={item.title}  />
           ))}
         </LiveContainer>
       </div>
@@ -25,7 +25,7 @@ export default function page() {
           title="Compare"
           label="Compare"
         >
-          <div className=" custom-scrollbar m-4 whitespace-nowrap bg-[#0d1117] p-1 text-[#dde1e6]">
+          <div className=" custom-scrollbar m-4 whitespace-nowrap bg-[#fff] p-1 text-[#dde1e6]">
             <DiffViewer oldText={newFile} newText={oldFile} />
           </div>
         </LiveContainer>

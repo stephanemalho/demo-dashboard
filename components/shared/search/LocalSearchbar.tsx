@@ -4,32 +4,40 @@ import Image from 'next/image'
 import React from 'react'
 
 interface CustomInputProps {
-  route: string
-  iconPosition: string
-  imgSrc: string
-  placeholder: string
-  otherClasses?: string
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  route?: string;
+  iconPosition: string;
+  placeholder: string;
+  otherClasses?: string;
+  searchValue: string; // Nouveau
+  setSearchValue: React.Dispatch<React.SetStateAction<string>>; // Nouveau
 }
 
 const LocalSearchbar = ({
-    route,
+    onChange,
     iconPosition,
-    imgSrc,
     placeholder,
-    otherClasses
+    otherClasses,
+    searchValue, // Nouveau
+    setSearchValue // Nouveau
 } : CustomInputProps ) => {
   return (
-    <div className={`flex min-h-[56px] grow items-center gap-4 rounded-[10px] px-4 ${otherClasses}`}>
+    <div className={`flex h-[26px] items-center gap-2 px-4 ${otherClasses}`}>
         {iconPosition === 'left' && (
             <Image
-                src={imgSrc}
+                src="/assets/icons/search.svg"
                 alt="search icon"
-                width={20}
-                height={20}
+                width={15}
+                height={15}
                 className="cursor-pointer"
             />
         )}
-        <Input placeholder={placeholder} value="" onChange={() => {}} className="no-focus border-none font-thin shadow-none outline-none"/>
+        <Input 
+            placeholder={placeholder} 
+            value={searchValue} // Utilisez la valeur de l'état de recherche
+            onChange={(e) => setSearchValue(e.target.value)} // Mettez à jour l'état de recherche lors de la modification
+            className="no-focus h-[24px] rounded-none border-none font-thin shadow-none outline-none"
+        />
     </div>
   )
 }

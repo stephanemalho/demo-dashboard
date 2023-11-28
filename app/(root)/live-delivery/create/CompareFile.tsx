@@ -105,12 +105,15 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
       return (
         <>
           <div className="flex h-[86vh] w-full flex-col">
-            <div className="sticky top-0 z-10 flex h-[20px] w-full flex-row bg-[rgba(17,16,16,0.8)]">
-              <div className="basis-[50%] pr-2 text-[15px] text-[#e4e4e4]">
-                Total of lines: {numberOfTotalNewLines}
+            <div className="sticky top-0 z-10 flex h-[20px] w-full flex-row bg-[#fff]">
+              <div className="basis-[50%] pr-2 text-[15px] text-[#000]">
+                Old source:
               </div>
-              <div className="basis-[50%] text-[15px] text-[#6FDC8C]">
-                Total of modified lines: {numberOfModifiedLines}
+              <div className=" text-[15px] text-[#6FDC8C]">
+                New source:
+              </div>
+              <div className="basis-[50%] pl-[40px] text-[15px] text-[#6FDC8C]">
+              modified lines: {numberOfModifiedLines}
               </div>
             </div>
             <DiffButton
@@ -142,14 +145,14 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
       }`}
     >
       {isSmallScreen && (
-        <div className="sticky top-0 flex justify-between bg-[rgba(0,0,0,0.8)]">
+        <div className="sticky top-0 flex justify-between bg-[#fff]">
           <div className="text-[12px] text-[#f7a8a8]">
-            Total of modified lines: {numberOfModifiedLines},{" "}
-            <span className="text-[#6FDC8C]">
-              added lines: {numberOfModifiedLines}
-            </span>
+            Old sources {" "}
           </div>
-          <div className="pr-2 text-[12px] text-[#e4e4e4]">
+          <div className="pr-2 text-[12px] text-[#000]">
+            <span className="text-[#6FDC8C]">
+              New source {numberOfModifiedLines}{" "}
+            </span>
             Total of lines: {numberOfTotalNewLines}
           </div>
         </div>
