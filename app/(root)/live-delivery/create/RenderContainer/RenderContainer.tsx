@@ -16,8 +16,8 @@ const RenderContainer = () => {
     <div className={` flex h-full max-h-[92vh] flex-row justify-between overflow-y-hidden bg-[#f2f2f2] transition-all duration-500 ease-in-out ${isOpen ? "w-[24vw] max-2xl:w-[36vw]" : "w-[50px]"}`}>
       <div className={`m-2 flex flex-col text-[10px] transition-all duration-500 ease-in-out ${isOpen ? ' w-[24px] max-2xl:w-[36vw] ' : 'w-[50px]'} absolute`}>
         <WrapIcon bgColorHover='hover:bg-[#fff]'>
-        <button onClick={handleOpen} className="m-1  h-full w-full max-w-[20px]">
-          <Image src="/assets/icons/data--base.svg" alt="arrow" width={20} height={20} />
+        <button onClick={handleOpen} className="h-full w-full">
+          <Image src="/assets/icons/data--base.svg" alt="arrow" width={20} height={20} className="h-full w-full p-[5px]"/>
         </button> 
         </WrapIcon>
       </div>
