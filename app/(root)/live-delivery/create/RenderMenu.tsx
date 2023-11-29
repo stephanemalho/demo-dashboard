@@ -4,6 +4,7 @@ import { MenuItemInterface } from "@/data/dashboard";
 import React, { useEffect, useRef, useState } from "react";
 import { MdChevronRight } from "react-icons/md";
 import { FaCube } from "react-icons/fa";
+import ExportIcons from "./FileIcons/ExportIcons";
 
 const RenderMenu: React.FC<{ item: MenuItemInterface; level: number }> = ({
   item,
@@ -13,6 +14,8 @@ const RenderMenu: React.FC<{ item: MenuItemInterface; level: number }> = ({
   const [maxHeight, setMaxHeight] = useState<string>("0px");
   const [searchValue, setSearchValue] = useState("");
   const contentRef = useRef<HTMLDivElement>(null);
+
+  const isFirstElementRef = useRef(true); // Initialisé à true pour le premier élément
 
   const isTerminalChild = !item.children || item.children.length === 0;
 
@@ -48,7 +51,16 @@ const RenderMenu: React.FC<{ item: MenuItemInterface; level: number }> = ({
             }`}
           />
           {item.title}
-          <FaCube className="ml-2 mr-auto" />
+          {isFirstElementRef.current && (
+            <>
+            <FaCube className="ml-2 mr-auto" />
+            <ExportIcons
+              loadData={() => alert("load data")}
+              loadChildren={() => alert("load children")}
+              loadDescendants={() => alert("load descendants")}
+            />
+            </>
+          )}
         </div>
       )}
       {!isTerminalChild && (
@@ -77,13 +89,15 @@ const RenderMenu: React.FC<{ item: MenuItemInterface; level: number }> = ({
       )}
       {isTerminalChild && (
         <div
-          onClick={() => {
-            alert("clicked");
-          }}
           style={{ paddingLeft: `${level * 20}px` }}
           className={`mx-1 flex h-auto cursor-pointer items-center p-1 text-[12px] hover:bg-[#e2e2e2] active:border-[#e2e2e2]`}
         >
           {item.title}
+          <ExportIcons
+            loadData={() => alert("load data")}
+            loadChildren={() => alert("load children")}
+            loadDescendants={() => alert("load descendants")}
+          />
         </div>
       )}
     </div>
