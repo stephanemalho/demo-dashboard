@@ -3,8 +3,36 @@ import LocalSearchbar from "@/components/shared/search/LocalSearchbar";
 import { MenuItemInterface } from "@/data/dashboard";
 import React, { useEffect, useRef, useState } from "react";
 import { MdChevronRight } from "react-icons/md";
-import { FaCube } from "react-icons/fa";
 import ExportIcons from "./FileIcons/ExportIcons";
+import { FaCubes } from "react-icons/fa";
+import { AiOutlineDatabase } from "react-icons/ai";
+import { TbDimensions, TbSettingsCode } from "react-icons/tb";
+import { VscServerProcess } from "react-icons/vsc";
+import { GoTools } from "react-icons/go";
+import { IoCubeOutline } from "react-icons/io5";
+
+export const selectIcon = ({ title, parentTitle } : any) => {
+  console.log("Title Received:", title); 
+  if (parentTitle === "Cubes") {
+    return <IoCubeOutline size={12} className="ml-2 mr-auto" />;
+  }
+  switch (title) {
+    case "Activity":
+      return <AiOutlineDatabase size={12}  className="ml-2 mr-auto" />;
+    case "Cubes":
+      return <FaCubes size={12} className="ml-2 mr-auto" />;
+    case "Dimensions":
+      return <TbDimensions  size={12} className="ml-2 mr-auto" />;
+    case "Processes" :
+      return <VscServerProcess  size={12} className="ml-2 mr-auto" />;
+    case "Chores" : 
+      return <TbSettingsCode size={12} className="ml-2 mr-auto" />;
+    case "Control Objects":
+      return <GoTools  size={12} className="ml-2 mr-auto" />;
+    default:
+      return <IoCubeOutline size={12} className="ml-2 mr-auto" />; // Icône par défaut si aucune correspondance
+  }
+};
 
 const RenderMenu: React.FC<{ item: MenuItemInterface; level: number }> = ({
   item,
@@ -53,7 +81,7 @@ const RenderMenu: React.FC<{ item: MenuItemInterface; level: number }> = ({
           {item.title}
           {isFirstElementRef.current && (
             <>
-            <FaCube className="ml-2 mr-auto" />
+            {selectIcon({ title: item.title })} 
             <ExportIcons
               loadData={() => alert("load data")}
               loadChildren={() => alert("load children")}

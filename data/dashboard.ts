@@ -57,7 +57,7 @@ export interface MenuItemInterface {
 
 export const menuItems: MenuItemInterface[] = [
   {
-    title: "Activité",
+    title: "Activity",
     children : [
       {
         title: "Cubes",

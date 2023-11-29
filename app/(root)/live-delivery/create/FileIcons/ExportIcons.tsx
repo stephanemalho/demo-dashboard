@@ -52,17 +52,17 @@ const Accordion = ({ loadData, loadChildren, loadDescendants } : AccordionProps)
   return (
     <div className="flex-between ml-auto flex items-center justify-center">
       {/* Icône pour insérer un élément seul */}
-      <WrapIcon bgColorHover="hover:bg-pink-500" >
+      <WrapIcon bgColorHover="hover:bg-[#fff]" >
       <FaPlus size={12} onClick={(e:any) => handleLoadData(e)} className="h-full w-full p-[10px]" /> 
       </WrapIcon>
 
       {/* Icône pour insérer un élément et ses enfants */}
-      <WrapIcon bgColorHover="hover:bg-green-500" >
+      <WrapIcon bgColorHover="hover:bg-[#fff]" >
       <FaPlusCircle size={12} onClick={(e: any) => handleLoadChildren(e)} className="h-full w-full p-[10px]" />
       </WrapIcon>
 
       {/* Icône pour insérer un élément et toute sa descendance */}
-      <WrapIcon bgColorHover="hover:bg-blue-500" >
+      <WrapIcon bgColorHover="hover:bg-[#fff]" >
       <FaPlusSquare size={12} onClick={(e: any) => handleLoadDescendants(e)} className="h-full w-full p-[10px]" />
       </WrapIcon>
 
