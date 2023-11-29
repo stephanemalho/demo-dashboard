@@ -57,34 +57,393 @@ export interface MenuItemInterface {
 
 export const menuItems: MenuItemInterface[] = [
   {
-    title: "Cube",
-    children: [
+    title: "Activité",
+    children : [
       {
-        title: "Dimension",
-        children: [{ title: "Subset",
-        children: [{ title: "View" },
-        { title: "Rules" },
-        { title: "Rules1" },
-        { title: "Rules2" },
-        { title: "Rules3" },
-        { title: "Rules4" },
-        { title: "Rules5" },
-        { title: "Rules6" },
-        { title: "Rules7" },
-        { title: "Rules8" },
-        { title: "Rules9" },
-        { title: "Rules10" },
-      ]
-        }]
+        title: "Cubes",
+        children: [
+          {
+            title: "Activité",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Process",
+              },
+            ],
+          },
+          {
+            title: "Cube2",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Process",
+              },
+            ],
+          },
+          {
+            title: "InfoCube",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Process",
+              },
+            ],
+          },
+          {
+            title : "Suivi congés",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Process",
+              },
+            ],
+          },
+          {
+            title : "TMA - Activity",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Process",
+              },
+              {
+                title: "Chores",
+              },
+              {
+                title: "Control Objects",
+              },
+              
+            ],
+          }
+        ],
       },
-      { title: "S-View" },
-      { title: "S-Rules" },
+      {
+        title: "Dimensions",
+        children: [
+          {
+            title: "Activité",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Process",
+              },
+            ],
+          },
+          {
+            title: "Cube2",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Process",
+              },
+            ],
+          },
+          {
+            title: "InfoCube",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Process",
+              },
+            ],
+          },
+          {
+            title : "Suivi congés",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Process",
+              },
+            ],
+          },
+          {
+            title : "TMA - Activity",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Process",
+              },
+            ],
+          }
+        ],
+      },
+      {
+        title: "Processes",
+        children: [
+          {
+            title: "Activité",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Process",
+              },
+            ],
+          },
+          {
+            title: "Cube2",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Process",
+              },
+            ],
+          },
+          {
+            title: "InfoCube",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Process",
+              },
+            ],
+          },
+          {
+            title : "Suivi congés",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Process",
+              },
+            ],
+          },
+          {
+            title : "TMA - Activity",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Process",
+              },
+            ],
+          }
+        ],
+      },
+      {
+        title: "Chores",
+        children: [
+          {
+            title: "Activité",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Chores",
+              },
+            ],
+          },
+          {
+            title: "Cube2",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Chores",
+              },
+            ],
+          },
+          {
+            title: "InfoCube",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Chores",
+              },
+            ],
+          },
+          {
+            title : "Suivi congés",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Chores",
+              },
+            ],
+          },
+          {
+            title : "TMA - Activity",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Chores",
+              },
+            ],
+          }
+        ],
+      },
+      {
+        title: "Control Objects",
+        children: [
+          {
+            title: "Activité",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Control Objects",
+              },
+            ],
+          },
+          {
+            title: "Cube2",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Control Objects",
+              },
+            ],
+          },
+          {
+            title: "InfoCube",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Control Objects",
+              },
+            ],
+          },
+          {
+            title : "Suivi congés",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Control Objects",
+              },
+            ],
+          },
+          {
+            title : "TMA - Activity",
+            children: [
+              {
+                title: "Dimensions",
+              },
+              {
+                title: "Views",
+              },
+              {
+                title: "Control Objects",
+              },
+            ],
+          }
+        ],
+      },
     ]
   },
-  {
-    title: "Chores",
-    children: [{ title: "Process" }]
-  }
+    
 ];
 
 export const dashboard: DashboardInterface = {

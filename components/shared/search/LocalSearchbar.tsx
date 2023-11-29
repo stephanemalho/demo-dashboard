@@ -22,14 +22,14 @@ const LocalSearchbar = ({
     setSearchValue // Nouveau
 } : CustomInputProps ) => {
   return (
-    <div className={`flex h-[26px] items-center gap-2 px-4 ${otherClasses}`}>
-        {iconPosition === 'left' && (
+    <div className={`relative z-20 flex h-[26px] items-center gap-2 px-4 ${otherClasses}`}>
+        {iconPosition === 'right' && (
             <Image
                 src="/assets/icons/search.svg"
                 alt="search icon"
-                width={15}
-                height={15}
-                className="cursor-pointer"
+                width={10}
+                height={10}
+                className="absolute right-6 cursor-pointer"
             />
         )}
         <Input 

@@ -1,25 +1,15 @@
 import LiveContainer from "@/components/shared/boxContainer/LiveContainer";
-import { menuItems } from "@/data/dashboard";
-import RenderMenu from "./RenderMenu";
+// import { menuItems } from "@/data/dashboard";
+// import RenderMenu from "./RenderMenu";
 import DiffViewer from "./CompareFile";
 import { newFile, oldFile } from "@/data/compareFile";
+import RenderContainer from "./RenderContainer/RenderContainer";
 
 export default function page() {
   return (
     <div className=" flex w-[98vw] flex-row justify-between">
-      <div className=" flex w-[10vw] flex-col text-[10px]">
-        <LiveContainer
-          logHeight="h-[90vh] max-2xl:h-[80vh] w-[10vw] pt-1"
-          title="Create"
-          label="Create"
-          showIcons={false}
-        >
-                    {menuItems.map((item) => (
-            <RenderMenu key={item.title}  />
-          ))}
-        </LiveContainer>
-      </div>
-      <div className="ml-1 flex h-[90vh] w-[88vw] flex-col text-[10px] max-2xl:h-[80vh]">
+      <RenderContainer />
+      <div className="ml-1 flex h-[90vh] w-[100vw] flex-col text-[10px] max-2xl:h-[80vh]">
         <LiveContainer
           logHeight="h-[90vh] max-2xl:h-[80vh] w-full"
           title="Compare"
