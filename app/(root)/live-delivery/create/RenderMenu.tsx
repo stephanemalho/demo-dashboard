@@ -30,7 +30,7 @@ export const selectIcon = ({ title, parentTitle } : any) => {
     case "Control Objects":
       return <GoTools  size={12} className="ml-2 mr-auto" />;
     default:
-      return <IoCubeOutline size={12} className="ml-2 mr-auto" />; // Icône par défaut si aucune correspondance
+      return null;
   }
 };
 
