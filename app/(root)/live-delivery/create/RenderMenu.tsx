@@ -11,29 +11,6 @@ import { VscServerProcess } from "react-icons/vsc";
 import { GoTools } from "react-icons/go";
 import { IoCubeOutline } from "react-icons/io5";
 
-export const selectIcon = ({ title, parentTitle } : any) => {
-  console.log("Title Received:", title); 
-  if (parentTitle === "Cubes") {
-    return <IoCubeOutline size={12} className="ml-2 mr-auto" />;
-  }
-  switch (title) {
-    case "Activity":
-      return <AiOutlineDatabase size={12}  className="ml-2 mr-auto" />;
-    case "Cubes":
-      return <FaCubes size={12} className="ml-2 mr-auto" />;
-    case "Dimensions":
-      return <TbDimensions  size={12} className="ml-2 mr-auto" />;
-    case "Processes" :
-      return <VscServerProcess  size={12} className="ml-2 mr-auto" />;
-    case "Chores" : 
-      return <TbSettingsCode size={12} className="ml-2 mr-auto" />;
-    case "Control Objects":
-      return <GoTools  size={12} className="ml-2 mr-auto" />;
-    default:
-      return null;
-  }
-};
-
 const RenderMenu: React.FC<{ item: MenuItemInterface; level: number }> = ({
   item,
   level,
@@ -44,7 +21,6 @@ const RenderMenu: React.FC<{ item: MenuItemInterface; level: number }> = ({
   const contentRef = useRef<HTMLDivElement>(null);
 
   const isFirstElementRef = useRef(true); // Initialisé à true pour le premier élément
-
   const isTerminalChild = !item.children || item.children.length === 0;
 
   const toggleOpen = () => {
@@ -83,9 +59,9 @@ const RenderMenu: React.FC<{ item: MenuItemInterface; level: number }> = ({
             <>
             {selectIcon({ title: item.title })} 
             <ExportIcons
-              loadData={() => alert("load data")}
-              loadChildren={() => alert("load children")}
-              loadDescendants={() => alert("load descendants")}
+              loadData={() => alert("export element")}
+              loadChildren={() => alert("export element and children")}
+              loadDescendants={() => alert("export element and descendants")}
             />
             </>
           )}
@@ -122,9 +98,9 @@ const RenderMenu: React.FC<{ item: MenuItemInterface; level: number }> = ({
         >
           {item.title}
           <ExportIcons
-            loadData={() => alert("load data")}
-            loadChildren={() => alert("load children")}
-            loadDescendants={() => alert("load descendants")}
+            loadData={() => alert("export element")}
+            loadChildren={() => alert("export element and children")}
+            loadDescendants={() => alert("export element and descendants")}
           />
         </div>
       )}
@@ -133,3 +109,26 @@ const RenderMenu: React.FC<{ item: MenuItemInterface; level: number }> = ({
 };
 
 export default RenderMenu;
+
+export const selectIcon = ({ title, parentTitle } : any) => {
+  console.log("Title Received:", title); 
+  if (parentTitle === "Cubes") {
+    return <IoCubeOutline size={12} className="ml-2 mr-auto" />;
+  }
+  switch (title) {
+    case "Activity":
+      return <AiOutlineDatabase size={12}  className="ml-2 mr-auto" />;
+    case "Cubes":
+      return <FaCubes size={12} className="ml-2 mr-auto" />;
+    case "Dimensions":
+      return <TbDimensions  size={12} className="ml-2 mr-auto" />;
+    case "Processes" :
+      return <VscServerProcess  size={12} className="ml-2 mr-auto" />;
+    case "Chores" : 
+      return <TbSettingsCode size={12} className="ml-2 mr-auto" />;
+    case "Control Objects":
+      return <GoTools  size={12} className="ml-2 mr-auto" />;
+    default:
+      return null;
+  }
+};
