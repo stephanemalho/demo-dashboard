@@ -1,13 +1,19 @@
 import LiveContainer from "@/components/shared/boxContainer/LiveContainer";
-// import { menuItems } from "@/data/dashboard";
-// import RenderMenu from "./RenderMenu";
 import DiffViewer from "./CompareFile";
-import { newFile, oldFile } from "@/data/compareFile";
 import RenderContainer from "./RenderContainer/RenderContainer";
+import jsonData from "@/data/data.json"; // Assurez-vous que le chemin est correct
 
 export default function page() {
+  // Transformation des données JSON en objets DiffFile
+  const oldTextFile = {
+    content: jsonData.map(item => item.Text1)
+  };
+  const newTextFile = {
+    content: jsonData.map(item => item.Text2)
+  };
+
   return (
-    <div className=" flex w-[98vw] flex-row justify-between">
+    <div className="flex w-[98vw] flex-row justify-between">
       <RenderContainer />
       <div className="ml-1 flex h-[90vh] w-[100vw] flex-col text-[10px] max-2xl:h-[80vh]">
         <LiveContainer
@@ -15,8 +21,8 @@ export default function page() {
           title="Compare"
           label="Compare"
         >
-          <div className=" custom-scrollbar m-4 whitespace-nowrap bg-[#fff] p-1 text-[#dde1e6]">
-            <DiffViewer oldText={newFile} newText={oldFile} />
+          <div className="custom-scrollbar m-4 whitespace-nowrap bg-[#fff] p-1 text-[#dde1e6]">
+            <DiffViewer oldText={oldTextFile} newText={newTextFile} />
           </div>
         </LiveContainer>
       </div>

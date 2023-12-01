@@ -64,8 +64,7 @@ export type BadgeCriteriaType = keyof typeof BADGE_CRITERIA;
 export interface IconProps {
   handleDeleteElement: (event: React.MouseEvent<HTMLSpanElement>) => void;
 }
-export interface DiffFile {
-  document: string;
+interface DiffFile {
   content: string[];
 }
 export interface DiffViewerProps {

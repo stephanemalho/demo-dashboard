@@ -1,0 +1,1724 @@
+[
+    {
+        "NumeroL1": 1,
+        "NumeroL2": 1,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 2,
+        "NumeroL2": 2,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 3,
+        "NumeroL2": 3,
+        "Operation": "Nothing",
+        "Text1": "Skipcheck ;",
+        "Text2": "Skipcheck ;"
+    },
+    {
+        "NumeroL1": 4,
+        "NumeroL2": 4,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 5,
+        "NumeroL2": 5,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 6,
+        "NumeroL2": 6,
+        "Operation": "Nothing",
+        "Text1": "#-- on neutralise les phases",
+        "Text2": "#-- on neutralise les phases de réel"
+    },
+    {
+        "NumeroL1": 7,
+        "NumeroL2": 7,
+        "Operation": "Nothing",
+        "Text1": "['Value']=N:",
+        "Text2": "['Value']=N:"
+    },
+    {
+        "NumeroL1": 8,
+        "NumeroL2": 8,
+        "Operation": "Nothing",
+        "Text1": "#If ( SUBST ( !Yearly phases,2  , 4 ) @= 'Actu' % SUBST ( !Yearly phases,1  , 2 ) @= 'TC',",
+        "Text2": "#If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu' % SUBST ( !Yearly phases,1  , 2 ) @= 'TC',"
+    },
+    {
+        "NumeroL1": 9,
+        "NumeroL2": 9,
+        "Operation": "Nothing",
+        "Text1": "If (SUBST ( !Yearly phases,1  , 2 ) @= 'TC',",
+        "Text2": "If (SUBST ( !Yearly phases,1  , 2 ) @= 'TC',"
+    },
+    {
+        "NumeroL1": 10,
+        "NumeroL2": 10,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 11,
+        "NumeroL2": 11,
+        "Operation": "Nothing",
+        "Text1": "\tstet ,",
+        "Text2": "\tstet ,"
+    },
+    {
+        "NumeroL1": 12,
+        "NumeroL2": 12,
+        "Operation": "Nothing",
+        "Text1": "\tcontinue",
+        "Text2": "\tcontinue"
+    },
+    {
+        "NumeroL1": 13,
+        "NumeroL2": 13,
+        "Operation": "Nothing",
+        "Text1": ");",
+        "Text2": ");"
+    },
+    {
+        "NumeroL1": 14,
+        "NumeroL2": 14,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 15,
+        "NumeroL2": 15,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 16,
+        "NumeroL2": 16,
+        "Operation": "Nothing",
+        "Text1": "['Actual and TC Es1 19/20','Total_Period']=['TC_Es1_19_20','Adjust']+['Actual_19_20','Q1'];",
+        "Text2": "['Actual and TC Es1 19/20','Total_Period']=['TC_Es1_19_20','Adjust']+['Actual_19_20','Q1'];"
+    },
+    {
+        "NumeroL1": 17,
+        "NumeroL2": 17,
+        "Operation": "Nothing",
+        "Text1": "['Actual and TC Es2 20/20','Total_Period']=['TC_Es2_19_20','Adjust']+['Actual_19_20','YTD_Apr'];",
+        "Text2": "['Actual and TC Es2 19/20','Total_Period']=['TC_Es2_19_20','Adjust']+['Actual_19_20','YTD_Apr'];"
+    },
+    {
+        "NumeroL1": 18,
+        "NumeroL2": 18,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 19,
+        "NumeroL2": 19,
+        "Operation": "Nothing",
+        "Text1": "#-- Calcul des écarts:",
+        "Text2": "#-- Calcul des écarts:"
+    },
+    {
+        "NumeroL1": 20,
+        "NumeroL2": 20,
+        "Operation": "Nothing",
+        "Text1": "['Var_Actua_19_20_vs_Esti_2_19_20_%']=C:",
+        "Text2": "['Var_Actua_19_20_vs_Esti_2_19_20_%']=C:"
+    },
+    {
+        "NumeroL1": 21,
+        "NumeroL2": 21,
+        "Operation": "Nothing",
+        "Text1": "(['Actual_19_20']-['Esti_2_19_20'])\\['Esti_2_19_20'];",
+        "Text2": "(['Actual_19_20']-['Esti_2_19_20'])\\['Esti_2_19_20'];"
+    },
+    {
+        "NumeroL1": 22,
+        "NumeroL2": 22,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 23,
+        "NumeroL2": 23,
+        "Operation": "Nothing",
+        "Text1": "['Var_Actua_19_20_vs_Actual_18_19_%']=C:",
+        "Text2": "['Var_Actua_19_20_vs_Actual_18_19_%']=C:"
+    },
+    {
+        "NumeroL1": 24,
+        "NumeroL2": 24,
+        "Operation": "Nothing",
+        "Text1": "(['Actual_19_20']-['Actual_18_19'])\\['Actual_18_19'];",
+        "Text2": "(['Actual_19_20']-['Actual_18_19'])\\['Actual_18_19'];"
+    },
+    {
+        "NumeroL1": 25,
+        "NumeroL2": 25,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 26,
+        "NumeroL2": 26,
+        "Operation": "Nothing",
+        "Text1": "['Var_Esti_1_19_20_vs_Budg_Fin_19_20_%']=C:",
+        "Text2": "['Var_Esti_1_19_20_vs_Budg_Fin_19_20_%']=C:"
+    },
+    {
+        "NumeroL1": 27,
+        "NumeroL2": 27,
+        "Operation": "Nothing",
+        "Text1": "(['Esti_1_19_20']-['Budg_Fin_19_20'])\\['Budg_Fin_19_20'];",
+        "Text2": "(['Esti_1_19_20']-['Budg_Fin_19_20'])\\['Budg_Fin_19_20'];"
+    },
+    {
+        "NumeroL1": 28,
+        "NumeroL2": 28,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 29,
+        "NumeroL2": 29,
+        "Operation": "Nothing",
+        "Text1": "['Var_Esti_2_19_20_vs_Esti_1_19_20_%']=C:",
+        "Text2": "['Var_Esti_2_19_20_vs_Esti_1_19_20_%']=C:"
+    },
+    {
+        "NumeroL1": 30,
+        "NumeroL2": 30,
+        "Operation": "Nothing",
+        "Text1": "(['Esti_2_19_20']-['Esti_1_19_20'])\\['Esti_1_19_20'];",
+        "Text2": "(['Esti_2_19_20']-['Esti_1_19_20'])\\['Esti_1_19_20'];"
+    },
+    {
+        "NumeroL1": 31,
+        "NumeroL2": 31,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 32,
+        "NumeroL2": 32,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 33,
+        "NumeroL2": 33,
+        "Operation": "Nothing",
+        "Text1": "['Var_Budg_Pre_19_20_vs_Budg_Fin_19_20_%']=C:",
+        "Text2": "['Var_Budg_Pre_19_20_vs_Budg_Fin_19_20_%']=C:"
+    },
+    {
+        "NumeroL1": 34,
+        "NumeroL2": 34,
+        "Operation": "Nothing",
+        "Text1": "(['Budg_Pre_19_20']-['Budg_Fin_19_20'])\\['Budg_Fin_19_20'];",
+        "Text2": "(['Budg_Pre_19_20']-['Budg_Fin_19_20'])\\['Budg_Fin_19_20'];"
+    },
+    {
+        "NumeroL1": 35,
+        "NumeroL2": 35,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 36,
+        "NumeroL2": 36,
+        "Operation": "Nothing",
+        "Text1": "['Var_Budg_Fin_19_20_vs_Budg_Pre_19_20_%']=C:",
+        "Text2": "['Var_Budg_Fin_19_20_vs_Budg_Pre_19_20_%']=C:"
+    },
+    {
+        "NumeroL1": 37,
+        "NumeroL2": 37,
+        "Operation": "Nothing",
+        "Text1": "(['Budg_Fin_19_20']-['Budg_Pre_19_20'])\\['Budg_Pre_19_20'];",
+        "Text2": "(['Budg_Fin_19_20']-['Budg_Pre_19_20'])\\['Budg_Pre_19_20'];"
+    },
+    {
+        "NumeroL1": 38,
+        "NumeroL2": 38,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 39,
+        "NumeroL2": 39,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 40,
+        "NumeroL2": 40,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 41,
+        "NumeroL2": 41,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 42,
+        "NumeroL2": 42,
+        "Operation": "Nothing",
+        "Text1": "#-- Récupération du réel dans le cube GL_Import",
+        "Text2": "#-- Récupération du réel dans le cube GL_Import"
+    },
+    {
+        "NumeroL1": 43,
+        "NumeroL2": 43,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 44,
+        "NumeroL2": 44,
+        "Operation": "Nothing",
+        "Text1": "#-- pour actual 18_19, on ne récupère pas le GL sur NAT2",
+        "Text2": "#-- pour actual 18_19, on ne récupère pas le GL sur NAT2"
+    },
+    {
+        "NumeroL1": 45,
+        "NumeroL2": 45,
+        "Operation": "Nothing",
+        "Text1": "['Value','NAT2','N_A','Actual_18_19']=N:",
+        "Text2": "['Value','NAT2','N_A','Actual_18_19']=N:"
+    },
+    {
+        "NumeroL1": 46,
+        "NumeroL2": 46,
+        "Operation": "Nothing",
+        "Text1": "If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu' & Elisanc ( 'Period', 'Total_Per_Exc_Aju' , !Period ) = 1 ,",
+        "Text2": "If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu' & Elisanc ( 'Period', 'Total_Per_Exc_Aju' , !Period ) = 1 ,"
+    },
+    {
+        "NumeroL1": 47,
+        "NumeroL2": 47,
+        "Operation": "Nothing",
+        "Text1": "\tDB('Staff Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12",
+        "Text2": "\tDB('Staff Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12"
+    },
+    {
+        "NumeroL1": 48,
+        "NumeroL2": 48,
+        "Operation": "Nothing",
+        "Text1": "#\t+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') / 12 ,",
+        "Text2": "#\t+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') / 12 ,"
+    },
+    {
+        "NumeroL1": 49,
+        "NumeroL2": 49,
+        "Operation": "Nothing",
+        "Text1": "    + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12 ,",
+        "Text2": "    + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12 ,"
+    },
+    {
+        "NumeroL1": 50,
+        "NumeroL2": 50,
+        "Operation": "Nothing",
+        "Text1": "\tcontinue",
+        "Text2": "\tcontinue"
+    },
+    {
+        "NumeroL1": 51,
+        "NumeroL2": 51,
+        "Operation": "Nothing",
+        "Text1": ");",
+        "Text2": ");"
+    },
+    {
+        "NumeroL1": 52,
+        "NumeroL2": 52,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 53,
+        "NumeroL2": 53,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 54,
+        "NumeroL2": 54,
+        "Operation": "Nothing",
+        "Text1": "# NCE - Evol récupération du réel dans Carl Cost Analysis",
+        "Text2": "# NCE - Evol récupération du réel dans Carl Cost Analysis"
+    },
+    {
+        "NumeroL1": 55,
+        "NumeroL2": 55,
+        "Operation": "Nothing",
+        "Text1": "#-- Pour staff cost, on ajoute la saisie issue du cube staff cost input (en 1/12)",
+        "Text2": "#-- Pour staff cost, on ajoute la saisie issue du cube staff cost input (en 1/12)"
+    },
+    {
+        "NumeroL1": 56,
+        "NumeroL2": 56,
+        "Operation": "Nothing",
+        "Text1": "['Value','NAT2','N_A','Actual_20_21']=N:",
+        "Text2": "['Value','NAT2','N_A','Actual_20_21']=N:"
+    },
+    {
+        "NumeroL1": 57,
+        "NumeroL2": 57,
+        "Operation": "Nothing",
+        "Text1": "If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu' & Elisanc ( 'Period', 'Total_Per_Exc_Aju' , !Period ) = 1 ,",
+        "Text2": "If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu' & Elisanc ( 'Period', 'Total_Per_Exc_Aju' , !Period ) = 1 ,"
+    },
+    {
+        "NumeroL1": 58,
+        "NumeroL2": 58,
+        "Operation": "Nothing",
+        "Text1": "#\tDB('GL Import','Total clef','Total journal','Total Entity',!Yearly phases,!Period,'Total Accounts',!Cost Nature,!Management Unit,'Total Supplier','All Projects','Signed_amt')",
+        "Text2": "#\tDB('GL Import','Total clef','Total journal','Total Entity',!Yearly phases,!Period,'Total Accounts',!Cost Nature,!Management Unit,'Total Supplier','All Projects','Signed_amt')"
+    },
+    {
+        "NumeroL1": 59,
+        "NumeroL2": 59,
+        "Operation": "Nothing",
+        "Text1": "\t DB('Staff Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12",
+        "Text2": "\t DB('Staff Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12"
+    },
+    {
+        "NumeroL1": 60,
+        "NumeroL2": 60,
+        "Operation": "Nothing",
+        "Text1": "#\t+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') / 12 ,",
+        "Text2": "#\t+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') / 12 ,"
+    },
+    {
+        "NumeroL1": 61,
+        "NumeroL2": 61,
+        "Operation": "Nothing",
+        "Text1": "     + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12 ,",
+        "Text2": "     + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12 ,"
+    },
+    {
+        "NumeroL1": 62,
+        "NumeroL2": 62,
+        "Operation": "Nothing",
+        "Text1": "    ",
+        "Text2": "    "
+    },
+    {
+        "NumeroL1": 63,
+        "NumeroL2": 63,
+        "Operation": "Nothing",
+        "Text1": "\tcontinue",
+        "Text2": "\tcontinue"
+    },
+    {
+        "NumeroL1": 64,
+        "NumeroL2": 64,
+        "Operation": "Nothing",
+        "Text1": ");",
+        "Text2": ");"
+    },
+    {
+        "NumeroL1": 65,
+        "NumeroL2": 65,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 66,
+        "NumeroL2": 66,
+        "Operation": "Nothing",
+        "Text1": "# CRO : 20230925 : on a la notion de projet désormais, Sur le NA on recupere Staff Cost Input + manuel input du projet NA et on fait un 2e pavé pour les autres projet",
+        "Text2": "# CRO : 20230925 : on a la notion de projet désormais, Sur le NA on recupere Staff Cost Input + manuel input du projet NA et on fait un 2e pavé pour les autres projet"
+    },
+    {
+        "NumeroL1": 67,
+        "NumeroL2": 67,
+        "Operation": "Nothing",
+        "Text1": "#['Value','NAT2','N_A',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:",
+        "Text2": "#['Value','NAT2','N_A',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:"
+    },
+    {
+        "NumeroL1": 68,
+        "NumeroL2": 68,
+        "Operation": "Nothing",
+        "Text1": "#DB('Staff Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12",
+        "Text2": "#DB('Staff Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12"
+    },
+    {
+        "NumeroL1": 69,
+        "NumeroL2": 69,
+        "Operation": "Nothing",
+        "Text1": "##+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') / 12",
+        "Text2": "##+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') / 12"
+    },
+    {
+        "NumeroL1": 70,
+        "NumeroL2": 70,
+        "Operation": "Nothing",
+        "Text1": "# + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12",
+        "Text2": "# + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12"
+    },
+    {
+        "NumeroL1": 71,
+        "NumeroL2": 71,
+        "Operation": "Nothing",
+        "Text1": "# ;",
+        "Text2": "# ;"
+    },
+    {
+        "NumeroL1": 72,
+        "NumeroL2": 72,
+        "Operation": "Nothing",
+        "Text1": "['Value','NAT2','N_A',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:",
+        "Text2": "['Value','NAT2','N_A',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:"
+    },
+    {
+        "NumeroL1": 73,
+        "NumeroL2": 73,
+        "Operation": "Nothing",
+        "Text1": "DB('Staff Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12",
+        "Text2": "DB('Staff Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12"
+    },
+    {
+        "NumeroL1": 74,
+        "NumeroL2": 74,
+        "Operation": "Nothing",
+        "Text1": " + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12;",
+        "Text2": " + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12;"
+    },
+    {
+        "NumeroL1": 75,
+        "NumeroL2": 75,
+        "Operation": "Nothing",
+        "Text1": " ",
+        "Text2": " "
+    },
+    {
+        "NumeroL1": 76,
+        "NumeroL2": 76,
+        "Operation": "Nothing",
+        "Text1": "['Value','NAT2',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:",
+        "Text2": "['Value','NAT2',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:"
+    },
+    {
+        "NumeroL1": 77,
+        "NumeroL2": 77,
+        "Operation": "Nothing",
+        "Text1": "DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12;",
+        "Text2": "DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12;"
+    },
+    {
+        "NumeroL1": 78,
+        "NumeroL2": 78,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 79,
+        "NumeroL2": 79,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 80,
+        "NumeroL2": 80,
+        "Operation": "Nothing",
+        "Text1": "['Value','NAT2',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:",
+        "Text2": "['Value','NAT2',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:"
+    },
+    {
+        "NumeroL1": 81,
+        "NumeroL2": 81,
+        "Operation": "Nothing",
+        "Text1": "IF ( !Yearly phases @<> 'Actual_18_19' ,",
+        "Text2": "IF ( !Yearly phases @<> 'Actual_18_19' ,"
+    },
+    {
+        "NumeroL1": 82,
+        "NumeroL2": 82,
+        "Operation": "Nothing",
+        "Text1": "\t0 ,",
+        "Text2": "\t0 ,"
+    },
+    {
+        "NumeroL1": 83,
+        "NumeroL2": 83,
+        "Operation": "Nothing",
+        "Text1": "\tcontinue",
+        "Text2": "\tcontinue"
+    },
+    {
+        "NumeroL1": 84,
+        "NumeroL2": 84,
+        "Operation": "Nothing",
+        "Text1": ") ;",
+        "Text2": ") ;"
+    },
+    {
+        "NumeroL1": 85,
+        "NumeroL2": 85,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 86,
+        "NumeroL2": 86,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 87,
+        "NumeroL2": 87,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 88,
+        "NumeroL2": 88,
+        "Operation": "Nothing",
+        "Text1": "#-- pour actual 18_19, on ne récupère pas le GL sur NAT1",
+        "Text2": "#-- pour actual 18_19, on ne récupère pas le GL sur NAT1"
+    },
+    {
+        "NumeroL1": 89,
+        "NumeroL2": 89,
+        "Operation": "Nothing",
+        "Text1": "['Value','NAT1','N_A','Actual_18_19']=N:",
+        "Text2": "['Value','NAT1','N_A','Actual_18_19']=N:"
+    },
+    {
+        "NumeroL1": 90,
+        "NumeroL2": 90,
+        "Operation": "Nothing",
+        "Text1": "If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu' & Elisanc ( 'Period', 'Total_Per_Exc_Aju' , !Period ) = 1 ,",
+        "Text2": "If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu' & Elisanc ( 'Period', 'Total_Per_Exc_Aju' , !Period ) = 1 ,"
+    },
+    {
+        "NumeroL1": 91,
+        "NumeroL2": 91,
+        "Operation": "Nothing",
+        "Text1": "\t+ DB('Partner Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12",
+        "Text2": "\t+ DB('Partner Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12"
+    },
+    {
+        "NumeroL1": 92,
+        "NumeroL2": 92,
+        "Operation": "Nothing",
+        "Text1": "#\t+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') / 12 ,",
+        "Text2": "#\t+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') / 12 ,"
+    },
+    {
+        "NumeroL1": 93,
+        "NumeroL2": 93,
+        "Operation": "Nothing",
+        "Text1": "     + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12 ,",
+        "Text2": "     + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12 ,"
+    },
+    {
+        "NumeroL1": 94,
+        "NumeroL2": 94,
+        "Operation": "Nothing",
+        "Text1": "\tcontinue",
+        "Text2": "\tcontinue"
+    },
+    {
+        "NumeroL1": 95,
+        "NumeroL2": 95,
+        "Operation": "Nothing",
+        "Text1": ");",
+        "Text2": ");"
+    },
+    {
+        "NumeroL1": 96,
+        "NumeroL2": 96,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 97,
+        "NumeroL2": 97,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 98,
+        "NumeroL2": 98,
+        "Operation": "Nothing",
+        "Text1": "# NCE - Evol récupération du réel dans Carl Cost Analysis",
+        "Text2": "# NCE - Evol récupération du réel dans Carl Cost Analysis"
+    },
+    {
+        "NumeroL1": 99,
+        "NumeroL2": 99,
+        "Operation": "Nothing",
+        "Text1": "['Value','NAT1','N_A','Actual_20_21']=N:",
+        "Text2": "['Value','NAT1','N_A','Actual_20_21']=N:"
+    },
+    {
+        "NumeroL1": 100,
+        "NumeroL2": 100,
+        "Operation": "Nothing",
+        "Text1": "If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu' & Elisanc ( 'Period', 'Total_Per_Exc_Aju' , !Period ) = 1 ,",
+        "Text2": "If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu' & Elisanc ( 'Period', 'Total_Per_Exc_Aju' , !Period ) = 1 ,"
+    },
+    {
+        "NumeroL1": 101,
+        "NumeroL2": 101,
+        "Operation": "Nothing",
+        "Text1": "#\tDB('GL Import','Total clef','Total journal','Total Entity',!Yearly phases,!Period,'Total Accounts',!Cost Nature,!Management Unit,'Total Supplier','All Projects','Signed_amt')",
+        "Text2": "#\tDB('GL Import','Total clef','Total journal','Total Entity',!Yearly phases,!Period,'Total Accounts',!Cost Nature,!Management Unit,'Total Supplier','All Projects','Signed_amt')"
+    },
+    {
+        "NumeroL1": 102,
+        "NumeroL2": 102,
+        "Operation": "Nothing",
+        "Text1": "\t DB('Partner Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12",
+        "Text2": "\t DB('Partner Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12"
+    },
+    {
+        "NumeroL1": 103,
+        "NumeroL2": 103,
+        "Operation": "Nothing",
+        "Text1": "#\t+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') / 12 ,",
+        "Text2": "#\t+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') / 12 ,"
+    },
+    {
+        "NumeroL1": 104,
+        "NumeroL2": 104,
+        "Operation": "Nothing",
+        "Text1": "     + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12 ,",
+        "Text2": "     + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12 ,"
+    },
+    {
+        "NumeroL1": 105,
+        "NumeroL2": 105,
+        "Operation": "Nothing",
+        "Text1": "\tcontinue",
+        "Text2": "\tcontinue"
+    },
+    {
+        "NumeroL1": 106,
+        "NumeroL2": 106,
+        "Operation": "Nothing",
+        "Text1": ");",
+        "Text2": ");"
+    },
+    {
+        "NumeroL1": 107,
+        "NumeroL2": 107,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 108,
+        "NumeroL2": 108,
+        "Operation": "Nothing",
+        "Text1": "# CRO : 20230925 : on a la notion de projet désormais, Sur le NA on recupere Staff Cost Input + manuel input du projet NA et on fait un 2e pavé pour les autres projet",
+        "Text2": "# CRO : 20230925 : on a la notion de projet désormais, Sur le NA on recupere Staff Cost Input + manuel input du projet NA et on fait un 2e pavé pour les autres projet"
+    },
+    {
+        "NumeroL1": 109,
+        "NumeroL2": 109,
+        "Operation": "Nothing",
+        "Text1": "#['Value','NAT1','N_A',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:",
+        "Text2": "#['Value','NAT1','N_A',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:"
+    },
+    {
+        "NumeroL1": 110,
+        "NumeroL2": 110,
+        "Operation": "Nothing",
+        "Text1": "# DB('Partner Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12",
+        "Text2": "# DB('Partner Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12"
+    },
+    {
+        "NumeroL1": 111,
+        "NumeroL2": 111,
+        "Operation": "Nothing",
+        "Text1": "##+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') / 12",
+        "Text2": "##+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') / 12"
+    },
+    {
+        "NumeroL1": 112,
+        "NumeroL2": 112,
+        "Operation": "Nothing",
+        "Text1": "# + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12",
+        "Text2": "# + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12"
+    },
+    {
+        "NumeroL1": 113,
+        "NumeroL2": 113,
+        "Operation": "Nothing",
+        "Text1": "#;",
+        "Text2": "#;"
+    },
+    {
+        "NumeroL1": 114,
+        "NumeroL2": 114,
+        "Operation": "Nothing",
+        "Text1": "['Value','NAT1','N_A',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:",
+        "Text2": "['Value','NAT1','N_A',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:"
+    },
+    {
+        "NumeroL1": 115,
+        "NumeroL2": 115,
+        "Operation": "Nothing",
+        "Text1": " DB('Partner Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12",
+        "Text2": " DB('Partner Cost Input',!Yearly phases,!Management Unit,'All Staff','COST') / 12"
+    },
+    {
+        "NumeroL1": 116,
+        "NumeroL2": 116,
+        "Operation": "Nothing",
+        "Text1": " + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12;",
+        "Text2": " + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12;"
+    },
+    {
+        "NumeroL1": 117,
+        "NumeroL2": 117,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 118,
+        "NumeroL2": 118,
+        "Operation": "Nothing",
+        "Text1": "['Value','NAT1',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:",
+        "Text2": "['Value','NAT1',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:"
+    },
+    {
+        "NumeroL1": 119,
+        "NumeroL2": 119,
+        "Operation": "Nothing",
+        "Text1": "DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12;",
+        "Text2": "DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12;"
+    },
+    {
+        "NumeroL1": 120,
+        "NumeroL2": 120,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 121,
+        "NumeroL2": 121,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 122,
+        "NumeroL2": 122,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 123,
+        "NumeroL2": 123,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 124,
+        "NumeroL2": 124,
+        "Operation": "Nothing",
+        "Text1": "['Value','NAT1',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:",
+        "Text2": "['Value','NAT1',{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=N:"
+    },
+    {
+        "NumeroL1": 125,
+        "NumeroL2": 125,
+        "Operation": "Nothing",
+        "Text1": "IF ( !Yearly phases @<> 'Actual_18_19' ,",
+        "Text2": "IF ( !Yearly phases @<> 'Actual_18_19' ,"
+    },
+    {
+        "NumeroL1": 126,
+        "NumeroL2": 126,
+        "Operation": "Nothing",
+        "Text1": "\t0 ,",
+        "Text2": "\t0 ,"
+    },
+    {
+        "NumeroL1": 127,
+        "NumeroL2": 127,
+        "Operation": "Nothing",
+        "Text1": "\tcontinue",
+        "Text2": "\tcontinue"
+    },
+    {
+        "NumeroL1": 128,
+        "NumeroL2": 128,
+        "Operation": "Nothing",
+        "Text1": ") ;",
+        "Text2": ") ;"
+    },
+    {
+        "NumeroL1": 129,
+        "NumeroL2": 129,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 130,
+        "NumeroL2": 130,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 131,
+        "NumeroL2": 131,
+        "Operation": "Nothing",
+        "Text1": "# CRO : 20230925 : on a la notion de projet désormais, Sur le NA on recupere Staff Cost Input + manuel input du projet NA et on fait un 2e pavé pour les autres projet",
+        "Text2": "# CRO : 20230925 : on a la notion de projet désormais, Sur le NA on recupere Staff Cost Input + manuel input du projet NA et on fait un 2e pavé pour les autres projet"
+    },
+    {
+        "NumeroL1": 132,
+        "NumeroL2": 132,
+        "Operation": "Nothing",
+        "Text1": "#['Value',{'NAT5','NAT6'},'N_A']=N:",
+        "Text2": "#['Value',{'NAT5','NAT6'},'N_A']=N:"
+    },
+    {
+        "NumeroL1": 133,
+        "NumeroL2": 133,
+        "Operation": "Nothing",
+        "Text1": "#If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu'  & Elisanc ( 'Period', 'Total_Per_Exc_Aju' , !Period ) = 1 ,",
+        "Text2": "#If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu'  & Elisanc ( 'Period', 'Total_Per_Exc_Aju' , !Period ) = 1 ,"
+    },
+    {
+        "NumeroL1": 134,
+        "NumeroL2": 134,
+        "Operation": "Nothing",
+        "Text1": "#\tDB('GL Import','Total clef','Total journal','Total Entity',!Yearly phases,!Period,'Total Accounts',!Cost Nature,!Management Unit,'Total Supplier',!Projects,'Signed_amt')",
+        "Text2": "#\tDB('GL Import','Total clef','Total journal','Total Entity',!Yearly phases,!Period,'Total Accounts',!Cost Nature,!Management Unit,'Total Supplier',!Projects,'Signed_amt')"
+    },
+    {
+        "NumeroL1": 135,
+        "NumeroL2": 135,
+        "Operation": "Nothing",
+        "Text1": "##\t+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') / 12 ,",
+        "Text2": "##\t+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') / 12 ,"
+    },
+    {
+        "NumeroL1": 136,
+        "NumeroL2": 136,
+        "Operation": "Nothing",
+        "Text1": "#     + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12 ,   ",
+        "Text2": "#     + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12 ,   "
+    },
+    {
+        "NumeroL1": 137,
+        "NumeroL2": 137,
+        "Operation": "Nothing",
+        "Text1": "#\tcontinue",
+        "Text2": "#\tcontinue"
+    },
+    {
+        "NumeroL1": 138,
+        "NumeroL2": 138,
+        "Operation": "Nothing",
+        "Text1": "#) ;",
+        "Text2": "#) ;"
+    },
+    {
+        "NumeroL1": 139,
+        "NumeroL2": 139,
+        "Operation": "Nothing",
+        "Text1": "['Value',{'NAT5','NAT6'},'N_A']=N:",
+        "Text2": "['Value',{'NAT5','NAT6'},'N_A']=N:"
+    },
+    {
+        "NumeroL1": 140,
+        "NumeroL2": 140,
+        "Operation": "Nothing",
+        "Text1": "If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu'  & Elisanc ( 'Period', 'Total_Per_Exc_Aju' , !Period ) = 1 ,",
+        "Text2": "If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu'  & Elisanc ( 'Period', 'Total_Per_Exc_Aju' , !Period ) = 1 ,"
+    },
+    {
+        "NumeroL1": 141,
+        "NumeroL2": 141,
+        "Operation": "Nothing",
+        "Text1": "\tDB('GL Import','Total clef','Total journal','Total Entity',!Yearly phases,!Period,'Total Accounts',!Cost Nature,!Management Unit,'Total Supplier',!Projects,'Signed_amt')",
+        "Text2": "\tDB('GL Import','Total clef','Total journal','Total Entity',!Yearly phases,!Period,'Total Accounts',!Cost Nature,!Management Unit,'Total Supplier',!Projects,'Signed_amt')"
+    },
+    {
+        "NumeroL1": 142,
+        "NumeroL2": 142,
+        "Operation": "Nothing",
+        "Text1": "     + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12 ,   ",
+        "Text2": "     + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12 ,   "
+    },
+    {
+        "NumeroL1": 143,
+        "NumeroL2": 143,
+        "Operation": "Nothing",
+        "Text1": "\tcontinue",
+        "Text2": "\tcontinue"
+    },
+    {
+        "NumeroL1": 144,
+        "NumeroL2": 144,
+        "Operation": "Nothing",
+        "Text1": ") ;",
+        "Text2": ") ;"
+    },
+    {
+        "NumeroL1": 145,
+        "NumeroL2": 145,
+        "Operation": "Nothing",
+        "Text1": "['Value',{'NAT5','NAT6'}]=N:",
+        "Text2": "['Value',{'NAT5','NAT6'}]=N:"
+    },
+    {
+        "NumeroL1": 146,
+        "NumeroL2": 146,
+        "Operation": "Nothing",
+        "Text1": "If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu'  & Elisanc ( 'Period', 'Total_Per_Exc_Aju' , !Period ) = 1 ,",
+        "Text2": "If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu'  & Elisanc ( 'Period', 'Total_Per_Exc_Aju' , !Period ) = 1 ,"
+    },
+    {
+        "NumeroL1": 147,
+        "NumeroL2": 147,
+        "Operation": "Nothing",
+        "Text1": "DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12 ,   ",
+        "Text2": "DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') / 12 ,   "
+    },
+    {
+        "NumeroL1": 148,
+        "NumeroL2": 148,
+        "Operation": "Nothing",
+        "Text1": "\tcontinue",
+        "Text2": "\tcontinue"
+    },
+    {
+        "NumeroL1": 149,
+        "NumeroL2": 149,
+        "Operation": "Nothing",
+        "Text1": ") ;",
+        "Text2": ") ;"
+    },
+    {
+        "NumeroL1": 150,
+        "NumeroL2": 150,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 151,
+        "NumeroL2": 151,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 152,
+        "NumeroL2": 152,
+        "Operation": "Nothing",
+        "Text1": "['Value']=N:",
+        "Text2": "['Value']=N:"
+    },
+    {
+        "NumeroL1": 153,
+        "NumeroL2": 153,
+        "Operation": "Nothing",
+        "Text1": "If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu' ,",
+        "Text2": "If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu' ,"
+    },
+    {
+        "NumeroL1": 154,
+        "NumeroL2": 154,
+        "Operation": "Nothing",
+        "Text1": "\tDB('GL Import','Total clef','Total journal','Total Enti fhezrjgk ' frzejio gh jrzelkgh jklrzj fjrezklgj jkljzmg kjglrzmgj jklgm fjegfol erlk jrhe klfjhrevjkh \"rvkj h\"rvkjrh v \"htlgi ",
+        "Text2": "\tDB('GL Import','Total clef','Total journal','Total Enti fhezrjgk ' frzejio gh jrzelkgh jklrzj fjrezklgj jkljzmg kjglrzmgj jklgm fjegfol erlk jrhe klfjhrevjkh \"rvkj h\"rvkjrh v \"htlgi "
+    },
+    {
+        "NumeroL1": 155,
+        "NumeroL2": 155,
+        "Operation": "Nothing",
+        "Text1": "\trzjgt kgjrlmgrt ty',!Yearly phases,!Period,'Total Accounts',!Cost Nature,!Management Unit,'Total Supplier',!Projects,'Signed_amt') ,",
+        "Text2": "\trzjgt kgjrlmgrt ty',!Yearly phases,!Period,'Total Accounts',!Cost Nature,!Management Unit,'Total Supplier',!Projects,'Signed_amt') ,"
+    },
+    {
+        "NumeroL1": 156,
+        "NumeroL2": 156,
+        "Operation": "Nothing",
+        "Text1": "\tcontinue",
+        "Text2": "\tcontinue"
+    },
+    {
+        "NumeroL1": 157,
+        "NumeroL2": 157,
+        "Operation": "Nothing",
+        "Text1": ");",
+        "Text2": ");"
+    },
+    {
+        "NumeroL1": 158,
+        "NumeroL2": 158,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 159,
+        "NumeroL2": 159,
+        "Operation": "Nothing",
+        "Text1": "#-- récupération des carl fees sur annuel, other, MU CARL FEES",
+        "Text2": "#-- récupération des carl fees sur annuel, other, MU CARL FEES"
+    },
+    {
+        "NumeroL1": 160,
+        "NumeroL2": 160,
+        "Operation": "Nothing",
+        "Text1": "['CARL FEES','FullYear','N_A','NAT6']=N:",
+        "Text2": "['CARL FEES','FullYear','N_A','NAT6']=N:"
+    },
+    {
+        "NumeroL1": 161,
+        "NumeroL2": 161,
+        "Operation": "Nothing",
+        "Text1": "DB('Carl Fees',!Yearly phases,'CTRY0','SRCKPI5');",
+        "Text2": "DB('Carl Fees',!Yearly phases,'CTRY0','SRCKPI5');"
+    },
+    {
+        "NumeroL1": 162,
+        "NumeroL2": 162,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 163,
+        "NumeroL2": 163,
+        "Operation": "Nothing",
+        "Text1": "# PYB 03 12 , spread full year cost per month",
+        "Text2": "# PYB 03 12 , spread full year cost per month"
+    },
+    {
+        "NumeroL1": 164,
+        "NumeroL2": 164,
+        "Operation": "Nothing",
+        "Text1": "[{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]=",
+        "Text2": "[{'Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'}]="
+    },
+    {
+        "NumeroL1": 165,
+        "NumeroL2": 165,
+        "Operation": "Nothing",
+        "Text1": "N:IF(ATTRS('Yearly phases',!Yearly phases,'Phasetype') @= 'yearly' & ['FullYear'] <> 0,",
+        "Text2": "N:IF(ATTRS('Yearly phases',!Yearly phases,'Phasetype') @= 'yearly' & ['FullYear'] <> 0,"
+    },
+    {
+        "NumeroL1": 166,
+        "NumeroL2": 166,
+        "Operation": "Nothing",
+        "Text1": " ['FullYear']/12, continue);",
+        "Text2": " ['FullYear']/12, continue);"
+    },
+    {
+        "NumeroL1": 167,
+        "NumeroL2": 167,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 168,
+        "NumeroL2": 168,
+        "Operation": "Nothing",
+        "Text1": " # PYB 05 03 montant doucles car Adjust contient aussi le total cost - uniquement sur Full year",
+        "Text2": " # PYB 05 03 montant doucles car Adjust contient aussi le total cost - uniquement sur Full year"
+    },
+    {
+        "NumeroL1": 169,
+        "NumeroL2": 169,
+        "Operation": "Nothing",
+        "Text1": "# NCE 01.05.2020 -- on récupère les élément du manual input aussi pour les autres phases",
+        "Text2": "# NCE 01.05.2020 -- on récupère les élément du manual input aussi pour les autres phases"
+    },
+    {
+        "NumeroL1": 170,
+        "NumeroL2": 170,
+        "Operation": "Nothing",
+        "Text1": " ['NAT1','Value','FullYear']=N:",
+        "Text2": " ['NAT1','Value','FullYear']=N:"
+    },
+    {
+        "NumeroL1": 171,
+        "NumeroL2": 171,
+        "Operation": "Nothing",
+        "Text1": "DB('Partner Cost Input',!Yearly phases,!Management Unit,'All Staff','COST')",
+        "Text2": "DB('Partner Cost Input',!Yearly phases,!Management Unit,'All Staff','COST')"
+    },
+    {
+        "NumeroL1": 172,
+        "NumeroL2": 172,
+        "Operation": "Nothing",
+        "Text1": "#+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value')  ;",
+        "Text2": "#+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value')  ;"
+    },
+    {
+        "NumeroL1": 173,
+        "NumeroL2": 173,
+        "Operation": "Nothing",
+        "Text1": " + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') ;",
+        "Text2": " + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') ;"
+    },
+    {
+        "NumeroL1": 174,
+        "NumeroL2": 174,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 175,
+        "NumeroL2": 175,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 176,
+        "NumeroL2": 176,
+        "Operation": "Nothing",
+        "Text1": " # PYB 05 03 montant doucles car Adjust contient aussi le total cost - uniquement sur Full year",
+        "Text2": " # PYB 05 03 montant doucles car Adjust contient aussi le total cost - uniquement sur Full year"
+    },
+    {
+        "NumeroL1": 177,
+        "NumeroL2": 177,
+        "Operation": "Nothing",
+        "Text1": "# NCE 01.05.2020 -- on récupère les élément du manual input aussi pour les autres phases",
+        "Text2": "# NCE 01.05.2020 -- on récupère les élément du manual input aussi pour les autres phases"
+    },
+    {
+        "NumeroL1": 178,
+        "NumeroL2": 178,
+        "Operation": "Nothing",
+        "Text1": "['NAT2','Value','FullYear']=N:",
+        "Text2": "['NAT2','Value','FullYear']=N:"
+    },
+    {
+        "NumeroL1": 179,
+        "NumeroL2": 179,
+        "Operation": "Nothing",
+        "Text1": "DB('Staff Cost Input',!Yearly phases,!Management Unit,'All Staff','COST')",
+        "Text2": "DB('Staff Cost Input',!Yearly phases,!Management Unit,'All Staff','COST')"
+    },
+    {
+        "NumeroL1": 180,
+        "NumeroL2": 180,
+        "Operation": "Nothing",
+        "Text1": "#+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') ;",
+        "Text2": "#+ DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') ;"
+    },
+    {
+        "NumeroL1": 181,
+        "NumeroL2": 181,
+        "Operation": "Nothing",
+        "Text1": " + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') ;",
+        "Text2": " + DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') ;"
+    },
+    {
+        "NumeroL1": 182,
+        "NumeroL2": 182,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 183,
+        "NumeroL2": 183,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 184,
+        "NumeroL2": 184,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 185,
+        "NumeroL2": 185,
+        "Operation": "Nothing",
+        "Text1": "# NCE 01.05.2020 -- on récupère les élément du manual input aussi pour les autres phases",
+        "Text2": "# NCE 01.05.2020 -- on récupère les élément du manual input aussi pour les autres phases"
+    },
+    {
+        "NumeroL1": 186,
+        "NumeroL2": 186,
+        "Operation": "Nothing",
+        "Text1": "# ['NAT5','Value','fullyear','N_A']=N:",
+        "Text2": "# ['NAT5','Value','fullyear','N_A']=N:"
+    },
+    {
+        "NumeroL1": 187,
+        "NumeroL2": 187,
+        "Operation": "Nothing",
+        "Text1": "# # DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') ;",
+        "Text2": "# # DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') ;"
+    },
+    {
+        "NumeroL1": 188,
+        "NumeroL2": 188,
+        "Operation": "Nothing",
+        "Text1": "#   DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') ;",
+        "Text2": "#   DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') ;"
+    },
+    {
+        "NumeroL1": 189,
+        "NumeroL2": 189,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 190,
+        "NumeroL2": 190,
+        "Operation": "Nothing",
+        "Text1": "# ['NAT5','Value','fullyear']=N:",
+        "Text2": "# ['NAT5','Value','fullyear']=N:"
+    },
+    {
+        "NumeroL1": 191,
+        "NumeroL2": 191,
+        "Operation": "Nothing",
+        "Text1": "# DB('Project Cost Analysis',!Yearly phases,!Period,!Management Unit,'All Projects',!Projects,'TRAVEL');",
+        "Text2": "# DB('Project Cost Analysis',!Yearly phases,!Period,!Management Unit,'All Projects',!Projects,'TRAVEL');"
+    },
+    {
+        "NumeroL1": 192,
+        "NumeroL2": 192,
+        "Operation": "Nothing",
+        "Text1": "['NAT5','Value','fullyear']=N:",
+        "Text2": "['NAT5','Value','fullyear']=N:"
+    },
+    {
+        "NumeroL1": 193,
+        "NumeroL2": 193,
+        "Operation": "Nothing",
+        "Text1": "  DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') ",
+        "Text2": "  DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') "
+    },
+    {
+        "NumeroL1": 194,
+        "NumeroL2": 194,
+        "Operation": "Nothing",
+        "Text1": "\t+",
+        "Text2": "\t+"
+    },
+    {
+        "NumeroL1": 195,
+        "NumeroL2": 195,
+        "Operation": "Nothing",
+        "Text1": "\tDB('Project Cost Analysis',!Yearly phases,!Period,!Management Unit,'All Projects',!Projects,'TRAVEL');",
+        "Text2": "\tDB('Project Cost Analysis',!Yearly phases,!Period,!Management Unit,'All Projects',!Projects,'TRAVEL');"
+    },
+    {
+        "NumeroL1": 196,
+        "NumeroL2": 196,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 197,
+        "NumeroL2": 197,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 198,
+        "NumeroL2": 198,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 199,
+        "NumeroL2": 199,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 200,
+        "NumeroL2": 200,
+        "Operation": "Nothing",
+        "Text1": "# NCE 01.05.2020 -- on récupère les élément du manual input aussi pour les autres phases",
+        "Text2": "# NCE 01.05.2020 -- on récupère les élément du manual input aussi pour les autres phases"
+    },
+    {
+        "NumeroL1": 201,
+        "NumeroL2": 201,
+        "Operation": "Nothing",
+        "Text1": "# NCE 01.05.2020 -- on récupère les élément du manual input aussi pour les autres phases",
+        "Text2": "# NCE 01.05.2020 -- on récupère les élément du manual input aussi pour les autres phases"
+    },
+    {
+        "NumeroL1": 202,
+        "NumeroL2": 202,
+        "Operation": "Nothing",
+        "Text1": "['NAT6','Value','fullyear','N_A','Management Unit':'REDEVANCE']=N:",
+        "Text2": "['NAT6','Value','fullyear','N_A','Management Unit':'REDEVANCE']=N:"
+    },
+    {
+        "NumeroL1": 203,
+        "NumeroL2": 203,
+        "Operation": "Nothing",
+        "Text1": "If ( !Yearly Phases @<> 'Budg_Fin_19_20'",
+        "Text2": "If ( !Yearly Phases @<> 'Budg_Fin_19_20'"
+    },
+    {
+        "NumeroL1": 204,
+        "NumeroL2": 204,
+        "Operation": "Nothing",
+        "Text1": "\t& !Yearly Phases @<> 'Esti_1_19_20'",
+        "Text2": "\t& !Yearly Phases @<> 'Esti_1_19_20'"
+    },
+    {
+        "NumeroL1": 205,
+        "NumeroL2": 205,
+        "Operation": "Nothing",
+        "Text1": "\t& !Yearly Phases @<> 'Esti_2_19_20'",
+        "Text2": "\t& !Yearly Phases @<> 'Esti_2_19_20'"
+    },
+    {
+        "NumeroL1": 206,
+        "NumeroL2": 206,
+        "Operation": "Nothing",
+        "Text1": " \t& !Yearly Phases @<> 'Actual_22_23',",
+        "Text2": " \t& !Yearly Phases @<> 'Actual_22_23',"
+    },
+    {
+        "NumeroL1": 207,
+        "NumeroL2": 207,
+        "Operation": "Nothing",
+        "Text1": "#\tDB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value')",
+        "Text2": "#\tDB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value')"
+    },
+    {
+        "NumeroL1": 208,
+        "NumeroL2": 208,
+        "Operation": "Nothing",
+        "Text1": "     DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value')",
+        "Text2": "     DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value')"
+    },
+    {
+        "NumeroL1": 209,
+        "NumeroL2": 209,
+        "Operation": "Nothing",
+        "Text1": "\t+ DB('Carl Fees',!Yearly phases,'CTRY0','CTRY_Fee_Income') ,",
+        "Text2": "\t+ DB('Carl Fees',!Yearly phases,'CTRY0','CTRY_Fee_Income') ,"
+    },
+    {
+        "NumeroL1": 210,
+        "NumeroL2": 210,
+        "Operation": "Nothing",
+        "Text1": "\tcontinue )",
+        "Text2": "\tcontinue )"
+    },
+    {
+        "NumeroL1": 211,
+        "NumeroL2": 211,
+        "Operation": "Nothing",
+        "Text1": ";",
+        "Text2": ";"
+    },
+    {
+        "NumeroL1": 212,
+        "NumeroL2": 212,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 213,
+        "NumeroL2": 213,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 214,
+        "NumeroL2": 214,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 215,
+        "NumeroL2": 215,
+        "Operation": "Nothing",
+        "Text1": "# ['NAT6','Value','fullyear','N_A']=N:",
+        "Text2": "# ['NAT6','Value','fullyear','N_A']=N:"
+    },
+    {
+        "NumeroL1": 216,
+        "NumeroL2": 216,
+        "Operation": "Nothing",
+        "Text1": "# # DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') ;",
+        "Text2": "# # DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') ;"
+    },
+    {
+        "NumeroL1": 217,
+        "NumeroL2": 217,
+        "Operation": "Nothing",
+        "Text1": "#   DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') ;",
+        "Text2": "#   DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') ;"
+    },
+    {
+        "NumeroL1": 218,
+        "NumeroL2": 218,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 219,
+        "NumeroL2": 219,
+        "Operation": "Nothing",
+        "Text1": "# ['NAT6','Value','fullyear']=N:",
+        "Text2": "# ['NAT6','Value','fullyear']=N:"
+    },
+    {
+        "NumeroL1": 220,
+        "NumeroL2": 220,
+        "Operation": "Nothing",
+        "Text1": "# DB('Project Cost Analysis',!Yearly phases,!Period,!Management Unit,'All Projects',!Projects,'OTHER');",
+        "Text2": "# DB('Project Cost Analysis',!Yearly phases,!Period,!Management Unit,'All Projects',!Projects,'OTHER');"
+    },
+    {
+        "NumeroL1": 221,
+        "NumeroL2": 221,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 222,
+        "NumeroL2": 222,
+        "Operation": "Nothing",
+        "Text1": "['NAT6','Value','fullyear']=N:",
+        "Text2": "['NAT6','Value','fullyear']=N:"
+    },
+    {
+        "NumeroL1": 223,
+        "NumeroL2": 223,
+        "Operation": "Nothing",
+        "Text1": "  DB('Manual Input Projects',!Yearly phases,'FullYear',!CostNature by machin ,!rien a voir,!Projects,'Value') ",
+        "Text2": "  DB('Manual Input Projects',!Yearly phases,'FullYear',!CostNature by machin ,!rien a voir,!Projects,'Value') "
+    },
+    {
+        "NumeroL1": 224,
+        "NumeroL2": 224,
+        "Operation": "Nothing",
+        "Text1": "+DB('Project Cost Analysis',!Yearly phases,!Period,!Management Unit,'All Projects',!Projects,'OTHER');",
+        "Text2": "+DB('Project Cost Analysis',!Yearly phases,!Period,!Management Unit,'All Projects',!Projects,'OTHER');"
+    },
+    {
+        "NumeroL1": 225,
+        "NumeroL2": 225,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 226,
+        "NumeroL2": 226,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 227,
+        "NumeroL2": 227,
+        "Operation": "Nothing",
+        "Text1": "# ['NAT7','Value','fullyear','N_A']=N:",
+        "Text2": "# ['NAT7','Value','fullyear','N_A']=N:"
+    },
+    {
+        "NumeroL1": 228,
+        "NumeroL2": 228,
+        "Operation": "Nothing",
+        "Text1": "# # DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') ;",
+        "Text2": "# # DB('Manual Input',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,'Value') ;"
+    },
+    {
+        "NumeroL1": 229,
+        "NumeroL2": 229,
+        "Operation": "Nothing",
+        "Text1": "#   DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') ;",
+        "Text2": "#   DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') ;"
+    },
+    {
+        "NumeroL1": 230,
+        "NumeroL2": 230,
+        "Operation": "Nothing",
+        "Text1": " ",
+        "Text2": " "
+    },
+    {
+        "NumeroL1": 231,
+        "NumeroL2": 231,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 232,
+        "NumeroL2": 232,
+        "Operation": "Nothing",
+        "Text1": "# ['NAT7','Value','fullyear']=N:",
+        "Text2": "# ['NAT7','Value','fullyear']=N:"
+    },
+    {
+        "NumeroL1": 233,
+        "NumeroL2": 233,
+        "Operation": "Nothing",
+        "Text1": "# DB('Project Cost Analysis',!Yearly phases,!Period,!Management Unit,'All Projects',!Projects,'REBILLING');",
+        "Text2": "# DB('Project Cost Analysis',!Yearly phases,!Period,!Management Unit,'All Projects',!Projects,'REBILLING');"
+    },
+    {
+        "NumeroL1": 234,
+        "NumeroL2": 234,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 235,
+        "NumeroL2": 235,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 236,
+        "NumeroL2": 236,
+        "Operation": "Nothing",
+        "Text1": "['NAT7','Value','fullyear']=N:",
+        "Text2": "['NAT7','Value','fullyear']=N:"
+    },
+    {
+        "NumeroL1": 237,
+        "NumeroL2": 237,
+        "Operation": "Nothing",
+        "Text1": "  DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') ",
+        "Text2": "  DB('Manual Input Projects',!Yearly phases,'FullYear',!Cost Nature,!Management Unit,!Projects,'Value') "
+    },
+    {
+        "NumeroL1": 238,
+        "NumeroL2": 238,
+        "Operation": "Nothing",
+        "Text1": "+DB('Project Cost Analysis',!Yearly phases,!Period,!Management Unit,'All Projects',!Projects,'REBILLING');",
+        "Text2": "+DB('Project Cost Analysis',!Yearly phases,!Period,!Management Unit,'All Projects',!Projects,'REBILLING');"
+    },
+    {
+        "NumeroL1": 239,
+        "NumeroL2": 239,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 240,
+        "NumeroL2": 240,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 241,
+        "NumeroL2": 241,
+        "Operation": "Nothing",
+        "Text1": "Feeders;",
+        "Text2": "Feeders;"
+    },
+    {
+        "NumeroL1": 242,
+        "NumeroL2": 242,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 243,
+        "NumeroL2": 243,
+        "Operation": "Nothing",
+        "Text1": "['FullYear']=>['Total_Per_Exc_Aju'];",
+        "Text2": "['FullYear']=>['Total_Per_Exc_Aju'];"
+    },
+    {
+        "NumeroL1": 244,
+        "NumeroL2": 244,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 245,
+        "NumeroL2": 245,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    },
+    {
+        "NumeroL1": 246,
+        "NumeroL2": 246,
+        "Operation": "Nothing",
+        "Text1": "",
+        "Text2": ""
+    }
+]
