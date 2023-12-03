@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 import { diffWordsWithSpace } from "diff";
 import { DiffViewerProps } from "@/types";
 
-import DiffLine from "./Diff/DiffLine";
+import DiffLine from "../DiffLine";
 import { lineHasChanges, newLinesCount, totalLines } from "@/utils/arrays";
-import DiffButton from "./Diff/DiffButton";
+import DiffButton from "../DiffButton";
 
 const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
   const numberOfModifiedLines = newLinesCount(oldText, newText, lineHasChanges);
@@ -37,7 +37,7 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
         const lineNumber = index + 1;
         const fragmentKey = `line-pair-${lineNumber}`;
         const lineChanged = lineHasChanges(changes);
-    
+
         if (lineChanged) {
           return (
             <React.Fragment key={fragmentKey}>
@@ -46,7 +46,7 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
                 changes={changes}
                 lineNum={lineNumber}
                 isOld={true}
-                isVisible={true} 
+                isVisible={true}
                 isSmallScreen={isSmallScreen}
               />
               <DiffLine
@@ -54,7 +54,7 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
                 changes={changes}
                 lineNum={lineNumber}
                 isOld={false}
-                isVisible={true} 
+                isVisible={true}
                 isSmallScreen={isSmallScreen}
               />
             </React.Fragment>
@@ -65,7 +65,7 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
               key={fragmentKey}
               changes={changes}
               lineNum={lineNumber}
-              isOld={false} 
+              isOld={false}
               isVisible={true}
               isSmallScreen={isSmallScreen}
             />
@@ -109,11 +109,9 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
               <div className="basis-[50%] pr-2 text-[15px] text-[#000]">
                 Old source:
               </div>
-              <div className=" text-[15px] text-[#6FDC8C]">
-                New source:
-              </div>
+              <div className=" text-[15px] text-[#6FDC8C]">New source:</div>
               <div className="basis-[50%] pl-[40px] text-[15px] text-[#6FDC8C]">
-              modified lines: {numberOfModifiedLines}
+                modified lines: {numberOfModifiedLines}
               </div>
             </div>
             <DiffButton
@@ -146,9 +144,7 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
     >
       {isSmallScreen && (
         <div className="sticky top-0 flex justify-between bg-[#fff]">
-          <div className="text-[12px] text-[#f7a8a8]">
-            Old sources {" "}
-          </div>
+          <div className="text-[12px] text-[#f7a8a8]">Old sources </div>
           <div className="pr-2 text-[12px] text-[#000]">
             <span className="text-[#6FDC8C]">
               New source {numberOfModifiedLines}{" "}

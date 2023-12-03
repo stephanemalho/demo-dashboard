@@ -1,15 +1,15 @@
 import LiveContainer from "@/components/shared/boxContainer/LiveContainer";
-import DiffViewer from "./CompareFile";
+import DiffViewer from "./Diff/DiffComponent/CompareFile";
 import RenderContainer from "./RenderContainer/RenderContainer";
 import jsonData from "@/data/data.json"; // Assurez-vous que le chemin est correct
 
 export default function page() {
   // Transformation des données JSON en objets DiffFile
   const oldTextFile = {
-    content: jsonData.map(item => item.Text1)
+    content: jsonData.map((item) => item.Text1),
   };
   const newTextFile = {
-    content: jsonData.map(item => item.Text2)
+    content: jsonData.map((item) => item.Text2),
   };
 
   return (
