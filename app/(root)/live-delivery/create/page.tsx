@@ -21,8 +21,8 @@ export default function page() {
           title="Compare"
           label="Compare"
         >
-          <div className="custom-scrollbar m-4 whitespace-nowrap bg-[#fff] p-1 text-[#dde1e6]">
-            <DiffViewer oldText={oldTextFile} newText={newTextFile} />
+          <div className="custom-scrollbar m-4 w-full whitespace-nowrap bg-[#fff] p-1 text-[#dde1e6]">
+            <DiffViewer oldText={newTextFile} newText={oldTextFile} />
           </div>
         </LiveContainer>
       </div>

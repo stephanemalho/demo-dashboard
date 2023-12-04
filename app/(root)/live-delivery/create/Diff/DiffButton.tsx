@@ -11,7 +11,7 @@ interface DiffButtonProps {
 const DiffButton = ({ children,  showAllLines, toggleShowAllLines }: DiffButtonProps) => {
   return (
     <button
-      className="flex items-center border-[1px] bg-[#F1F8FF] text-[#92c3f4]"
+      className={`flex w-full items-center border-[1px] bg-[#f2f2f2]  hover:bg-[#fff] ${showAllLines ? "border-[#92c3f4] text-[#92c3f4] " : "border-[#c3c3c3] text-[#c3c3c3]"} `}
       onClick={toggleShowAllLines}
     >
       <WrapIcon bgColorHover="hover:bg-[rgba(44,42,42,0.2)]">

@@ -4,14 +4,14 @@
         "NumeroL2": 1,
         "Operation": "Nothing",
         "Text1": "",
-        "Text2": ""
+        "Text2": "Nouveau text"
     },
     {
         "NumeroL1": 2,
         "NumeroL2": 2,
         "Operation": "Nothing",
         "Text1": "",
-        "Text2": ""
+        "Text2": "text2"
     },
     {
         "NumeroL1": 3,
@@ -81,7 +81,7 @@
         "NumeroL2": 12,
         "Operation": "Nothing",
         "Text1": "\tcontinue",
-        "Text2": "\tcontinue"
+        "Text2": ""
     },
     {
         "NumeroL1": 13,
@@ -116,7 +116,7 @@
         "NumeroL2": 17,
         "Operation": "Nothing",
         "Text1": "['Actual and TC Es2 20/20','Total_Period']=['TC_Es2_19_20','Adjust']+['Actual_19_20','YTD_Apr'];",
-        "Text2": "['Actual and TC Es2 19/20','Total_Period']=['TC_Es2_19_20','Adjust']+['Actual_19_20','YTD_Apr'];"
+        "Text2": ""
     },
     {
         "NumeroL1": 18,
@@ -130,14 +130,14 @@
         "NumeroL2": 19,
         "Operation": "Nothing",
         "Text1": "#-- Calcul des écarts:",
-        "Text2": "#-- Calcul des écarts:"
+        "Text2": ""
     },
     {
         "NumeroL1": 20,
         "NumeroL2": 20,
         "Operation": "Nothing",
         "Text1": "['Var_Actua_19_20_vs_Esti_2_19_20_%']=C:",
-        "Text2": "['Var_Actua_19_20_vs_Esti_2_19_20_%']=C:"
+        "Text2": ":"
     },
     {
         "NumeroL1": 21,
@@ -235,7 +235,7 @@
         "NumeroL2": 34,
         "Operation": "Nothing",
         "Text1": "(['Budg_Pre_19_20']-['Budg_Fin_19_20'])\\['Budg_Fin_19_20'];",
-        "Text2": "(['Budg_Pre_19_20']-['Budg_Fin_19_20'])\\['Budg_Fin_19_20'];"
+        "Text2": "(['Budg_Pre_19_20']\\['Budg_Fin_19_20'];"
     },
     {
         "NumeroL1": 35,
@@ -255,7 +255,7 @@
         "NumeroL1": 37,
         "NumeroL2": 37,
         "Operation": "Nothing",
-        "Text1": "(['Budg_Fin_19_20']-['Budg_Pre_19_20'])\\['Budg_Pre_19_20'];",
+        "Text1": "",
         "Text2": "(['Budg_Fin_19_20']-['Budg_Pre_19_20'])\\['Budg_Pre_19_20'];"
     },
     {
