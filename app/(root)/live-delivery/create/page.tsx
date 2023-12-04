@@ -17,7 +17,7 @@ export default function page() {
       <RenderContainer />
       <div className="ml-1 flex h-[90vh] w-[100vw] flex-col text-[10px] max-2xl:h-[80vh]">
         <LiveContainer
-          logHeight="h-[90vh] max-2xl:h-[80vh] w-full"
+          logHeight="h-[90vh] max-2xl:h-[80vh] w-auto"
           title="Compare"
           label="Compare"
         >
