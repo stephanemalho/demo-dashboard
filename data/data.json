@@ -53,14 +53,14 @@
         "NumeroL2": 8,
         "Operation": "Nothing",
         "Text1": "#If ( SUBST ( !Yearly phases,2  , 4 ) @= 'Actu' % SUBST ( !Yearly phases,1  , 2 ) @= 'TC',",
-        "Text2": "#If ( SUBST ( !Yearly phases,1  , 4 ) @= 'Actu' % SUBST ( !Yearly phases,1  , 2 ) @= 'TC',"
+        "Text2": ""
     },
     {
         "NumeroL1": 9,
         "NumeroL2": 9,
         "Operation": "Nothing",
         "Text1": "If (SUBST ( !Yearly phases,1  , 2 ) @= 'TC',",
-        "Text2": "If (SUBST ( !Yearly phases,1  , 2 ) @= 'TC',"
+        "Text2": ""
     },
     {
         "NumeroL1": 10,
@@ -74,7 +74,7 @@
         "NumeroL2": 11,
         "Operation": "Nothing",
         "Text1": "\tstet ,",
-        "Text2": "\tstet ,"
+        "Text2": ""
     },
     {
         "NumeroL1": 12,

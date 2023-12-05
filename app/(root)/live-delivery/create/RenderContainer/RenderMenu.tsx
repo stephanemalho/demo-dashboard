@@ -44,16 +44,16 @@ const RenderMenu: React.FC<{
         <div
           onClick={toggleOpen}
           style={{ paddingLeft: `${level * 20}px` }}
-          className="mx-1 flex cursor-pointer items-center p-1 text-[12px] hover:bg-[#e2e2e2] active:border-[#e2e2e2]"
+          className="mx-1 flex cursor-pointer items-center truncate p-1 text-[12px] hover:bg-[#e2e2e2] active:border-[#e2e2e2]"
         >
           <MdChevronRight
-            className={`transition-transform duration-300 ${
+            className={`truncate transition-transform duration-300 ${
               isOpen ? "rotate-90" : ""
             }`}
           />
           {isFirstElementRef.current && (
             <>
-              <div className="flex h-full flex-row items-center">
+              <div className="flex h-full flex-row items-center truncate">
                 {selectIcon({
                   title: item.title,
                   parentTitle: item.parentTitle,
@@ -71,7 +71,7 @@ const RenderMenu: React.FC<{
       )}
       {!isTerminalChild && (
         <div
-          className={`overflow-hidden duration-300`}
+          className={`overflow-hidden truncate duration-300`}
           style={{ maxHeight }}
           ref={contentRef}
         >
@@ -100,11 +100,11 @@ const RenderMenu: React.FC<{
       {isTerminalChild && (
         <div
           style={{ paddingLeft: `${level * 20}px` }}
-          className={`mx-1 flex h-auto cursor-pointer items-center p-1 text-[12px] hover:bg-[#e2e2e2] active:border-[#e2e2e2]`}
+          className={`mx-1 flex h-auto cursor-pointer items-center truncate p-1 text-[12px] hover:bg-[#e2e2e2] active:border-[#e2e2e2]`}
         >
-          <div className="flex h-full flex-row items-center">
+          <div className="flex h-full flex-row items-center truncate">
             {selectIcon({ title: item.title, parentTitle: item.parentTitle })}
-            <span className="ml-2">{item.title}</span>
+            <span className="ml-2 truncate">{item.title}</span>
           </div>
           <ExportIcons
             loadData={() => alert("export element")}
