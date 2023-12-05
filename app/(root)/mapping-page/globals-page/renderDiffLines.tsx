@@ -29,7 +29,7 @@ const RenderDiffLines = ({oldText , newText, isSmallScreen} : any) => {
       toggleShowAllLines={() => toggleLinesVisibility(start, end)}
       showAllLines={visibleLines.has(start)}
     >
-      {` ${start + 1}-${end + 1}`}
+      <span className="mr-2 text-[12px]">{` ${start + 1}-${end + 1}`}</span>
     </DiffButton>
   );
 

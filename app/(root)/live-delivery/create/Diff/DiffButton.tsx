@@ -17,7 +17,7 @@ const DiffButton = ({ children,  showAllLines, toggleShowAllLines }: DiffButtonP
       <WrapIcon bgColorHover="hover:bg-[rgba(44,42,42,0.2)]">
         {showAllLines ? <MdOutlineUnfoldMoreDouble size={16} className="ml-1" /> : <MdOutlineUnfoldLessDouble size={16}  className="ml-1" />}
       </WrapIcon>
-      <span className="flex h-full w-full items-center justify-center"> {showAllLines ? "hidde none modified lines" : "Show all lines"}</span>
+      <span className="flex h-full w-full items-center justify-center text-[12px]">{showAllLines ? "hidde none modified lines" : "Show all lines"}</span>
     {children && children}
     </button>
   );
