@@ -6,8 +6,9 @@ import { diffWordsWithSpace } from "diff";
 import { lineHasChanges, newLinesCount } from "@/utils/arrays";
 import { useSidebar } from "@/context/SideBarProvider";
 import LinesToCompare from "./LineToCompare";
+import { toggleLines, toggleVisibilityLines } from "./toggle";
 
-interface TextContent {
+export interface TextContent {
   content: string[];
 }
 
@@ -33,40 +34,15 @@ const RenderDiffLines = ({
     return count + (lineHasChanges(changes) ? 0 : 1);
   }, 0);
 
-  // Fonction pour afficher/cacher toutes les lignes non modifiées
   const toggleAllLinesVisibility = () => {
-    setShowAllNonModified(!showAllNonModified);
-    if (!showAllNonModified) {
-      const allLines = new Set();
-      oldText.content.forEach((_, index) => {
-        if (
-          !lineHasChanges(
-            diffWordsWithSpace(
-              oldText.content[index],
-              newText.content[index] || ""
-            )
-          )
-        ) {
-          allLines.add(index);
-        }
-      });
-      setVisibleLines(allLines);
-    } else {
-      setVisibleLines(new Set());
-    }
+    toggleLines(setShowAllNonModified, showAllNonModified, oldText, newText, setVisibleLines);
   };
 
   const toggleLinesVisibility = (start: any, end: number) => {
-    const newVisibleLines = new Set(visibleLines);
-    for (let i = start; i <= end; i++) {
-      if (newVisibleLines.has(i)) {
-        newVisibleLines.delete(i);
-      } else {
-        newVisibleLines.add(i);
-      }
-    }
-    setVisibleLines(newVisibleLines);
+    toggleVisibilityLines(visibleLines, start, end, setVisibleLines);
+
   };
+
   const renderNonModifiedBlock = (start: any, end: number) => (
     <DiffButton
       key={`non-modified-${start}-${end}`}
@@ -209,3 +185,4 @@ const RenderDiffLines = ({
 };
 
 export default RenderDiffLines;
+
