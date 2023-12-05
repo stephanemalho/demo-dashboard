@@ -4,11 +4,12 @@ import DiffButton from '../../live-delivery/create/Diff/DiffButton';
 import DiffLine from '../../live-delivery/create/Diff/DiffLine';
 import { diffWordsWithSpace } from 'diff';
 import { lineHasChanges, newLinesCount } from '@/utils/arrays';
+import { useSidebar } from '@/context/SideBarProvider';
 
 const RenderDiffLines = ({oldText , newText, isSmallScreen} : any) => {
-
   const numberOfModifiedLines = newLinesCount(oldText, newText, lineHasChanges);
   const [visibleLines, setVisibleLines] = useState(new Set());
+  const {isOpen} = useSidebar();
 
   const toggleLinesVisibility = (start: any , end: number) => {
     const newVisibleLines = new Set(visibleLines);
@@ -85,7 +86,7 @@ const RenderDiffLines = ({oldText , newText, isSmallScreen} : any) => {
 
     return (
       <>
-        <div className="flex h-full w-full flex-col">
+        <div className={`m-auto flex h-full  max-w-[92vw] flex-col ${isOpen ? "m-auto max-w-[70vw] max-2xl:ml-auto max-2xl:max-w-[70vw]": "w-full"}`}>
           <div className="sticky top-0 z-10 flex w-full flex-row bg-[#fff] p-1 shadow-sm">
             <div className="basis-[50%] pr-2 text-[15px] text-[#000]">
               Old source:
@@ -95,11 +96,11 @@ const RenderDiffLines = ({oldText , newText, isSmallScreen} : any) => {
               modified lines: {numberOfModifiedLines}
             </div>
           </div>
-          <div className="flex min-h-[60vh] w-[80vw] flex-row">
-            <div className="flex max-w-[47vw]  basis-[50%] flex-col overflow-x-auto">
+          <div className={`flex min-h-[60vh] flex-row`}>
+            <div className="flex basis-[50%] flex-col overflow-x-auto ">
               {oldTextElements}
             </div>
-            <div className="flex max-w-[47vw]  basis-[50%] flex-col overflow-x-auto">
+            <div className="flex basis-[50%] flex-col overflow-x-auto">
               {newTextElements}
             </div>
           </div>

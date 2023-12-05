@@ -10,7 +10,7 @@ const RenderMenu: React.FC<{
   item: MenuItemInterface;
   level: number;
   parentIcon?: React.JSX.Element;
-}> = ({ item, level, parentIcon }) => {
+}> = ({ item, level }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [maxHeight, setMaxHeight] = useState<string>("0px");
   const [searchValue, setSearchValue] = useState("");

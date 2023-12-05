@@ -104,7 +104,7 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
 
       return (
         <>
-          <div className="m-auto flex h-[84vh] w-full max-w-[80vw] flex-col">
+          <div className="m-auto flex h-[84vh] w-full max-w-[84vw] flex-col">
             <div className="sticky top-0 z-10 flex h-[20px] w-full flex-row bg-[#fff]">
               <div className="basis-[50%] pr-2 text-[15px] text-[#000]">
                 Old source:
@@ -119,12 +119,12 @@ const DiffViewer: React.FC<DiffViewerProps> = ({ oldText, newText }) => {
               showAllLines={showAllLines}
               toggleShowAllLines={toggleShowAllLines}
             />
-            <div className="flex flex-row">
+            <div className="flex w-full flex-row">
               <div className="flex min-w-full ">
-                <div className="flex max-w-[40vw] basis-[50%] flex-col  overflow-x-scroll">
+                <div className="m-auto flex max-w-[50vw] basis-[50%] flex-col  overflow-x-scroll">
                   {oldTextElements}
                 </div>
-                <div className="flex max-w-[40vw] basis-[50%] flex-col  overflow-x-scroll">
+                <div className="m-auto flex max-w-[50vw] basis-[50%] flex-col  overflow-x-scroll">
                   {newTextElements}
                 </div>
               </div>

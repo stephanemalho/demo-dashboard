@@ -13,15 +13,15 @@ const page = () => {
   };
 
   return (
-    <div className="flex min-h-[80vh] w-[98vw] flex-row justify-between">
+    <div className="flex min-h-[80vh]  w-[98vw] flex-row justify-between">
       <RenderContainer />
-      <div className="ml-1 flex h-[90vh] w-[98vw] flex-col text-[10px] max-2xl:h-[80vh]">
+      <div className="ml-1 flex h-[90vh] w-full max-w-[96vw] flex-col text-[10px] transition-all duration-500">
         <LiveContainer
           title="Test Array"
           label="Test Array"
-          logHeight="h-[90vh] max-2xl:h-[80vh] max-2xl:w-full w-auto m-auto"
+          logHeight="h-[90vh] max-2xl:h-[80vh] w-auto w-full max-2xl:w-full m-auto"
         >
-          <div className="custom-scrollbar m-4 whitespace-nowrap bg-[#fff] p-1 text-[#dde1e6]">
+          <div className="custom-scrollbar m-4 w-full whitespace-nowrap bg-[#fff] p-1 text-[#dde1e6]">
             <TestArray newText={oldTextFile} oldText={newTextFile} />
           </div>
         </LiveContainer>
