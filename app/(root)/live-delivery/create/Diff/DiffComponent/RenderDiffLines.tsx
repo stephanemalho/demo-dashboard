@@ -17,10 +17,44 @@ interface RenderDiffLinesProps {
   isSmallScreen: boolean;
 }
 
-const RenderDiffLines = ({ oldText, newText, isSmallScreen } : RenderDiffLinesProps) => {
+const RenderDiffLines = ({
+  oldText,
+  newText,
+  isSmallScreen,
+}: RenderDiffLinesProps) => {
   const numberOfModifiedLines = newLinesCount(oldText, newText, lineHasChanges);
   const [visibleLines, setVisibleLines] = useState(new Set());
   const { isOpen } = useSidebar();
+
+  const [showAllNonModified, setShowAllNonModified] = useState(false);
+
+  const totalNonModifiedLines = oldText.content.reduce((count, line, index) => {
+    const changes = diffWordsWithSpace(line, newText.content[index] || "");
+    return count + (lineHasChanges(changes) ? 0 : 1);
+  }, 0);
+
+  // Fonction pour afficher/cacher toutes les lignes non modifiées
+  const toggleAllLinesVisibility = () => {
+    setShowAllNonModified(!showAllNonModified);
+    if (!showAllNonModified) {
+      const allLines = new Set();
+      oldText.content.forEach((_, index) => {
+        if (
+          !lineHasChanges(
+            diffWordsWithSpace(
+              oldText.content[index],
+              newText.content[index] || ""
+            )
+          )
+        ) {
+          allLines.add(index);
+        }
+      });
+      setVisibleLines(allLines);
+    } else {
+      setVisibleLines(new Set());
+    }
+  };
 
   const toggleLinesVisibility = (start: any, end: number) => {
     const newVisibleLines = new Set(visibleLines);
@@ -33,7 +67,6 @@ const RenderDiffLines = ({ oldText, newText, isSmallScreen } : RenderDiffLinesPr
     }
     setVisibleLines(newVisibleLines);
   };
-
   const renderNonModifiedBlock = (start: any, end: number) => (
     <DiffButton
       key={`non-modified-${start}-${end}`}
@@ -49,7 +82,6 @@ const RenderDiffLines = ({ oldText, newText, isSmallScreen } : RenderDiffLinesPr
     let addedLinesStart: any = null;
     const oldTextElements: React.JSX.Element[] = [];
     const newTextElements: React.JSX.Element[] = [];
-
     const addNonModifiedAndAddedLines = LinesToCompare(
       renderNonModifiedBlock,
       oldTextElements,
@@ -64,7 +96,6 @@ const RenderDiffLines = ({ oldText, newText, isSmallScreen } : RenderDiffLinesPr
     oldText.content.forEach((line, index) => {
       const changes = diffWordsWithSpace(line, newText.content[index] || "");
       const isNewLine = index >= oldText.content.length;
-
       if (!lineHasChanges(changes) && !isNewLine) {
         if (nonModifiedBlockStart === null) {
           nonModifiedBlockStart = index;
@@ -90,12 +121,10 @@ const RenderDiffLines = ({ oldText, newText, isSmallScreen } : RenderDiffLinesPr
         }
       }
     });
-
     // Parcourez le nouveau texte et trouvez les lignes ajoutées
     newText.content.forEach((line, index) => {
       const changes = diffWordsWithSpace(line, oldText.content[index] || "");
       const isOldLine = index >= newText.content.length;
-
       if (!lineHasChanges(changes) && !isOldLine) {
         if (addedLinesStart === null) {
           addedLinesStart = index;
@@ -105,7 +134,6 @@ const RenderDiffLines = ({ oldText, newText, isSmallScreen } : RenderDiffLinesPr
           addNonModifiedAndAddedLines(addedLinesStart, index - 1, false);
           addedLinesStart = null;
         }
-
         // Ajoutez la ligne ajoutée
         if (!isOldLine) {
           const lineElement = (
@@ -122,7 +150,6 @@ const RenderDiffLines = ({ oldText, newText, isSmallScreen } : RenderDiffLinesPr
         }
       }
     });
-
     // Vérifiez s'il y a des lignes ajoutées à la fin du nouveau fichier
     if (addedLinesStart !== null) {
       addNonModifiedAndAddedLines(
@@ -131,7 +158,6 @@ const RenderDiffLines = ({ oldText, newText, isSmallScreen } : RenderDiffLinesPr
         false
       );
     }
-
     // Vérifiez s'il reste des blocs non modifiés dans l'ancien fichier
     if (nonModifiedBlockStart !== null) {
       addNonModifiedAndAddedLines(
@@ -140,7 +166,6 @@ const RenderDiffLines = ({ oldText, newText, isSmallScreen } : RenderDiffLinesPr
         true
       );
     }
-
     return { oldTextElements, newTextElements };
   };
 
@@ -163,6 +188,14 @@ const RenderDiffLines = ({ oldText, newText, isSmallScreen } : RenderDiffLinesPr
           modified lines: {numberOfModifiedLines}
         </div>
       </div>
+      <DiffButton
+        toggleShowAllLines={toggleAllLinesVisibility}
+        showAllLines={showAllNonModified}
+      >
+        <span className="mr-2 text-[12px]">
+        {showAllNonModified ? `Hide (${totalNonModifiedLines}) lines` : `Show (${totalNonModifiedLines}) lines`}
+        </span>
+      </DiffButton>
       <div className={`mx-auto flex min-h-[60vh] flex-row`}>
         <div className="flex w-[40vw] basis-[50%] flex-col overflow-x-auto ">
           {oldTextElements}
