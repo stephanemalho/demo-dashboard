@@ -51,22 +51,21 @@ const Accordion = ({ loadData, loadChildren, loadDescendants } : AccordionProps)
 
   return (
     <div className="flex-between ml-auto flex items-center justify-center">
-      {/* Icône pour insérer un élément seul */}
+      {/* @toto ajouter logique pour insérer un élément seul */}
       <WrapIcon bgColorHover="hover:bg-[#fff]" >
       <FaPlus size={12} onClick={(e:any) => handleLoadData(e)} className="h-full w-full p-[10px]" /> 
       </WrapIcon>
 
-      {/* Icône pour insérer un élément et ses enfants */}
+      {/* @toto ajouter logique pour insérer un élément et ses enfants */}
       <WrapIcon bgColorHover="hover:bg-[#fff]" >
       <FaPlusCircle size={12} onClick={(e: any) => handleLoadChildren(e)} className="h-full w-full p-[10px]" />
       </WrapIcon>
 
-      {/* Icône pour insérer un élément et toute sa descendance */}
+      {/* @toto ajouter logique pour insérer un élément et toute sa descendance */}
       <WrapIcon bgColorHover="hover:bg-[#fff]" >
       <FaPlusSquare size={12} onClick={(e: any) => handleLoadDescendants(e)} className="h-full w-full p-[10px]" />
       </WrapIcon>
 
-      {/* Affichage du chargement */}
       {loading && <p>Chargement...</p>}
     </div>
   );

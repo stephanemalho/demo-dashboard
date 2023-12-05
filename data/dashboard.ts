@@ -53,6 +53,7 @@ export interface DashboardInterface {
 export interface MenuItemInterface {
   title: string;
   children?: MenuItemInterface[];
+  parentTitle?: string;
 }
 
 export const menuItems: MenuItemInterface[] = [

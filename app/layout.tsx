@@ -45,7 +45,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={` custom-scrollbar`}>
+      <body className={`custom-scrollbar`}>
         <ClerkProvider
           appearance={{
             elements: {
