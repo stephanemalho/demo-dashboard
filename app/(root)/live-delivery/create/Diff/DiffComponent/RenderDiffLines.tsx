@@ -173,10 +173,10 @@ const RenderDiffLines = ({
         </span>
       </DiffButton>
       <div className={`mx-auto flex min-h-[60vh] flex-row`}>
-        <div className="flex w-[40vw] basis-[50%] flex-col overflow-x-auto ">
+        <div className="custom-scrollbar flex w-[40vw] basis-[50%] flex-col overflow-x-auto ">
           {oldTextElements}
         </div>
-        <div className="flex w-[40vw] basis-[50%] flex-col overflow-x-auto">
+        <div className="custom-scrollbar flex w-[40vw] basis-[50%] flex-col overflow-x-auto">
           {newTextElements}
         </div>
       </div>

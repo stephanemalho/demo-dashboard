@@ -1,4 +1,3 @@
-import WrapIcon from "@/components/WrapIcon";
 import React from "react";
 import {
   MdOutlineUnfoldLessDouble,
@@ -25,14 +24,14 @@ const DiffButton = ({
       } `}
       onClick={toggleShowAllLines}
     >
-      <WrapIcon bgColorHover="hover:bg-[rgba(44,42,42,0.2)]">
+      <div>
         {showAllLines ? (
           <MdOutlineUnfoldMoreDouble size={16} className="ml-1" />
         ) : (
           <MdOutlineUnfoldLessDouble size={16} className="ml-1" />
         )}
-      </WrapIcon>
-      <span className="flex h-full w-full items-center justify-center text-[12px]">
+      </div>
+      <span className="flex h-full w-full items-center justify-center text-[12px] max-2xl:text-[10px]">
         {showAllLines ? "hidde none modified lines" : "Show all lines"}
       </span>
       {children && children}
