@@ -89,10 +89,10 @@ const RenderDiffLines = ({oldText , newText, isSmallScreen} : any) => {
         <div className={`m-auto flex h-full  max-w-[92vw] flex-col ${isOpen ? "m-auto max-w-[70vw] max-2xl:ml-auto max-2xl:max-w-[70vw]": "w-full"}`}>
           <div className="sticky top-0 z-10 flex w-full flex-row bg-[#fff] p-1 shadow-sm">
             <div className="basis-[50%] pr-2 text-[15px] text-[#000]">
-              Old source:
+              Target file:
             </div>
-            <div className=" text-[15px] text-[#6FDC8C]">New source:</div>
-            <div className="basis-[50%] pl-[40px] text-[15px] text-[#6FDC8C]">
+            <div className=" text-[15px] text-[#6FDC8C]">New file:</div>
+            <div className=" ml-auto pl-[40px] text-[15px] text-[#434343]">
               modified lines: {numberOfModifiedLines}
             </div>
           </div>

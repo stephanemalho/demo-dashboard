@@ -11,13 +11,13 @@ interface DiffButtonProps {
 const DiffButton = ({ children,  showAllLines, toggleShowAllLines }: DiffButtonProps) => {
   return (
     <button
-      className={`flex w-full items-center border-[1px] bg-[#f2f2f2]  hover:bg-[#fff] ${showAllLines ? "border-[#92c3f4] text-[#92c3f4] " : "border-[#c3c3c3] text-[#c3c3c3]"} `}
+      className={`flex w-full items-center border-[1px] bg-[#fafafa]  hover:bg-[#fff] ${showAllLines ? "border-[#92c3f4] text-[#92c3f4] " : "border-[#f2f2f2] text-[#c3c3c3]"} `}
       onClick={toggleShowAllLines}
     >
       <WrapIcon bgColorHover="hover:bg-[rgba(44,42,42,0.2)]">
         {showAllLines ? <MdOutlineUnfoldMoreDouble size={16} className="ml-1" /> : <MdOutlineUnfoldLessDouble size={16}  className="ml-1" />}
       </WrapIcon>
-      {showAllLines ? "hidde none modified lines" : "Show all lines"}
+      <span className="flex h-full w-full items-center justify-center"> {showAllLines ? "hidde none modified lines" : "Show all lines"}</span>
     {children && children}
     </button>
   );

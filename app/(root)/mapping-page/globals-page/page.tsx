@@ -13,7 +13,7 @@ const page = () => {
   };
 
   return (
-    <div className="flex min-h-[80vh]  w-[98vw] flex-row justify-between">
+    <div className="flex min-h-[80vh] w-[98vw] flex-row justify-between">
       <RenderContainer />
       <div className="ml-1 flex h-[90vh] w-full max-w-[96vw] flex-col text-[10px] transition-all duration-500">
         <LiveContainer
