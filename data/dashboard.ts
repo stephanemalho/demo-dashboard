@@ -56,6 +56,77 @@ export interface MenuItemInterface {
   parentTitle?: string;
 }
 
+export interface TreemapInterface {
+  name: string;
+  children?: TreemapInterface[];
+  size?: number;
+} 
+
+
+export const treeMap : TreemapInterface[] = [
+  {
+    "name": "axis",
+    "children": [
+      {
+        "name": "Axis",
+        "size": 24593
+      },
+      {
+        "name": "Axes",
+        "size": 1302
+      },
+      {
+        "name": "AxisGridLine",
+        "size": 652
+      },
+      {
+        "name": "AxisLabel",
+        "size": 636
+      },
+      {
+        "name": "CartesianAxes",
+        "size": 6703
+      }
+    ]
+  },
+  {
+    "name": "controls",
+    "children": [
+      {
+        "name": "control",
+        "size": 8435
+      },
+    ]
+  },
+  {
+    "name": "data",
+    "children": [
+      {
+        "name": "data",
+        "size": 20544
+      },
+      {
+        "name": "NodeSprite",
+        "size": 19382
+      },
+        ]
+      },
+      {
+        "name": "ScaleBinding",
+        "size": 11275
+      },
+      {
+        "name": "TreeBuilder",
+        "size": 9930
+      },
+      {
+        "name": "Tree",
+        "size": 7147
+      }
+    
+]
+
+
 export const menuItems: MenuItemInterface[] = [
   {
     title: "Activity",
