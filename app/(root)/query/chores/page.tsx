@@ -1,11 +1,10 @@
-import React from 'react'
+import ContentContainer from "@/components/shared/contentContainer/ContentContainer";
+import ChoresTables from "./ChoresTables";
 
-const page = () => {
+export default function page() {
   return (
-    <div className="slide-in-right text-dark500_light700 flex w-full flex-col-reverse justify-between gap-4 sm:flex-row">
-      <h1 className="h1-bold">Live Delivery</h1>
-    </div>
-  )
+    <ContentContainer>
+      <ChoresTables />
+    </ContentContainer>
+  );
 }
-
-export default page
