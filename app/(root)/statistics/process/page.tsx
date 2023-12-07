@@ -1,25 +1,42 @@
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { JSX, SVGProps } from "react"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { JSX, SVGProps } from "react";
+import Charts from "./Chart";
 
 function page() {
   return (
     <div className="flex flex-col gap-8 p-8 lg:flex-row">
-      <div className="flex-1">
-        <div className="rounded-lg bg-white p-6 shadow">
+      <div className="m-auto flex flex-col">
+        <div className="w-[70vw] rounded-lg bg-white p-6 shadow-lg">
           <h2 className="mb-4 text-lg font-semibold">RAM & Garbage Use</h2>
-      
           <div className="mt-2 flex justify-between text-sm text-gray-500">
             <span>Total Ram</span>
             <span>Garbage</span>
           </div>
+          <div className="h-[30vh] w-[66vw]">
+            <Charts />
+          </div>
         </div>
-        <div className="mt-6 rounded-lg bg-white p-6 shadow">
-          <h2 className="mb-4 text-lg font-semibold">Active Threads & Connected Users</h2>
-        
+        <div className="mt-6 w-[70vw] rounded-lg bg-white p-6 shadow-lg">
+          <h2 className="mb-4 text-lg font-semibold">
+            Active Threads & Connected Users
+          </h2>
           <div className="mt-2 flex justify-between text-sm text-gray-500">
             <span>Active Threads</span>
             <span>Connected Users</span>
+          </div>
+          <div className="h-[30vh] w-[66vw]">
+            <Charts />
+          </div>
+        </div>
+        <div className="mt-6 w-[70vw] rounded-lg bg-white p-6 shadow-lg">
+          <h2 className="mb-4 text-lg font-semibold">Startup Time Historic</h2>
+          <div className="mt-2 flex justify-between text-sm text-gray-500">
+            <span>Active Threads</span>
+            <span>Connected Users</span>
+          </div>
+          <div className="h-[30vh] w-[66vw]">
+            <Charts />
           </div>
         </div>
       </div>
@@ -48,18 +65,16 @@ function page() {
             </div>
           </div>
         </div>
-        <div className="mt-6 rounded-lg bg-white p-6 shadow">
-          <h2 className="mb-4 text-lg font-semibold">Startup Time Historic</h2>
-        
-        </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default page
+export default page;
 
-function IconCalendar(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
+function IconCalendar(
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
+) {
   return (
     <svg
       {...props}
@@ -78,9 +93,8 @@ function IconCalendar(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) 
       <line x1="8" x2="8" y1="2" y2="6" />
       <line x1="3" x2="21" y1="10" y2="10" />
     </svg>
-  )
+  );
 }
-
 
 function IconClock(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
@@ -99,5 +113,5 @@ function IconClock(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
       <circle cx="12" cy="12" r="10" />
       <polyline points="12 6 12 12 16 14" />
     </svg>
-  )
+  );
 }
