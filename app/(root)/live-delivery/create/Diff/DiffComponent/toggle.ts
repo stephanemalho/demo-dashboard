@@ -1,6 +1,6 @@
 // Définir la fonction `toggleLines` en dehors du composant
 
-import { lineHasChanges } from "@/utils/arrays";
+import { lineHasChanges } from "@/lib/utils/arrays";
 import { diffWordsWithSpace } from "diff";
 import React from "react";
 import { TextContent } from "./RenderDiffLines";
@@ -17,7 +17,7 @@ export function toggleLines(
 
   if (!showAllNonModified) {
     const allLines = new Set();
-    oldText.content.forEach((_: any, index: number ) => {
+    oldText.content.forEach((_: any, index: number) => {
       if (
         !lineHasChanges(
           diffWordsWithSpace(

@@ -8,7 +8,7 @@ import {
 } from "@radix-ui/react-dropdown-menu";
 import { Button } from "@/components/ui/button";
 
-import { getUnique } from "@/utils/arrays";
+import { getUnique } from "@/lib/utils/arrays";
 import { useSidebar } from "@/context/SideBarProvider";
 import { getData } from "@/api/getData";
 

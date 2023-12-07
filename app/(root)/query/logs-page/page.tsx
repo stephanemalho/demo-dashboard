@@ -193,18 +193,18 @@ export default function Component() {
                 </label>
               ))}
             </div>
-            <div className="flex justify-end gap-2">
+            <div className="flex">
               <Button
-                className="my-1 w-[150px]  rounded-none border bg-[#0f62fe] text-white hover:bg-[#4589ff]"
+                className="my-1 w-[50%]  rounded-none border bg-[#0f62fe] text-white hover:bg-[#4589ff]"
                 onClick={handleSelectAll}
               >
                 Select All
               </Button>
               <Button
-                className="my-1 w-[150px]  rounded-none border bg-[#0f62fe] text-white hover:bg-[#4589ff]"
+                className="my-1 w-[50%]  rounded-none border bg-[#0f62fe] text-white hover:bg-[#4589ff]"
                 onClick={handleDeselectAll}
               >
-                Deselect All
+                Unselect All
               </Button>
             </div>
           </div>
@@ -234,13 +234,13 @@ export default function Component() {
                 placeholder="Add a badge..."
               />
               <Button
-                className="my-1 w-[100px] rounded-none border bg-[#0f62fe] text-white hover:bg-[#4589ff]"
+                className="my-1 w-[50%] rounded-none border bg-[#0f62fe] text-white hover:bg-[#4589ff]"
                 onClick={handleSubmit}
               >
                 Add
               </Button>
               <Button
-                className={`my-1 w-[100px] rounded-none border ${
+                className={`my-1 w-[50%] rounded-none border ${
                   selectedBadgeIndex !== null
                     ? "bg-[#da1e28] text-white hover:bg-[#fa4d56]"
                     : "bg-gray-300"

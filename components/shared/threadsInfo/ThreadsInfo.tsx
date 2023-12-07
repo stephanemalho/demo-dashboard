@@ -2,8 +2,8 @@
 import React from "react";
 // import moment from "moment";
 import { dashboard } from "@/data/dashboard";
-import { getElementLength } from "@/utils/arrays";
-import { formatRamValue } from "@/utils/formatNumber";
+import { getElementLength } from "@/lib/utils/arrays";
+import { formatRamValue } from "@/lib/utils/formatNumber";
 import OnlineUser from "./OnlineUser";
 import MainInfo from "./MainInfo";
 

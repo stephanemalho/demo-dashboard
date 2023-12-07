@@ -1,0 +1,25 @@
+{
+	"children": [
+		{
+			"Count": 55788,
+			"Average": 5006.673,
+			"Sum": 279312273,
+			"Name": "Calc_Conso_Luxembourg",
+			"Min": 0,
+			"Max": 5172,
+			"Top": 0,
+			"LastExec": "2023-11-17T22:08:58.907000"
+		},
+		{
+			"Count": 15596,
+			"Average": 9982.3646,
+			"Sum": 155684958,
+			"Name": "Calc_Conso_Belgique",
+			"Min": 0,
+			"Max": 10017,
+			"Top": 1,
+			"LastExec": "2023-11-17T22:08:48.901000"
+		}
+	]
+}
+
