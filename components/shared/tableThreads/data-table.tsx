@@ -28,8 +28,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { exportTableToExcel } from "@/utils/formatTable";
-import { toLowerCaseText } from "@/utils/formatText";
+import { exportTableToExcel } from "@/lib/utils/formatTable";
+import { toLowerCaseText } from "@/lib/utils/formatText";
 import Image from "next/image";
 import WrapIcon from "@/components/WrapIcon";
 
@@ -71,16 +71,16 @@ export function DataTable<TData, TValue>({
   return (
     <div className="m-auto flex h-full w-full flex-col overflow-hidden">
       <div className="sticky top-0 z-10 flex h-[26px] w-full bg-[#f4f4f4] ">
-            <WrapIcon bgColorHover="hover:bg-[#e2e2e2]" >
-            <Image 
+        <WrapIcon bgColorHover="hover:bg-[#e2e2e2]">
+          <Image
             src="/assets/icons/download.svg"
             width={15}
             height={15}
             alt="download"
             onClick={() => exportTableToExcel(data)}
             className="m-auto pb-[1px]"
-            />
-            </WrapIcon>
+          />
+        </WrapIcon>
         <div className="ml-auto flex w-[200px] flex-row">
           <DropdownMenu>
             <DropdownMenuTrigger asChild className="ml-auto">
@@ -136,7 +136,7 @@ export function DataTable<TData, TValue>({
               </TableRow>
             ))}
           </TableHeader>
-          
+
           <TableBody className="overflow-y-scroll">
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (

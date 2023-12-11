@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import DiffButton from "./DiffButton";
 import DiffLine from "./DiffLine";
 import { diffWordsWithSpace } from "diff";
-import { lineHasChanges, newLinesCount } from "@/utils/arrays";
+import { lineHasChanges, newLinesCount } from "@/lib/utils/arrays";
 import { useSidebar } from "@/context/SideBarProvider";
 import LinesToCompare from "./LineToCompare";
 import { toggleLines, toggleVisibilityLines } from "./toggle";
@@ -35,12 +35,17 @@ const RenderDiffLines = ({
   }, 0);
 
   const toggleAllLinesVisibility = () => {
-    toggleLines(setShowAllNonModified, showAllNonModified, oldText, newText, setVisibleLines);
+    toggleLines(
+      setShowAllNonModified,
+      showAllNonModified,
+      oldText,
+      newText,
+      setVisibleLines
+    );
   };
 
   const toggleLinesVisibility = (start: any, end: number) => {
     toggleVisibilityLines(visibleLines, start, end, setVisibleLines);
-
   };
 
   const renderNonModifiedBlock = (start: any, end: number) => (
@@ -67,7 +72,6 @@ const RenderDiffLines = ({
       newText,
       isSmallScreen
     );
-
     // Parcourez l'ancien texte et trouvez les blocs non modifiés et ajoutés
     oldText.content.forEach((line, index) => {
       const changes = diffWordsWithSpace(line, newText.content[index] || "");
@@ -169,7 +173,9 @@ const RenderDiffLines = ({
         showAllLines={showAllNonModified}
       >
         <span className="mr-2 text-[12px]">
-        {showAllNonModified ? `Hide (${totalNonModifiedLines}) lines` : `Show (${totalNonModifiedLines}) lines`}
+          {showAllNonModified
+            ? `Hide (${totalNonModifiedLines}) lines`
+            : `Show (${totalNonModifiedLines}) lines`}
         </span>
       </DiffButton>
       <div className={`mx-auto flex min-h-[60vh] flex-row`}>
@@ -185,4 +191,3 @@ const RenderDiffLines = ({
 };
 
 export default RenderDiffLines;
-

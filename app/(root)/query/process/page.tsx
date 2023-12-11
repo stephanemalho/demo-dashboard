@@ -1,11 +1,10 @@
-import React from 'react'
+import ContentContainer from "@/components/shared/contentContainer/ContentContainer";
+import ProcessTables from "./ProcessTable";
 
-const page = () => {
+export default function page() {
   return (
-    <div className="slide-in-right text-dark500_light700 flex w-full flex-col-reverse justify-between gap-4 sm:flex-row">
-      <h1 className="h1-bold">Query Process</h1>
-    </div>
-  )
+    <ContentContainer>
+      <ProcessTables />
+    </ContentContainer>
+  );
 }
-
-export default page

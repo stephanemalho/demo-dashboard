@@ -28,7 +28,7 @@ const LeftSideBar = () => {
       <section
         className={`${
           toggleSideBar ? "slide-in-sidebar" : ""
-        } custom-scrollbar ibm-text-black fixed left-0 top-[50px] z-50 flex h-[95vh] w-[300px] flex-col justify-between overflow-y-auto bg-[#000] font-regular shadow-light-300 max-2xl:w-[210px]`}
+        } custom-scrollbar ibm-text-black fixed left-0 top-[50px] z-50 flex h-full w-[300px] flex-col justify-between overflow-y-auto bg-[#000] font-regular shadow-light-300 max-2xl:w-[210px]`}
       >
         <nav
           className={`absolute top-[1px] m-1 flex w-[280px] flex-1 flex-col scroll-auto ease-in max-2xl:w-[200px]`}
@@ -169,7 +169,7 @@ const LeftSideBar = () => {
       </section>
       <div
         onClick={handleClick}
-        className="fixed top-[50px] z-40 h-[95vh] w-[100vw] bg-black opacity-[60%]"
+        className="fixed top-[50px] z-40 h-full w-[100vw] bg-black opacity-[60%]"
       >
         {""}
       </div>

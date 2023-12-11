@@ -1,4 +1,3 @@
-
 export interface LogEntry {
   ID: number;
   ThreadID: number;
@@ -56,10 +55,59 @@ export interface MenuItemInterface {
   parentTitle?: string;
 }
 
+export interface TreemapInterface {
+  name: string;
+  children?: TreemapInterface[];
+  size?: number;
+}
+
+export const treeMap: TreemapInterface[] = [
+  {
+    name: "Axis",
+    size: 24593,
+  },
+  {
+    name: "Axes",
+    size: 1302,
+  },
+  {
+    name: "AxisGridLine",
+    size: 652,
+  },
+  {
+    name: "AxisLabel",
+    size: 636,
+  },
+  {
+    name: "CartesianAxes",
+    size: 6703,
+  },
+  {
+    name: "controls",
+    size: 8435,
+  },
+  {
+    name: "data",
+    size: 19382,
+  },
+  {
+    name: "ScaleBinding",
+    size: 11275,
+  },
+  {
+    name: "TreeBuilder",
+    size: 9930,
+  },
+  {
+    name: "Tree",
+    size: 7147,
+  },
+];
+
 export const menuItems: MenuItemInterface[] = [
   {
     title: "Activity",
-    children : [
+    children: [
       {
         title: "Cubes",
         children: [
@@ -106,7 +154,7 @@ export const menuItems: MenuItemInterface[] = [
             ],
           },
           {
-            title : "Suivi congés",
+            title: "Suivi congés",
             children: [
               {
                 title: "Dimensions",
@@ -120,7 +168,7 @@ export const menuItems: MenuItemInterface[] = [
             ],
           },
           {
-            title : "TMA - Activity",
+            title: "TMA - Activity",
             children: [
               {
                 title: "Dimensions",
@@ -137,9 +185,8 @@ export const menuItems: MenuItemInterface[] = [
               {
                 title: "Control Objects",
               },
-              
             ],
-          }
+          },
         ],
       },
       {
@@ -188,7 +235,7 @@ export const menuItems: MenuItemInterface[] = [
             ],
           },
           {
-            title : "Suivi congés",
+            title: "Suivi congés",
             children: [
               {
                 title: "Dimensions",
@@ -202,7 +249,7 @@ export const menuItems: MenuItemInterface[] = [
             ],
           },
           {
-            title : "TMA - Activity",
+            title: "TMA - Activity",
             children: [
               {
                 title: "Dimensions",
@@ -214,7 +261,7 @@ export const menuItems: MenuItemInterface[] = [
                 title: "Process",
               },
             ],
-          }
+          },
         ],
       },
       {
@@ -263,7 +310,7 @@ export const menuItems: MenuItemInterface[] = [
             ],
           },
           {
-            title : "Suivi congés",
+            title: "Suivi congés",
             children: [
               {
                 title: "Dimensions",
@@ -277,7 +324,7 @@ export const menuItems: MenuItemInterface[] = [
             ],
           },
           {
-            title : "TMA - Activity",
+            title: "TMA - Activity",
             children: [
               {
                 title: "Dimensions",
@@ -289,7 +336,7 @@ export const menuItems: MenuItemInterface[] = [
                 title: "Process",
               },
             ],
-          }
+          },
         ],
       },
       {
@@ -338,7 +385,7 @@ export const menuItems: MenuItemInterface[] = [
             ],
           },
           {
-            title : "Suivi congés",
+            title: "Suivi congés",
             children: [
               {
                 title: "Dimensions",
@@ -352,7 +399,7 @@ export const menuItems: MenuItemInterface[] = [
             ],
           },
           {
-            title : "TMA - Activity",
+            title: "TMA - Activity",
             children: [
               {
                 title: "Dimensions",
@@ -364,7 +411,7 @@ export const menuItems: MenuItemInterface[] = [
                 title: "Chores",
               },
             ],
-          }
+          },
         ],
       },
       {
@@ -413,7 +460,7 @@ export const menuItems: MenuItemInterface[] = [
             ],
           },
           {
-            title : "Suivi congés",
+            title: "Suivi congés",
             children: [
               {
                 title: "Dimensions",
@@ -427,7 +474,7 @@ export const menuItems: MenuItemInterface[] = [
             ],
           },
           {
-            title : "TMA - Activity",
+            title: "TMA - Activity",
             children: [
               {
                 title: "Dimensions",
@@ -439,12 +486,11 @@ export const menuItems: MenuItemInterface[] = [
                 title: "Control Objects",
               },
             ],
-          }
+          },
         ],
       },
-    ]
+    ],
   },
-    
 ];
 
 export const dashboard: DashboardInterface = {
