@@ -2,8 +2,8 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className="slide-in-right text-dark500_light700 flex w-full flex-col-reverse justify-between gap-4 sm:flex-row">
-      <h1 className="h1-bold">Globals page</h1>
+    <div className="flex h-[96vh] w-full items-center justify-center  gap-4 sm:flex-row">
+      <h1 className="h1-bold">No data from now</h1>
     </div>
   )
 }

@@ -17,8 +17,8 @@ import LiveContainer from "@/components/shared/boxContainer/LiveContainer";
 export default function Component() {
 
   return (
-    <div className="flex bg-gray-100">
-      <div className="m-auto flex w-3/4  flex-col overflow-auto p-8">
+    <div className="flex h-[94vh] bg-gray-100">
+      <div className="mx-auto flex w-3/4 flex-col overflow-auto p-8">
         <Card className="mb-4 rounded-none p-1">
           <div className="flex justify-between">
             <div className="flex space-x-2">

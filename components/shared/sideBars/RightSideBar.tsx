@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import MetaData from "../../../app/(root)/statistics/ressources/ressourceFile/MetaData";
 import TestData from "../../../app/(root)/statistics/process/TestData";
 import LogSetting from "@/app/(root)/query/logs-page/LogSetting";
+import SelectMenu from "@/app/(root)/mapping-page/globals-page/SelectMenu";
 
 interface ComponentMappingInterface {
   [key: string]: () => React.ReactElement;
@@ -20,6 +21,7 @@ const RightSideBar = () => {
     "/statistics/ressources": MetaData,
     "/statistics/process": TestData,
     "/query/logs-page": LogSetting,
+    "/mapping-page/globals-page": SelectMenu,
   };
 
   useEffect(() => {
