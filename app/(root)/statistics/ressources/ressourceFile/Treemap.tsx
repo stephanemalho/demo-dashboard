@@ -47,7 +47,7 @@ const TreemapComponent = () => {
 
   return (
     <div
-      className="custom-scrollbar h-full overflow-y-scroll"
+      className="custom-scrollbar h-[70vh] overflow-y-scroll"
       ref={ref}
       style={{ width: "100%" }}
     >
