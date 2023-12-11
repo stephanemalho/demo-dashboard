@@ -1,5 +1,4 @@
 import DummyDataTable from "./DummyDataTable";
-import DummyDataTable1 from "./DummyDataTable1";
 
 export interface ProcessConfig {
   id: string;
@@ -17,7 +16,7 @@ const processConfig  = [
   },
   {
     id: "process-history",
-    component: DummyDataTable1,
+    component: DummyDataTable,
     title: "Selected Process History",
     lastTable: true,
   },

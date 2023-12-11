@@ -1,5 +1,4 @@
 import DummyChoresTable from "./DummyChoresTable";
-import DummyChoresTable1 from "./DummyChoresTable1";
 
 export interface ChoresConfig {
   id: string;
@@ -17,13 +16,13 @@ const choresConfig  = [
   },
   {
     id: "chores-history",
-    component: DummyChoresTable1,
+    component: DummyChoresTable,
     title: "Selected Chores History",
     lastTable: false,
   },
   {
     id: "chores-related-process",
-    component: DummyChoresTable1,
+    component: DummyChoresTable,
     title: "Selected Chores Related Process",
     lastTable: true,
   },
