@@ -21,11 +21,11 @@ import LiveContainer from "@/components/shared/boxContainer/LiveContainer";
 const LiveBasicTable = () => {
   return (
     <LiveContainer
-      logHeight="h-[44vh] max-2xl:h-[80vh]"
+      logHeight="h-[60vh] max-2xl:h-[80vh]"
       title="Basic Datatable"
       label="Basic Datatable"
     >
-      <div className="sticky top-0 z-10 mb-4 flex items-center justify-between bg-white p-4">
+      <div className="sticky top-0 z-10 mb-4 flex w-full items-center justify-between bg-white p-4">
         <div className="flex items-center">
           <label className="mr-2" htmlFor="entries">
             Show
@@ -49,7 +49,7 @@ const LiveBasicTable = () => {
           <Input id="search" placeholder="" />
         </div>
       </div>
-      <Table className="m-4 h-[50vh] w-[58vw] max-2xl:w-full">
+      <Table className="m-4 h-[50px] w-[98%] max-2xl:w-full">
         <TableHeader className="sticky top-0">
           <TableRow>
             <TableHead className="w-[200px]">
@@ -66,8 +66,8 @@ const LiveBasicTable = () => {
             </TableHead>
           </TableRow>
         </TableHeader>
-        <TableBody className="overflow-hidden">
-          <TableRow className="h-[10px]">
+        <TableBody className="h-[50vh] overflow-hidden">
+          <TableRow className="h-[1px]">
             <TableCell className="w-2/5 font-medium">1 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 12:43:17</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
@@ -82,7 +82,7 @@ const LiveBasicTable = () => {
               </Button>
             </TableCell>
           </TableRow>
-          <TableRow className="h-[10px]">
+          <TableRow className="h-[1px]">
             <TableCell className="w-2/5 font-medium">2 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 12:43:18</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
@@ -97,7 +97,7 @@ const LiveBasicTable = () => {
               </Button>
             </TableCell>
           </TableRow>
-          <TableRow className="h-[10px]">
+          <TableRow className="h-[1px]">
             <TableCell className="w-2/5 font-medium">3 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 12:43:19</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
@@ -112,7 +112,7 @@ const LiveBasicTable = () => {
               </Button>
             </TableCell>
           </TableRow>
-          <TableRow className="h-[10px]">
+          <TableRow className="h-[1px]">
             <TableCell className="w-2/5 font-medium">4 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 14:43:38</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
@@ -127,7 +127,307 @@ const LiveBasicTable = () => {
               </Button>
             </TableCell>
           </TableRow>
-          <TableRow className="h-[10px]">
+          <TableRow className="h-[1px]">
+            <TableCell className="w-2/5 font-medium">7 - Exemple2</TableCell>
+            <TableCell>2023-11-23 15:09:37</TableCell>
+            <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
+              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
+                Show
+              </Button>
+              <Button className=" w-[100px] rounded-none bg-[#24A148]">
+                Deliver
+              </Button>
+              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
+                Delete
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow className="h-[1px]">
+            <TableCell className="w-2/5 font-medium">1 - Example</TableCell>
+            <TableCell className="w-2/5">2023-10-09 12:43:17</TableCell>
+            <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
+              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
+                Show
+              </Button>
+              <Button className=" w-[100px] rounded-none bg-[#24A148]">
+                Deliver
+              </Button>
+              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
+                Delete
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow className="h-[1px]">
+            <TableCell className="w-2/5 font-medium">2 - Example</TableCell>
+            <TableCell className="w-2/5">2023-10-09 12:43:18</TableCell>
+            <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
+              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
+                Show
+              </Button>
+              <Button className=" w-[100px] rounded-none bg-[#24A148]">
+                Deliver
+              </Button>
+              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
+                Delete
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow className="h-[1px]">
+            <TableCell className="w-2/5 font-medium">3 - Example</TableCell>
+            <TableCell className="w-2/5">2023-10-09 12:43:19</TableCell>
+            <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
+              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
+                Show
+              </Button>
+              <Button className=" w-[100px] rounded-none bg-[#24A148]">
+                Deliver
+              </Button>
+              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
+                Delete
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow className="h-[1px]">
+            <TableCell className="w-2/5 font-medium">4 - Example</TableCell>
+            <TableCell className="w-2/5">2023-10-09 14:43:38</TableCell>
+            <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
+              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
+                Show
+              </Button>
+              <Button className=" w-[100px] rounded-none bg-[#24A148]">
+                Deliver
+              </Button>
+              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
+                Delete
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow className="h-[1px]">
+            <TableCell className="w-2/5 font-medium">7 - Exemple2</TableCell>
+            <TableCell>2023-11-23 15:09:37</TableCell>
+            <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
+              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
+                Show
+              </Button>
+              <Button className=" w-[100px] rounded-none bg-[#24A148]">
+                Deliver
+              </Button>
+              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
+                Delete
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow className="h-[1px]">
+            <TableCell className="w-2/5 font-medium">1 - Example</TableCell>
+            <TableCell className="w-2/5">2023-10-09 12:43:17</TableCell>
+            <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
+              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
+                Show
+              </Button>
+              <Button className=" w-[100px] rounded-none bg-[#24A148]">
+                Deliver
+              </Button>
+              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
+                Delete
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow className="h-[1px]">
+            <TableCell className="w-2/5 font-medium">2 - Example</TableCell>
+            <TableCell className="w-2/5">2023-10-09 12:43:18</TableCell>
+            <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
+              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
+                Show
+              </Button>
+              <Button className=" w-[100px] rounded-none bg-[#24A148]">
+                Deliver
+              </Button>
+              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
+                Delete
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow className="h-[1px]">
+            <TableCell className="w-2/5 font-medium">3 - Example</TableCell>
+            <TableCell className="w-2/5">2023-10-09 12:43:19</TableCell>
+            <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
+              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
+                Show
+              </Button>
+              <Button className=" w-[100px] rounded-none bg-[#24A148]">
+                Deliver
+              </Button>
+              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
+                Delete
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow className="h-[1px]">
+            <TableCell className="w-2/5 font-medium">4 - Example</TableCell>
+            <TableCell className="w-2/5">2023-10-09 14:43:38</TableCell>
+            <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
+              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
+                Show
+              </Button>
+              <Button className=" w-[100px] rounded-none bg-[#24A148]">
+                Deliver
+              </Button>
+              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
+                Delete
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow className="h-[1px]">
+            <TableCell className="w-2/5 font-medium">7 - Exemple2</TableCell>
+            <TableCell>2023-11-23 15:09:37</TableCell>
+            <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
+              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
+                Show
+              </Button>
+              <Button className=" w-[100px] rounded-none bg-[#24A148]">
+                Deliver
+              </Button>
+              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
+                Delete
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow className="h-[1px]">
+            <TableCell className="w-2/5 font-medium">1 - Example</TableCell>
+            <TableCell className="w-2/5">2023-10-09 12:43:17</TableCell>
+            <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
+              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
+                Show
+              </Button>
+              <Button className=" w-[100px] rounded-none bg-[#24A148]">
+                Deliver
+              </Button>
+              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
+                Delete
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow className="h-[1px]">
+            <TableCell className="w-2/5 font-medium">2 - Example</TableCell>
+            <TableCell className="w-2/5">2023-10-09 12:43:18</TableCell>
+            <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
+              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
+                Show
+              </Button>
+              <Button className=" w-[100px] rounded-none bg-[#24A148]">
+                Deliver
+              </Button>
+              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
+                Delete
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow className="h-[1px]">
+            <TableCell className="w-2/5 font-medium">3 - Example</TableCell>
+            <TableCell className="w-2/5">2023-10-09 12:43:19</TableCell>
+            <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
+              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
+                Show
+              </Button>
+              <Button className=" w-[100px] rounded-none bg-[#24A148]">
+                Deliver
+              </Button>
+              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
+                Delete
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow className="h-[1px]">
+            <TableCell className="w-2/5 font-medium">4 - Example</TableCell>
+            <TableCell className="w-2/5">2023-10-09 14:43:38</TableCell>
+            <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
+              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
+                Show
+              </Button>
+              <Button className=" w-[100px] rounded-none bg-[#24A148]">
+                Deliver
+              </Button>
+              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
+                Delete
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow className="h-[1px]">
+            <TableCell className="w-2/5 font-medium">7 - Exemple2</TableCell>
+            <TableCell>2023-11-23 15:09:37</TableCell>
+            <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
+              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
+                Show
+              </Button>
+              <Button className=" w-[100px] rounded-none bg-[#24A148]">
+                Deliver
+              </Button>
+              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
+                Delete
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow className="h-[1px]">
+            <TableCell className="w-2/5 font-medium">1 - Example</TableCell>
+            <TableCell className="w-2/5">2023-10-09 12:43:17</TableCell>
+            <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
+              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
+                Show
+              </Button>
+              <Button className=" w-[100px] rounded-none bg-[#24A148]">
+                Deliver
+              </Button>
+              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
+                Delete
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow className="h-[1px]">
+            <TableCell className="w-2/5 font-medium">2 - Example</TableCell>
+            <TableCell className="w-2/5">2023-10-09 12:43:18</TableCell>
+            <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
+              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
+                Show
+              </Button>
+              <Button className=" w-[100px] rounded-none bg-[#24A148]">
+                Deliver
+              </Button>
+              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
+                Delete
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow className="h-[1px]">
+            <TableCell className="w-2/5 font-medium">3 - Example</TableCell>
+            <TableCell className="w-2/5">2023-10-09 12:43:19</TableCell>
+            <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
+              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
+                Show
+              </Button>
+              <Button className=" w-[100px] rounded-none bg-[#24A148]">
+                Deliver
+              </Button>
+              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
+                Delete
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow className="h-[1px]">
+            <TableCell className="w-2/5 font-medium">4 - Example</TableCell>
+            <TableCell className="w-2/5">2023-10-09 14:43:38</TableCell>
+            <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
+              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
+                Show
+              </Button>
+              <Button className=" w-[100px] rounded-none bg-[#24A148]">
+                Deliver
+              </Button>
+              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
+                Delete
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow className="h-[1px]">
             <TableCell className="w-2/5 font-medium">7 - Exemple2</TableCell>
             <TableCell>2023-11-23 15:09:37</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">

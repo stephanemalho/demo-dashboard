@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 
 const TestData = () => {
   return (
-    <div className="w-full lg:w-96">
+    <div className="w-full">
         <div className="rounded-lg bg-white p-6 shadow">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-lg font-semibold">Time Stamp</h2>
@@ -13,19 +13,19 @@ const TestData = () => {
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2">
               <IconCalendar className="text-gray-400" />
-              <Input placeholder="mm / dd / yyyy" />
+              <Input type="date" placeholder="mm / dd / yyyy" />
             </div>
             <div className="flex items-center gap-2">
               <IconClock className="text-gray-400" />
-              <Input placeholder="12:00 AM" />
+              <Input type="time" placeholder="12:00 AM" />
             </div>
             <div className="flex items-center gap-2">
               <IconCalendar className="text-gray-400" />
-              <Input placeholder="mm / dd / yyyy" />
+              <Input type="date" placeholder="mm / dd / yyyy" />
             </div>
             <div className="flex items-center gap-2">
               <IconClock className="text-gray-400" />
-              <Input placeholder="12:00 AM" />
+              <Input type="time" placeholder="12:00 AM" />
             </div>
           </div>
         </div>
