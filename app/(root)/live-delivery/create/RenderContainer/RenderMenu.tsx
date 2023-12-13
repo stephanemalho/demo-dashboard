@@ -1,10 +1,11 @@
 "use client";
-import LocalSearchbar from "@/components/shared/search/LocalSearchbar";
+// import LocalSearchbar from "@/components/shared/search/LocalSearchbar";
 import { MenuItemInterface } from "@/data/dashboard";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { MdChevronRight } from "react-icons/md";
 import ExportIcons from "./FileIcons/ExportIcons";
 import { selectIcon } from "./FileIcons/SelectIcons";
+import ExpendableSearchBar from "@/components/shared/search/ExpendableSearchBar";
 
 const RenderMenu: React.FC<{
   item: MenuItemInterface;
@@ -25,6 +26,10 @@ const RenderMenu: React.FC<{
     setIsOpen(!isOpen);
   };
 
+  const handleValueLocalSearchBar = (e: { target: { value: React.SetStateAction<string>; }; }) => {
+    setSearchValue(e.target.value)
+  }
+  
   useEffect(() => {
     if (!isTerminalChild) {
       const currentContent = contentRef.current;
@@ -76,14 +81,20 @@ const RenderMenu: React.FC<{
           ref={contentRef}
         >
           {item.children && item.children.length > 3 && (
-            <LocalSearchbar
-              onChange={(e) => setSearchValue(e.target.value)}
+            // <LocalSearchbar
+            //   onChange={handleValueLocalSearchBar} // Nouveau
+            //   route={item.title}
+            //   iconPosition="right"
+            //   placeholder={`Filter ${item.title}`}
+            //   searchValue={searchValue}
+            //   otherClasses="max-w-[300px]"
+            // />
+            <ExpendableSearchBar
               route={item.title}
-              iconPosition="right"
-              placeholder={`Filter ${item.title}`}
+              placeHolderValue={`Filter ${item.title}...`}
+              onChange={handleValueLocalSearchBar} // Nouveau
               searchValue={searchValue}
-              setSearchValue={setSearchValue}
-              otherClasses="max-w-[300px]"
+              size="h-[30px] w-[30px] min-w-[30px]"
             />
           )}
           {filteredChildren &&
