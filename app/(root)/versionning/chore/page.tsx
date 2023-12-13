@@ -1,4 +1,4 @@
-import ExpendableSearchBar from "@/components/shared/ExpendableSearchBar";
+import ExpendableSearchBar from "@/components/shared/search/ExpendableSearchBar";
 
 export default function page() {
   return (
