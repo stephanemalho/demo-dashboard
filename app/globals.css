@@ -271,3 +271,20 @@ code {
   }
 }
 
+.search-transition-enter {
+  width: 0; /* Ou la valeur initiale souhaitée */
+}
+
+.search-transition-enter-active {
+  width: 100%; /* Ou la valeur finale souhaitée */
+  transition: width 600ms ease-in-out;
+}
+
+.search-transition-exit {
+  width: 80%;
+}
+
+.search-transition-exit-active {
+  width: 0;
+  transition: width 700ms ease-in-out;
+}

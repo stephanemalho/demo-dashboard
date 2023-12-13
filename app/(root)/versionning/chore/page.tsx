@@ -1,3 +1,5 @@
+import ExpendableSearchBar from "@/components/shared/search/ExpendableSearchBar";
+
 export default function page() {
   return (
     <div className="flex h-screen bg-gray-100">
@@ -31,15 +33,7 @@ export default function page() {
       <div className="flex-1 p-8">
         <div className="mb-6 flex justify-between">
           <div className="mr-6 flex-1">
-            <label className="mb-2 block font-medium text-sm text-gray-900" htmlFor="cube-name">
-              Chores
-            </label>
-            <input
-              className="block w-full rounded-none border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-              id="cube-name"
-              placeholder="Cube1"
-              type="text"
-            />
+            <ExpendableSearchBar placeHolderValue={"Search chores"}/>
           </div>
           <div className="flex space-x-4">
             <button className="rounded-none border border-gray-300 bg-transparent px-4 py-2 font-medium text-sm text-gray-900 hover:bg-gray-50 focus:ring-4 focus:ring-gray-200">
