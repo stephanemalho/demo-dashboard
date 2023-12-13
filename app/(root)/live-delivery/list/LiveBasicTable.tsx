@@ -1,3 +1,5 @@
+"use client";
+import { LuArrowUpDown } from "react-icons/lu";
 import {
   SelectValue,
   SelectTrigger,
@@ -15,10 +17,22 @@ import {
   Table,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { JSX, SVGProps } from "react";
 import LiveContainer from "@/components/shared/boxContainer/LiveContainer";
+import { FaEye } from "react-icons/fa";
+import Image from "next/image";
 
 const LiveBasicTable = () => {
+  const handleClickView = () => {
+    alert("boom");
+  };
+
+  const handleDeliveryClick = () => {
+    alert("delivery");
+  };
+  const handleTrashClick = () => {
+    alert("trash");
+  };
+
   return (
     <LiveContainer
       logHeight="h-[60vh] max-2xl:h-[80vh]"
@@ -52,18 +66,9 @@ const LiveBasicTable = () => {
       <Table className="m-4 h-[50px] w-[98%] max-2xl:w-full">
         <TableHeader className="sticky top-0">
           <TableRow>
-            <TableHead className="w-[200px]">
-              PACKAGE NAME
-              <ListOrderedIcon className="ml-2" />
-            </TableHead>
-            <TableHead className="w-[200px]">
-              CREATION DATE
-              <ListOrderedIcon className="ml-2" />
-            </TableHead>
-            <TableHead className="w-[200px]">
-              ACTIONS
-              <ListOrderedIcon className="ml-2" />
-            </TableHead>
+            <TableHead className="p-3"><div className="flex items-center">PACKAGE NAME<LuArrowUpDown className="ml-5"/></div></TableHead>
+            <TableHead className="p-3 "><div className="flex items-center">CREATION DATE <LuArrowUpDown className="ml-5"/></div></TableHead>
+            <TableHead className="p-3">ACTIONS</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody className="h-[50vh] overflow-hidden">
@@ -71,14 +76,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">1 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 12:43:17</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={() => alert("boom")}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -86,14 +110,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">2 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 12:43:18</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -101,14 +144,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">3 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 12:43:19</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -116,14 +178,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">4 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 14:43:38</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -131,14 +212,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">7 - Exemple2</TableCell>
             <TableCell>2023-11-23 15:09:37</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -146,14 +246,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">1 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 12:43:17</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -161,14 +280,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">2 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 12:43:18</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -176,14 +314,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">3 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 12:43:19</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -191,14 +348,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">4 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 14:43:38</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -206,14 +382,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">7 - Exemple2</TableCell>
             <TableCell>2023-11-23 15:09:37</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -221,14 +416,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">1 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 12:43:17</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -236,14 +450,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">2 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 12:43:18</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -251,14 +484,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">3 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 12:43:19</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -266,14 +518,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">4 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 14:43:38</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -281,14 +552,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">7 - Exemple2</TableCell>
             <TableCell>2023-11-23 15:09:37</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -296,14 +586,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">1 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 12:43:17</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -311,14 +620,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">2 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 12:43:18</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -326,14 +654,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">3 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 12:43:19</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -341,14 +688,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">4 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 14:43:38</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -356,14 +722,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">7 - Exemple2</TableCell>
             <TableCell>2023-11-23 15:09:37</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -371,14 +756,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">1 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 12:43:17</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -386,14 +790,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">2 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 12:43:18</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -401,14 +824,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">3 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 12:43:19</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -416,14 +858,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">4 - Example</TableCell>
             <TableCell className="w-2/5">2023-10-09 14:43:38</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -431,14 +892,33 @@ const LiveBasicTable = () => {
             <TableCell className="w-2/5 font-medium">7 - Exemple2</TableCell>
             <TableCell>2023-11-23 15:09:37</TableCell>
             <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
-              <Button className=" w-[100px] rounded-none bg-[#0043ce]">
-                Show
+              <Button
+                onClick={handleClickView}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <FaEye className="text-black" />
               </Button>
-              <Button className=" w-[100px] rounded-none bg-[#24A148]">
-                Deliver
+              <Button
+                onClick={handleDeliveryClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/delivery.svg"
+                  width={16}
+                  height={16}
+                  alt="delivery "
+                />
               </Button>
-              <Button className="w-[100px] rounded-none bg-[#DA1E28]">
-                Delete
+              <Button
+                onClick={handleTrashClick}
+                className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"
+              >
+                <Image
+                  src="/assets/icons/trash.svg"
+                  width={16}
+                  height={16}
+                  alt="trash "
+                />
               </Button>
             </TableCell>
           </TableRow>
@@ -461,29 +941,3 @@ const LiveBasicTable = () => {
 };
 
 export default LiveBasicTable;
-
-function ListOrderedIcon(
-  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
-) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <line x1="10" x2="21" y1="6" y2="6" />
-      <line x1="10" x2="21" y1="12" y2="12" />
-      <line x1="10" x2="21" y1="18" y2="18" />
-      <path d="M4 6h1v4" />
-      <path d="M4 10h2" />
-      <path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1" />
-    </svg>
-  );
-}
