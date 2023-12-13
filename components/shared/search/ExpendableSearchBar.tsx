@@ -1,13 +1,22 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { CSSTransition } from "react-transition-group";
 
 interface ExpendableSearchBarProps {
   placeHolderValue: string | undefined | null;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  searchValue: string;
+  route?: string;
+  size?: string;
 }
 
-const ExpendableSearchBar = ({ placeHolderValue }: ExpendableSearchBarProps) => {
+const ExpendableSearchBar = ({
+  placeHolderValue,
+  searchValue,
+  onChange,
+  size,
+}: ExpendableSearchBarProps) => {
   const [isExpended, setIsExpended] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -19,10 +28,14 @@ const ExpendableSearchBar = ({ placeHolderValue }: ExpendableSearchBarProps) => 
   }, [isExpended]); // Dépendance à isExpended
 
   return (
-    <div className="flex items-center bg-[#f4f4f4]">
+    <div className=" flex items-center bg-[#f4f4f4]">
       <button
         onClick={() => setIsExpended(!isExpended)}
-        className={`flex h-[50px] w-[50px] min-w-[50px] cursor-pointer items-center justify-center border-[1px] bg-gray-50 p-2.5 text-sm text-gray-900 first-letter:capitalize ${isExpended ? "border-blue-500 border-r-[#f4f4f4]" : "border-gray-300 focus:border-r-gray-300 "}`}
+        className={`flex ${size} cursor-pointer items-center justify-center border-[1px] bg-gray-50 p-2.5 text-sm text-gray-900 first-letter:capitalize ${
+          isExpended
+            ? "border-blue-500 border-r-[#f4f4f4]"
+            : "border-gray-300 focus:border-r-gray-300 "
+        }`}
       >
         <FaSearch />
       </button>
@@ -34,23 +47,25 @@ const ExpendableSearchBar = ({ placeHolderValue }: ExpendableSearchBarProps) => 
         unmountOnExit
       >
         <input
-        ref={inputRef} 
-          className={`h-[50px] ease-in-out ${
+          ref={inputRef}
+          className={`${size} ease-in-out ${
             isExpended ? "w-full " : "w-0"
-          } rounded-none border border-blue-500 border-l-gray-300 p-2.5 text-sm text-gray-900 focus:outline-none`}
+          } rounded-none border border-blue-500 border-l-gray-300 p-2.5 text-[12px] text-gray-900 focus:outline-none`}
           placeholder={placeHolderValue || "search..."}
           type="text"
           name="cube-name"
+          value={searchValue} // Utilisez la valeur de l'état de recherche
+          onChange={(e) => onChange(e)} // Mettez à jour l'état de recherche lors de la modification
         />
       </CSSTransition>
 
       {!isExpended && (
         <label
-          className="ml-2 block font-bold text-sm text-gray-900"
+          className="ml-2 block cursor-pointer font-bold text-[12px] text-gray-900"
           htmlFor="cube-name"
           onClick={() => setIsExpended(true)}
         >
-          Chores
+          {placeHolderValue || "search..."}
         </label>
       )}
     </div>

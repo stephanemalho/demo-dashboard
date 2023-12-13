@@ -10,7 +10,6 @@ interface CustomInputProps {
   placeholder: string;
   otherClasses?: string;
   searchValue: string; // Nouveau
-  setSearchValue: React.Dispatch<React.SetStateAction<string>>; // Nouveau
 }
 
 const LocalSearchbar = ({
@@ -18,8 +17,7 @@ const LocalSearchbar = ({
     iconPosition,
     placeholder,
     otherClasses,
-    searchValue, // Nouveau
-    setSearchValue // Nouveau
+    searchValue, // Nouveau // Nouveau
 } : CustomInputProps ) => {
   return (
     <div className={`relative z-20 flex h-[26px] items-center gap-2 px-4 ${otherClasses}`}>
@@ -35,7 +33,7 @@ const LocalSearchbar = ({
         <Input 
             placeholder={placeholder} 
             value={searchValue} // Utilisez la valeur de l'état de recherche
-            onChange={(e) => setSearchValue(e.target.value)} // Mettez à jour l'état de recherche lors de la modification
+            onChange={(e) => onChange(e)} // Mettez à jour l'état de recherche lors de la modification
             className="no-focus h-[24px] rounded-none border-none font-thin shadow-none outline-none"
         />
     </div>
