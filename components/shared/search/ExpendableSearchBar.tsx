@@ -9,6 +9,7 @@ interface ExpendableSearchBarProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   searchValue: string;
   route?: string;
+  label?: string; 
   size?: string;
 }
 
@@ -16,6 +17,7 @@ const ExpendableSearchBar = ({
   placeHolderValue,
   searchValue,
   onChange,
+  label,
   size,
 }: ExpendableSearchBarProps) => {
   const [isExpended, setIsExpended] = useState(false);
@@ -80,7 +82,7 @@ const ExpendableSearchBar = ({
           htmlFor="cube-name"
           onClick={() => setIsExpended(true)}
         >
-          {placeHolderValue || "search..."}
+          {label || "Search..."}
         </label>
       )}
     </div>

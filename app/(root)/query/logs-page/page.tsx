@@ -1,7 +1,5 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card } from "@/components/ui/card";
 import {
   TableHead,
   TableRow,
@@ -13,26 +11,28 @@ import {
 import { Badge } from "@/components/ui/badge";
 import React from "react";
 import LiveContainer from "@/components/shared/boxContainer/LiveContainer";
+import ExpendableSearchBar from "@/components/shared/search/ExpendableSearchBar";
 
 export default function Component() {
-
   return (
     <div className="flex h-[94vh] bg-gray-100">
       <div className="mx-auto flex w-3/4 flex-col overflow-auto p-8">
-        <Card className="mb-4 rounded-none p-1">
-          <div className="flex justify-between">
-            <div className="flex space-x-2">
-              <Button variant="secondary">Excel</Button>
-              <Button>Reload</Button>
-            </div>
-            <Input placeholder="Search..." />
-          </div>
-        </Card>
         <LiveContainer
           title="Query Logs"
           logHeight="p-3 bg-white"
           label={"Query Logs"}
         >
+          <div className="sticky top-0 z-10 flex w-full items-center justify-between border-b-[1px]">
+            <div className="relative w-full">
+              <ExpendableSearchBar
+                placeHolderValue="Search in table..."
+                searchValue=""
+                onChange={() => alert("boom")}
+                size="h-[50px] w-[50px] min-w-[50px]"
+              />
+            </div>
+            <Button variant="secondary">Excel</Button>
+          </div>
           <Table className="p-6">
             <TableHeader>
               <TableRow>
