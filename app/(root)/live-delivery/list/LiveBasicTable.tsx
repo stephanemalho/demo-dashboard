@@ -1,14 +1,6 @@
 "use client";
 import { LuArrowUpDown } from "react-icons/lu";
 import {
-  SelectValue,
-  SelectTrigger,
-  SelectItem,
-  SelectContent,
-  Select,
-} from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
-import {
   TableHead,
   TableRow,
   TableHeader,
@@ -20,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import LiveContainer from "@/components/shared/boxContainer/LiveContainer";
 import { FaEye } from "react-icons/fa";
 import Image from "next/image";
+import ExpendableSearchBar from "@/components/shared/search/ExpendableSearchBar";
 
 const LiveBasicTable = () => {
   const handleClickView = () => {
@@ -35,40 +28,27 @@ const LiveBasicTable = () => {
 
   return (
     <LiveContainer
-      logHeight="h-[60vh] max-2xl:h-[80vh]"
+      logHeight="h-[80vh] max-2xl:h-[80vh]"
       title="Basic Datatable"
       label="Basic Datatable"
     >
-      <div className="sticky top-0 z-10 mb-4 flex w-full items-center justify-between bg-white p-4">
-        <div className="flex items-center">
-          <label className="mr-2" htmlFor="entries">
-            Show
-          </label>
-          <Select>
-            <SelectTrigger id="entries">
-              <SelectValue placeholder="10" />
-            </SelectTrigger>
-            <SelectContent position="popper">
-              <SelectItem value="5">5</SelectItem>
-              <SelectItem value="10">10</SelectItem>
-              <SelectItem value="15">15</SelectItem>
-            </SelectContent>
-          </Select>
-          <span className="ml-2">entries</span>
-        </div>
-        <div className="flex items-center">
-          <label className="mr-2" htmlFor="search">
-            Search:
-          </label>
-          <Input id="search" placeholder="" />
+      <div className="sticky top-0 z-10 flex w-full items-center justify-between border-b-[1px] bg-[#bf5e5e]">
+        <div className="relative w-full">
+        <ExpendableSearchBar  
+          placeHolderValue="Search in table..."
+          searchValue=""
+          onChange={() => alert("boom")}
+          size="h-[50px] w-[50px] min-w-[50px]"
+        />
         </div>
       </div>
-      <Table className="m-4 h-[50px] w-[98%] max-2xl:w-full">
-        <TableHeader className="sticky top-0">
+      <div className="m-2 bg-[]">
+      <Table className=" h-[50px] w-[100%] max-2xl:w-full">
+        <TableHeader className="sticky top-0 m-0 h-[20px]">
           <TableRow>
-            <TableHead className="p-3"><div className="flex items-center">PACKAGE NAME<LuArrowUpDown className="ml-5"/></div></TableHead>
-            <TableHead className="p-3 "><div className="flex items-center">CREATION DATE <LuArrowUpDown className="ml-5"/></div></TableHead>
-            <TableHead className="p-3">ACTIONS</TableHead>
+            <TableHead className="p-1"><div className="flex items-center">PACKAGE NAME<LuArrowUpDown className="ml-5"/></div></TableHead>
+            <TableHead className="p-1 "><div className="flex items-center">CREATION DATE <LuArrowUpDown className="ml-5"/></div></TableHead>
+            <TableHead className="p-1">ACTIONS</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody className="h-[50vh] overflow-hidden">
@@ -924,17 +904,6 @@ const LiveBasicTable = () => {
           </TableRow>
         </TableBody>
       </Table>
-      <div className="sticky bottom-0 z-10 mt-4 flex items-center justify-between border-[1px] bg-white p-4">
-        <span>Showing 1 to 5 of 5 entries</span>
-        <div className="flex">
-          <Button className="mr-2" variant="outline">
-            Previous
-          </Button>
-          <Button variant="outline">1</Button>
-          <Button className="ml-2" variant="outline">
-            Next
-          </Button>
-        </div>
       </div>
     </LiveContainer>
   );
