@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { FaSearch } from "react-icons/fa";
@@ -19,6 +20,21 @@ const ExpendableSearchBar = ({
 }: ExpendableSearchBarProps) => {
   const [isExpended, setIsExpended] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const [showLabel, setShowLabel] = useState(false);
+
+  useEffect(() => {
+    let timeoutId: string | number | NodeJS.Timeout | undefined;
+    if (!isExpended) {
+      timeoutId = setTimeout(() => {
+        setShowLabel(true);
+      }, 600); // Durée correspondant à la durée de l'animation de l'input
+    } else {
+      setShowLabel(false);
+    }
+
+    return () => clearTimeout(timeoutId); // Nettoyer le timeout si le composant est démonté
+  }, [isExpended]);
+
 
   useEffect(() => {
     // Autofocus lorsque isExpended est true
@@ -31,18 +47,17 @@ const ExpendableSearchBar = ({
     <div className=" flex items-center bg-[#f4f4f4]">
       <button
         onClick={() => setIsExpended(!isExpended)}
-        className={`flex ${size} cursor-pointer items-center justify-center border-[1px] bg-gray-50 p-2.5 text-sm text-gray-900 first-letter:capitalize ${
+        className={`flex ${size} cursor-pointer items-center justify-center border-[1px] bg-[#F4F4F4] p-2.5 text-sm text-[#061727] first-letter:capitalize active:bg-[#E0E0E0]  ${
           isExpended
-            ? "border-blue-500 border-r-[#f4f4f4]"
+            ? "border-[#0F62FE] border-r-[#f4f4f4]"
             : "border-gray-300 focus:border-r-gray-300 "
         }`}
       >
         <FaSearch />
       </button>
-
       <CSSTransition
         in={isExpended}
-        timeout={600}
+        timeout={400}
         classNames="search-transition"
         unmountOnExit
       >
@@ -50,7 +65,7 @@ const ExpendableSearchBar = ({
           ref={inputRef}
           className={`${size} ease-in-out ${
             isExpended ? "w-full " : "w-0"
-          } rounded-none border border-blue-500 border-l-gray-300 p-2.5 text-[12px] text-gray-900 focus:outline-none`}
+          } rounded-none border border-[#0F62FE] border-l-gray-300 p-2.5 text-[12px] text-gray-900 focus:outline-none`}
           placeholder={placeHolderValue || "search..."}
           type="text"
           name="cube-name"
@@ -58,10 +73,10 @@ const ExpendableSearchBar = ({
           onChange={(e) => onChange(e)} // Mettez à jour l'état de recherche lors de la modification
         />
       </CSSTransition>
-
-      {!isExpended && (
+      {showLabel && (
         <label
-          className="ml-2 block cursor-pointer font-bold text-[12px] text-gray-900"
+          className="ml-2 block cursor-pointer truncate font-bold text-[12px] text-gray-900"
+          style={{ opacity: showLabel ? 1 : 0 }}
           htmlFor="cube-name"
           onClick={() => setIsExpended(true)}
         >
