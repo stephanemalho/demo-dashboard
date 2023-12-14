@@ -71,3 +71,7 @@ export interface DiffViewerProps {
   oldText: DiffFile;
   newText: DiffFile;
 }
+
+export interface AccordionItemsProps {
+  item: any;
+}
