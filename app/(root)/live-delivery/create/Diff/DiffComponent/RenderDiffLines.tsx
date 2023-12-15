@@ -6,7 +6,7 @@ import { diffWordsWithSpace } from "diff";
 import { lineHasChanges, newLinesCount } from "@/lib/utils/arrays";
 import { useSidebar } from "@/context/SideBarProvider";
 import LinesToCompare from "./LineToCompare";
-import { toggleLines, toggleVisibilityLines } from "./toggle";
+import { toggleVisibilityLines } from "./toggle";
 
 export interface TextContent {
   content: string[];
@@ -23,26 +23,28 @@ const RenderDiffLines = ({
   newText,
   isSmallScreen,
 }: RenderDiffLinesProps) => {
+  // States or variables
   const numberOfModifiedLines = newLinesCount(oldText, newText, lineHasChanges);
   const [visibleLines, setVisibleLines] = useState(new Set());
   const { isOpen } = useSidebar();
 
-  const [showAllNonModified, setShowAllNonModified] = useState(false);
+  // const [showAllNonModified, setShowAllNonModified] = useState(false);
 
-  const totalNonModifiedLines = oldText.content.reduce((count, line, index) => {
-    const changes = diffWordsWithSpace(line, newText.content[index] || "");
-    return count + (lineHasChanges(changes) ? 0 : 1);
-  }, 0);
+  // // Behavior & Functions
+  // const totalNonModifiedLines = oldText.content.reduce((count, line, index) => {
+  //   const changes = diffWordsWithSpace(line, newText.content[index] || "");
+  //   return count + (lineHasChanges(changes) ? 0 : 1);
+  // }, 0);
 
-  const toggleAllLinesVisibility = () => {
-    toggleLines(
-      setShowAllNonModified,
-      showAllNonModified,
-      oldText,
-      newText,
-      setVisibleLines
-    );
-  };
+  // const toggleAllLinesVisibility = () => {
+  //   toggleLines(
+  //     setShowAllNonModified,
+  //     showAllNonModified,
+  //     oldText,
+  //     newText,
+  //     setVisibleLines
+  //   );
+  // };
 
   const toggleLinesVisibility = (start: any, end: number) => {
     toggleVisibilityLines(visibleLines, start, end, setVisibleLines);
@@ -153,40 +155,31 @@ const RenderDiffLines = ({
 
   return (
     <div
-      className={`m-auto flex h-full max-w-[92vw] flex-col ${
-        isOpen
-          ? "m-auto max-w-[70vw] max-2xl:ml-auto max-2xl:max-w-[70vw]"
-          : "w-full"
-      }`}
-    >
-      <div className="sticky top-0 z-10 flex w-full flex-row bg-[#fff] p-1 shadow-sm">
-        <div className="basis-[50%] pr-2 text-[15px] text-[#000]">
-          Target file:
-        </div>
-        <div className="text-[15px] text-[#6FDC8C]">New file:</div>
-        <div className="ml-auto pl-[40px] text-[15px] text-[#434343]">
-          modified lines: {numberOfModifiedLines}
-        </div>
+    className={`m-auto flex h-full max-w-[92vw] flex-col ${
+      isOpen ? "m-auto max-w-[70vw] max-2xl:ml-auto max-2xl:max-w-[70vw]" : "w-full"
+    }`}
+  >
+    <div className="sticky top-0 z-10 flex w-full flex-row bg-[#fff] p-1 shadow-sm">
+      <div className="shrink grow-0 basis-1/2 pr-2 text-[#000]">
+        Target file:
       </div>
-      <DiffButton
-        toggleShowAllLines={toggleAllLinesVisibility}
-        showAllLines={showAllNonModified}
-      >
-        <span className="mr-2 text-[12px]">
-          {showAllNonModified
-            ? `Hide (${totalNonModifiedLines}) lines`
-            : `Show (${totalNonModifiedLines}) lines`}
-        </span>
-      </DiffButton>
-      <div className={`mx-auto flex min-h-[60vh] flex-row`}>
-        <div className="custom-scrollbar flex w-[40vw] basis-[50%] flex-col overflow-x-auto ">
-          {oldTextElements}
-        </div>
-        <div className="custom-scrollbar flex w-[40vw] basis-[50%] flex-col overflow-x-auto">
-          {newTextElements}
-        </div>
+      <div className="shrink grow-0 basis-1/2 text-[#6FDC8C]">
+        New file:
+      </div>
+      <div className="ml-auto pl-[40px] text-[#434343]">
+        modified lines: {numberOfModifiedLines}
       </div>
     </div>
+    <div className="mx-auto flex min-h-[60vh] w-full flex-row">
+      <div className="custom-scrollbar flex w-1/2 shrink-0 grow-0 flex-col overflow-x-auto">
+        {oldTextElements}
+      </div>
+      <div className="custom-scrollbar flex w-1/2 shrink-0 grow-0 flex-col overflow-x-auto">
+        {newTextElements}
+      </div>
+    </div>
+  </div>
+  
   );
 };
 
