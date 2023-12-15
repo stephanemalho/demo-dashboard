@@ -7,6 +7,7 @@ interface DiffLineProps {
   isOld: boolean;
   isVisible: boolean;
   isSmallScreen: boolean;
+  scrollToCorrespondingLine?: (lineNum: number) => void; // Ajout d'une prop pour la fonction de défilement
 }
 
 const DiffLine = ({
@@ -15,7 +16,9 @@ const DiffLine = ({
   isOld,
   isVisible,
   isSmallScreen,
+  scrollToCorrespondingLine,
 }: DiffLineProps) => {
+  const lineId = `line-${isOld ? "old" : "new"}-${lineNum}`; // Identifiant unique pour chaque ligne
 
   const lineIsModified = changes.some(
     (change) => change.added || change.removed
@@ -25,15 +28,42 @@ const DiffLine = ({
 
   return (
     <div
-      className={` flex h-[30px] items-center text-center text-[15px] text-[#000] max-2xl:text-[10px] ${
+      id={lineId}
+      className={`flex h-[30px] items-center text-center text-[15px] text-[#000] max-2xl:text-[10px] ${
         lineIsModified ? lineBackgroundColor : ""
-      } `}
+      }`}
     >
-      <span className={`min-w-[30px] border-r-[1px] border-[#f1f8ff] pr-1`}>
-        {!isOld && isVisible && lineNum}
+      <span
+        className={`mr-1 min-w-[30px] border-r-[1px] border-[#f1f8ff] ${
+          lineIsModified && !isOld ? "cursor-pointer hover:bg-[#87e39f]" : ""
+        }`}
+      >
+        <a
+          onClick={() => {
+            if (lineIsModified && !isOld && scrollToCorrespondingLine) {
+              scrollToCorrespondingLine(lineNum);
+            }
+          }} // Ajout de la fonction de défilement
+          className="block h-full w-full"
+        >
+          {!isOld && isVisible && lineNum}
+        </a>
       </span>
-      <span className={`min-w-[30px] border-r-[1px] border-[#f1f8ff] pr-1 `}>
-        {isOld && isVisible && lineNum}
+      <span
+        className={`mr-1 min-w-[30px] border-r-[1px] border-[#f1f8ff] ${
+          lineIsModified && isOld ? " cursor-pointer hover:bg-[#ffbdc5]" : ""
+        }`}
+      >
+        <a
+          onClick={() => {
+            if (lineIsModified && isOld && scrollToCorrespondingLine) {
+              scrollToCorrespondingLine(lineNum);
+            }
+          }} // Ajout de la fonction de défilement
+          className="block h-full w-full"
+        >
+          {isOld && isVisible && lineNum}
+        </a>
       </span>
       <div className={`pl-2 `}>
         {changes.map((part, index) => {
@@ -77,9 +107,9 @@ const DiffLine = ({
       </div>
     </div>
   );
-  
+
   function isBGColor() {
-    if (isOld  && isSmallScreen) {
+    if (isOld && isSmallScreen) {
       return " bg-[#e6ffed] border-b-[1px] border-[#FFF] ";
     } else if (!isOld && !isSmallScreen) {
       return "bg-[#e6ffed] border-b-[1px] border-[#FFF] ";

@@ -109,7 +109,7 @@
         "NumeroL2": 16,
         "Operation": "Nothing",
         "Text1": "['Actual and TC Es1 19/20','Total_Period']=['TC_Es1_19_20','Adjust']+['Actual_19_20','Q1'];",
-        "Text2": "['Actual and TC Es1 19/20','Total_Period']=['TC_Es1_19_20','Adjust']+['Actual_19_20','Q1'];"
+        "Text2": "['Actual  TC Es1 19/20','Total_Period']=['TC_Es1_19_20','Adjust']+['Actual_19_20','Q1'];"
     },
     {
         "NumeroL1": 17,
@@ -151,7 +151,7 @@
         "NumeroL2": 22,
         "Operation": "Nothing",
         "Text1": "",
-        "Text2": ""
+        "Text2": "Idriss Marius David Ciryl et Stéphane sont sur un bateau"
     },
     {
         "NumeroL1": 23,
@@ -193,7 +193,7 @@
         "NumeroL2": 28,
         "Operation": "Nothing",
         "Text1": "",
-        "Text2": ""
+        "Text2": "Stéphane tombe à l'eau"
     },
     {
         "NumeroL1": 29,
@@ -606,7 +606,7 @@
         "NumeroL2": 87,
         "Operation": "Nothing",
         "Text1": "",
-        "Text2": ""
+        "Text2": "qui est tombé à l'eau ?"
     },
     {
         "NumeroL1": 88,
@@ -669,7 +669,7 @@
         "NumeroL2": 96,
         "Operation": "Nothing",
         "Text1": "",
-        "Text2": ""
+        "Text2": "bas toujours le meme"
     },
     {
         "NumeroL1": 97,
@@ -1621,7 +1621,7 @@
         "NumeroL2": 232,
         "Operation": "Nothing",
         "Text1": "# ['NAT7','Value','fullyear']=N:",
-        "Text2": "# ['NAT7','Value','fullyear']=N:"
+        "Text2": "# ['NAT7','Value','lastyear']=N:"
     },
     {
         "NumeroL1": 233,
@@ -1635,14 +1635,14 @@
         "NumeroL2": 234,
         "Operation": "Nothing",
         "Text1": "",
-        "Text2": ""
+        "Text2": "# DB('Project Cost Analysis',!Yearly phases,!Period,!Management Unit,'All Projects',!Projects,'REBILLING"
     },
     {
         "NumeroL1": 235,
         "NumeroL2": 235,
         "Operation": "Nothing",
         "Text1": "",
-        "Text2": ""
+        "Text2": "# DB('Project Cost Analysis',!Yearly phases,!Period,!Management Unit,'All Projects',!Projects,'REBILLING"
     },
     {
         "NumeroL1": 236,
