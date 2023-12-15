@@ -7,7 +7,7 @@ interface DiffLineProps {
   isOld: boolean;
   isVisible: boolean;
   isSmallScreen: boolean;
-  scrollToCorrespondingLine: (lineNum: number) => void; // Ajout d'une prop pour la fonction de défilement
+  scrollToCorrespondingLine?: (lineNum: number) => void; // Ajout d'une prop pour la fonction de défilement
 }
 
 const DiffLine = ({
@@ -39,7 +39,11 @@ const DiffLine = ({
         }`}
       >
         <a
-           onClick={  lineIsModified && !isOld ? () => scrollToCorrespondingLine(lineNum) : undefined } // Ajout de la fonction de défilement
+          onClick={() => {
+            if (lineIsModified && !isOld && scrollToCorrespondingLine) {
+              scrollToCorrespondingLine(lineNum);
+            }
+          }} // Ajout de la fonction de défilement
           className="block h-full w-full"
         >
           {!isOld && isVisible && lineNum}
@@ -51,7 +55,11 @@ const DiffLine = ({
         }`}
       >
         <a
-          onClick={ lineIsModified && isOld ? () => scrollToCorrespondingLine(lineNum) : undefined}
+          onClick={() => {
+            if (lineIsModified && isOld && scrollToCorrespondingLine) {
+              scrollToCorrespondingLine(lineNum);
+            }
+          }} // Ajout de la fonction de défilement
           className="block h-full w-full"
         >
           {isOld && isVisible && lineNum}

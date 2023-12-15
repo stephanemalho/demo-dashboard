@@ -47,17 +47,17 @@ const RenderDiffLines = ({
     }
   };
 
-  const toggleLinesVisibility = (start: any, end: number) => {
+  const toggleLinesVisibility = (start: number, end: number) => {
     toggleVisibilityLines(visibleLines, start, end, setVisibleLines);
   };
 
-  const renderNonModifiedBlock = (start: any, end: number) => (
+  const renderNonModifiedBlock = (start: number, end: number, position: any) => (
     <DiffButton
-      key={`non-modified-${start}-${end}`}
+      key={`non-modified-${start}-${end}-${position}`}
       toggleShowAllLines={() => toggleLinesVisibility(start, end)}
       showAllLines={visibleLines.has(start)}
     >
-      <span className="mr-2 text-[12px]">{` ${start + 1}-${end + 1}`}</span>
+      <span className="mr-2 text-[12px]">{`${start + 1}-${end + 1}`}</span>
     </DiffButton>
   );
 
