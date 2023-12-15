@@ -28,23 +28,24 @@ const RenderDiffLines = ({
   const [visibleLines, setVisibleLines] = useState(new Set());
   const { isOpen } = useSidebar();
 
-  // const [showAllNonModified, setShowAllNonModified] = useState(false);
-
-  // // Behavior & Functions
-  // const totalNonModifiedLines = oldText.content.reduce((count, line, index) => {
-  //   const changes = diffWordsWithSpace(line, newText.content[index] || "");
-  //   return count + (lineHasChanges(changes) ? 0 : 1);
-  // }, 0);
-
-  // const toggleAllLinesVisibility = () => {
-  //   toggleLines(
-  //     setShowAllNonModified,
-  //     showAllNonModified,
-  //     oldText,
-  //     newText,
-  //     setVisibleLines
-  //   );
-  // };
+  const scrollToCorrespondingLine = (lineNum: any) => {
+    const correspondingLineIdOld = `line-old-${lineNum}`;
+    const correspondingLineIdNew = `line-new-${lineNum}`;
+    const elementOld = document.getElementById(correspondingLineIdOld);
+    const elementNew = document.getElementById(correspondingLineIdNew);
+  
+    if (elementOld) {
+      elementOld.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      console.log("test",elementOld
+        );
+      
+    }
+    if (elementNew) {
+      elementNew.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      console.log("test2",elementNew
+        );
+    }
+  };
 
   const toggleLinesVisibility = (start: any, end: number) => {
     toggleVisibilityLines(visibleLines, start, end, setVisibleLines);
@@ -74,7 +75,6 @@ const RenderDiffLines = ({
       newText,
       isSmallScreen
     );
-    // Parcourez l'ancien texte et trouvez les blocs non modifiés et ajoutés
     oldText.content.forEach((line, index) => {
       const changes = diffWordsWithSpace(line, newText.content[index] || "");
       const isNewLine = index >= oldText.content.length;
@@ -87,7 +87,7 @@ const RenderDiffLines = ({
           addNonModifiedAndAddedLines(nonModifiedBlockStart, index - 1, true);
           nonModifiedBlockStart = null;
         }
-        // Ajoutez la ligne supprimée
+        // add old line
         if (!isNewLine) {
           const lineElement = (
             <DiffLine
@@ -97,13 +97,14 @@ const RenderDiffLines = ({
               isOld={true}
               isVisible={true}
               isSmallScreen={isSmallScreen}
+              scrollToCorrespondingLine={scrollToCorrespondingLine}
             />
           );
           oldTextElements.push(lineElement);
         }
       }
     });
-    // Parcourez le nouveau texte et trouvez les lignes ajoutées
+    // found new added lines
     newText.content.forEach((line, index) => {
       const changes = diffWordsWithSpace(line, oldText.content[index] || "");
       const isOldLine = index >= newText.content.length;
@@ -116,7 +117,7 @@ const RenderDiffLines = ({
           addNonModifiedAndAddedLines(addedLinesStart, index - 1, false);
           addedLinesStart = null;
         }
-        // Ajoutez la ligne ajoutée
+        // add new line
         if (!isOldLine) {
           const lineElement = (
             <DiffLine
@@ -126,13 +127,14 @@ const RenderDiffLines = ({
               isOld={false}
               isVisible={true}
               isSmallScreen={isSmallScreen}
+              scrollToCorrespondingLine={scrollToCorrespondingLine}
             />
           );
           newTextElements.push(lineElement);
         }
       }
     });
-    // Vérifiez s'il y a des lignes ajoutées à la fin du nouveau fichier
+    // check if there are non modified blocks in the new file
     if (addedLinesStart !== null) {
       addNonModifiedAndAddedLines(
         addedLinesStart,
@@ -140,7 +142,7 @@ const RenderDiffLines = ({
         false
       );
     }
-    // Vérifiez s'il reste des blocs non modifiés dans l'ancien fichier
+    // check if there are non modified blocks in the old file
     if (nonModifiedBlockStart !== null) {
       addNonModifiedAndAddedLines(
         nonModifiedBlockStart,
