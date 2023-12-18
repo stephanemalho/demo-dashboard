@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 const TestData = () => {
   return (
     <div className="w-full">
-        <div className="rounded-lg bg-white p-6 shadow">
+        <div className="bg-white p-6 shadow">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-lg font-semibold">Time Stamp</h2>
             <Button variant="secondary">Reload</Button>

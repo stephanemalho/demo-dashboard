@@ -21,7 +21,7 @@ const LiveContainer = ({ children, logHeight, title, label, showIcons = true }: 
   // variables
   const containerClasses = `w-full ${
     isFullscreen === title
-      ? "z-10 fixed top-50px left-0 right-0 h-[100vh] w-[100vw]"
+      ? "z-50 fixed top-[45px] left-0 right-0 h-screen w-[100vw] bg-black"
       : ""
   }`;
   // TSX

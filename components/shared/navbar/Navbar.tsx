@@ -15,11 +15,11 @@ import {
 import ThreadsInfo from "../threadsInfo/ThreadsInfo";
 
 const Navbar = () => {
-  const { handleClick, toggleSideBar, handleClickRightSideBar, toggleRightSideBar } = useSidebar(); // sideBar Context
+  const { handleClick, toggleSideBar } = useSidebar(); // sideBar Context
   const { user } = useUser(); 
 
   return (
-    <nav className="fixed z-10 flex h-[50px] w-full border-b-[1px] border-[#262626] bg-[#000]  shadow-light-300 ">
+    <nav className="fixed z-50 flex h-[50px] w-full border-b-[1px] border-[#262626] bg-[#000]  shadow-light-300 ">
       <SignedIn>
         <div
           className="flex h-[49px] w-[50px] cursor-pointer justify-center hover:bg-[#262626] active:border-[2px] active:border-[#fff]"
@@ -52,7 +52,6 @@ const Navbar = () => {
         </Link>
       </div>
       <SignedIn>
-        {/* remove this block to test  */}
         <div className="flex">
           <ThreadsInfo />
         </div>
@@ -117,23 +116,6 @@ const Navbar = () => {
                 },
               }}
             />
-          </div>
-          <div onClick={handleClickRightSideBar} className="flex h-[49px] min-w-[50px] cursor-pointer justify-center hover:bg-[#262626] active:border-[2px] active:border-[#fff]">
-            {toggleRightSideBar ? (
-            <Image
-              src={"/assets/icons/close.svg"}
-              alt={"menu"}
-              width={22}
-              height={22}
-            />
-          ) : (
-            <Image
-            src={"/assets/icons/menu-left.svg"}
-            alt={"menu"}
-            width={20}
-            height={20}
-          />
-          )}
           </div>
         </SignedIn>
       </div>
