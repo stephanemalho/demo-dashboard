@@ -11,8 +11,8 @@ const RenderContainer = () => {
 
   return (
     <div
-      className={` flex h-full flex-row justify-between overflow-y-hidden bg-[#f2f2f2] transition-all duration-500 ease-in-out ${
-        isOpen ? "w-[20vw] max-w-[400px] max-2xl:w-[30vw]" : "w-[50px]"
+      className={`flex h-full flex-row justify-between overflow-y-hidden bg-[#f2f2f2] transition-all  duration-500 ease-in-out ${
+        isOpen ? "mx-1" : "w-[50px]"
       }`}
     >
       <div
@@ -35,7 +35,7 @@ const RenderContainer = () => {
       {isOpen && (
         <div
           className={`mt-[50px] flex h-auto overflow-y-auto ${
-            isOpen ? "w-[20vw] max-2xl:w-[28vw]" : "w-[0vw]"
+            isOpen ? "w-full" : "w-0"
           } flex-col text-[10px] transition-all duration-500 ease-in-out`}
         >
           {menuItems.map((item) => (

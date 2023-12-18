@@ -9,6 +9,7 @@ import SelectMenu from "@/app/(root)/mapping-page/globals-page/SelectMenu";
 import clsx from "clsx";
 import Image from "next/image";
 import { MiniOptionsSideBar } from "./MiniOptionsSideBar/MiniOptionSideBar";
+import RenderContainer from "@/app/(root)/live-delivery/create/RenderContainer/RenderContainer";
 
 interface ComponentMappingInterface {
   [key: string]: () => React.ReactElement;
@@ -33,6 +34,7 @@ const OptionsSideBar = () => {
     "/statistics/process": TestData,
     "/query/logs-page": LogSetting,
     "/mapping-page/globals-page": SelectMenu,
+    "/live-delivery/create":  RenderContainer,
   };
 
   useEffect(() => {
@@ -52,7 +54,7 @@ const OptionsSideBar = () => {
     <section className={sidebarClasses}>
       <div
         onClick={handleClickOptionsSideBar}
-        className="flex h-[49px] max-w-[50px] cursor-pointer justify-center hover:bg-[#262626] active:border-[2px] active:border-[#fff]"
+        className="flex h-[49px] min-h-[49px] max-w-[50px] cursor-pointer justify-center hover:bg-[#262626] active:border-[2px] active:border-[#fff]"
       >
         {toggleOptionsSideBar ? (
           <Image
@@ -71,7 +73,7 @@ const OptionsSideBar = () => {
         )}
       </div>
       {isMetaVisible && ComponentToRender && <ComponentToRender />}
-      <div className="mt-10 flex h-[50px] w-[50px] cursor-pointer items-center justify-center bg-[#393939] hover:bg-[#262626]">
+      <div className=" flex h-[50px] w-[50px] cursor-pointer items-center justify-center bg-[#393939] hover:bg-[#262626]">
         <Image
           src={"/assets/icons/settings.svg"}
           alt={"menu"}

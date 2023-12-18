@@ -34,7 +34,7 @@ const RenderMenu: React.FC<{
     if (!isTerminalChild) {
       const currentContent = contentRef.current;
       if (currentContent) {
-        setMaxHeight(isOpen ? `100vh` : "0px");
+        setMaxHeight(isOpen ? `100%` : "0px");
       }
     }
   }, [isOpen, isTerminalChild]);
@@ -49,7 +49,7 @@ const RenderMenu: React.FC<{
         <div
           onClick={toggleOpen}
           style={{ paddingLeft: `${level * 20}px` }}
-          className="mx-1 flex cursor-pointer items-center truncate p-1 text-[12px] hover:bg-[#e2e2e2] active:border-[#e2e2e2]"
+          className="mx-1  flex cursor-pointer items-center truncate p-1 text-[12px] hover:bg-[#e2e2e2] active:border-[#e2e2e2]"
         >
           <MdChevronRight
             className={`truncate transition-transform duration-300 ${
@@ -81,14 +81,6 @@ const RenderMenu: React.FC<{
           ref={contentRef}
         >
           {item.children && item.children.length > 3 && (
-            // <LocalSearchbar
-            //   onChange={handleValueLocalSearchBar} // Nouveau
-            //   route={item.title}
-            //   iconPosition="right"
-            //   placeholder={`Filter ${item.title}`}
-            //   searchValue={searchValue}
-            //   otherClasses="max-w-[300px]"
-            // />
             <ExpendableSearchBar
               route={item.title}
               placeHolderValue={`Filter ${item.title}...`}
@@ -113,7 +105,7 @@ const RenderMenu: React.FC<{
           style={{ paddingLeft: `${level * 20}px` }}
           className={`mx-1 flex h-auto cursor-pointer items-center truncate p-1 text-[12px] hover:bg-[#e2e2e2] active:border-[#e2e2e2]`}
         >
-          <div className="flex h-full flex-row items-center truncate">
+          <div className="flex h-auto flex-row items-center truncate">
             {selectIcon({ title: item.title, parentTitle: item.parentTitle })}
             <span className="ml-2 truncate">{item.title}</span>
           </div>

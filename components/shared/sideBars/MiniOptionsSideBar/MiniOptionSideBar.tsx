@@ -2,7 +2,6 @@ import { useSidebar } from "@/context/SideBarProvider";
 import Image from "next/image";
 
 const MiniOptionsSideBar = () => {
-
   const { handleClickOptionsSideBar, toggleOptionsSideBar } = useSidebar();
 
   return (
@@ -29,7 +28,7 @@ const MiniOptionsSideBar = () => {
           />
         )}
       </div>
-      <div className="mt-10 flex h-[50px] w-[50px] items-center justify-center bg-[#393939] hover:bg-[#262626]">
+      <div className="mt-10 flex h-[50px] w-[50px] cursor-pointer items-center justify-center bg-[#393939] hover:bg-[#262626]">
         <Image
           src={"/assets/icons/settings.svg"}
           alt={"menu"}
