@@ -61,7 +61,7 @@ export const columns: ColumnDef<Threads>[] = [
               ? "destructive"
               : "outline"
           }
-          className="flex w-[36px] items-center justify-center py-[1px] text-center text-[8px] max-2xl:text-[6px]"
+          className="flex w-[36px] items-center justify-center py-[1px] text-center text-[8px] max-2xl:py-[2px] max-2xl:text-[8px]"
         >
           {state === "" ? "N/A" : state}
         </Badge>
