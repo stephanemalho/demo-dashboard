@@ -148,7 +148,7 @@ export function DataTable<TData, TValue>({
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className=" truncate text-[10px] max-2xl:text-[10px]"
+                      className=" truncate text-[12px] max-2xl:text-[12px]"
                     >
                       {cell.column.id !== "state" &&
                       typeof cell.getValue() === "string"

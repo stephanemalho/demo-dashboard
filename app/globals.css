@@ -263,7 +263,7 @@ code {
 
 @keyframes slideOutSidebar {
   0% {
-    transform: translateX(+100%);
+    transform: translateX(-100%);
   }
 
   100% {

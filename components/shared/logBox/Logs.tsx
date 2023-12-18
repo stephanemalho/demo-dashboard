@@ -15,7 +15,7 @@ const Logs = () => {
 
   return (
     <div className="m-auto flex h-full w-full overflow-hidden">
-    <Table className="z-[1] text-[0.7rem] max-2xl:text-[0.5rem]">
+    <Table className="z-[1] text-[10px] max-2xl:text-[10px]">
       <TableHeader className="sticky top-0">
         <TableRows className="bg-[#e2e2e2]" />
       </TableHeader>

@@ -4,7 +4,6 @@ import DiffButton from "./DiffButton";
 import DiffLine from "./DiffLine";
 import { diffWordsWithSpace } from "diff";
 import { lineHasChanges, newLinesCount } from "@/lib/utils/arrays";
-import { useSidebar } from "@/context/SideBarProvider";
 import LinesToCompare from "./LineToCompare";
 import { toggleVisibilityLines } from "./toggle";
 
@@ -26,7 +25,6 @@ const RenderDiffLines = ({
   // States or variables
   const numberOfModifiedLines = newLinesCount(oldText, newText, lineHasChanges);
   const [visibleLines, setVisibleLines] = useState(new Set());
-  const { isOpen } = useSidebar();
 
   const scrollToCorrespondingLine = (lineNum: any) => {
     const correspondingLineIdOld = `line-old-${lineNum}`;
@@ -157,9 +155,7 @@ const RenderDiffLines = ({
 
   return (
     <div
-    className={`m-auto flex h-full max-w-[92vw] flex-col transition-all duration-500 ${
-      isOpen ? "m-auto max-w-[64vw] max-2xl:ml-auto max-2xl:max-w-[70vw]" : "w-full"
-    }`}
+    className={`m-auto flex h-full max-w-[92vw] flex-col transition-all duration-500 `}
   >
     <div className="sticky top-0 z-10 flex w-full flex-row bg-[#fff] p-1 shadow-sm">
       <div className="shrink grow-0 basis-1/2 pr-2 text-[#000]">
