@@ -11,7 +11,7 @@ const RenderContainer = () => {
 
   return (
     <div
-      className={` flex h-[90vh] max-h-[90vh] flex-row justify-between overflow-y-hidden bg-[#f2f2f2] transition-all duration-500 ease-in-out ${
+      className={` flex h-full flex-row justify-between overflow-y-hidden bg-[#f2f2f2] transition-all duration-500 ease-in-out ${
         isOpen ? "w-[20vw] max-w-[400px] max-2xl:w-[30vw]" : "w-[50px]"
       }`}
     >

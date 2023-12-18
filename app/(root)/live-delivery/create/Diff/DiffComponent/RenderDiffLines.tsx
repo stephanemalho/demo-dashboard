@@ -157,8 +157,8 @@ const RenderDiffLines = ({
 
   return (
     <div
-    className={`m-auto flex h-full max-w-[92vw] flex-col ${
-      isOpen ? "m-auto max-w-[70vw] max-2xl:ml-auto max-2xl:max-w-[70vw]" : "w-full"
+    className={`m-auto flex h-full max-w-[92vw] flex-col transition-all duration-500 ${
+      isOpen ? "m-auto max-w-[64vw] max-2xl:ml-auto max-2xl:max-w-[70vw]" : "w-full"
     }`}
   >
     <div className="sticky top-0 z-10 flex w-full flex-row bg-[#fff] p-1 shadow-sm">
