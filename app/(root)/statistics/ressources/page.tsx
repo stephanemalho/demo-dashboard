@@ -1,5 +1,5 @@
-import ReloadButton from "./ressourceFile/ReloadButton";
-import TreemapComponent from "./ressourceFile/Treemap";
+import ReloadButton from "./ressourceComponents/ReloadButton";
+import TreemapComponent from "./ressourceComponents/Treemap";
 
 function page() {
   return (

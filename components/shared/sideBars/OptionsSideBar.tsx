@@ -2,7 +2,7 @@
 import { usePathname, useSearchParams } from "next/navigation";
 import { useSidebar } from "@/context/SideBarProvider";
 import React, { useEffect, useState } from "react";
-import MetaData from "../../../app/(root)/statistics/ressources/ressourceFile/MetaData";
+import MetaData from "../../../app/(root)/statistics/ressources/ressourceComponents/MetaData";
 import TestData from "../../../app/(root)/statistics/process/TestData";
 import LogSetting from "@/app/(root)/query/logs-page/LogSetting";
 import SelectMenu from "@/app/(root)/mapping-page/globals-page/SelectMenu";
@@ -10,6 +10,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import { MiniOptionsSideBar } from "./MiniOptionsSideBar/MiniOptionSideBar";
 import RenderContainer from "@/app/(root)/live-delivery/create/RenderContainer/RenderContainer";
+import ChoresPanel from "@/app/(root)/versionning/chore/choreComponents/ChoresPanel";
 
 interface ComponentMappingInterface {
   [key: string]: () => React.ReactElement;
@@ -34,7 +35,8 @@ const OptionsSideBar = () => {
     "/statistics/process": TestData,
     "/query/logs-page": LogSetting,
     "/mapping-page/globals-page": SelectMenu,
-    "/live-delivery/create":  RenderContainer,
+    "/live-delivery/create": RenderContainer,
+    "/versionning/chore": ChoresPanel,
   };
 
   useEffect(() => {
@@ -45,7 +47,7 @@ const OptionsSideBar = () => {
   }, [pathname, searchParams]);
 
   if (!toggleOptionsSideBar) {
-    return <MiniOptionsSideBar/>;
+    return <MiniOptionsSideBar />;
   }
 
   const ComponentToRender = componentMapping[pathname] || "";
