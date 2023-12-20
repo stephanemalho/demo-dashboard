@@ -25,7 +25,7 @@ export default function Component() {
           <div className="sticky top-0 z-10 flex w-full items-center justify-between border-b-[1px]">
             <div className="relative w-full">
               <ExpendableSearchBar
-                placeHolderValue="Search in table..."
+                placeholderValue="Search in table..."
                 searchValue=""
                 onChange={() => alert("boom")}
                 size="h-[50px] w-[50px] min-w-[50px]"

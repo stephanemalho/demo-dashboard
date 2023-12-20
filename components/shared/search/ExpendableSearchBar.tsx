@@ -5,16 +5,16 @@ import { FaSearch } from "react-icons/fa";
 import { CSSTransition } from "react-transition-group";
 
 interface ExpendableSearchBarProps {
-  placeHolderValue: string | undefined | null;
+  placeholderValue: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   searchValue: string;
   route?: string;
-  label?: string; 
+  label?: string;
   size?: string;
 }
 
 const ExpendableSearchBar = ({
-  placeHolderValue,
+  placeholderValue,
   searchValue,
   onChange,
   label,
@@ -36,7 +36,6 @@ const ExpendableSearchBar = ({
 
     return () => clearTimeout(timeoutId); // Nettoyer le timeout si le composant est démonté
   }, [isExpended]);
-
 
   useEffect(() => {
     // Autofocus lorsque isExpended est true
@@ -68,7 +67,7 @@ const ExpendableSearchBar = ({
           className={`${size} ease-in-out ${
             isExpended ? "w-full " : "w-0"
           } rounded-none border border-[#0F62FE] border-l-gray-300 p-2.5 text-[12px] text-gray-900 focus:outline-none`}
-          placeholder={placeHolderValue || "search..."}
+          placeholder={placeholderValue}
           type="text"
           name="cube-name"
           value={searchValue} // Utilisez la valeur de l'état de recherche

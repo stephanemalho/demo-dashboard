@@ -16,7 +16,10 @@ const RenderMenu: React.FC<{
   const [maxHeight, setMaxHeight] = useState<string>("0px");
   const [searchValue, setSearchValue] = useState("");
   const contentRef = useRef<HTMLDivElement>(null);
-  const icon = useMemo(() => selectIcon({ title: item.title, parentTitle: item.parentTitle }), [item.title, item.parentTitle]);
+  const icon = useMemo(
+    () => selectIcon({ title: item.title, parentTitle: item.parentTitle }),
+    [item.title, item.parentTitle]
+  );
 
   const isFirstElementRef = useRef(true); // Initialisé à true pour le premier élément
   const isTerminalChild = !item.children || item.children.length === 0;
@@ -26,10 +29,12 @@ const RenderMenu: React.FC<{
     setIsOpen(!isOpen);
   };
 
-  const handleValueLocalSearchBar = (e: { target: { value: React.SetStateAction<string>; }; }) => {
-    setSearchValue(e.target.value)
-  }
-  
+  const handleValueLocalSearchBar = (e: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
+    setSearchValue(e.target.value);
+  };
+
   useEffect(() => {
     if (!isTerminalChild) {
       const currentContent = contentRef.current;
@@ -49,7 +54,7 @@ const RenderMenu: React.FC<{
         <div
           onClick={toggleOpen}
           style={{ paddingLeft: `${level * 20}px` }}
-          className="mx-1  flex cursor-pointer items-center truncate p-1 text-[12px] hover:bg-[#e2e2e2] active:border-[#e2e2e2]"
+          className="mx-1 flex cursor-pointer items-center truncate p-1 text-[12px] hover:bg-[#e2e2e2] active:border-[#e2e2e2]"
         >
           <MdChevronRight
             className={`truncate transition-transform duration-300 ${
@@ -83,7 +88,7 @@ const RenderMenu: React.FC<{
           {item.children && item.children.length > 3 && (
             <ExpendableSearchBar
               route={item.title}
-              placeHolderValue={`Filter ${item.title}...`}
+              placeholderValue={`Filter ${item.title}...`}
               onChange={handleValueLocalSearchBar} // Nouveau
               searchValue={searchValue}
               size="h-[30px] w-[30px] min-w-[30px]"
