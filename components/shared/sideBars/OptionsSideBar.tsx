@@ -11,6 +11,8 @@ import Image from "next/image";
 import { MiniOptionsSideBar } from "./MiniOptionsSideBar/MiniOptionSideBar";
 import RenderContainer from "@/app/(root)/live-delivery/create/RenderContainer/RenderContainer";
 import ChoresPanel from "@/app/(root)/versionning/chore/choreComponents/ChoresPanel";
+import ProcessPanel from "@/app/(root)/versionning/process/processComponents/ProcessPanel";
+import RulesPanel from "@/app/(root)/versionning/rule-page/ruleComponents/RulesPanel";
 
 interface ComponentMappingInterface {
   [key: string]: () => React.ReactElement;
@@ -37,6 +39,8 @@ const OptionsSideBar = () => {
     "/mapping-page/globals-page": SelectMenu,
     "/live-delivery/create": RenderContainer,
     "/versionning/chore": ChoresPanel,
+    "/versionning/process": ProcessPanel,
+    "/versionning/rule-page": RulesPanel ,
   };
 
   useEffect(() => {
