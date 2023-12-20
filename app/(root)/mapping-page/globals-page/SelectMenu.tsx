@@ -5,6 +5,7 @@ import Nodes from "./menuItem/Nodes";
 import { useState } from "react";
 import ShowEdges from "./menuItem/ShowEdges";
 import ShowNodes from "./menuItem/ShowNodes";
+import ContainerWrapper from "@/components/shared/sideBars/ContainerWrapper";
 
 const SelectMenu = () => {
   const [selectedMenu, setSelectedMenu] = useState("Mapping");
@@ -15,6 +16,7 @@ const SelectMenu = () => {
   const showNodeList = () => setSelectedMenu("Node List");
 
   return (
+    <ContainerWrapper>
     <div className=" bg-white p-4 shadow">
       <div className="mb-4 flex w-full justify-between space-x-2">
         <Button
@@ -65,6 +67,7 @@ const SelectMenu = () => {
         <Button className="w-full bg-green-500 text-white">RUN</Button>
       </div>
     </div>
+    </ContainerWrapper>
   );
 };
 

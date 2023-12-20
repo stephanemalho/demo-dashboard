@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Badge } from '@/components/ui/badge'
 import React, { useState } from 'react'
+import ContainerWrapper from '@/components/shared/sideBars/ContainerWrapper';
 
 const items = [
   "TM1.Process",
@@ -72,7 +73,8 @@ const LogSetting = () => {
   };
 
   return (
-    <div className="flex w-full flex-col bg-white p-8">
+    <ContainerWrapper>
+    <div className="mb-3 flex w-[30vw] flex-col overflow-y-scroll bg-white p-8">
         <Card className="mb-4 p-2">
           <div className="flex flex-wrap gap-2 space-y-2">
             <div className="w-full text-lg font-semibold">Level</div>
@@ -202,6 +204,7 @@ const LogSetting = () => {
           </div>
         </Card>
       </div>
+      </ContainerWrapper>
   )
 }
 

@@ -1,7 +1,9 @@
+import ContainerWrapper from '@/components/shared/sideBars/ContainerWrapper'
 import React from 'react'
 
 const RulesPanel = () => {
   return (
+    <ContainerWrapper>
     <div className="flex w-full flex-col bg-white p-8">
     <div className="mb-6">
       <label className="mb-2 block font-medium text-sm text-gray-900" htmlFor="cube">
@@ -37,6 +39,7 @@ const RulesPanel = () => {
       Get back to this version
     </button>
   </div>
+  </ContainerWrapper>
   )
 }
 

@@ -15,8 +15,6 @@ import ExpendableSearchBar from "@/components/shared/search/ExpendableSearchBar"
 
 export default function Component() {
   return (
-    <div className="flex h-[94vh] bg-gray-100">
-      <div className="mx-auto flex w-3/4 flex-col overflow-auto p-8">
         <LiveContainer
           title="Query Logs"
           logHeight="p-3 bg-white"
@@ -60,7 +58,6 @@ export default function Component() {
             </TableBody>
           </Table>
         </LiveContainer>
-      </div>
-    </div>
+    
   );
 }

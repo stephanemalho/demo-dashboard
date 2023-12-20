@@ -8,7 +8,6 @@ import LogSetting from "@/app/(root)/query/logs-page/LogSetting";
 import SelectMenu from "@/app/(root)/mapping-page/globals-page/SelectMenu";
 import clsx from "clsx";
 import Image from "next/image";
-import { MiniOptionsSideBar } from "./MiniOptionsSideBar/MiniOptionSideBar";
 import RenderContainer from "@/app/(root)/live-delivery/create/RenderContainer/RenderContainer";
 import ChoresPanel from "@/app/(root)/versionning/chore/choreComponents/ChoresPanel";
 import ProcessPanel from "@/app/(root)/versionning/process/processComponents/ProcessPanel";
@@ -18,17 +17,22 @@ interface ComponentMappingInterface {
   [key: string]: () => React.ReactElement;
 }
 
+interface ComponentIconMappingInterface {
+  [key: string]: string;
+}
+
 const OptionsSideBar = () => {
   const [isMetaVisible, setIsMetaVisible] = useState(false);
-  const { toggleOptionsSideBar, handleClickOptionsSideBar } = useSidebar();
+  const { toggleOptionsSideBar, handleOpen } = useSidebar();
+
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   const sidebarClasses = clsx(
-    "custom-scrollbar fixed left-0 top-0 z-20 flex h-screen flex-col justify-between overflow-y-auto bg-[#393939]  pt-[50px] dark:shadow-none",
+    "custom-scrollbar fixed left-0 top-0 z-0 flex h-screen flex-col justify-between overflow-y-auto bg-[#393939]  pt-[50px] dark:shadow-none",
     {
       "slide-in-rightSidebar w-[450px]": toggleOptionsSideBar,
-      "flex w-screen": !toggleOptionsSideBar,
+      "flex w-[50px]": !toggleOptionsSideBar,
     }
   );
 
@@ -40,7 +44,18 @@ const OptionsSideBar = () => {
     "/live-delivery/create": RenderContainer,
     "/versionning/chore": ChoresPanel,
     "/versionning/process": ProcessPanel,
-    "/versionning/rule-page": RulesPanel ,
+    "/versionning/rule-page": RulesPanel,
+  };
+
+  const componentIconMappingUrl: ComponentIconMappingInterface = {
+    "/statistics/ressources": "/assets/icons/menu-left.svg",
+    "/statistics/process": "/assets/icons/menu-left.svg",
+    "/query/logs-page": "/assets/icons/menu-left.svg",
+    "/mapping-page/globals-page": "/assets/icons/menu-left.svg",
+    "/live-delivery/create": "/assets/icons/menu-left.svg",
+    "/versionning/chore": "/assets/icons/menu-left.svg",
+    "/versionning/process": "/assets/icons/menu-left.svg",
+    "/versionning/rule-page": "/assets/icons/menu-left.svg",
   };
 
   useEffect(() => {
@@ -50,44 +65,35 @@ const OptionsSideBar = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname, searchParams]);
 
-  if (!toggleOptionsSideBar) {
-    return <MiniOptionsSideBar />;
-  }
-
   const ComponentToRender = componentMapping[pathname] || "";
 
   return (
-    <section className={sidebarClasses}>
-      <div
-        onClick={handleClickOptionsSideBar}
-        className="flex h-[49px] min-h-[49px] max-w-[50px] cursor-pointer justify-center hover:bg-[#262626] active:border-[2px] active:border-[#fff]"
-      >
-        {toggleOptionsSideBar ? (
+    <div className="flex flex-row">
+      <section className={sidebarClasses}>
+        {componentIconMappingUrl[pathname] ? (
+          <button
+            onClick={handleOpen}
+            className="flex h-[50px] w-[50px] items-center justify-center hover:bg-[#262626]"
+          >
+            <Image
+              src={componentIconMappingUrl[pathname]}
+              alt={"menu"}
+              width={20}
+              height={20}
+            />
+          </button>
+        ) : null}
+        <div className="mt-auto flex h-[50px] w-[50px] cursor-pointer items-center justify-center bg-[#393939] hover:bg-[#262626]">
           <Image
-            src={"/assets/icons/close.svg"}
-            alt={"menu"}
-            width={22}
-            height={22}
-          />
-        ) : (
-          <Image
-            src={"/assets/icons/menu-left.svg"}
+            src={"/assets/icons/settings.svg"}
             alt={"menu"}
             width={20}
             height={20}
           />
-        )}
-      </div>
+        </div>
+      </section>
       {isMetaVisible && ComponentToRender && <ComponentToRender />}
-      <div className=" flex h-[50px] w-[50px] cursor-pointer items-center justify-center bg-[#393939] hover:bg-[#262626]">
-        <Image
-          src={"/assets/icons/settings.svg"}
-          alt={"menu"}
-          width={20}
-          height={20}
-        />
-      </div>
-    </section>
+    </div>
   );
 };
 

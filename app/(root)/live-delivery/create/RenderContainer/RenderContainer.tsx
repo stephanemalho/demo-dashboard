@@ -1,54 +1,39 @@
 "use client";
 // import WrapIcon from "@/components/WrapIcon";
 import { menuItems } from "@/data/dashboard";
-import Image from "next/image";
 import React from "react";
 import RenderMenu from "./RenderMenu";
 import { useSidebar } from "@/context/SideBarProvider";
 import ExpendableSearchBar from "@/components/shared/search/ExpendableSearchBar";
+import ContainerWrapper from "@/components/shared/sideBars/ContainerWrapper";
 
 const RenderContainer = () => {
-  const { isOpen, handleOpen } = useSidebar();
+  const { isOpen } = useSidebar();
 
   return (
-    <div
-      className={`mt-12 flex h-full flex-row justify-between overflow-y-hidden bg-[#f2f2f2] transition-all duration-500 ease-in-out ${
-        isOpen ? "mx-1 min-w-[30vw] max-2xl:min-w-[25vw]" : "w-[50px]"
-      }`}
-    >
+    <ContainerWrapper>
       <div
-        className={`mr-1 flex text-[10px] transition-all duration-500 ease-in-out ${
-          isOpen ? "w-[30vw] max-2xl:w-[25vw] " : "w-[50px]"
+        className={`flex text-[10px] transition-all  duration-500 ease-in-out ${
+          isOpen ? "w-[30vw] max-2xl:w-[25vw] " : "w-0"
         } absolute`}
       >
         <div className="flex w-full flex-row">
-          <button
-            onClick={handleOpen}
-            className="flex h-[50px] w-[50px] items-center justify-center hover:bg-[#e2e2e2]"
-          >
-            <Image
-              src="/assets/icons/data--base.svg"
-              alt="arrow"
-              width={20}
-              height={20}
-            />
-          </button>
           <div className={`${isOpen ? "w-full" : "hidden"}`}>
-          {isOpen && (
-            <ExpendableSearchBar
-              placeholderValue="Rechercher..."
-              searchValue=""
-              onChange={() => {}}
-              label="all search"
-              size="h-[50px] w-[50px] min-w-[50px]"
-            />
-          )}
+            {isOpen && (
+              <ExpendableSearchBar
+                placeholderValue="Rechercher..."
+                searchValue=""
+                onChange={() => {}}
+                label="all search"
+                size="h-[50px] w-[50px] min-w-[50px]"
+              />
+            )}
           </div>
         </div>
       </div>
       {isOpen && (
         <div
-          className={`mt-[50px] flex h-auto overflow-y-auto ${
+          className={`mb-[20px] mt-[50px] flex h-auto overflow-y-auto ${
             isOpen ? "w-full" : "w-0"
           } flex-col text-[10px] transition-all duration-500 ease-in-out`}
         >
@@ -57,7 +42,7 @@ const RenderContainer = () => {
           ))}
         </div>
       )}
-    </div>
+    </ContainerWrapper>
   );
 };
 

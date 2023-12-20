@@ -1,9 +1,11 @@
 import { JSX, SVGProps } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import ContainerWrapper from "@/components/shared/sideBars/ContainerWrapper";
 
 const TestData = () => {
   return (
+    <ContainerWrapper>
     <div className="w-full">
         <div className="bg-white p-6 shadow">
           <div className="mb-4 flex items-center justify-between">
@@ -30,6 +32,7 @@ const TestData = () => {
           </div>
         </div>
       </div>
+      </ContainerWrapper>
   );
 };
 

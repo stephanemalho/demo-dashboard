@@ -19,7 +19,7 @@ const LeftSideBar = () => {
       <section
         className={`${
           toggleSideBar ? "slide-in-sidebar" : ""
-        } custom-scrollbar ibm-text-black fixed left-0 top-[50px] z-50 flex h-full w-[300px] flex-col justify-between overflow-y-auto bg-[#000] font-regular shadow-light-300 max-2xl:w-[210px]`}
+        } custom-scrollbar ibm-text-black fixed left-0 top-[50px] z-[10000] flex h-full w-[300px] flex-col justify-between overflow-y-auto bg-[#000] font-regular shadow-light-300 max-2xl:w-[210px]`}
       >
         <nav className={`absolute top-[1px] m-1 flex w-[280px] flex-1 flex-col scroll-auto ease-in max-2xl:w-[200px]`}>
           {firstSidebarLink.map((item) => {

@@ -7,9 +7,11 @@ import {
   SelectValue,
 } from "../../../../../components/ui/select";
 import { Input } from "../../../../../components/ui/input";
+import ContainerWrapper from "@/components/shared/sideBars/ContainerWrapper";
 
 const MetaData = () => {
   return (
+    <ContainerWrapper>
     <div className="col-span-1 rounded-none bg-white p-4 shadow">
       <div className="mb-6">
         <label
@@ -73,6 +75,7 @@ const MetaData = () => {
         </Select>
       </div>
     </div>
+    </ContainerWrapper>
   );
 };
 

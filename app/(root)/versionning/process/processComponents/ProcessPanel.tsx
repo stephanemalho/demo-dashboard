@@ -1,7 +1,9 @@
+import ContainerWrapper from '@/components/shared/sideBars/ContainerWrapper'
 import React from 'react'
 
 const ProcessPanel = () => {
   return (
+    <ContainerWrapper>
     <div className="flex w-full flex-col bg-white p-8">
         <div className="mb-6">
           <label
@@ -35,6 +37,7 @@ const ProcessPanel = () => {
           Get back to this version
         </button>
       </div>
+      </ContainerWrapper>
   )
 }
 

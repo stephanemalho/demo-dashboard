@@ -54,7 +54,7 @@ const RenderMenu: React.FC<{
         <div
           onClick={toggleOpen}
           style={{ paddingLeft: `${level * 20}px` }}
-          className="mx-1 flex cursor-pointer items-center truncate p-1 text-[12px] hover:bg-[#e2e2e2] active:border-[#e2e2e2]"
+          className="mr-1 flex cursor-pointer items-center truncate p-1 text-[12px] hover:bg-[#e2e2e2] active:border-[#e2e2e2]"
         >
           <MdChevronRight
             className={`truncate transition-transform duration-300 ${
