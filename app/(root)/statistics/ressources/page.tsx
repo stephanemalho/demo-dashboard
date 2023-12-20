@@ -1,19 +1,17 @@
-import ReloadButton from "./ressourceComponents/ReloadButton";
+// import ReloadButton from "./ressourceComponents/ReloadButton";
+import LiveContainer from "@/components/shared/boxContainer/LiveContainer";
 import TreemapComponent from "./ressourceComponents/Treemap";
+import ContentContainer from "@/components/shared/contentContainer/ContentContainer";
 
 function page() {
   return (
-    <main className="flex-1">
-      <header className="sticky top-0 flex h-[50px] items-center justify-between bg-white p-6 shadow">
-        <h1 className="text-xl font-semibold text-gray-800">Treemap Process</h1>
-        <div className="flex items-center">
-          <ReloadButton />
-        </div>
-      </header>
-      <div className="mx-auto w-[80vw] p-6">
+    <ContentContainer>
+    <LiveContainer label="Treemap Process" title="Treemap Process" logHeight="h-[90vh] max-2xl:h-[84vh]">
+      <div className="mx-auto w-full p-6">
         <TreemapComponent />
       </div>
-    </main>
+    </LiveContainer>
+    </ContentContainer>
   );
 }
 

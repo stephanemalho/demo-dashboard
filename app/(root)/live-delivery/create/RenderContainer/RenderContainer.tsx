@@ -5,7 +5,7 @@ import React from "react";
 import RenderMenu from "./RenderMenu";
 import { useSidebar } from "@/context/SideBarProvider";
 import ExpendableSearchBar from "@/components/shared/search/ExpendableSearchBar";
-import ContainerWrapper from "@/components/shared/sideBars/ContainerWrapper";
+import ContainerWrapper from "@/components/shared/sideBars/optionSideBar/optionSideBarComponent/ContainerWrapper";
 
 const RenderContainer = () => {
   const { isOpen } = useSidebar();

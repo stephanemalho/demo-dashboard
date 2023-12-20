@@ -2,10 +2,10 @@
 import { usePathname, useSearchParams } from "next/navigation";
 import { useSidebar } from "@/context/SideBarProvider";
 import React, { useEffect, useState } from "react";
-import MetaData from "../../../app/(root)/statistics/ressources/ressourceComponents/MetaData";
-import TestData from "../../../app/(root)/statistics/process/TestData";
+import MetaData from "../../../../app/(root)/statistics/ressources/ressourceComponents/MetaData";
+import TestData from "../../../../app/(root)/statistics/process/TestData";
 import LogSetting from "@/app/(root)/query/logs-page/LogSetting";
-import SelectMenu from "@/app/(root)/mapping-page/globals-page/SelectMenu";
+import SelectMenu from "@/app/(root)/mapping-page/globals-page/menu/SelectMenu";
 import clsx from "clsx";
 import Image from "next/image";
 import RenderContainer from "@/app/(root)/live-delivery/create/RenderContainer/RenderContainer";
