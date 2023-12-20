@@ -1,36 +1,48 @@
 "use client";
-import WrapIcon from "@/components/WrapIcon";
+// import WrapIcon from "@/components/WrapIcon";
 import { menuItems } from "@/data/dashboard";
 import Image from "next/image";
 import React from "react";
 import RenderMenu from "./RenderMenu";
 import { useSidebar } from "@/context/SideBarProvider";
+import ExpendableSearchBar from "@/components/shared/search/ExpendableSearchBar";
 
 const RenderContainer = () => {
   const { isOpen, handleOpen } = useSidebar();
 
   return (
     <div
-      className={`flex h-full flex-row justify-between overflow-y-hidden bg-[#f2f2f2] transition-all  duration-500 ease-in-out ${
+      className={`mt-12 flex h-full flex-row justify-between overflow-y-hidden bg-[#f2f2f2] transition-all  duration-500 ease-in-out ${
         isOpen ? "mx-1" : "w-[50px]"
       }`}
     >
       <div
-        className={`m-2 flex flex-col text-[10px] transition-all duration-500 ease-in-out ${
+        className={`flex text-[10px] transition-all duration-500 ease-in-out ${
           isOpen ? " w-[20px] max-2xl:w-[30vw] " : "w-[50px]"
         } absolute`}
       >
-        <WrapIcon bgColorHover="hover:bg-[#fff]">
-          <button onClick={handleOpen} className="h-full w-full">
+        <div className="flex w-full flex-row bg-pink-400">
+          <button
+            onClick={handleOpen}
+            className="flex h-[50px] w-[50px] items-center justify-center hover:bg-[#e2e2e2]"
+          >
             <Image
               src="/assets/icons/data--base.svg"
               alt="arrow"
               width={20}
               height={20}
-              className="h-full w-full p-[5px]"
             />
           </button>
-        </WrapIcon>
+          {isOpen && (
+            <ExpendableSearchBar
+              placeHolderValue="Rechercher"
+              searchValue=""
+              onChange={() => {}}
+              label=""
+              size="h-[50px] w-[50px] min-w-[50px]"
+            />
+          )}
+        </div>
       </div>
       {isOpen && (
         <div
