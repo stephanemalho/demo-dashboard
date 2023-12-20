@@ -12,16 +12,16 @@ const RenderContainer = () => {
 
   return (
     <div
-      className={`mt-12 flex h-full flex-row justify-between overflow-y-hidden bg-[#f2f2f2] transition-all  duration-500 ease-in-out ${
-        isOpen ? "mx-1" : "w-[50px]"
+      className={`mt-12 flex h-full flex-row justify-between overflow-y-hidden bg-[#f2f2f2] transition-all duration-500 ease-in-out ${
+        isOpen ? "mx-1 min-w-[30vw] max-2xl:min-w-[25vw]" : "w-[50px]"
       }`}
     >
       <div
-        className={`flex text-[10px] transition-all duration-500 ease-in-out ${
-          isOpen ? " w-[20px] max-2xl:w-[30vw] " : "w-[50px]"
+        className={`mr-1 flex text-[10px] transition-all duration-500 ease-in-out ${
+          isOpen ? "w-[30vw] max-2xl:w-[25vw] " : "w-[50px]"
         } absolute`}
       >
-        <div className="flex w-full flex-row bg-pink-400">
+        <div className="flex w-full flex-row">
           <button
             onClick={handleOpen}
             className="flex h-[50px] w-[50px] items-center justify-center hover:bg-[#e2e2e2]"
@@ -33,15 +33,17 @@ const RenderContainer = () => {
               height={20}
             />
           </button>
+          <div className={`${isOpen ? "w-full" : "hidden"}`}>
           {isOpen && (
             <ExpendableSearchBar
-              placeHolderValue="Rechercher"
+              placeholderValue="Rechercher..."
               searchValue=""
               onChange={() => {}}
-              label=""
+              label="all search"
               size="h-[50px] w-[50px] min-w-[50px]"
             />
           )}
+          </div>
         </div>
       </div>
       {isOpen && (

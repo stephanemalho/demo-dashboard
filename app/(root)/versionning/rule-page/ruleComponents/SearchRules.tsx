@@ -6,7 +6,7 @@ const SearchRules = () => {
   return (
     <div className="mr-6 flex-1">
       <ExpendableSearchBar
-        placeHolderValue="Search for a rule"
+        placeholderValue="Search for a rule"
         searchValue=""
         onChange={() => {}}
         size={"h-[50px] w-[50px] min-w-[50px]"}
