@@ -1,10 +1,10 @@
 import Navbar from "@/components/shared/navbar/Navbar";
-import LeftSideBar from "@/components/shared/sideBars/LeftSideBar";
+import LeftSideBar from "@/components/shared/sideBars/leftSidebar/LeftSideBar";
 // import RightSideBar from "@/components/shared/sideBars/RightSideBar";
 import { SignedIn } from "@clerk/nextjs";
 import React from "react";
 import PageContainer from "@/components/shared/pageContainer/PageContainer";
-import OptionsSideBar from "@/components/shared/sideBars/OptionsSideBar";
+import OptionsSideBar from "@/components/shared/sideBars/optionSideBar/OptionsSideBar";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (

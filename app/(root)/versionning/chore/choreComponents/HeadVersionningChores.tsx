@@ -11,7 +11,7 @@ const HeadVersionningChores = () => {
   };
 
   return (
-    <div className="mb-6 flex justify-between">
+    <div className=" flex justify-between">
       <div className="mr-6 flex-1">
         <ExpendableSearchBar
           placeholderValue={"Search chores"}

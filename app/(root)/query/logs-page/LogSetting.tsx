@@ -1,9 +1,10 @@
 "use client";
-import { Button } from '@/components/ui/button'
-import { Card } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Badge } from '@/components/ui/badge'
-import React, { useState } from 'react'
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import React, { useState } from "react";
+import ContainerWrapper from "@/components/shared/sideBars/optionSideBar/optionSideBarComponent/ContainerWrapper";
 
 const items = [
   "TM1.Process",
@@ -20,7 +21,6 @@ const items = [
 ];
 
 const LogSetting = () => {
-
   const [checkedState, setCheckedState] = useState(
     new Array(11).fill(false) // 11 pour le nombre d'éléments que vous avez
   );
@@ -41,7 +41,7 @@ const LogSetting = () => {
       setSelectedBadgeIndex(index);
     }
   };
-  
+
   const handleSubmit = () => {
     if (inputValue.trim() !== "") {
       setBadges([...badges, inputValue]);
@@ -72,7 +72,8 @@ const LogSetting = () => {
   };
 
   return (
-    <div className="flex w-full flex-col bg-white p-8">
+    <ContainerWrapper>
+      <div className="mb-3 flex w-[30vw] flex-col overflow-y-scroll bg-white p-8">
         <Card className="mb-4 p-2">
           <div className="flex flex-wrap gap-2 space-y-2">
             <div className="w-full text-lg font-semibold">Level</div>
@@ -161,7 +162,9 @@ const LogSetting = () => {
                   key={index}
                   variant="secondary"
                   className={`min-w-[100px]  p-4 ${
-                    selectedBadgeIndex === index ? "shake-animation bg-red-500 text-white" : "bg-[#bfdbfe] "
+                    selectedBadgeIndex === index
+                      ? "shake-animation bg-red-500 text-white"
+                      : "bg-[#bfdbfe] "
                   }`}
                   onClick={() => handleBadgeClick(index)}
                 >
@@ -202,7 +205,8 @@ const LogSetting = () => {
           </div>
         </Card>
       </div>
-  )
-}
+    </ContainerWrapper>
+  );
+};
 
-export default LogSetting
+export default LogSetting;

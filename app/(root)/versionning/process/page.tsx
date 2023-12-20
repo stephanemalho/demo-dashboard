@@ -1,8 +1,15 @@
+import LiveContainer from "@/components/shared/boxContainer/LiveContainer";
+import ContentContainer from "@/components/shared/contentContainer/ContentContainer";
+
 export default function page() {
   return (
-    <div className="flex h-screen bg-gray-100">
-      <div className="flex-1 p-8">
-        <div className="mb-6 flex justify-between">
+     <ContentContainer>
+       <LiveContainer
+          title="Process"
+          label="Process"
+          logHeight="h-96"
+       >
+        <div className="flex justify-between">
           <div className="mr-6 flex-1">
             <label
               className="mb-2 block font-medium text-sm text-gray-900"
@@ -33,7 +40,7 @@ export default function page() {
           </div>
         </div>
         <div className="h-full bg-white" />
-      </div>
-    </div>
+       </LiveContainer>
+     </ContentContainer>
   );
 }

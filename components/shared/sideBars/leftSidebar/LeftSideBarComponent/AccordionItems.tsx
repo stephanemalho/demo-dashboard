@@ -1,5 +1,10 @@
 "use client";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -7,7 +12,7 @@ import { isRouteLength, lastSegmentOrder } from "./leftSIdeBarConfig";
 import { AccordionItemsProps } from "@/types";
 import { usePathname } from "next/navigation";
 
-const AccordionItems = ({ item } : AccordionItemsProps) => {
+const AccordionItems = ({ item }: AccordionItemsProps) => {
   const pathname = usePathname();
   const isActive = isRouteLength(pathname, item);
   const getLastSegment = lastSegmentOrder();
@@ -41,7 +46,7 @@ const AccordionItems = ({ item } : AccordionItemsProps) => {
         </AccordionTrigger>
         <AccordionContent>
           {Array.isArray(item.route) ? (
-            item.route.map((subRoute : string, subIndex : number) => (
+            item.route.map((subRoute: string, subIndex: number) => (
               <Link
                 title={subRoute.split("/")[2]}
                 key={subIndex}

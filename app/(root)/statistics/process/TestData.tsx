@@ -1,10 +1,12 @@
 import { JSX, SVGProps } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import ContainerWrapper from "@/components/shared/sideBars/optionSideBar/optionSideBarComponent/ContainerWrapper";
 
 const TestData = () => {
   return (
-    <div className="w-full">
+    <ContainerWrapper>
+      <div className="w-full">
         <div className="bg-white p-6 shadow">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-lg font-semibold">Time Stamp</h2>
@@ -30,6 +32,7 @@ const TestData = () => {
           </div>
         </div>
       </div>
+    </ContainerWrapper>
   );
 };
 

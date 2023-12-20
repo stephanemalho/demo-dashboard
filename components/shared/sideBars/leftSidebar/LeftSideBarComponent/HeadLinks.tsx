@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -6,7 +6,7 @@ import { isRoute } from "./leftSIdeBarConfig";
 import { AccordionItemsProps } from "@/types";
 import { usePathname } from "next/navigation";
 
-const HeadLinks = ({ item } : AccordionItemsProps) => {
+const HeadLinks = ({ item }: AccordionItemsProps) => {
   const pathname = usePathname();
   const isActive = isRoute(pathname, item);
   return (

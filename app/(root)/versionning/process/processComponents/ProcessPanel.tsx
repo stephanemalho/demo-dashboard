@@ -1,8 +1,10 @@
-import React from 'react'
+import ContainerWrapper from "@/components/shared/sideBars/optionSideBar/optionSideBarComponent/ContainerWrapper";
+import React from "react";
 
 const ProcessPanel = () => {
   return (
-    <div className="flex w-full flex-col bg-white p-8">
+    <ContainerWrapper>
+      <div className="flex w-full flex-col bg-white p-8">
         <div className="mb-6">
           <label
             className="mb-2 block font-medium text-sm text-gray-900"
@@ -35,7 +37,8 @@ const ProcessPanel = () => {
           Get back to this version
         </button>
       </div>
-  )
-}
+    </ContainerWrapper>
+  );
+};
 
-export default ProcessPanel
+export default ProcessPanel;
