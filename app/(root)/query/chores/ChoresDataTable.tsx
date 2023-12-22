@@ -36,7 +36,7 @@ export const ChoresDataTable = () => {
   });
 
   return (
-    <Table className="text-[10px] ">
+    <Table className="text-[10px]">
       <TableHeader>
         <TableRow className="bg-[#e2e2e2]">
           {table.getHeaderGroups().map((headerGroup) =>
