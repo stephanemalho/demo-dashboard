@@ -16,7 +16,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import jsonData from "../../../../data/QueryLog.json";
+import jsonData from "../../../../data/logQuery.json";
 import { Badge } from "@/components/ui/badge";
 
 const columns: ColumnDef<(typeof jsonData)[0]>[] = [
