@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import ContainerWrapper from "@/components/shared/sideBars/optionSideBar/optionSideBarComponent/ContainerWrapper";
 
-const TestData = () => {
+const TimeSetting = () => {
   return (
     <ContainerWrapper>
       <div className="w-full">
@@ -36,7 +36,7 @@ const TestData = () => {
   );
 };
 
-export default TestData;
+export default TimeSetting;
 
 function IconCalendar(
   props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
