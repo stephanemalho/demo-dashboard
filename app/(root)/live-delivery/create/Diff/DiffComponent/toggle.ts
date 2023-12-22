@@ -51,3 +51,22 @@ export function toggleVisibilityLines(
   }
   updateVisibleLines(newVisibleLines);
 }
+
+export const scrollToCorrespondingLine = (lineNum: any) => {
+  const correspondingLineIdOld = `line-old-${lineNum}`;
+  const correspondingLineIdNew = `line-new-${lineNum}`;
+  const elementOld = document.getElementById(correspondingLineIdOld);
+  const elementNew = document.getElementById(correspondingLineIdNew);
+
+  if (elementOld) {
+    elementOld.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    console.log("test",elementOld
+      );
+    
+  }
+  if (elementNew) {
+    elementNew.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    console.log("test2",elementNew
+      );
+  }
+};

@@ -38,14 +38,14 @@ const LiveBasicTable = () => {
             placeholderValue="Search in table..."
             searchValue=""
             onChange={() => alert("boom")}
-            size="h-[50px] w-[50px] min-w-[50px]"
+            size="h-[30px] w-[30px] min-w-[30px]"
           />
         </div>
       </div>
-      <div className="m-2 bg-[]">
-        <Table className=" h-[50px] w-[100%] max-2xl:w-full">
-          <TableHeader className="sticky top-0 m-0 h-[20px]">
-            <TableRow>
+      <div className=" ">
+        <Table className=" h-[50px] w-[100%] max-2xl:w-full max-2xl:text-[12px]">
+          <TableHeader className="sticky top-0 h-[20px]">
+            <TableRow className="bg-[#E2E2E2]">
               <TableHead className="p-1">
                 <div className="flex items-center">
                   PACKAGE NAME
@@ -57,10 +57,10 @@ const LiveBasicTable = () => {
                   CREATION DATE <LuArrowUpDown className="ml-5" />
                 </div>
               </TableHead>
-              <TableHead className="p-1">ACTIONS</TableHead>
+              <TableHead className="p-1 text-center">ACTIONS</TableHead>
             </TableRow>
           </TableHeader>
-          <TableBody className="h-[50vh] overflow-hidden">
+          <TableBody className="h-[50vh] overflow-y-scroll">
             <TableRow className="h-[1px]">
               <TableCell className="w-2/5 font-medium">1 - Example</TableCell>
               <TableCell className="w-2/5">2023-10-09 12:43:17</TableCell>
@@ -98,7 +98,7 @@ const LiveBasicTable = () => {
             <TableRow className="h-[1px]">
               <TableCell className="w-2/5 font-medium">2 - Example</TableCell>
               <TableCell className="w-2/5">2023-10-09 12:43:18</TableCell>
-              <TableCell className="flex h-full w-auto  items-center justify-between  px-5 text-white">
+              <TableCell className="flex h-full w-auto items-center justify-between  px-5 text-white">
                 <Button
                   onClick={handleClickView}
                   className=" w-[100px] rounded-none hover:bg-[#e2e2e2]"

@@ -1,3 +1,4 @@
+import ChoresDataTable from "./ChoresDataTable";
 import DummyChoresTable from "./DummyChoresTable";
 
 export interface ChoresConfig {
@@ -10,7 +11,7 @@ export interface ChoresConfig {
 const choresConfig  = [
   {
     id: "chores",
-    component: DummyChoresTable ,  
+    component: ChoresDataTable ,  
     title: "Last Chores Execution",
     lastTable: false,
   },

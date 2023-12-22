@@ -4,7 +4,7 @@ import React from "react";
 const ProcessPanel = () => {
   return (
     <ContainerWrapper>
-      <div className="flex w-full flex-col bg-white p-8">
+      <div className="m-2">
         <div className="mb-6">
           <label
             className="mb-2 block font-medium text-sm text-gray-900"
@@ -33,7 +33,7 @@ const ProcessPanel = () => {
             <option>2023-11-06 11:42:00 (Latest)</option>
           </select>
         </div>
-        <button className="w-full rounded-none bg-blue-700 px-5 py-2.5 text-center font-medium text-sm text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 sm:w-auto">
+        <button className="w-full rounded-none bg-blue-700 px-5 py-2.5 text-center font-medium text-sm text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">
           Get back to this version
         </button>
       </div>

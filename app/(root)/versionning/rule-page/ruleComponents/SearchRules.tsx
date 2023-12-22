@@ -9,7 +9,7 @@ const SearchRules = () => {
         placeholderValue="Search for a rule"
         searchValue=""
         onChange={() => {}}
-        size={"h-[50px] w-[50px] min-w-[50px]"}
+        size={"h-[30px] w-[30px] min-w-[30px]"}
       />
     </div>
   );
