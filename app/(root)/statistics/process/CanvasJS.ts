@@ -2,7 +2,7 @@ import CanvasJSReact from "@canvasjs/react-charts";
 
 const CanvasJS = CanvasJSReact.CanvasJS;
 
-CanvasJS.addColorSet("customColorSet", ["#0062ff", "#FF832B"]);
+CanvasJS.addColorSet("customColorSet", ["#0062ff", "#FA4D56"]);
 
 export const ramAndGarbageUseOptions: any = {
   colorSet: "customColorSet",
