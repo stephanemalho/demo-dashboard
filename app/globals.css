@@ -288,3 +288,15 @@ code {
   width: 0;
   transition: width 700ms ease-in-out;
 }
+
+.chart-container {
+  height: 100%; /* Utilisez 100% pour que la hauteur soit relative au parent */
+  font-size: 0.8rem; /* Adaptez la taille de la police à votre convenance */
+}
+
+/* Media queries pour ajuster le style sur différents appareils */
+@media (max-width: 600px) {
+  .chart-container {
+    font-size: 0.6rem; /* Taille de police plus petite pour les petits écrans */
+  }
+}

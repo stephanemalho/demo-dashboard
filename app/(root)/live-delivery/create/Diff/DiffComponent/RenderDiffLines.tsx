@@ -5,7 +5,7 @@ import DiffLine from "./DiffLine";
 import { diffWordsWithSpace } from "diff";
 import { lineHasChanges, newLinesCount } from "@/lib/utils/arrays";
 import LinesToCompare from "./LineToCompare";
-import { toggleVisibilityLines } from "./toggle";
+import { scrollToCorrespondingLine, toggleVisibilityLines } from "./toggle";
 
 export interface TextContent {
   content: string[];
@@ -25,25 +25,6 @@ const RenderDiffLines = ({
   // States or variables
   const numberOfModifiedLines = newLinesCount(oldText, newText, lineHasChanges);
   const [visibleLines, setVisibleLines] = useState(new Set());
-
-  const scrollToCorrespondingLine = (lineNum: any) => {
-    const correspondingLineIdOld = `line-old-${lineNum}`;
-    const correspondingLineIdNew = `line-new-${lineNum}`;
-    const elementOld = document.getElementById(correspondingLineIdOld);
-    const elementNew = document.getElementById(correspondingLineIdNew);
-  
-    if (elementOld) {
-      elementOld.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      console.log("test",elementOld
-        );
-      
-    }
-    if (elementNew) {
-      elementNew.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      console.log("test2",elementNew
-        );
-    }
-  };
 
   const toggleLinesVisibility = (start: number, end: number) => {
     toggleVisibilityLines(visibleLines, start, end, setVisibleLines);
@@ -157,7 +138,7 @@ const RenderDiffLines = ({
     <div
     className={`m-auto flex h-full max-w-[92vw] flex-col transition-all duration-500 `}
   >
-    <div className="sticky top-0 z-10 flex w-full flex-row bg-[#fff] p-1 shadow-sm">
+    <div className="sticky top-0 z-10 flex w-full flex-row bg-[#fff] p-1 shadow-sm max-2xl:text-[10px]">
       <div className="shrink grow-0 basis-1/2 pr-2 text-[#000]">
         Target file:
       </div>

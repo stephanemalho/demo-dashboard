@@ -17,8 +17,8 @@ const SelectMenu = () => {
 
   return (
     <ContainerWrapper>
-      <div className=" bg-white p-4 shadow">
-        <div className="mb-4 flex w-full justify-between space-x-2">
+      <div className="custom-scrollbar mb-10 overflow-y-auto bg-white  shadow">
+        <div className=" flex w-full">
           <Button
             onClick={showMapping}
             // eslint-disable-next-line tailwindcss/no-custom-classname
@@ -61,14 +61,14 @@ const SelectMenu = () => {
             Node List
           </Button>
         </div>
-        <div>
+        <div className="p-4">
           {selectedMenu === "Mapping" && <Mapping />}
           {selectedMenu === "Nodes" && <Nodes />}
           {selectedMenu === "Edges" && <ShowEdges />}
           {selectedMenu === "Node List" && <ShowNodes />}
         </div>
-        <div className="mt-6">
-          <Button className="w-full bg-green-500 text-white">RUN</Button>
+        <div className="mb-6 mt-2">
+          <Button className="w-full rounded-none bg-green-500 text-white">RUN</Button>
         </div>
       </div>
     </ContainerWrapper>

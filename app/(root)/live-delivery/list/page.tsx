@@ -1,10 +1,10 @@
 import ContentContainer from "@/components/shared/contentContainer/ContentContainer";
-import LiveBasicTable from "./LiveBasicTable";
+import LiveListTables from "./LiveListTable";
 
 export default function page() {
   return (
     <ContentContainer>
-      <LiveBasicTable />
+      <LiveListTables />
     </ContentContainer>
   );
 }

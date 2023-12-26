@@ -1,34 +1,25 @@
 import React from "react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../../../../../components/ui/select";
 import { Input } from "../../../../../components/ui/input";
 import ContainerWrapper from "@/components/shared/sideBars/optionSideBar/optionSideBarComponent/ContainerWrapper";
 
 const MetaData = () => {
   return (
     <ContainerWrapper>
-      <div className="col-span-1 rounded-none bg-white p-4 shadow">
-        <div className="mb-6">
+      <div className="col-span-1 rounded-none p-2">
+      <div className="mb-6">
           <label
             className="mb-2 block font-medium text-sm text-gray-900"
-            htmlFor="type"
+            htmlFor="version"
           >
             Type
           </label>
-          <Select>
-            <SelectTrigger id="type">
-              <SelectValue placeholder="Count" />
-            </SelectTrigger>
-            <SelectContent className="bg-white" position="popper">
-              <SelectItem value="count">Count</SelectItem>
-              <SelectItem value="time">Time</SelectItem>
-            </SelectContent>
-          </Select>
+          <select
+            className="block w-full rounded-none border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+            id="version"
+          >
+            <option>Count</option>
+            <option>Type</option>
+          </select>
         </div>
         <div className="mb-6">
           <label
@@ -45,34 +36,30 @@ const MetaData = () => {
         <div className="mb-6">
           <label
             className="mb-2 block font-medium text-sm text-gray-900"
-            htmlFor="users"
+            htmlFor="version"
           >
             Users
           </label>
-          <Select>
-            <SelectTrigger id="users">
-              <SelectValue placeholder="Everyone" />
-            </SelectTrigger>
-            <SelectContent className="bg-white" position="popper">
-              <SelectItem value="everyone">Everyone</SelectItem>
-            </SelectContent>
-          </Select>
+          <select
+            className="block w-full rounded-none border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+            id="version"
+          >
+            <option>Everyone</option>
+          </select>
         </div>
         <div className="mb-6">
           <label
             className="mb-2 block font-medium text-sm text-gray-900"
-            htmlFor="process"
+            htmlFor="version"
           >
-            Process
+            Version
           </label>
-          <Select>
-            <SelectTrigger id="process">
-              <SelectValue placeholder="Everyone" />
-            </SelectTrigger>
-            <SelectContent className="bg-white" position="popper">
-              <SelectItem value="everyone">Everyone</SelectItem>
-            </SelectContent>
-          </Select>
+          <select
+            className="block w-full rounded-none border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+            id="version"
+          >
+            <option>2023-11-06 11:42:00 (Latest)</option>
+          </select>
         </div>
       </div>
     </ContainerWrapper>

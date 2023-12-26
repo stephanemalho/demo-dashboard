@@ -1,16 +1,16 @@
 import { JSX, SVGProps } from "react";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import ContainerWrapper from "@/components/shared/sideBars/optionSideBar/optionSideBarComponent/ContainerWrapper";
 
-const TestData = () => {
+const TimeSetting = () => {
   return (
     <ContainerWrapper>
       <div className="w-full">
-        <div className="bg-white p-6 shadow">
+        <div className="p-2">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-lg font-semibold">Time Stamp</h2>
-            <Button variant="secondary">Reload</Button>
+            {/* <Button variant="secondary">Reload</Button> */}
           </div>
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2">
@@ -36,7 +36,7 @@ const TestData = () => {
   );
 };
 
-export default TestData;
+export default TimeSetting;
 
 function IconCalendar(
   props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>

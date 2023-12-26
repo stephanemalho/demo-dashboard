@@ -1,8 +1,9 @@
+import React from "react";
 import DummyDataTable from "./DummyDataTable";
 
 export interface ProcessConfig {
   id: string;
-  component: any;
+  component: React.FC;
   title: string;
   lastTable: boolean;
 }

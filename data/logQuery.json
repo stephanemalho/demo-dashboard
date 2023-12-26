@@ -1,0 +1,10 @@
+[
+  {
+      "T_ID": 9836,
+      "S_ID": 0,
+      "LEVEL": "INFO",
+      "TIMESTAMP": "2023-11-17 22:08:58",
+      "LOGGER": "TMI.Chore",
+      "MESSAGE": "Chore Tache_Test_1 finished executing"
+  }
+]
