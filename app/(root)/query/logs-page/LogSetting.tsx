@@ -1,6 +1,5 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import React, { useState } from "react";
@@ -73,10 +72,9 @@ const LogSetting = () => {
 
   return (
     <ContainerWrapper>
-      <div className="mb-3 flex w-[30vw] flex-col overflow-y-scroll bg-white p-8">
-        <Card className="mb-4 p-2">
-          <div className="flex flex-wrap gap-2 space-y-2">
-            <div className="w-full text-lg font-semibold">Level</div>
+      <div className="custom-scrollbar flex w-[30vw] flex-col overflow-y-scroll p-2 text-[12px]">
+          <div className="mb-6 flex flex-wrap gap-2 space-y-2">
+            <div className="w-full text-sm font-semibold">Level</div>
             <div className="mt-3 flex flex-wrap">
               <div>
                 <label className="flex w-[100px]">
@@ -110,20 +108,16 @@ const LogSetting = () => {
               </div>
             </div>
           </div>
-        </Card>
-        <Card className="mb-4 p-2">
-          <div className="flex flex-col space-y-2">
-            <div className="text-lg font-semibold">Time Stamp</div>
+          <div className="mb-6 flex flex-col space-y-2">
+            <div className="text-sm font-semibold">Time Stamp</div>
             <Input type="date" />
             <div className="flex space-x-2">
-              <Input type="time" />
-              <Input type="time" />
+              <Input type="time"/>
+              <Input type="time"/>
             </div>
           </div>
-        </Card>
-        <Card className="mb-4 p-2">
-          <div className="flex flex-col space-y-2">
-            <div className="text-lg font-semibold">Logger</div>
+          <div className="mb-6 flex flex-col space-y-2">
+            <div className="text-sm font-semibold">Logger</div>
             <div className="flex flex-wrap gap-2 p-4">
               {items.map((item, index) => (
                 <label key={item} className="flex items-center space-x-2">
@@ -152,10 +146,8 @@ const LogSetting = () => {
               </Button>
             </div>
           </div>
-        </Card>
-        <Card className="mb-4 p-2">
           <div className="flex flex-col space-y-2">
-            <div className="text-lg font-semibold">Contains</div>
+            <div className="text-sm font-semibold">Contains</div>
             <div className="flex flex-wrap gap-2">
               {badges.map((badge, index) => (
                 <Badge
@@ -198,12 +190,9 @@ const LogSetting = () => {
               </Button>
             </div>
           </div>
-        </Card>
-        <Card className="mb-4 p-2">
-          <div className="flex flex-col space-y-2">
-            <div className="text-lg font-semibold">Not Contains</div>
+          <div className="mb-6 flex flex-col space-y-2">
+            <div className="text-sm font-semibold">Not Contains</div>
           </div>
-        </Card>
       </div>
     </ContainerWrapper>
   );

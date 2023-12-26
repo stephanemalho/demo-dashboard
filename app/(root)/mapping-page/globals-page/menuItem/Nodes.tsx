@@ -1,5 +1,4 @@
 "use client"; 
-import { CardContent } from "@/components/ui/card";
 import React, { useState } from "react";
 
 const Nodes = () => {
@@ -22,9 +21,8 @@ const Nodes = () => {
   };
 
   return (
-    <CardContent>
       <div className="flex flex-col space-y-4  pb-20">
-        <div className="flex items-center justify-between">
+        <div className="flex">
           <div className="flex items-center">
             <input className="mr-2" id="cube" type="checkbox" />
             <label htmlFor="cube">Cube</label>
@@ -53,7 +51,7 @@ const Nodes = () => {
           <span>0</span>
         </div>
         <div className="pt-4">
-          <div className="font-medium">Custom Nodes Types</div>
+          <div className="font-semibold">Custom Nodes Types</div>
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <input className="mr-2" id="custom1" type="checkbox" />
@@ -70,7 +68,7 @@ const Nodes = () => {
           </div>
         </div>
         <div className="pt-4">
-          <div className="font-medium">Nodes Options</div>
+          <div className="font-semibold">Nodes Options</div>
           <div className="flex flex-col space-y-2">
             <label htmlFor="contain">Cube</label>
           <input 
@@ -100,7 +98,6 @@ const Nodes = () => {
           </div>
         </div>
       </div>
-    </CardContent>
   );
 };
 
