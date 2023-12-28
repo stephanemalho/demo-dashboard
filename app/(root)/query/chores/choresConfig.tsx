@@ -1,32 +1,28 @@
+import React from "react";
 import ChoresDataTable from "./ChoresDataTable";
 import DummyChoresTable from "./DummyChoresTable";
 
 export interface ChoresConfig {
   id: string;
-  component: any;
+  renderComponent: (props: any) => React.JSX.Element;
   title: string;
   lastTable: boolean;
 }
 
-const choresConfig  = [
+const choresConfig: ChoresConfig[] = [
   {
     id: "chores",
-    component: ChoresDataTable ,  
+    renderComponent: (props) => <ChoresDataTable {...props} />,  
     title: "Last Chores Execution",
     lastTable: false,
   },
   {
     id: "chores-history",
-    component: DummyChoresTable,
+    renderComponent: (props) => <DummyChoresTable data={props.selectedRows} />,
     title: "Selected Chores History",
-    lastTable: false,
-  },
-  {
-    id: "chores-related-process",
-    component: DummyChoresTable,
-    title: "Selected Chores Related Process",
     lastTable: true,
   },
 ];
 
 export default choresConfig;
+
