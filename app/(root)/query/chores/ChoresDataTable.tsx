@@ -27,8 +27,13 @@ const columns: ColumnDef<(typeof jsonData)[0]>[] = [
   { accessorKey: "version", header: "Version" },
 ];
 
-export const ChoresDataTable = () => {
-  
+interface ChoresDataTableProps {
+  onRowClick: (rowData: any) => void;
+  activeRowId: string | null; 
+}
+
+export const ChoresDataTable = ({onRowClick, activeRowId  } : ChoresDataTableProps) => {
+
   const table = useReactTable({
     data: jsonData,
     columns,
@@ -52,8 +57,8 @@ export const ChoresDataTable = () => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {table.getRowModel().rows.map((row) => (
-          <TableRow key={row.id}>
+      {table.getRowModel().rows.map((row) => (
+          <TableRow   className={`cursor-pointer ${row.original.id === activeRowId ? "bg-pink-500" : ""}`} key={row.id} onClick={() => onRowClick(row.original)}>
             {row.getVisibleCells().map((cell) => (
               <TableCell key={cell.id}>
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
