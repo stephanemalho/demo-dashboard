@@ -290,8 +290,13 @@ code {
 }
 
 .chart-container {
-  height: 100%; /* Utilisez 100% pour que la hauteur soit relative au parent */
-  font-size: 0.8rem; /* Adaptez la taille de la police à votre convenance */
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* This will distribute the space evenly */
+  align-items: center; /* This will center align the content horizontally */
+  height: 100%; /* Take full height of the parent */
+  font-size: 0.8rem;
 }
 
 /* Media queries pour ajuster le style sur différents appareils */
