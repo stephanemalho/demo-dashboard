@@ -1,23 +1,30 @@
-import React from "react";
-import queryLogsConfig, { QueryLogsConfig } from "./logsConfig";
-import LiveContainer from "@/components/shared/boxContainer/LiveContainer";
+"use client";
+import React, { useEffect, useState } from "react";
 
+import { getQueryLogData } from "@/api/getQueryLogData";
+import { DataTable } from "@/components/shared/tableThreads/data-table";
+import { QueryLogEntry, columns } from "./columns";
+import LoadingTable from "@/components/shared/Loading/LoadingTable";
 
-const QueryLogsTables = () => {
-  return (
-    <>
-      {queryLogsConfig.map((queryLogs : QueryLogsConfig) => (
-        <LiveContainer
-          key={queryLogs.id}
-          logHeight="h-[44vh] max-2xl:h-[38vh]"
-          title={queryLogs.title}
-          label={queryLogs.title}
-        >
-          <queryLogs.component />
-        </LiveContainer>
-      ))}
-    </>
-  );
+const QueryLogs = () => {
+  const [data, setData] = useState<QueryLogEntry[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await getQueryLogData(); // Utilisez getQueryLogData pour charger les données
+      setData(result);
+    };
+
+    fetchData().catch(console.error);
+  }, []);
+
+  // Si les données ne sont pas encore chargées, affichez un indicateur de chargement
+  if (data.length === 0) {
+    return <LoadingTable />;
+  }
+
+  // Passez les données et les colonnes à DataTable
+  return <DataTable columns={columns} data={data} />;
 };
 
-export default QueryLogsTables;
+export default QueryLogs;
