@@ -1,5 +1,5 @@
 import React from "react";
-import DummyQueryLogs from "./DummyQueryLogs";
+import DummyQueryLogs from "./QueryLogs";
 
 
 export interface QueryLogsConfig {
