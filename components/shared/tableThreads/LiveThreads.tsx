@@ -1,4 +1,5 @@
 "use client";
+import LoadingTable from "../Loading/LoadingTable";
 import { Threads, columns } from "./columns";
 import { DataTable } from "./data-table";
 import { getData } from "@/api/getData";
@@ -17,7 +18,7 @@ const LiveThreads = () => {
 
   // Si les données ne sont pas encore chargées, affichez un indicateur de chargement
   if (data.length === 0) {
-    return <div>Loading...</div>;
+    return <LoadingTable />;
   }
   // Passez les données et les colonnes à DataTable
   return <DataTable columns={columns} data={data} />;
