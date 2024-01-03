@@ -1,7 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-import { getQueryLogData } from "@/api/getQueryLogData";
+
+import { getQueryLogData } from "@/api/query/getQuery";
 import { DataTable } from "@/components/shared/tableThreads/data-table";
 import { QueryLogEntry, columns } from "./columns";
 import LoadingTable from "@/components/shared/Loading/LoadingTable";

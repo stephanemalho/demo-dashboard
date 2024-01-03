@@ -1,13 +1,12 @@
 import LiveContainer from "@/components/shared/boxContainer/LiveContainer";
 import React from "react";
 import choresConfig from "./choresConfig";
+import { useChores } from "@/context/ChoresContext";
 
-interface ChoresTablesProps {
-  onRowClick: (rowData: any) => void;
-  selectedRows: any;
-}
 
-const ChoresTables = ({ onRowClick, selectedRows }: ChoresTablesProps) => {
+const ChoresTables = () => {
+  const { selectedRows, handleRowClick } = useChores();
+
   return (
     <>
       {choresConfig.map((process) => (
@@ -17,7 +16,7 @@ const ChoresTables = ({ onRowClick, selectedRows }: ChoresTablesProps) => {
           title={process.title}
           label={process.title}
         >
-          {process.renderComponent({ onRowClick, selectedRows })}
+          {process.renderComponent({ handleRowClick, selectedRows })}
         </LiveContainer>
       ))}
     </>

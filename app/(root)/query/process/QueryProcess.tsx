@@ -1,19 +1,17 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-import { getQueryChoresData } from "@/api/query/getQuery";
+import { getQueryProcessData } from "@/api/query/getQuery";
 import { DataTable } from "@/components/shared/tableThreads/data-table";
-import { QueryChoresEntry, columns } from "./columns";
+import { QueryProcessEntry, columns } from "./columns";
 import LoadingTable from "@/components/shared/Loading/LoadingTable";
-import { useChores } from "@/context/ChoresContext";
 
-const ChoresDataTable = () => {  // { handleRowClick }
-  const [data, setData] = useState<QueryChoresEntry[]>([]);
-  const { handleRowClick } = useChores();
+const QueryProcess = () => {
+  const [data, setData] = useState<QueryProcessEntry[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await getQueryChoresData(); 
+      const result = await getQueryProcessData(); 
       setData(result);
     };
 
@@ -25,7 +23,8 @@ const ChoresDataTable = () => {  // { handleRowClick }
     return <LoadingTable />;
   }
 
-  return <DataTable columns={columns} data={data}  onRowClick={handleRowClick}/>;
+  return <DataTable columns={columns} data={data} />;
 };
 
-export default ChoresDataTable;
+export default QueryProcess;
+
