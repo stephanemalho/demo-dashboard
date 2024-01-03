@@ -1,4 +1,3 @@
-"use client";
 import ContentContainer from "@/components/shared/contentContainer/ContentContainer";
 import ChoresTables from "./ChoresTables";
 import { ChoresProvider } from "@/context/ChoresContext";

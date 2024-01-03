@@ -1,3 +1,4 @@
+"use client";
 import LiveContainer from "@/components/shared/boxContainer/LiveContainer";
 import React from "react";
 import choresConfig from "./choresConfig";

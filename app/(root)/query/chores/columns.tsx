@@ -20,3 +20,23 @@ export const columns: ColumnDef<QueryChoresEntry>[] = [
   { accessorKey: "fullLog", header: "Full Log" },
   { accessorKey: "version", header: "Version" },
 ];
+
+export interface QuerySelectedChore {
+  level: string;
+  processName: string;
+  lastExecutionDate: string;
+  duration: string;
+  executor: string;
+  fullLog: string;
+  version: string | null;
+}
+
+export const selectedColumns: ColumnDef<QuerySelectedChore>[] = [
+    { accessorKey: 'level', header: 'Level' },
+    { accessorKey: 'processName', header: 'Process Name' },
+    { accessorKey: 'lastExecutionDate', header: 'Last Execution Date' },
+    { accessorKey: 'duration', header: 'Duration' },
+    { accessorKey: 'executor', header: 'Executor' },
+    { accessorKey: 'fullLog', header: 'Full Log' },
+    { accessorKey: 'version', header: 'Version' },
+  ];
