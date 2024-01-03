@@ -1,5 +1,5 @@
 import React from "react";
-import DummyDataTable from "./DummyDataTable";
+import DummyDataTable from "./QueryProcess";
 
 export interface ProcessConfig {
   id: string;
@@ -8,10 +8,10 @@ export interface ProcessConfig {
   lastTable: boolean;
 }
 
-const processConfig  = [
+const processConfig = [
   {
     id: "process",
-    component: DummyDataTable  ,  
+    component: DummyDataTable,
     title: "Last Process Execution",
     lastTable: false,
   },

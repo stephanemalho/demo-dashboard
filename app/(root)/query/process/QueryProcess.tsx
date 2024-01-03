@@ -1,18 +1,17 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-
-import { getQueryLogData } from "@/api/query/getQuery";
+import { getQueryProcessData } from "@/api/query/getQuery";
 import { DataTable } from "@/components/shared/tableThreads/data-table";
-import { QueryLogEntry, columns } from "./columns";
+import { QueryProcessEntry, columns } from "./columns";
 import LoadingTable from "@/components/shared/Loading/LoadingTable";
 
-const QueryLogs = () => {
-  const [data, setData] = useState<QueryLogEntry[]>([]);
+const QueryProcess = () => {
+  const [data, setData] = useState<QueryProcessEntry[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await getQueryLogData(); 
+      const result = await getQueryProcessData(); 
       setData(result);
     };
 
@@ -27,4 +26,5 @@ const QueryLogs = () => {
   return <DataTable columns={columns} data={data} />;
 };
 
-export default QueryLogs;
+export default QueryProcess;
+
