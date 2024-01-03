@@ -11,7 +11,7 @@ const QueryLogs = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await getQueryLogData(); // Utilisez getQueryLogData pour charger les données
+      const result = await getQueryLogData(); 
       setData(result);
     };
 
@@ -23,7 +23,6 @@ const QueryLogs = () => {
     return <LoadingTable />;
   }
 
-  // Passez les données et les colonnes à DataTable
   return <DataTable columns={columns} data={data} />;
 };
 

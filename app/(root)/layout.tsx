@@ -1,6 +1,5 @@
 import Navbar from "@/components/shared/navbar/Navbar";
 import LeftSideBar from "@/components/shared/sideBars/leftSidebar/LeftSideBar";
-// import RightSideBar from "@/components/shared/sideBars/RightSideBar";
 import { SignedIn } from "@clerk/nextjs";
 import React from "react";
 import PageContainer from "@/components/shared/pageContainer/PageContainer";
