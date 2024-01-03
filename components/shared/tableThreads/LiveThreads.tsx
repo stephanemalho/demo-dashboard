@@ -2,7 +2,7 @@
 import LoadingTable from "../Loading/LoadingTable";
 import { Threads, columns } from "./columns";
 import { DataTable } from "./data-table";
-import { getData } from "@/api/getData";
+import { getDashboardData } from "@/api/dashboard/getDashboardData";
 import React, { useEffect, useState } from "react";
 
 const LiveThreads = () => {
@@ -10,17 +10,14 @@ const LiveThreads = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await getData(); // Utilisez getDummyData pour charger les données
+      const result = await getDashboardData();
       setData(result);
     };
     fetchData().catch(console.error);
   }, []);
 
-  // Si les données ne sont pas encore chargées, affichez un indicateur de chargement
-  if (data.length === 0) {
-    return <LoadingTable />;
-  }
-  // Passez les données et les colonnes à DataTable
+  if (data.length === 0) return <LoadingTable />;
+  
   return <DataTable columns={columns} data={data} />;
 };
 

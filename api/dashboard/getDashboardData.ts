@@ -1,10 +1,10 @@
 import { dashboard } from "@/data/dashboard";
 import { Threads } from "@/components/shared/tableThreads/columns";
 
-export async function getData(): Promise<Threads[]> {
+export async function getDashboardData(): Promise<Threads[]> {
   const data = dashboard;
   const threads = data.Threads;
-
+  
   return Object.keys(threads).map((logKey) => {
     const threadsEntry = threads[logKey as unknown as keyof typeof threads];
     return {

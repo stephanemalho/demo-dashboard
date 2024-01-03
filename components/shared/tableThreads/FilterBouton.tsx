@@ -10,7 +10,7 @@ import {
 import { ArrowDown, ArrowUp, ArrowUpDown } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import IconInfo from "@/components/IconInfo";
-import { getData } from "@/api/getData";
+import { getDashboardData } from "@/api/dashboard/getDashboardData";
 import { Threads } from "./columns";
 
 interface Props {
@@ -32,14 +32,14 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
 
   const getContentHeightClass = () => {
     const itemCount = filterPreview.length;
-    if (itemCount === 0) return "h-[0px]"; 
+    if (itemCount === 0) return "h-[0px]";
     if (itemCount === 1) return "h-[30px]";
-    return "h-[75px]"; 
+    return "h-[75px]";
   };
 
   useEffect(() => {
     const loadData = async () => {
-      const data = await getData();
+      const data = await getDashboardData();
       const columnValues = data.map(
         (item) => item[column.id as keyof Threads]
       ) as string[];
@@ -142,7 +142,9 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
             >
               <AiOutlineClose size={14} />
             </div>
-            <div className={`m-1 ${getContentHeightClass()} overflow-hidden border-[1px] border-white`}>
+            <div
+              className={`m-1 ${getContentHeightClass()} overflow-hidden border-[1px] border-white`}
+            >
               <ul className="custom-scrollbar h-full w-full overflow-y-scroll">
                 {filterPreview.map((value, index) => (
                   <li
