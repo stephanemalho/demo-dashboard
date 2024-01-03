@@ -6,14 +6,14 @@ import versioningProcessConfig, { VersioningProcessConfig } from "./versioningPr
 const VersioningProcessTables = () => {
   return (
     <>
-      {versioningProcessConfig.map((versioningChore : VersioningProcessConfig ) => (
+      {versioningProcessConfig.map((versioningProcess : VersioningProcessConfig ) => (
         <LiveContainer
-          key={versioningChore.id}
+          key={versioningProcess.id}
           logHeight="h-[44vh] max-2xl:h-[38vh]"
-          title={versioningChore.title}
-          label={versioningChore.title}
+          title={versioningProcess.title}
+          label={versioningProcess.title}
         >
-          <versioningChore.component />
+          <versioningProcess.component />
         </LiveContainer>
       ))}
     </>
