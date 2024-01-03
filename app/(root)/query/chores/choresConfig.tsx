@@ -1,6 +1,6 @@
 import React from "react";
 import ChoresDataTable from "./ChoresDataTable";
-import DummyChoresTable from "./DummyChoresTable";
+import DummyChoresTable from "./SelectedChoresTable";
 
 export interface ChoresConfig {
   id: string;
