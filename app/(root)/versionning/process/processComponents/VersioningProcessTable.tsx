@@ -1,12 +1,12 @@
 import React from "react";
 
 import LiveContainer from "@/components/shared/boxContainer/LiveContainer";
-import versioningChoreConfig, { VersioningChoreConfig } from "./versioningChoreConfig";
+import versioningProcessConfig, { VersioningProcessConfig } from "./versioningProcessConfig";
 
-const VersioningChoreTables = () => {
+const VersioningProcessTables = () => {
   return (
     <>
-      {versioningChoreConfig.map((versioningChore : VersioningChoreConfig ) => (
+      {versioningProcessConfig.map((versioningChore : VersioningProcessConfig ) => (
         <LiveContainer
           key={versioningChore.id}
           logHeight="h-[44vh] max-2xl:h-[38vh]"
@@ -20,4 +20,4 @@ const VersioningChoreTables = () => {
   );
 };
 
-export default VersioningChoreTables;
+export default VersioningProcessTables;
