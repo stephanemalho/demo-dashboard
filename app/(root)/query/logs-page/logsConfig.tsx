@@ -1,5 +1,5 @@
 import React from "react";
-import DummyQueryLogs from "./QueryLogs";
+import QueryLogs from "./QueryLogs";
 
 
 export interface QueryLogsConfig {
@@ -12,7 +12,7 @@ export interface QueryLogsConfig {
 const queryLogsConfig  = [
   {
     id: "QueryLogs",
-    component: DummyQueryLogs  ,  
+    component: QueryLogs  ,  
     title: "Query Logs",
     lastTable: false,
   },
