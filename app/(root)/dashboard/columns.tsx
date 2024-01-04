@@ -11,9 +11,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 // import { copyRowToExcel } from "@/utils/formatTable";
-import DeleteButton from "../deleteBtn/DeleteButton";
+import DeleteButton from "../../../components/shared/deleteBtn/DeleteButton";
 import { Badge } from "@/components/ui/badge";
-import FilterBouton from "./FilterBouton";
+import FilterBouton from "../../../components/shared/tableThreads/FilterBouton";
 import Image from "next/image";
 
 // shape of data.
@@ -142,10 +142,7 @@ export const columns: ColumnDef<Threads>[] = [
               />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent
-            align="end"
-            className="bg-[#e4e4e4] capitalize"
-          >
+          <DropdownMenuContent align="end" className="bg-[#e4e4e4] capitalize">
             <DropdownMenuLabel className="text-[10px]">
               remove this line?:
             </DropdownMenuLabel>

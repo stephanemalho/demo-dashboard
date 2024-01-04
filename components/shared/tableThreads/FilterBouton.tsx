@@ -11,7 +11,7 @@ import { ArrowDown, ArrowUp, ArrowUpDown } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import IconInfo from "@/components/IconInfo";
 import { getDashboardData } from "@/api/dashboard/getDashboardData";
-import { Threads } from "./columns";
+import { Threads } from "../../../app/(root)/dashboard/columns";
 
 interface Props {
   column: any;

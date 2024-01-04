@@ -6,12 +6,13 @@ export default function LoadingTable() {
   return (
     <div className="animate-pulse">
       <table className="w-full table-fixed text-left">
-        <div  className="bg-gray-100">
-        <div className="h-4  bg-gray-200" />
+        <div className="sticky top-0 bg-gray-100">
+          <div className=" h-[25px] bg-gray-200" />
+          <div className="h-[25px]  bg-gray-300" />
         </div>
         <thead>
           <tr className="bg-gray-200">
-            <th className="w-1/2 p-2"> 
+            <th className="w-1/2 p-2">
               <div className="h-4 bg-gray-300 " />
             </th>
             <th className="w-1/2 p-2">
@@ -269,5 +270,5 @@ export default function LoadingTable() {
         </tbody>
       </table>
     </div>
-  )
+  );
 }
