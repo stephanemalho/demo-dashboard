@@ -1,5 +1,5 @@
 import React from "react";
-import VersioningChore from "./VersioninChore";
+import VersioningChore from "./VersioningChore";
 
 export interface VersioningChoreConfig {
   id: string;
