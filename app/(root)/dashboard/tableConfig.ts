@@ -1,5 +1,5 @@
 // tableConfig.js
-import LiveThreads from "@/components/shared/tableThreads/LiveThreads";
+import LiveThreads from "@/app/(root)/dashboard/LiveThreads";
 import LiveLogs from "@/components/shared/logBox/Logs";
 
 export interface TableConfig {
@@ -9,7 +9,7 @@ export interface TableConfig {
   lastTable: boolean;
 }
 
-const tableConfig  = [
+const tableConfig = [
   {
     id: "liveThreads",
     component: LiveThreads,
