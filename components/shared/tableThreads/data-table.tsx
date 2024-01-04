@@ -144,21 +144,23 @@ export function DataTable<TData, TValue>({
               table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
-                  className={`h-[20px]  bg-[#f4f4f4] font-medium hover:bg-[#e0e0e0] max-2xl:h-[15px] `}
+                  data-state={row.getIsSelected() ? "selected" : undefined}
+                  className="h-[20px] bg-[#f4f4f4] font-medium hover:bg-[#e0e0e0] max-2xl:h-[15px]"
                   onClick={() => onRowClick && onRowClick(row.original)}
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className=" truncate text-[12px] max-2xl:text-[12px]"
+                      className="truncate text-[12px] max-2xl:text-[12px]"
                     >
-                      {cell.column.id !== "state" &&
-                      typeof cell.getValue() === "string"
+                      {cell.column.id === "ACTIONS"
                         ? flexRender(
-                            toLowerCaseText(cell.getValue() as string),
+                            cell.column.columnDef.cell,
                             cell.getContext()
                           )
+                        : typeof cell.getValue() === "string" &&
+                          cell.column.id !== "state"
+                        ? toLowerCaseText(cell.getValue() as string)
                         : flexRender(
                             cell.column.columnDef.cell,
                             cell.getContext()
