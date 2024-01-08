@@ -1,9 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-
 import { getQueryLogData } from "@/api/query/getQuery";
-import { DataTable } from "@/components/shared/tableThreads/data-table";
+import { DataTable } from "@/components/shared/tables/data-table";
 import { QueryLogEntry, columns } from "./columns";
 import LoadingTable from "@/components/shared/Loading/LoadingTable";
 
@@ -12,7 +11,7 @@ const QueryLogs = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await getQueryLogData(); 
+      const result = await getQueryLogData();
       setData(result);
     };
 

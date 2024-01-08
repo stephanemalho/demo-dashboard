@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-import { DataTable } from "@/components/shared/tableThreads/data-table";
+import { DataTable } from "@/components/shared/tables/data-table";
 
 import LoadingTable from "@/components/shared/Loading/LoadingTable";
 import { VersioningChoreEntry, columns } from "./columns";
@@ -12,7 +12,7 @@ const VersioningChore = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await getVersioningChoreData(); 
+      const result = await getVersioningChoreData();
       setData(result);
     };
 

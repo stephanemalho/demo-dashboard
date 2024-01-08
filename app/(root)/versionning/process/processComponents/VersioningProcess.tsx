@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-import { DataTable } from "@/components/shared/tableThreads/data-table";
+import { DataTable } from "@/components/shared/tables/data-table";
 
 import LoadingTable from "@/components/shared/Loading/LoadingTable";
 import { VersioningProcessEntry, columns } from "./columns";
@@ -12,7 +12,7 @@ const VersioningProcess = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await getVersioningProcessData(); 
+      const result = await getVersioningProcessData();
       setData(result);
     };
 

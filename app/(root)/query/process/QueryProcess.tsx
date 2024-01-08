@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 
 import { getQueryProcessData } from "@/api/query/getQuery";
-import { DataTable } from "@/components/shared/tableThreads/data-table";
+import { DataTable } from "@/components/shared/tables/data-table";
 import { QueryProcessEntry, columns } from "./columns";
 import LoadingTable from "@/components/shared/Loading/LoadingTable";
 
@@ -11,7 +11,7 @@ const QueryProcess = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await getQueryProcessData(); 
+      const result = await getQueryProcessData();
       setData(result);
     };
 
@@ -27,4 +27,3 @@ const QueryProcess = () => {
 };
 
 export default QueryProcess;
-

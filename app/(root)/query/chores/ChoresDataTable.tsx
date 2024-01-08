@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 
 import { getQueryChoresData } from "@/api/query/getQuery";
-import { DataTable } from "@/components/shared/tableThreads/data-table";
+import { DataTable } from "@/components/shared/tables/data-table";
 import { QueryChoresEntry, columns } from "./columns";
 import LoadingTable from "@/components/shared/Loading/LoadingTable";
 import { useChores } from "@/context/ChoresContext";
