@@ -7,7 +7,7 @@ export default function LoadingTable() {
   ));
   return (
     <div className="animate-pulse">
-      <table className="w-full table-fixed text-left">
+      <table className="w-full table-fixed animate-pulse text-left">
         <LoadingTableHead />  
         <tbody>{tableRows}</tbody>
       </table>
