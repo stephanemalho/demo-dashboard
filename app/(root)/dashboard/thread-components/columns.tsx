@@ -13,7 +13,7 @@ import {
 // import { copyRowToExcel } from "@/utils/formatTable";
 import DeleteButton from "../../../../components/shared/deleteBtn/DeleteButton";
 import { Badge } from "@/components/ui/badge";
-import FilterButton from "../../../../components/shared/tableThreads/FilterButton";
+import FilterButton from "../../../../components/shared/tables/FilterButton";
 import Image from "next/image";
 
 // shape of data.

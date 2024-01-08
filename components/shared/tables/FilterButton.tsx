@@ -11,7 +11,7 @@ import { ArrowDown, ArrowUp, ArrowUpDown } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import IconInfo from "@/components/IconInfo";
 import { getDashboardData } from "@/api/dashboard/getDashboardData";
-import { Threads } from "../../../app/(root)/dashboard/thread-components/columns";
+import { Threads } from "@/app/(root)/dashboard/thread-components/columns";
 
 interface Props {
   column: any;
@@ -47,6 +47,7 @@ const FilterButton = ({ column, label, minSize }: Props) => {
     };
     loadData();
   }, [column.id]);
+  
 
   const updateFilterPreview = (text: string) => {
     setInputValue(text);
@@ -62,7 +63,7 @@ const FilterButton = ({ column, label, minSize }: Props) => {
 
   const resetFilter = () => {
     setInputValue(""); // Réinitialiser la valeur de l'input
-    setFilterPreview(allValues); // Réinitialiser filterPreview
+    setFilterPreview([]); // Réinitialiser filterPreview
     column.setFilterValue(""); // Réinitialiser le filtre de la colonne
   };
 
@@ -75,7 +76,7 @@ const FilterButton = ({ column, label, minSize }: Props) => {
             inputValue ? "bg-[#d1d1d1]" : "bg-[#e2e2e2]" // Classe conditionnelle basée sur inputValue
           } pl-[7px] font-black text-[12px] hover:bg-[#f2f2f2] active:text-light-500 max-2xl:text-[9px]`}
         >
-          {label}
+          {label} {column.getIsFiltered() && <span className="ml-auto flex">(filtered)</span>}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent

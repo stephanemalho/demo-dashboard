@@ -4,8 +4,7 @@ import { DashboardLogEntry, columns } from "./columns";
 import { getLogsData } from "@/api/dashboard/getDashboardData";
 import React, { useEffect, useState } from "react";
 import LoadingTable from "@/components/shared/Loading/LoadingTable";
-import { DataTable } from "@/components/shared/tableThreads/data-table";
-
+import { DataTable } from "@/components/shared/tables/data-table";
 
 const LiveLogs = () => {
   const [data, setData] = useState<DashboardLogEntry[]>([]);

@@ -4,12 +4,12 @@ import Image from "next/image";
 import React from "react";
 import { FaEye } from "react-icons/fa";
 import { getClassForCell, getClassForHeader } from "./helpers";
-import FilterButton from "@/components/shared/tableThreads/FilterButton";
+import FilterButton from "@/components/shared/tables/FilterButton";
 
 export interface LiveDeliveryListEntry {
-  "PACKAGE_NAME": string;
-  "CREATION_DATE": string;
-  "ACTIONS": string;
+  PACKAGE_NAME: string;
+  CREATION_DATE: string;
+  ACTIONS: string;
 }
 
 export const columns: ColumnDef<LiveDeliveryListEntry>[] = [
@@ -24,9 +24,7 @@ export const columns: ColumnDef<LiveDeliveryListEntry>[] = [
         />
       );
     },
-    cell: (info) => (
-      <span >{info.getValue() as string}</span>
-    ),
+    cell: (info) => <span>{info.getValue() as string}</span>,
   },
   {
     accessorKey: "CREATION_DATE",
@@ -40,15 +38,29 @@ export const columns: ColumnDef<LiveDeliveryListEntry>[] = [
       );
     },
     cell: (info) => (
-      <span className={getClassForCell("CREATION DATE")}>{info.getValue() as string}</span>
+      <span className={getClassForCell("CREATION DATE")}>
+        {info.getValue() as string}
+      </span>
     ),
   },
   {
     accessorKey: "ACTIONS",
-    header: () => <div className={getClassForHeader("ACTIONS") + " text-center font-bold ml-auto"}>ACTIONS</div>,
+    header: () => (
+      <div
+        className={
+          getClassForHeader("ACTIONS") + " text-center font-bold ml-auto"
+        }
+      >
+        ACTIONS
+      </div>
+    ),
     cell: (info) => {
       return (
-          <div className={`${getClassForCell("ACTIONS")} flex h-full items-center justify-between`}>
+        <div
+          className={`${getClassForCell(
+            "ACTIONS"
+          )} flex h-full items-center justify-between`}
+        >
           <Button
             onClick={() => {}}
             className="h-full flex-1 rounded-none hover:bg-[#e2e2e2]"
@@ -79,6 +91,6 @@ export const columns: ColumnDef<LiveDeliveryListEntry>[] = [
           </Button>
         </div>
       );
-  },
+    },
   },
 ];

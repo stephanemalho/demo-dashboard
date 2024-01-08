@@ -1,6 +1,6 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { Badge } from "@/components/ui/badge";
-import FilterButton from "@/components/shared/tableThreads/FilterButton";
+import FilterButton from "@/components/shared/tables/FilterButton";
 
 export interface QueryLogEntry {
   T_ID: number;
@@ -11,24 +11,20 @@ export interface QueryLogEntry {
   MESSAGE: string;
 }
 
-export const columns:  ColumnDef<QueryLogEntry>[] = [
-  { accessorKey: "T_ID", header: ({ column }) => {
+export const columns: ColumnDef<QueryLogEntry>[] = [
+  {
+    accessorKey: "T_ID",
+    header: ({ column }) => {
       return (
-        <FilterButton
-          minSize="min-w-[100px]"
-          column={column}
-          label={"T_ID"}
-        />
+        <FilterButton minSize="min-w-[100px]" column={column} label={"T_ID"} />
       );
     },
   },
-  { accessorKey: "S_ID", header: ({ column }) => {
+  {
+    accessorKey: "S_ID",
+    header: ({ column }) => {
       return (
-        <FilterButton
-          minSize="min-w-[100px]"
-          column={column}
-          label={"S_ID"}
-        />
+        <FilterButton minSize="min-w-[100px]" column={column} label={"S_ID"} />
       );
     },
   },
@@ -36,11 +32,7 @@ export const columns:  ColumnDef<QueryLogEntry>[] = [
     accessorKey: "LEVEL",
     header: ({ column }) => {
       return (
-        <FilterButton
-          minSize="min-w-[100px]"
-          column={column}
-          label={"Level"}
-        />
+        <FilterButton minSize="min-w-[100px]" column={column} label={"Level"} />
       );
     },
     cell: (info) => (
@@ -49,7 +41,9 @@ export const columns:  ColumnDef<QueryLogEntry>[] = [
       </Badge>
     ),
   },
-  { accessorKey: "TIMESTAMP", header: ({ column }) => {
+  {
+    accessorKey: "TIMESTAMP",
+    header: ({ column }) => {
       return (
         <FilterButton
           minSize="min-w-[100px]"
@@ -59,7 +53,9 @@ export const columns:  ColumnDef<QueryLogEntry>[] = [
       );
     },
   },
-  { accessorKey: "LOGGER", header: ({ column }) => {
+  {
+    accessorKey: "LOGGER",
+    header: ({ column }) => {
       return (
         <FilterButton
           minSize="min-w-[100px]"
@@ -69,7 +65,9 @@ export const columns:  ColumnDef<QueryLogEntry>[] = [
       );
     },
   },
-  { accessorKey: "MESSAGE", header: ({ column }) => {
+  {
+    accessorKey: "MESSAGE",
+    header: ({ column }) => {
       return (
         <FilterButton
           minSize="min-w-[100px]"

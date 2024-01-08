@@ -1,4 +1,4 @@
-import FilterButton from "@/components/shared/tableThreads/FilterButton";
+import FilterButton from "@/components/shared/tables/FilterButton";
 import { ColumnDef } from "@tanstack/react-table";
 
 export interface VersioningRuleEntry {
@@ -13,17 +13,17 @@ export interface VersioningRuleEntry {
 
 export const columns: ColumnDef<VersioningRuleEntry>[] = [
   // Définissez ici les colonnes en fonction de la structure de jsonData
-  { accessorKey: "level", header: ({ column }) => {
+  {
+    accessorKey: "level",
+    header: ({ column }) => {
       return (
-        <FilterButton
-          minSize="min-w-[50px]"
-          column={column}
-          label={"Level"}
-        />
+        <FilterButton minSize="min-w-[50px]" column={column} label={"Level"} />
       );
     },
   },
-  { accessorKey: "processName", header: ({ column }) => {
+  {
+    accessorKey: "processName",
+    header: ({ column }) => {
       return (
         <FilterButton
           minSize="min-w-[100px]"
@@ -33,7 +33,9 @@ export const columns: ColumnDef<VersioningRuleEntry>[] = [
       );
     },
   },
-  { accessorKey: "lastExecutionDate", header: ({ column }) => {
+  {
+    accessorKey: "lastExecutionDate",
+    header: ({ column }) => {
       return (
         <FilterButton
           minSize="min-w-[100px]"
@@ -43,7 +45,9 @@ export const columns: ColumnDef<VersioningRuleEntry>[] = [
       );
     },
   },
-  { accessorKey: "duration", header: ({ column }) => {
+  {
+    accessorKey: "duration",
+    header: ({ column }) => {
       return (
         <FilterButton
           minSize="min-w-[50px]"
@@ -53,7 +57,9 @@ export const columns: ColumnDef<VersioningRuleEntry>[] = [
       );
     },
   },
-  { accessorKey: "executor", header: ({ column }) => {
+  {
+    accessorKey: "executor",
+    header: ({ column }) => {
       return (
         <FilterButton
           minSize="min-w-[100px]"
@@ -63,7 +69,9 @@ export const columns: ColumnDef<VersioningRuleEntry>[] = [
       );
     },
   },
-  { accessorKey: "fullLog", header: ({ column }) => {
+  {
+    accessorKey: "fullLog",
+    header: ({ column }) => {
       return (
         <FilterButton
           minSize="min-w-[100px]"
@@ -73,7 +81,9 @@ export const columns: ColumnDef<VersioningRuleEntry>[] = [
       );
     },
   },
-  { accessorKey: "version", header: ({ column }) => {
+  {
+    accessorKey: "version",
+    header: ({ column }) => {
       return (
         <FilterButton
           minSize="min-w-[100px]"

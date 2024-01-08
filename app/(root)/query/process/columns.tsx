@@ -1,4 +1,4 @@
-import FilterButton from "@/components/shared/tableThreads/FilterButton";
+import FilterButton from "@/components/shared/tables/FilterButton";
 import { ColumnDef } from "@tanstack/react-table";
 
 export interface QueryProcessEntry {
@@ -12,17 +12,17 @@ export interface QueryProcessEntry {
 }
 
 export const columns: ColumnDef<QueryProcessEntry>[] = [
-  { accessorKey: 'level', header: ({ column }) => {
+  {
+    accessorKey: "level",
+    header: ({ column }) => {
       return (
-        <FilterButton
-          minSize="min-w-[50px]"
-          column={column}
-          label={"Level"}
-        />
+        <FilterButton minSize="min-w-[50px]" column={column} label={"Level"} />
       );
     },
   },
-  { accessorKey: 'processName', header: ({ column }) => {
+  {
+    accessorKey: "processName",
+    header: ({ column }) => {
       return (
         <FilterButton
           minSize="min-w-[100px]"
@@ -32,7 +32,9 @@ export const columns: ColumnDef<QueryProcessEntry>[] = [
       );
     },
   },
-  { accessorKey: 'lastExecutionDate', header: ({ column }) => {
+  {
+    accessorKey: "lastExecutionDate",
+    header: ({ column }) => {
       return (
         <FilterButton
           minSize="min-w-[100px]"
@@ -42,7 +44,9 @@ export const columns: ColumnDef<QueryProcessEntry>[] = [
       );
     },
   },
-  { accessorKey: 'duration', header: ({ column }) => {
+  {
+    accessorKey: "duration",
+    header: ({ column }) => {
       return (
         <FilterButton
           minSize="min-w-[50px]"
@@ -52,7 +56,9 @@ export const columns: ColumnDef<QueryProcessEntry>[] = [
       );
     },
   },
-  { accessorKey: 'executor', header: ({ column }) => {
+  {
+    accessorKey: "executor",
+    header: ({ column }) => {
       return (
         <FilterButton
           minSize="min-w-[100px]"
@@ -62,7 +68,9 @@ export const columns: ColumnDef<QueryProcessEntry>[] = [
       );
     },
   },
-  { accessorKey: 'fullLog', header: ({ column }) => {
+  {
+    accessorKey: "fullLog",
+    header: ({ column }) => {
       return (
         <FilterButton
           minSize="min-w-[100px]"
@@ -72,7 +80,9 @@ export const columns: ColumnDef<QueryProcessEntry>[] = [
       );
     },
   },
-  { accessorKey: 'version', header: ({ column }) => {
+  {
+    accessorKey: "version",
+    header: ({ column }) => {
       return (
         <FilterButton
           minSize="min-w-[100px]"
