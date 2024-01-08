@@ -1,7 +1,7 @@
 "use client";
-import LoadingTable from "../../../components/shared/Loading/LoadingTable";
+import LoadingTable from "../../../../components/shared/Loading/LoadingTable";
 import { Threads, columns } from "./columns";
-import { DataTable } from "../../../components/shared/tableThreads/data-table";
+import { DataTable } from "../../../../components/shared/tableThreads/data-table";
 import { getDashboardData } from "@/api/dashboard/getDashboardData";
 import React, { useEffect, useState } from "react";
 

@@ -1,6 +1,6 @@
 // tableConfig.js
-import LiveThreads from "@/app/(root)/dashboard/LiveThreads";
-import LiveLogs from "@/components/shared/logBox/Logs";
+import LiveThreads from "@/app/(root)/dashboard/thread-components/LiveThreads";
+import LiveLogs from "@/app/(root)/dashboard/logs-components/LiveLogs";
 
 export interface TableConfig {
   id: string;

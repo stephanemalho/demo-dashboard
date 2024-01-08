@@ -1,11 +1,11 @@
 import LiveContainer from "@/components/shared/boxContainer/LiveContainer";
 import React from "react";
-import tableConfig, { TableConfig } from "./tableConfig";
+import tableConfig, { TableConfig } from "../tableConfig";
 
 const DashBoardTables = () => {
   return (
     <>
-      {tableConfig.map((table : TableConfig) => (
+      {tableConfig.map((table: TableConfig) => (
         <LiveContainer
           key={table.id}
           logHeight="h-[44vh] max-2xl:h-[38vh]"

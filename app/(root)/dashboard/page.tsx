@@ -1,5 +1,5 @@
 import ContentContainer from "@/components/shared/contentContainer/ContentContainer";
-import DashBoardTables from "./DashBoardTables";
+import DashBoardTables from "./thread-components/DashBoardTables";
 
 export default function page() {
   return (
