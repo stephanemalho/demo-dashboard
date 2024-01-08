@@ -1,17 +1,15 @@
 "use client";
+import React, { useEffect, useState } from "react";
+import { ArrowDown, ArrowUp, ArrowUpDown } from "lucide-react";
+import { AiOutlineClose } from "react-icons/ai";
+import { FaFilter } from 'react-icons/fa';
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { AiOutlineClose } from "react-icons/ai";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "@radix-ui/react-dropdown-menu";
-import { ArrowDown, ArrowUp, ArrowUpDown } from "lucide-react";
-import React, { useEffect, useState } from "react";
-import IconInfo from "@/components/IconInfo";
 import { getDashboardData } from "@/api/dashboard/getDashboardData";
 import { Threads } from "@/app/(root)/dashboard/thread-components/columns";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { getContentHeight } from "@/lib/utils";
 
 interface Props {
   column: any;
@@ -21,20 +19,13 @@ interface Props {
 
 const FilterButton = ({ column, label, minSize }: Props) => {
   const [clickCount, setClickCount] = useState(0);
-  const [clickCountUpDown, setClickCountUpDown] = useState(0);
-  const [clickCountDownUp, setClickCountDownUp] = useState(0);
   const icons = [ArrowUpDown, ArrowUp, ArrowDown];
-  const iconUpDown = [ArrowUp, ArrowDown];
-  const iconDownUp = [ArrowDown, ArrowUp];
   const [filterPreview, setFilterPreview] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [allValues, setAllValues] = useState<string[]>([]);
 
-  const getContentHeightClass = () => {
-    const itemCount = filterPreview.length;
-    if (itemCount === 0) return "h-[0px]";
-    if (itemCount === 1) return "h-[30px]";
-    return "h-[75px]";
+  const heightClass = () => {
+    return getContentHeight(filterPreview);
   };
 
   useEffect(() => {
@@ -76,16 +67,21 @@ const FilterButton = ({ column, label, minSize }: Props) => {
             inputValue ? "bg-[#d1d1d1]" : "bg-[#e2e2e2]" // Classe conditionnelle basée sur inputValue
           } pl-[7px] font-black text-[12px] hover:bg-[#f2f2f2] active:text-light-500 max-2xl:text-[9px]`}
         >
-          {label} {column.getIsFiltered() && <span className="ml-auto flex">(filtered)</span>}
+          {label} {column.getIsFiltered() && <span className="ml-auto flex"><FaFilter /></span>} 
+          {/* Afficher ici icons en fonction de l'icon qui est affiché dans le filtre si le filtre est up ou down */}
+          {
+            React.createElement(icons[clickCount], {
+              className: "ml-auto h-3 w-3 max-2xl:h-[10px] max-2xl:w-[10px]",
+            })
+          }
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="end"
-        className="flex h-auto w-[150px] flex-col border-[1px] border-[rgb(61,199,98)] bg-[rgb(161,233,180)]"
+        className="flex h-auto w-[150px] flex-col rounded-none border-[1px] border-[rgb(61,199,98)] bg-[rgb(161,233,180)]"
       >
         <div className="flex">
-          <IconInfo title="Filter by columns" />
-          <h4 className="mr-auto flex items-center text-center font-bold">
+          <h4 className="mr-auto flex items-center text-center font-bold text-[10px]">
             Filter by colomns
           </h4>
         </div>
@@ -93,37 +89,11 @@ const FilterButton = ({ column, label, minSize }: Props) => {
           <Button
             variant="ghost"
             onClick={() => {
-              setClickCountUpDown((prevClickCount) => (prevClickCount + 1) % 2);
-              column.toggleSorting(column.getIsSorted() === "asc");
-            }}
-            className="mx-2 my-1 flex h-[40px] justify-start rounded-none border-[1px] border-[#fff] pl-2 text-left font-regular text-[10px] text-[#000] hover:bg-[#c6c6c6] active:bg-[#a8a8a8] max-2xl:h-[20px]"
-          >
-            Filter asc{" "}
-            {React.createElement(iconUpDown[clickCountUpDown], {
-              className: "ml-2 h-3 w-3 max-2xl:h-[10px] max-2xl:w-[10px]",
-            })}
-          </Button>
-          <Button
-            variant="ghost"
-            onClick={() => {
-              setClickCountDownUp((prevClickCount) => (prevClickCount + 1) % 2);
-              column.toggleSorting(column.getIsSorted() !== "desc");
-            }}
-            className="mx-2 mb-1 flex h-[40px] justify-start rounded-none border-[1px] border-[#fff] pl-2 text-left font-regular text-[10px] text-[#000] hover:bg-[#c6c6c6] active:bg-[#a8a8a8] max-2xl:h-[20px]"
-          >
-            Filter desc{" "}
-            {React.createElement(iconDownUp[clickCountDownUp], {
-              className: "ml-2 h-3 w-3 max-2xl:h-[10px] max-2xl:w-[10px]",
-            })}
-          </Button>
-          <Button
-            variant="ghost"
-            onClick={() => {
               // Incrémentez le compteur de clics
               setClickCount((prevClickCount) => (prevClickCount + 1) % 3);
               column.toggleSorting();
             }}
-            className="mx-2 flex h-[40px] justify-start rounded-none border-[1px] border-[#fff] pl-2 text-left font-regular text-[10px] text-[#000] hover:bg-[#c6c6c6] active:bg-[#a8a8a8] max-2xl:h-[20px]"
+            className="m-2 flex h-[40px] justify-start rounded-none border-[1px] border-[#fff] pl-2 text-left font-regular text-[10px] text-[#000] hover:bg-[#c6c6c6] active:bg-[#a8a8a8] max-2xl:h-[20px]"
           >
             Filter all{" "}
             {React.createElement(icons[clickCount], {
@@ -139,12 +109,12 @@ const FilterButton = ({ column, label, minSize }: Props) => {
             />
             <div
               onClick={resetFilter}
-              className="absolute right-[6px] top-[136px] flex h-[30px] w-[30px] items-center justify-center rounded-none p-0 text-center font-bold text-[12px] text-[#000] hover:bg-[#f4f4f4] active:bg-[#e0e0e0] max-2xl:right-[10px] max-2xl:top-[81px] max-2xl:h-[10px] max-2xl:w-[10px]"
+              className="absolute right-[6px] top-[60px] flex h-[30px] w-[30px] items-center justify-center rounded-none p-0 text-center font-bold text-[12px] text-[#000] hover:bg-[#f4f4f4] active:bg-[#e0e0e0] max-2xl:right-[12px] max-2xl:top-[45px] max-2xl:h-[10px] max-2xl:w-[10px]"
             >
               <AiOutlineClose size={14} />
             </div>
             <div
-              className={`m-1 ${getContentHeightClass()} overflow-hidden border-[1px] border-white`}
+              className={`m-1 ${heightClass()} overflow-hidden border-[1px] border-white`}
             >
               <ul className="custom-scrollbar h-full w-full overflow-y-scroll">
                 {filterPreview.map((value, index) => (
