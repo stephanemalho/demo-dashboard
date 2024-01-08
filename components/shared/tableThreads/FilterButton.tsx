@@ -19,7 +19,7 @@ interface Props {
   minSize?: string;
 }
 
-const FilterBouton = ({ column, label, minSize }: Props) => {
+const FilterButton = ({ column, label, minSize }: Props) => {
   const [clickCount, setClickCount] = useState(0);
   const [clickCountUpDown, setClickCountUpDown] = useState(0);
   const [clickCountDownUp, setClickCountDownUp] = useState(0);
@@ -165,4 +165,4 @@ const FilterBouton = ({ column, label, minSize }: Props) => {
   );
 };
 
-export default FilterBouton;
+export default FilterButton;

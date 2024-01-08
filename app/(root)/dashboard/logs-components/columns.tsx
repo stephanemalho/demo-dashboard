@@ -1,4 +1,4 @@
-import FilterBouton from "@/components/shared/tableThreads/FilterBouton";
+import FilterButton from "@/components/shared/tableThreads/FilterButton";
 import { formatLogDate } from "@/lib/utils/date";
 import { ColumnDef } from "@tanstack/react-table";
 
@@ -18,7 +18,7 @@ export const columns: ColumnDef<DashboardLogEntry>[] = [
     accessorKey: "ThreadID",
     header: ({ column }) => {
       return (
-        <FilterBouton
+        <FilterButton
           minSize="min-w-[100px]"
           column={column}
           label={"ThreadID"}
@@ -26,31 +26,31 @@ export const columns: ColumnDef<DashboardLogEntry>[] = [
       );
     },
   },
-  { accessorKey: "SessionID", header: ({ column }) => {
-    return (
-      <FilterBouton
-        minSize="min-w-[100px]"
-        column={column}
-        label={"SessionID"}
-      />
-    );
+  {
+    accessorKey: "SessionID",
+    header: ({ column }) => {
+      return (
+        <FilterButton
+          minSize="min-w-[100px]"
+          column={column}
+          label={"SessionID"}
+        />
+      );
+    },
   },
-},
-  { accessorKey: "Level", header: ({ column }) => {
-    return (
-      <FilterBouton
-        minSize="min-w-[100px]"
-        column={column}
-        label={"Level"}
-      />
-    );
+  {
+    accessorKey: "Level",
+    header: ({ column }) => {
+      return (
+        <FilterButton minSize="min-w-[100px]" column={column} label={"Level"} />
+      );
+    },
   },
-},
   {
     accessorKey: "TimeStamp",
     header: ({ column }) => {
       return (
-        <FilterBouton
+        <FilterButton
           minSize="min-w-[100px]"
           column={column}
           label={"TimeStamp"}
@@ -62,24 +62,28 @@ export const columns: ColumnDef<DashboardLogEntry>[] = [
       return <span>{formattedTimestamp}</span>;
     },
   },
-  { accessorKey: "Logger", header: ({ column }) => {
-    return (
-      <FilterBouton
-        minSize="min-w-[100px]"
-        column={column}
-        label={"Logger"}
-      />
-    );
+  {
+    accessorKey: "Logger",
+    header: ({ column }) => {
+      return (
+        <FilterButton
+          minSize="min-w-[100px]"
+          column={column}
+          label={"Logger"}
+        />
+      );
+    },
   },
-},
-  { accessorKey: "Message", header: ({ column }) => {
-    return (
-      <FilterBouton
-        minSize="min-w-[100px]"
-        column={column}
-        label={"Message"}
-      />
-    );
+  {
+    accessorKey: "Message",
+    header: ({ column }) => {
+      return (
+        <FilterButton
+          minSize="min-w-[100px]"
+          column={column}
+          label={"Message"}
+        />
+      );
+    },
   },
-},
 ];

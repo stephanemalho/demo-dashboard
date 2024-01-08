@@ -13,7 +13,7 @@ import {
 // import { copyRowToExcel } from "@/utils/formatTable";
 import DeleteButton from "../../../../components/shared/deleteBtn/DeleteButton";
 import { Badge } from "@/components/ui/badge";
-import FilterBouton from "../../../../components/shared/tableThreads/FilterBouton";
+import FilterButton from "../../../../components/shared/tableThreads/FilterButton";
 import Image from "next/image";
 
 // shape of data.
@@ -33,7 +33,7 @@ export const columns: ColumnDef<Threads>[] = [
     accessorKey: "function",
     header: ({ column }) => {
       return (
-        <FilterBouton
+        <FilterButton
           minSize="min-w-[300px]"
           column={column}
           label={"Function"}
@@ -45,7 +45,7 @@ export const columns: ColumnDef<Threads>[] = [
     accessorKey: "state",
     header: ({ column }) => {
       return (
-        <FilterBouton minSize="min-w-[100px]" column={column} label={"State"} />
+        <FilterButton minSize="min-w-[100px]" column={column} label={"State"} />
       );
     },
     cell: ({ row }) => {
@@ -72,7 +72,7 @@ export const columns: ColumnDef<Threads>[] = [
     accessorKey: "user",
     header: ({ column }) => {
       return (
-        <FilterBouton minSize="min-w-[100px]" column={column} label={"User"} />
+        <FilterButton minSize="min-w-[100px]" column={column} label={"User"} />
       );
     },
   },
@@ -80,7 +80,7 @@ export const columns: ColumnDef<Threads>[] = [
     accessorKey: "type",
     header: ({ column }) => {
       return (
-        <FilterBouton minSize="min-w-[100px]" column={column} label={"Type"} />
+        <FilterButton minSize="min-w-[100px]" column={column} label={"Type"} />
       );
     },
   },
@@ -88,7 +88,7 @@ export const columns: ColumnDef<Threads>[] = [
     accessorKey: "context",
     header: ({ column }) => {
       return (
-        <FilterBouton
+        <FilterButton
           minSize="min-w-[100px]"
           column={column}
           label={"Context"}
@@ -100,7 +100,7 @@ export const columns: ColumnDef<Threads>[] = [
     accessorKey: "waitTime",
     header: ({ column }) => {
       return (
-        <FilterBouton
+        <FilterButton
           minSize="min-w-[100px]"
           column={column}
           label={"Wait Time"}
@@ -113,7 +113,7 @@ export const columns: ColumnDef<Threads>[] = [
 
     header: ({ column }) => {
       return (
-        <FilterBouton
+        <FilterButton
           minSize="min-w-[100px]"
           column={column}
           label={"Elapsed Time"}
