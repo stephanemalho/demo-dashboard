@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 import { FaEye } from "react-icons/fa";
 import { getClassForCell, getClassForHeader } from "./helpers";
+import FilterButton from "@/components/shared/tableThreads/FilterButton";
 
 export interface LiveDeliveryListEntry {
   "PACKAGE_NAME": string;
@@ -14,14 +15,30 @@ export interface LiveDeliveryListEntry {
 export const columns: ColumnDef<LiveDeliveryListEntry>[] = [
   {
     accessorKey: "PACKAGE_NAME",
-    header: () => <div className={getClassForHeader("PACKAGE NAME") + " px-2 font-bold"}>PACKAGE NAME</div>,
+    header: ({ column }) => {
+      return (
+        <FilterButton
+          minSize="min-w-[100px]"
+          column={column}
+          label={"PACKAGE NAME"}
+        />
+      );
+    },
     cell: (info) => (
-      <span className={getClassForCell("PACKAGE_NAME")}>{info.getValue() as string}</span>
+      <span >{info.getValue() as string}</span>
     ),
   },
   {
     accessorKey: "CREATION_DATE",
-    header: () => <div className={getClassForHeader("CREATION_DATE") + " px-2 font-bold"}>CREATION DATE</div>,
+    header: ({ column }) => {
+      return (
+        <FilterButton
+          minSize="min-w-[100px]"
+          column={column}
+          label={"CREATION DATE"}
+        />
+      );
+    },
     cell: (info) => (
       <span className={getClassForCell("CREATION DATE")}>{info.getValue() as string}</span>
     ),

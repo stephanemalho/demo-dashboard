@@ -1,3 +1,4 @@
+import FilterButton from "@/components/shared/tableThreads/FilterButton";
 import { ColumnDef } from "@tanstack/react-table";
 
 export interface QueryChoresEntry {
@@ -12,13 +13,76 @@ export interface QueryChoresEntry {
 
 export const columns: ColumnDef<QueryChoresEntry>[] = [
   // Définissez ici les colonnes en fonction de la structure de jsonData
-  { accessorKey: "level", header: "Level" },
-  { accessorKey: "processName", header: "Process Name" },
-  { accessorKey: "lastExecutionDate", header: "Last Execution Date" },
-  { accessorKey: "duration", header: "Duration" },
-  { accessorKey: "executor", header: "Executor" },
-  { accessorKey: "fullLog", header: "Full Log" },
-  { accessorKey: "version", header: "Version" },
+  { accessorKey: "level", header: ({ column }) => {
+      return (
+        <FilterButton
+          minSize="min-w-[50px]"
+          column={column}
+          label={"Level"}
+        />
+      );
+    },
+  },
+  { accessorKey: "processName", header: ({ column }) => {
+      return (
+        <FilterButton
+          minSize="min-w-[100px]"
+          column={column}
+          label={"Process Name"}
+        />
+      );
+    },
+  },
+  { accessorKey: "lastExecutionDate", header: ({ column }) => {
+      return (
+        <FilterButton
+          minSize="min-w-[100px]"
+          column={column}
+          label={"Last Execution Date"}
+        />
+      );
+    },
+  },
+  { accessorKey: "duration", header: ({ column }) => {
+      return (
+        <FilterButton
+          minSize="min-w-[50px]"
+          column={column}
+          label={"Duration"}
+        />
+      );
+    },
+  },
+  { accessorKey: "executor", header: ({ column }) => {
+      return (
+        <FilterButton
+          minSize="min-w-[100px]"
+          column={column}
+          label={"Executor"}
+        />
+      );
+    },
+  },
+  { accessorKey: "fullLog", header: ({ column }) => {
+      return (
+        <FilterButton
+          minSize="min-w-[100px]"
+          column={column}
+          label={"Full Log"}
+        />
+      );
+    },
+  },
+  { accessorKey: "version", header: ({ column }) => {
+      return (
+        <FilterButton
+          minSize="min-w-[100px]"
+          column={column}
+          label={"Version"}
+        />
+      );
+    },
+  },
 ];
 
 export interface QuerySelectedChore {
@@ -32,11 +96,74 @@ export interface QuerySelectedChore {
 }
 
 export const selectedColumns: ColumnDef<QuerySelectedChore>[] = [
-    { accessorKey: 'level', header: 'Level' },
-    { accessorKey: 'processName', header: 'Process Name' },
-    { accessorKey: 'lastExecutionDate', header: 'Last Execution Date' },
-    { accessorKey: 'duration', header: 'Duration' },
-    { accessorKey: 'executor', header: 'Executor' },
-    { accessorKey: 'fullLog', header: 'Full Log' },
-    { accessorKey: 'version', header: 'Version' },
+    { accessorKey: 'level', header: ({ column }) => {
+      return (
+        <FilterButton
+          minSize="min-w-[100px]"
+          column={column}
+          label={"Level"}
+        />
+      );
+    },
+  },
+    { accessorKey: 'processName', header: ({ column }) => {
+      return (
+        <FilterButton
+          minSize="min-w-[100px]"
+          column={column}
+          label={"Process Name"}
+        />
+      );
+    },
+  },
+    { accessorKey: 'lastExecutionDate', header: ({ column }) => {
+      return (
+        <FilterButton
+          minSize="min-w-[100px]"
+          column={column}
+          label={"Last Execution Date"}
+        />
+      );
+    },
+  },
+    { accessorKey: 'duration',header: ({ column }) => {
+      return (
+        <FilterButton
+          minSize="min-w-[100px]"
+          column={column}
+          label={"Duration"}
+        />
+      );
+    },
+  },
+    { accessorKey: 'executor', header: ({ column }) => {
+      return (
+        <FilterButton
+          minSize="min-w-[100px]"
+          column={column}
+          label={"Executor"}
+        />
+      );
+    },
+  },
+    { accessorKey: 'fullLog', header: ({ column }) => {
+      return (
+        <FilterButton
+          minSize="min-w-[100px]"
+          column={column}
+          label={"Full Log"}
+        />
+      );
+    },
+  },
+    { accessorKey: 'version', header: ({ column }) => {
+      return (
+        <FilterButton
+          minSize="min-w-[100px]"
+          column={column}
+          label={"Version"}
+        />
+      );
+    },
+  },
   ];
