@@ -110,7 +110,7 @@ const FilterButton = ({ column, label, minSize }: Props) => {
             />
             <div
               onClick={resetFilter}
-              className="absolute right-[6px] top-[60px] flex h-[30px] w-[30px] items-center justify-center rounded-none p-0 text-center font-bold text-[12px] text-[#000] hover:bg-[#f4f4f4] active:bg-[#e0e0e0] max-2xl:right-[6px] max-2xl:top-[42px] max-2xl:h-[20px] max-2xl:w-[20px]"
+              className="absolute right-[4px] top-[52px] flex h-[30px] w-[30px] items-center justify-center rounded-none p-0 text-center font-bold text-[12px] text-[#000] hover:bg-[#f4f4f4] active:bg-[#e0e0e0]  max-2xl:top-[42px] max-2xl:h-[20px] max-2xl:w-[20px]"
             >
               <AiOutlineClose size={14} />
             </div>
