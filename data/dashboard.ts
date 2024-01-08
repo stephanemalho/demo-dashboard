@@ -8,11 +8,6 @@ export interface LogEntry {
   Message: string;
 }
 
-interface MenuItemsInterface {
-  title: string;
-  children?: MenuItemsInterface[];
-}
-
 export type LogsRecord = { [key: string]: LogEntry };
 
 export interface DashboardInterface {
