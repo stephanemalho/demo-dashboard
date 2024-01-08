@@ -1,4 +1,4 @@
-import FilterButton from "@/components/shared/tables/FilterButton";
+import FilterButton from "@/components/shared/button/FilterButton";
 import { ColumnDef } from "@tanstack/react-table";
 
 export interface QueryProcessEntry {

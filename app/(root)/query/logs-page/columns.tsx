@@ -1,6 +1,6 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { Badge } from "@/components/ui/badge";
-import FilterButton from "@/components/shared/tables/FilterButton";
+import FilterButton from "@/components/shared/button/FilterButton";
 
 export interface QueryLogEntry {
   T_ID: number;

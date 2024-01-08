@@ -11,9 +11,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 // import { copyRowToExcel } from "@/utils/formatTable";
-import DeleteButton from "../../../../components/shared/deleteBtn/DeleteButton";
+import DeleteButton from "../../../../components/shared/button/DeleteButton";
 import { Badge } from "@/components/ui/badge";
-import FilterButton from "../../../../components/shared/tables/FilterButton";
+import FilterButton from "../../../../components/shared/button/FilterButton";
 import Image from "next/image";
 
 // shape of data.

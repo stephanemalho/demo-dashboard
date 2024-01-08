@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 import { FaEye } from "react-icons/fa";
 import { getClassForCell, getClassForHeader } from "./helpers";
-import FilterButton from "@/components/shared/tables/FilterButton";
+import FilterButton from "@/components/shared/button/FilterButton";
 
 export interface LiveDeliveryListEntry {
   PACKAGE_NAME: string;

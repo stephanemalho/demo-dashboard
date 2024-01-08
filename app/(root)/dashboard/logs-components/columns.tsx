@@ -1,4 +1,4 @@
-import FilterButton from "@/components/shared/tables/FilterButton";
+import FilterButton from "@/components/shared/button/FilterButton";
 import { formatLogDate } from "@/lib/utils/date";
 import { ColumnDef } from "@tanstack/react-table";
 

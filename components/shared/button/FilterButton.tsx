@@ -28,15 +28,16 @@ const FilterButton = ({ column, label, minSize }: Props) => {
     return getContentHeight(filterPreview);
   };
 
+  const loadData = async (column: string | undefined) => {
+    const data = await getDashboardData();
+    const columnValues = data.map(
+      (item) => item[column as keyof Threads]
+    ) as string[];
+    setAllValues([...new Set(columnValues)]);
+  };
+  
   useEffect(() => {
-    const loadData = async () => {
-      const data = await getDashboardData();
-      const columnValues = data.map(
-        (item) => item[column.id as keyof Threads]
-      ) as string[];
-      setAllValues([...new Set(columnValues)]);
-    };
-    loadData();
+    loadData(column.id);
   }, [column.id]);
   
 
@@ -65,7 +66,7 @@ const FilterButton = ({ column, label, minSize }: Props) => {
           variant="outline"
           className={`${minSize} flex h-[20px] w-full cursor-pointer justify-start truncate rounded-none border-[1px] border-[#f2f2f2] ${
             inputValue ? "bg-[#d1d1d1]" : "bg-[#e2e2e2]" // Classe conditionnelle basée sur inputValue
-          } pl-[7px] font-black text-[12px] hover:bg-[#f2f2f2] active:text-light-500 max-2xl:text-[9px]`}
+          } pl-[7px] font-black text-[12px] hover:bg-[#f2f2f2] active:text-light-500 max-2xl:text-[11px]`}
         >
           {label} {column.getIsFiltered() && <span className="ml-auto flex"><FaFilter /></span>} 
           {/* Afficher ici icons en fonction de l'icon qui est affiché dans le filtre si le filtre est up ou down */}
@@ -93,23 +94,23 @@ const FilterButton = ({ column, label, minSize }: Props) => {
               setClickCount((prevClickCount) => (prevClickCount + 1) % 3);
               column.toggleSorting();
             }}
-            className="m-2 flex h-[40px] justify-start rounded-none border-[1px] border-[#fff] pl-2 text-left font-regular text-[10px] text-[#000] hover:bg-[#c6c6c6] active:bg-[#a8a8a8] max-2xl:h-[20px]"
+            className="m-1 flex h-[40px] justify-start rounded-none border-[1px] border-[#fff] pl-2 font-regular text-[10px] text-[#000] hover:bg-[#c6c6c6] active:bg-[#a8a8a8] max-2xl:h-[30px]"
           >
             Filter all{" "}
             {React.createElement(icons[clickCount], {
               className: "ml-2 h-3 w-3 max-2xl:h-[10px] max-2xl:w-[10px]",
             })}
           </Button>
-          <div className="mx-[3px]">
+          <div className="">
             <Input
               value={inputValue}
-              placeholder={`Filter ${label}`}
+              placeholder={label}
               onChange={(event) => updateFilterPreview(event.target.value)}
               className="m-1 h-[30px] w-[94%] max-w-sm truncate rounded-none border-none font-light text-sm placeholder:font-light placeholder:text-[10px] max-2xl:h-[20px] max-2xl:text-[10px] max-2xl:placeholder:text-[8px]"
             />
             <div
               onClick={resetFilter}
-              className="absolute right-[6px] top-[60px] flex h-[30px] w-[30px] items-center justify-center rounded-none p-0 text-center font-bold text-[12px] text-[#000] hover:bg-[#f4f4f4] active:bg-[#e0e0e0] max-2xl:right-[12px] max-2xl:top-[45px] max-2xl:h-[10px] max-2xl:w-[10px]"
+              className="absolute right-[6px] top-[60px] flex h-[30px] w-[30px] items-center justify-center rounded-none p-0 text-center font-bold text-[12px] text-[#000] hover:bg-[#f4f4f4] active:bg-[#e0e0e0] max-2xl:right-[6px] max-2xl:top-[42px] max-2xl:h-[20px] max-2xl:w-[20px]"
             >
               <AiOutlineClose size={14} />
             </div>
