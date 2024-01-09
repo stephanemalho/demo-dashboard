@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import {
-  ColumnDef,
   ColumnFiltersState,
   SortingState,
   VisibilityState,
@@ -32,12 +31,7 @@ import { exportTableToExcel } from "@/lib/utils/formatTable";
 import { toLowerCaseText } from "@/lib/utils/formatText";
 import Image from "next/image";
 import WrapIcon from "@/components/WrapIcon";
-
-export interface DataTableProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[];
-  data: TData[];
-  onRowClick?: (rowData: TData) => void;
-}
+import { DataTableProps } from "@/types";
 
 export function DataTable<TData, TValue>({
   columns,

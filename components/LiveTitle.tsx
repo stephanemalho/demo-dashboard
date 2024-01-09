@@ -1,9 +1,6 @@
+import { LiveTitleProps } from "@/types";
 import React from "react";
 
-interface LiveTitleProps {
-  title : string;
-  className : string;
-}
 
 const LiveTitle = ({ title, className }: LiveTitleProps) => {
   return (

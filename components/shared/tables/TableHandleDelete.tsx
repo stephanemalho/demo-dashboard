@@ -2,13 +2,9 @@
 import { TableCell } from "@/components/ui/table";
 import React from "react";
 import DeleteButton from "../button/DeleteButton";
+import { TableHandleDeleteProps } from "@/types";
 
-interface Props {
-  onDelete: () => void;
-  id: number;
-}
-
-const TableHandleDelete = ({ onDelete, id }: Props) => {
+const TableHandleDelete = ({ onDelete, id }: TableHandleDeleteProps) => {
   const handleDelete = () => {
     const confirm = window.confirm(
       "Are you sure you want to delete this thread?"

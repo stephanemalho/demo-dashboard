@@ -1,23 +1,15 @@
 "use client"
 import { Input } from '@/components/ui/input'
+import { CustomInputProps } from '@/types'
 import Image from 'next/image'
 import React from 'react'
-
-interface CustomInputProps {
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  route?: string;
-  iconPosition: string;
-  placeholder: string;
-  otherClasses?: string;
-  searchValue: string; // Nouveau
-}
 
 const LocalSearchbar = ({
     onChange,
     iconPosition,
     placeholder,
     otherClasses,
-    searchValue, // Nouveau // Nouveau
+    searchValue,
 } : CustomInputProps ) => {
   return (
     <div className={`relative z-20 flex h-[26px] items-center gap-2 px-4 ${otherClasses}`}>

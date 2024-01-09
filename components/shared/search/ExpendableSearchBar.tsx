@@ -1,17 +1,11 @@
 /* eslint-disable no-undef */
 "use client";
+import { ExpendableSearchBarProps } from "@/types";
 import React, { useEffect, useRef, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { CSSTransition } from "react-transition-group";
 
-interface ExpendableSearchBarProps {
-  placeholderValue: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  searchValue: string;
-  route?: string;
-  label?: string;
-  size?: string;
-}
+
 
 const ExpendableSearchBar = ({
   placeholderValue,

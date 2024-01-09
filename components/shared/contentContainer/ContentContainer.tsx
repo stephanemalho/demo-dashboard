@@ -1,8 +1,6 @@
 "use client";
+import { ContentContainerProps } from "@/types";
 import React from "react";
-interface ContentContainerProps {
-  children: React.ReactNode;
-}
 
 const ContentContainer = ({ children }: ContentContainerProps) => {
   

@@ -1,10 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import WrapIcon from './WrapIcon'
-
-interface IconInfoProps {
-  title?: string
-}
+import { IconInfoProps } from '@/types'
 
 const IconInfo = ({title}: IconInfoProps) => {
   return (
