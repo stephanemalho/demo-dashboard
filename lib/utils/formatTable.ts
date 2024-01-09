@@ -48,3 +48,20 @@ export function exportTableToExcel(
   a.download = "tableData.xlsx";
   a.click();
 }
+
+
+export async function loadColumnData<T>(
+  getDataFunction: () => Promise<T[]>,
+  columnId?: keyof T
+): Promise<string[]> {
+  if (columnId === undefined) {
+    throw new Error("columnId is undefined");
+  }
+
+  const data = await getDataFunction();
+  return data.map(item => {
+    const value = item[columnId];
+    return value != null ? String(value) : "";
+  });
+}
+

@@ -1,5 +1,8 @@
+
+import { getLogsData } from "@/api/dashboard/getDashboardData";
 import FilterButton from "@/components/shared/button/FilterButton";
 import { formatLogDate } from "@/lib/utils/date";
+import { loadColumnData } from "@/lib/utils/formatTable";
 import { ColumnDef } from "@tanstack/react-table";
 
 export interface DashboardLogEntry {
@@ -13,7 +16,6 @@ export interface DashboardLogEntry {
 }
 
 export const columns: ColumnDef<DashboardLogEntry>[] = [
-  // Définissez ici les colonnes en fonction de la structure de jsonData
   {
     accessorKey: "ThreadID",
     header: ({ column }) => {
@@ -22,6 +24,7 @@ export const columns: ColumnDef<DashboardLogEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"ThreadID"}
+          loadDataFunction={() => loadColumnData(getLogsData, column.id as keyof DashboardLogEntry)}
         />
       );
     },
@@ -34,6 +37,7 @@ export const columns: ColumnDef<DashboardLogEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"SessionID"}
+          loadDataFunction={() => loadColumnData(getLogsData, column.id as keyof DashboardLogEntry)}
         />
       );
     },
@@ -42,7 +46,10 @@ export const columns: ColumnDef<DashboardLogEntry>[] = [
     accessorKey: "Level",
     header: ({ column }) => {
       return (
-        <FilterButton minSize="min-w-[100px]" column={column} label={"Level"} />
+        <FilterButton minSize="min-w-[100px]" column={column} label={"Level"} loadDataFunction={async (columnId) => {
+          const data = await getLogsData();
+          return data.map(item => item[columnId as keyof typeof data[0]]);
+        }} />
       );
     },
   },
@@ -54,6 +61,11 @@ export const columns: ColumnDef<DashboardLogEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"TimeStamp"}
+          loadDataFunction={async (columnId) => {
+
+            const data = await getLogsData();
+            return data.map(item => item[columnId as keyof typeof data[0]]);
+          }}
         />
       );
     },
@@ -70,6 +82,7 @@ export const columns: ColumnDef<DashboardLogEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Logger"}
+          loadDataFunction={() => loadColumnData(getLogsData, column.id as keyof DashboardLogEntry)}
         />
       );
     },
@@ -82,6 +95,7 @@ export const columns: ColumnDef<DashboardLogEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Message"}
+          loadDataFunction={() => loadColumnData(getLogsData, column.id as keyof DashboardLogEntry)}
         />
       );
     },

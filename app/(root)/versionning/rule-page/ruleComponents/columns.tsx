@@ -1,4 +1,6 @@
+import { getVersioningRuleData } from "@/api/versioning/getVersioning";
 import FilterButton from "@/components/shared/button/FilterButton";
+import { loadColumnData } from "@/lib/utils/formatTable";
 import { ColumnDef } from "@tanstack/react-table";
 
 export interface VersioningRuleEntry {
@@ -17,7 +19,7 @@ export const columns: ColumnDef<VersioningRuleEntry>[] = [
     accessorKey: "level",
     header: ({ column }) => {
       return (
-        <FilterButton minSize="min-w-[50px]" column={column} label={"Level"} />
+        <FilterButton minSize="min-w-[50px]" column={column} label={"Level"} loadDataFunction={() => loadColumnData(getVersioningRuleData, column.id as keyof VersioningRuleEntry)}/>
       );
     },
   },
@@ -29,6 +31,7 @@ export const columns: ColumnDef<VersioningRuleEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Process Name"}
+          loadDataFunction={() => loadColumnData(getVersioningRuleData, column.id as keyof VersioningRuleEntry)}
         />
       );
     },
@@ -41,6 +44,7 @@ export const columns: ColumnDef<VersioningRuleEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Last Execution Date"}
+          loadDataFunction={() => loadColumnData(getVersioningRuleData, column.id as keyof VersioningRuleEntry)}
         />
       );
     },
@@ -53,6 +57,7 @@ export const columns: ColumnDef<VersioningRuleEntry>[] = [
           minSize="min-w-[50px]"
           column={column}
           label={"Duration"}
+          loadDataFunction={() => loadColumnData(getVersioningRuleData, column.id as keyof VersioningRuleEntry)}
         />
       );
     },
@@ -65,6 +70,7 @@ export const columns: ColumnDef<VersioningRuleEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Executor"}
+          loadDataFunction={() => loadColumnData(getVersioningRuleData, column.id as keyof VersioningRuleEntry)}
         />
       );
     },
@@ -77,6 +83,7 @@ export const columns: ColumnDef<VersioningRuleEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Full Log"}
+          loadDataFunction={() => loadColumnData(getVersioningRuleData, column.id as keyof VersioningRuleEntry)}
         />
       );
     },
@@ -89,6 +96,7 @@ export const columns: ColumnDef<VersioningRuleEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Version"}
+          loadDataFunction={() => loadColumnData(getVersioningRuleData, column.id as keyof VersioningRuleEntry)}
         />
       );
     },

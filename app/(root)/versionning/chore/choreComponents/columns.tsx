@@ -1,4 +1,6 @@
+import { getVersioningChoreData } from "@/api/versioning/getVersioning";
 import FilterButton from "@/components/shared/button/FilterButton";
+import { loadColumnData } from "@/lib/utils/formatTable";
 import { ColumnDef } from "@tanstack/react-table";
 
 export interface VersioningChoreEntry {
@@ -17,7 +19,7 @@ export const columns: ColumnDef<VersioningChoreEntry>[] = [
     accessorKey: "level",
     header: ({ column }) => {
       return (
-        <FilterButton minSize="min-w-[50px]" column={column} label={"Level"} />
+        <FilterButton minSize="min-w-[50px]" column={column} label={"Level"} loadDataFunction={() => loadColumnData(getVersioningChoreData, column.id as keyof VersioningChoreEntry)}/>
       );
     },
   },
@@ -29,6 +31,7 @@ export const columns: ColumnDef<VersioningChoreEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Process Name"}
+          loadDataFunction={() => loadColumnData(getVersioningChoreData, column.id as keyof VersioningChoreEntry)}
         />
       );
     },
@@ -41,6 +44,7 @@ export const columns: ColumnDef<VersioningChoreEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Last Execution Date"}
+          loadDataFunction={() => loadColumnData(getVersioningChoreData, column.id as keyof VersioningChoreEntry)}
         />
       );
     },
@@ -53,6 +57,7 @@ export const columns: ColumnDef<VersioningChoreEntry>[] = [
           minSize="min-w-[50px]"
           column={column}
           label={"Duration"}
+          loadDataFunction={() => loadColumnData(getVersioningChoreData, column.id as keyof VersioningChoreEntry)}
         />
       );
     },
@@ -65,6 +70,7 @@ export const columns: ColumnDef<VersioningChoreEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Executor"}
+          loadDataFunction={() => loadColumnData(getVersioningChoreData, column.id as keyof VersioningChoreEntry)}
         />
       );
     },
@@ -77,6 +83,7 @@ export const columns: ColumnDef<VersioningChoreEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Full Log"}
+          loadDataFunction={() => loadColumnData(getVersioningChoreData, column.id as keyof VersioningChoreEntry)}
         />
       );
     },
@@ -89,6 +96,7 @@ export const columns: ColumnDef<VersioningChoreEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Version"}
+          loadDataFunction={() => loadColumnData(getVersioningChoreData, column.id as keyof VersioningChoreEntry)}
         />
       );
     },
