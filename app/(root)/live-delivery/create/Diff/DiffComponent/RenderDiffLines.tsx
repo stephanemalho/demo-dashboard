@@ -6,16 +6,7 @@ import { diffWordsWithSpace } from "diff";
 import { lineHasChanges, newLinesCount } from "@/lib/utils/arrays";
 import LinesToCompare from "./LineToCompare";
 import { scrollToCorrespondingLine, toggleVisibilityLines } from "./toggle";
-
-export interface TextContent {
-  content: string[];
-}
-
-interface RenderDiffLinesProps {
-  oldText: TextContent;
-  newText: TextContent;
-  isSmallScreen: boolean;
-}
+import { RenderDiffLinesProps } from "@/types";
 
 const RenderDiffLines = ({
   oldText,

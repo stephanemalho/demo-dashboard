@@ -1,14 +1,9 @@
+import { DiffButtonProps } from "@/types";
 import React from "react";
 import {
   MdOutlineUnfoldLessDouble,
   MdOutlineUnfoldMoreDouble,
 } from "react-icons/md";
-
-interface DiffButtonProps {
-  children?: React.ReactNode;
-  showAllLines: boolean;
-  toggleShowAllLines: () => void;
-}
 
 const DiffButton = ({
   children,

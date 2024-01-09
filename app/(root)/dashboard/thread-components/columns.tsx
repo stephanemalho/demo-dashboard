@@ -60,9 +60,7 @@ export const columns: ColumnDef<Threads>[] = [
       );
     },
     cell: ({ row }) => {
-      const state = row.original.State;
-      console.log(state);
-      
+      const state = row.original.State;  
       return (
         <Badge
           variant={

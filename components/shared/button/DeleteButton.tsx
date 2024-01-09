@@ -1,12 +1,8 @@
 "use client";
+import { DeleteButtonProps } from "@/types";
 import React from "react";
 
-interface Props {
-  id: string | number;
-  onDelete: (id: string | number) => void;
-}
-
-const DeleteButton = ({ id, onDelete }: Props) => {
+const DeleteButton = ({ id, onDelete }: DeleteButtonProps) => {
   const handleClick = () => {
     onDelete(id);
   };

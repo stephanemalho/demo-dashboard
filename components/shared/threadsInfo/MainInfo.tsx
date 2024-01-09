@@ -1,9 +1,5 @@
+import { MainInfoProps } from "@/types";
 import React from "react";
-
-interface MainInfoProps {
-  infoTitle: string;
-  data: string | number;
-}
 
 const MainInfo = ({ infoTitle, data }: MainInfoProps) => {
   return (
