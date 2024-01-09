@@ -18,7 +18,6 @@ const QueryLogs = () => {
     fetchData().catch(console.error);
   }, []);
 
-  // Si les données ne sont pas encore chargées, affichez un indicateur de chargement
   if (data.length === 0) {
     return <LoadingTable />;
   }

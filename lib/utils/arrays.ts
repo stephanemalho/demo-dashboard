@@ -2,8 +2,21 @@ import { DiffFile } from "@/types";
 import { Change, diffWordsWithSpace } from "diff";
 
 export const getElementLength = (element: any) => {
-    return Object.keys(element).length;
-  };
+  // Vérifier si l'élément est un tableau
+  if (Array.isArray(element)) {
+    // Vérifier si le tableau contient au moins un élément et si cet élément est un objet
+    if (element.length > 0 && typeof element[0] === 'object') {
+      // Retourner le nombre de clés dans le premier objet du tableau
+      return Object.keys(element[0]).length;
+    } else {
+      // Retourner 0 si le tableau est vide ou ne contient pas d'objets
+      return 0;
+    }
+  } else {
+    // Si l'élément n'est pas un tableau, retourner 0
+    return 0;
+  }
+};
 
 // function that get all user in the data and reduce the sibling with the same name
 export const getUnique = (arr: any, comp: any) => {

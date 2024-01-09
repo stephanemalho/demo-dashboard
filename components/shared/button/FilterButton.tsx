@@ -6,8 +6,7 @@ import { FaFilter } from 'react-icons/fa';
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { getDashboardData } from "@/api/dashboard/getDashboardData";
-import { Threads } from "@/app/(root)/dashboard/thread-components/columns";
+
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { getContentHeight } from "@/lib/utils";
 
@@ -15,9 +14,10 @@ interface Props {
   column: any;
   label: string;
   minSize?: string;
+  loadDataFunction: (columnId: string | undefined) => Promise<string[]>;
 }
 
-const FilterButton = ({ column, label, minSize }: Props) => {
+const FilterButton = ({ column, label, minSize, loadDataFunction  }: Props) => {
   const [clickCount, setClickCount] = useState(0);
   const icons = [ArrowUpDown, ArrowUp, ArrowDown];
   const [filterPreview, setFilterPreview] = useState<string[]>([]);
@@ -29,15 +29,13 @@ const FilterButton = ({ column, label, minSize }: Props) => {
   };
 
   const loadData = async (column: string | undefined) => {
-    const data = await getDashboardData();
-    const columnValues = data.map(
-      (item) => item[column as keyof Threads]
-    ) as string[];
+    const columnValues = await loadDataFunction(column);
     setAllValues([...new Set(columnValues)]);
   };
   
   useEffect(() => {
     loadData(column.id);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [column.id]);
   
 
@@ -79,7 +77,7 @@ const FilterButton = ({ column, label, minSize }: Props) => {
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="end"
-        className="flex h-auto w-[150px] flex-col rounded-none border-[1px] border-[rgb(61,199,98)] bg-[rgb(161,233,180)]"
+        className="flex h-auto max-h-[40vh] w-[150px] flex-col rounded-none border-[1px] border-[rgb(61,199,98)] bg-[rgb(161,233,180)]"
       >
         <div className="flex">
           <h4 className="mr-auto flex items-center text-center font-bold text-[10px]">

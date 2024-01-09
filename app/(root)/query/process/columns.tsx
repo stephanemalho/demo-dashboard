@@ -1,4 +1,6 @@
+import { getQueryProcessData } from "@/api/query/getQuery";
 import FilterButton from "@/components/shared/button/FilterButton";
+import { loadColumnData } from "@/lib/utils/formatTable";
 import { ColumnDef } from "@tanstack/react-table";
 
 export interface QueryProcessEntry {
@@ -16,7 +18,7 @@ export const columns: ColumnDef<QueryProcessEntry>[] = [
     accessorKey: "level",
     header: ({ column }) => {
       return (
-        <FilterButton minSize="min-w-[50px]" column={column} label={"Level"} />
+        <FilterButton minSize="min-w-[50px]" column={column} label={"Level"} loadDataFunction={() => loadColumnData(getQueryProcessData, column.id as keyof QueryProcessEntry)}/>
       );
     },
   },
@@ -28,6 +30,7 @@ export const columns: ColumnDef<QueryProcessEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Process Name"}
+          loadDataFunction={() => loadColumnData(getQueryProcessData, column.id as keyof QueryProcessEntry)}
         />
       );
     },
@@ -40,6 +43,7 @@ export const columns: ColumnDef<QueryProcessEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Last Execution Date"}
+          loadDataFunction={() => loadColumnData(getQueryProcessData, column.id as keyof QueryProcessEntry)}
         />
       );
     },
@@ -52,6 +56,7 @@ export const columns: ColumnDef<QueryProcessEntry>[] = [
           minSize="min-w-[50px]"
           column={column}
           label={"Duration"}
+          loadDataFunction={() => loadColumnData(getQueryProcessData, column.id as keyof QueryProcessEntry)}
         />
       );
     },
@@ -64,6 +69,7 @@ export const columns: ColumnDef<QueryProcessEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Executor"}
+          loadDataFunction={() => loadColumnData(getQueryProcessData, column.id as keyof QueryProcessEntry)}
         />
       );
     },
@@ -76,6 +82,7 @@ export const columns: ColumnDef<QueryProcessEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Full Log"}
+          loadDataFunction={() => loadColumnData(getQueryProcessData, column.id as keyof QueryProcessEntry)}
         />
       );
     },
@@ -88,6 +95,7 @@ export const columns: ColumnDef<QueryProcessEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Version"}
+          loadDataFunction={() => loadColumnData(getQueryProcessData, column.id as keyof QueryProcessEntry)}
         />
       );
     },

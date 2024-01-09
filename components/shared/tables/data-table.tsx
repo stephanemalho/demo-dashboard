@@ -159,7 +159,7 @@ export function DataTable<TData, TValue>({
                             cell.getContext()
                           )
                         : typeof cell.getValue() === "string" &&
-                          cell.column.id !== "state"
+                          cell.column.id !== "State"
                         ? toLowerCaseText(cell.getValue() as string)
                         : flexRender(
                             cell.column.columnDef.cell,

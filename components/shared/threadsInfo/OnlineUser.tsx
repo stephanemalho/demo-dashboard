@@ -1,10 +1,10 @@
-import { dashboard } from "@/data/dashboard";
 import React from "react";
+import status from "@/data/info/status.json";
 
 const OnlineUser = () => {
-  const threadsInfo = dashboard;
-  const isOnline = threadsInfo.State.Value === "Online";
-
+  const statusValue = status[0].Value;
+  const isOnline = statusValue === "Online";
+  
   const stateColorClass = isOnline ? "bg-lime-500" : "bg-red-500";
   const isConnected = isOnline ? "Connected" : "Not Connected";
 

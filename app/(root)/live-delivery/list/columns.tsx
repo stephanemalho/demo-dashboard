@@ -5,6 +5,8 @@ import React from "react";
 import { FaEye } from "react-icons/fa";
 import { getClassForCell, getClassForHeader } from "./helpers";
 import FilterButton from "@/components/shared/button/FilterButton";
+import { getDeliveryListData } from "@/api/liveDelivery/getLiveDelivery";
+import { loadColumnData } from "@/lib/utils/formatTable";
 
 export interface LiveDeliveryListEntry {
   PACKAGE_NAME: string;
@@ -21,6 +23,7 @@ export const columns: ColumnDef<LiveDeliveryListEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"PACKAGE NAME"}
+          loadDataFunction={() => loadColumnData(getDeliveryListData, column.id as keyof LiveDeliveryListEntry)}
         />
       );
     },
@@ -34,6 +37,7 @@ export const columns: ColumnDef<LiveDeliveryListEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"CREATION DATE"}
+          loadDataFunction={() => loadColumnData(getDeliveryListData, column.id as keyof LiveDeliveryListEntry)}
         />
       );
     },

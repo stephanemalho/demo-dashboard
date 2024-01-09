@@ -1,4 +1,6 @@
+import { getVersioningProcessData } from "@/api/versioning/getVersioning";
 import FilterButton from "@/components/shared/button/FilterButton";
+import { loadColumnData } from "@/lib/utils/formatTable";
 import { ColumnDef } from "@tanstack/react-table";
 
 export interface VersioningProcessEntry {
@@ -17,7 +19,7 @@ export const columns: ColumnDef<VersioningProcessEntry>[] = [
     accessorKey: "level",
     header: ({ column }) => {
       return (
-        <FilterButton minSize="min-w-[50px]" column={column} label={"Level"} />
+        <FilterButton minSize="min-w-[50px]" column={column} label={"Level"}  loadDataFunction={() => loadColumnData(getVersioningProcessData, column.id as keyof VersioningProcessEntry)}/>
       );
     },
   },
@@ -29,6 +31,7 @@ export const columns: ColumnDef<VersioningProcessEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Process Name"}
+          loadDataFunction={() => loadColumnData(getVersioningProcessData, column.id as keyof VersioningProcessEntry)}
         />
       );
     },
@@ -41,6 +44,7 @@ export const columns: ColumnDef<VersioningProcessEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Last Execution Date"}
+          loadDataFunction={() => loadColumnData(getVersioningProcessData, column.id as keyof VersioningProcessEntry)}
         />
       );
     },
@@ -53,6 +57,7 @@ export const columns: ColumnDef<VersioningProcessEntry>[] = [
           minSize="min-w-[50px]"
           column={column}
           label={"Duration"}
+          loadDataFunction={() => loadColumnData(getVersioningProcessData, column.id as keyof VersioningProcessEntry)}
         />
       );
     },
@@ -65,6 +70,7 @@ export const columns: ColumnDef<VersioningProcessEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Executor"}
+          loadDataFunction={() => loadColumnData(getVersioningProcessData, column.id as keyof VersioningProcessEntry)}
         />
       );
     },
@@ -77,6 +83,7 @@ export const columns: ColumnDef<VersioningProcessEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Full Log"}
+          loadDataFunction={() => loadColumnData(getVersioningProcessData, column.id as keyof VersioningProcessEntry)}
         />
       );
     },
@@ -89,6 +96,7 @@ export const columns: ColumnDef<VersioningProcessEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Version"}
+          loadDataFunction={() => loadColumnData(getVersioningProcessData, column.id as keyof VersioningProcessEntry)}
         />
       );
     },

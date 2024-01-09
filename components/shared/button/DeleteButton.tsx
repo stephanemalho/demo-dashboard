@@ -2,8 +2,8 @@
 import React from "react";
 
 interface Props {
-  id: number;
-  onDelete: (id: number) => void;
+  id: string | number;
+  onDelete: (id: string | number) => void;
 }
 
 const DeleteButton = ({ id, onDelete }: Props) => {

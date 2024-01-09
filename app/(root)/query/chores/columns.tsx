@@ -1,4 +1,6 @@
+import { getQueryChoresData } from "@/api/query/getQuery";
 import FilterButton from "@/components/shared/button/FilterButton";
+import { loadColumnData } from "@/lib/utils/formatTable";
 import { ColumnDef } from "@tanstack/react-table";
 
 export interface QueryChoresEntry {
@@ -12,12 +14,16 @@ export interface QueryChoresEntry {
 }
 
 export const columns: ColumnDef<QueryChoresEntry>[] = [
-  // Définissez ici les colonnes en fonction de la structure de jsonData
   {
     accessorKey: "level",
     header: ({ column }) => {
       return (
-        <FilterButton minSize="min-w-[50px]" column={column} label={"Level"} />
+        <FilterButton
+          minSize="min-w-[50px]"
+          column={column}
+          label={"Level"}
+          loadDataFunction={() => loadColumnData(getQueryChoresData, column.id as keyof QueryChoresEntry)}
+        />
       );
     },
   },
@@ -29,6 +35,7 @@ export const columns: ColumnDef<QueryChoresEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Process Name"}
+          loadDataFunction={() => loadColumnData(getQueryChoresData, column.id as keyof QueryChoresEntry)}
         />
       );
     },
@@ -41,6 +48,7 @@ export const columns: ColumnDef<QueryChoresEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Last Execution Date"}
+          loadDataFunction={() => loadColumnData(getQueryChoresData, column.id as keyof QueryChoresEntry)}
         />
       );
     },
@@ -53,6 +61,7 @@ export const columns: ColumnDef<QueryChoresEntry>[] = [
           minSize="min-w-[50px]"
           column={column}
           label={"Duration"}
+          loadDataFunction={() => loadColumnData(getQueryChoresData, column.id as keyof QueryChoresEntry)}
         />
       );
     },
@@ -65,6 +74,7 @@ export const columns: ColumnDef<QueryChoresEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Executor"}
+          loadDataFunction={() => loadColumnData(getQueryChoresData, column.id as keyof QueryChoresEntry)}
         />
       );
     },
@@ -77,6 +87,7 @@ export const columns: ColumnDef<QueryChoresEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Full Log"}
+          loadDataFunction={() => loadColumnData(getQueryChoresData, column.id as keyof QueryChoresEntry)}
         />
       );
     },
@@ -89,6 +100,7 @@ export const columns: ColumnDef<QueryChoresEntry>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Version"}
+          loadDataFunction={() => loadColumnData(getQueryChoresData, column.id as keyof QueryChoresEntry)}
         />
       );
     },
@@ -110,7 +122,12 @@ export const selectedColumns: ColumnDef<QuerySelectedChore>[] = [
     accessorKey: "level",
     header: ({ column }) => {
       return (
-        <FilterButton minSize="min-w-[100px]" column={column} label={"Level"} />
+        <FilterButton
+          minSize="min-w-[100px]"
+          column={column}
+          label={"Level"}
+          loadDataFunction={() => loadColumnData(getQueryChoresData, column.id as keyof QuerySelectedChore)}
+        />
       );
     },
   },
@@ -122,6 +139,7 @@ export const selectedColumns: ColumnDef<QuerySelectedChore>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Process Name"}
+          loadDataFunction={() => loadColumnData(getQueryChoresData, column.id as keyof QuerySelectedChore)}
         />
       );
     },
@@ -134,6 +152,7 @@ export const selectedColumns: ColumnDef<QuerySelectedChore>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Last Execution Date"}
+          loadDataFunction={() => loadColumnData(getQueryChoresData, column.id as keyof QuerySelectedChore)}
         />
       );
     },
@@ -146,6 +165,7 @@ export const selectedColumns: ColumnDef<QuerySelectedChore>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Duration"}
+          loadDataFunction={() => loadColumnData(getQueryChoresData, column.id as keyof QuerySelectedChore)}
         />
       );
     },
@@ -158,6 +178,7 @@ export const selectedColumns: ColumnDef<QuerySelectedChore>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Executor"}
+          loadDataFunction={() => loadColumnData(getQueryChoresData, column.id as keyof QuerySelectedChore)}
         />
       );
     },
@@ -170,6 +191,7 @@ export const selectedColumns: ColumnDef<QuerySelectedChore>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Full Log"}
+          loadDataFunction={() => loadColumnData(getQueryChoresData, column.id as keyof QuerySelectedChore)}
         />
       );
     },
@@ -182,6 +204,7 @@ export const selectedColumns: ColumnDef<QuerySelectedChore>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Version"}
+          loadDataFunction={() => loadColumnData(getQueryChoresData, column.id as keyof QuerySelectedChore)}
         />
       );
     },

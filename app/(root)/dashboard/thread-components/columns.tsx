@@ -15,41 +15,54 @@ import DeleteButton from "../../../../components/shared/button/DeleteButton";
 import { Badge } from "@/components/ui/badge";
 import FilterButton from "../../../../components/shared/button/FilterButton";
 import Image from "next/image";
+import { getDashboardData } from "@/api/dashboard/getDashboardData";
+import { loadColumnData } from "@/lib/utils/formatTable";
 
 // shape of data.
-export type Threads = {
-  id: number;
-  user: string;
-  function: string;
-  type: string;
-  context: string;
-  waitTime: string;
-  elapsedTime: string;
-  state: string;
-};
+export interface Threads {
+  ID: number;
+  Type: string;
+  Name: string;
+  Context: string;
+  State: string;
+  Function: string;
+  ObjectType: string;
+  ObjectName: string;
+  RLocks: number;
+  IXLocks: number;
+  WLocks: number;
+  ElapsedTime: string;
+  WaitTime: string;
+  Info: string;
+}
 
 export const columns: ColumnDef<Threads>[] = [
   {
-    accessorKey: "function",
+    accessorKey: "Function",
     header: ({ column }) => {
       return (
         <FilterButton
           minSize="min-w-[300px]"
           column={column}
           label={"Function"}
+          loadDataFunction={() => loadColumnData(getDashboardData, column.id as keyof Threads)}
         />
       );
     },
   },
   {
-    accessorKey: "state",
+    accessorKey: "State",
     header: ({ column }) => {
       return (
-        <FilterButton minSize="min-w-[100px]" column={column} label={"State"} />
+        <FilterButton minSize="min-w-[100px]" column={column} label={"State"} 
+        loadDataFunction={() => loadColumnData(getDashboardData, column.id as keyof Threads)}
+        />
       );
     },
     cell: ({ row }) => {
-      const state = row.original.state;
+      const state = row.original.State;
+      console.log(state);
+      
       return (
         <Badge
           variant={
@@ -69,47 +82,53 @@ export const columns: ColumnDef<Threads>[] = [
     },
   },
   {
-    accessorKey: "user",
+    accessorKey: "Name",
     header: ({ column }) => {
       return (
-        <FilterButton minSize="min-w-[100px]" column={column} label={"User"} />
+        <FilterButton minSize="min-w-[100px]" column={column} label={"User"} 
+        loadDataFunction={() => loadColumnData(getDashboardData, column.id as keyof Threads)}
+        />
       );
     },
   },
   {
-    accessorKey: "type",
+    accessorKey: "Type",
     header: ({ column }) => {
       return (
-        <FilterButton minSize="min-w-[100px]" column={column} label={"Type"} />
+        <FilterButton minSize="min-w-[100px]" column={column} label={"Type"} 
+        loadDataFunction={() => loadColumnData(getDashboardData, column.id as keyof Threads)}
+        />
       );
     },
   },
   {
-    accessorKey: "context",
+    accessorKey: "Context",
     header: ({ column }) => {
       return (
         <FilterButton
           minSize="min-w-[100px]"
           column={column}
           label={"Context"}
+          loadDataFunction={() => loadColumnData(getDashboardData, column.id as keyof Threads)}
         />
       );
     },
   },
   {
-    accessorKey: "waitTime",
+    accessorKey: "WaitTime",
     header: ({ column }) => {
       return (
         <FilterButton
           minSize="min-w-[100px]"
           column={column}
           label={"Wait Time"}
+          loadDataFunction={() => loadColumnData(getDashboardData, column.id as keyof Threads)}
         />
       );
     },
   },
   {
-    accessorKey: "elapsedTime",
+    accessorKey: "ElapsedTime",
 
     header: ({ column }) => {
       return (
@@ -117,6 +136,7 @@ export const columns: ColumnDef<Threads>[] = [
           minSize="min-w-[100px]"
           column={column}
           label={"Elapsed Time"}
+          loadDataFunction={() => loadColumnData(getDashboardData, column.id as keyof Threads)}
         />
       );
     },
@@ -148,15 +168,15 @@ export const columns: ColumnDef<Threads>[] = [
             </DropdownMenuLabel>
             <DropdownMenuItem className="cursor-pointer bg-[#da1e28]  text-white hover:bg-[#ba1b23] active:bg-[#750e13]">
               <DeleteButton
-                id={row.original.id}
+                id={row.original.ID}
                 onDelete={
                   // @todo filter the id of the row to delete
-                  (id: number) => {
+                  (ID: number | string) => {
                     const confirm = window.confirm(
-                      "Are you sure you want to delete this thread?"
+                      `Are you sure you want to delete this thread? ${ID}}`
                     );
                     if (confirm) {
-                      console.log("thread deleted");
+                      console.log(confirm);
                       // onDelete();
                     }
                   }
