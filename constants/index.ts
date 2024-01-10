@@ -1,6 +1,5 @@
 import { SidebarLink } from "@/types";
 
-
 export const themes = [
   { value: "light", label: "Light", icon: "/assets/icons/light.svg" },
   { value: "dark", label: "Dark", icon: "/assets/icons/asleep.svg" },
@@ -20,33 +19,36 @@ export const sidebarLinks: SidebarLink[] = [
   },
   {
     imgURL: "/assets/icons/delivery.svg",
-    route: ["/live-delivery/create","/live-delivery/list"],
+    route: ["/live-delivery/create", "/live-delivery/list"],
     label: "Live Delivery",
   },
   {
     imgURL: "/assets/icons/branch.svg",
-    route: ["/versionning/chore","/versionning/process","/versionning/rule-page"],
-    label: "Versionning",
+    route: [
+      "/versioning/chore",
+      "/versioning/process",
+      "/versioning/rule-page",
+    ],
+    label: "Versioning",
   },
   {
     imgURL: "/assets/icons/ibm-watson--query.svg",
-    route: ["/query/chores","/query/process","/query/logs-page"],
+    route: ["/query/chores", "/query/process", "/query/logs-page"],
     label: "Query",
   },
   {
     imgURL: "/assets/icons/analytics.svg",
-    route: ["/statistics/ressources","/statistics/process"],
+    route: ["/statistics/ressources", "/statistics/process"],
     label: "Statistics",
   },
   {
     imgURL: "/assets/icons/warning--alt.svg",
-    route: ["/alerts/management","/alerts/visualization"],
+    route: ["/alerts/management", "/alerts/visualization"],
     label: "Alerts",
   },
   {
     imgURL: "/assets/icons/plan.svg",
-    route:["/mapping-page/globals-page"],
+    route: ["/mapping-page/globals-page"],
     label: "Mapping",
   },
 ];
-

@@ -9,9 +9,9 @@ import SelectMenu from "@/app/(root)/mapping-page/globals-page/menu/SelectMenu";
 import clsx from "clsx";
 import Image from "next/image";
 import RenderContainer from "@/app/(root)/live-delivery/create/RenderContainer/RenderContainer";
-import ChoresPanel from "@/app/(root)/versionning/chore/choreComponents/ChoresPanel";
-import ProcessPanel from "@/app/(root)/versionning/process/processComponents/ProcessPanel";
-import RulesPanel from "@/app/(root)/versionning/rule-page/ruleComponents/RulesPanel";
+import ChoresPanel from "@/app/(root)/versioning/chore/choreComponents/ChoresPanel";
+import ProcessPanel from "@/app/(root)/versioning/process/processComponents/ProcessPanel";
+import RulesPanel from "@/app/(root)/versioning/rule-page/ruleComponents/RulesPanel";
 
 interface ComponentMappingInterface {
   [key: string]: () => React.ReactElement;
@@ -42,9 +42,9 @@ const OptionsSideBar = () => {
     "/query/logs-page": LogSetting,
     "/mapping-page/globals-page": SelectMenu,
     "/live-delivery/create": RenderContainer,
-    "/versionning/chore": ChoresPanel,
-    "/versionning/process": ProcessPanel,
-    "/versionning/rule-page": RulesPanel,
+    "/versioning/chore": ChoresPanel,
+    "/versioning/process": ProcessPanel,
+    "/versioning/rule-page": RulesPanel,
   };
 
   const componentIconMappingUrl: ComponentIconMappingInterface = {
@@ -53,9 +53,9 @@ const OptionsSideBar = () => {
     "/query/logs-page": "/assets/icons/menu-left.svg",
     "/mapping-page/globals-page": "/assets/icons/menu-left.svg",
     "/live-delivery/create": "/assets/icons/menu-left.svg",
-    "/versionning/chore": "/assets/icons/menu-left.svg",
-    "/versionning/process": "/assets/icons/menu-left.svg",
-    "/versionning/rule-page": "/assets/icons/menu-left.svg",
+    "/versioning/chore": "/assets/icons/menu-left.svg",
+    "/versioning/process": "/assets/icons/menu-left.svg",
+    "/versioning/rule-page": "/assets/icons/menu-left.svg",
   };
 
   useEffect(() => {
