@@ -29,7 +29,7 @@ export const sidebarLinks: SidebarLink[] = [
       "/versioning/process",
       "/versioning/rule-page",
     ],
-    label: "versioning",
+    label: "Versioning",
   },
   {
     imgURL: "/assets/icons/ibm-watson--query.svg",
