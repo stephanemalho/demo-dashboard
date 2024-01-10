@@ -30,7 +30,7 @@ import {
 import { exportTableToExcel } from "@/lib/utils/formatTable";
 import { toLowerCaseText } from "@/lib/utils/formatText";
 import Image from "next/image";
-import WrapIcon from "@/components/WrapIcon";
+import WrapIcon from "@/components/shared/iconComponents/WrapIcon";
 import { DataTableProps } from "@/types";
 
 export function DataTable<TData, TValue>({

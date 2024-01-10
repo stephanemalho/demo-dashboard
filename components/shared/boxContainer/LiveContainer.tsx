@@ -1,6 +1,6 @@
 "use client";
-import IconInfo from "@/components/IconInfo";
-import IconMaximize from "@/components/IconMaximize";
+import IconInfo from "@/components/shared/iconComponents/IconInfo";
+import IconMaximize from "@/components/shared/iconComponents/IconMaximize";
 import { useFullscreen } from "@/context/ScreenSizeProvider";
 import React from "react";
 
@@ -9,10 +9,16 @@ interface BoxLogsProps {
   title: string;
   logHeight: string;
   label: string;
-  showIcons?: boolean; 
+  showIcons?: boolean;
 }
 
-const LiveContainer = ({ children, logHeight, title, label, showIcons = true }: BoxLogsProps) => {
+const LiveContainer = ({
+  children,
+  logHeight,
+  title,
+  label,
+  showIcons = true,
+}: BoxLogsProps) => {
   // state
 
   // context
@@ -25,7 +31,7 @@ const LiveContainer = ({ children, logHeight, title, label, showIcons = true }: 
   }`;
   // TSX
   return (
-    <div className={containerClasses} >
+    <div className={containerClasses}>
       <div className="flex h-[auto] w-[auto] items-center border-[2px] border-[rgb(61,199,98)] bg-[rgb(161,233,180)] font-bold text-[12px] max-2xl:text-[10px]">
         <IconInfo title={title} />
         {label}

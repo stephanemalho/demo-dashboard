@@ -9,15 +9,14 @@ const IconMaximize = ({ title }: { title: string }) => {
 
   const handleClick = () => {
     console.log("title onClick", title);
-    
-    toggleFullscreen(isFullscreen === title ? null : title); // Bascule entre l'ID 
+
+    toggleFullscreen(isFullscreen === title ? null : title); // Bascule entre l'ID
 
     console.log("isFullscreen", isFullscreen);
-    
   };
 
   return (
-    <WrapIcon bgColorHover='hover:bg-[#90d7da]'>
+    <WrapIcon bgColorHover="hover:bg-[#90d7da]">
       <Image
         src="/assets/icons/maximize.svg"
         alt="resize"
