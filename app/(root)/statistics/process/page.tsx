@@ -1,10 +1,20 @@
+// import ReloadButton from "./ressourceComponents/ReloadButton";
+import LiveContainer from "@/components/shared/boxContainer/LiveContainer";
+import TreemapComponent from "../process/processComponents/Treemap";
 import ContentContainer from "@/components/shared/contentContainer/ContentContainer";
-import GlobalStats from "./GlobalStats";
 
 function page() {
   return (
     <ContentContainer>
-      <GlobalStats />
+      <LiveContainer
+        label="Treemap Process"
+        title="Treemap Process"
+        logHeight="h-[90vh] max-2xl:h-[84vh]"
+      >
+        <div className="mx-auto w-full p-6">
+          <TreemapComponent />
+        </div>
+      </LiveContainer>
     </ContentContainer>
   );
 }
