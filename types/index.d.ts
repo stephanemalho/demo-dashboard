@@ -111,8 +111,8 @@ export interface MainInfoProps {
   data: string | number;
 }
 
-export interface LiveTitleProps {
-  title : string;
+export interface TitleProps {
+  title : string | React.ReactNode;
   className : string;
 }
 
