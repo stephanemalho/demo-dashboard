@@ -1,10 +1,15 @@
+import TreemapComponent from "../process/processComponents/Treemap";
 import ContentContainer from "@/components/shared/contentContainer/ContentContainer";
-import GlobalStats from "./GlobalStats";
+import ChartContainer from "@/components/shared/boxContainer/ChartContainer";
 
 function page() {
   return (
     <ContentContainer>
-      <GlobalStats />
+      <ChartContainer headTitle={'Statistics Process'} height={"h-[96vh]"}>
+        <div className="mx-auto w-full p-6">
+          <TreemapComponent />
+        </div>
+      </ChartContainer>
     </ContentContainer>
   );
 }

@@ -2,8 +2,8 @@
 import { usePathname, useSearchParams } from "next/navigation";
 import { useSidebar } from "@/context/SideBarProvider";
 import React, { useEffect, useState } from "react";
-import MetaData from "../../../../app/(root)/statistics/ressources/ressourceComponents/MetaData";
-import TimeSetting from "../../../../app/(root)/statistics/process/TimeSetup";
+import MetaData from "../../../../app/(root)/statistics/process/processComponents/MetaData";
+import TimeSetting from "../../../../app/(root)/statistics/ressources/TimeSetup";
 import LogSetting from "@/app/(root)/query/logs-page/LogSetting";
 import SelectMenu from "@/app/(root)/mapping-page/globals-page/menu/SelectMenu";
 import clsx from "clsx";

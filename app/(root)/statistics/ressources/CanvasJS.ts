@@ -5,6 +5,7 @@ const CanvasJS = CanvasJSReact.CanvasJS;
 CanvasJS.addColorSet("customColorSet", ["#0062ff", "#000"]);
 
 export const ramAndGarbageUseOptions: any = {
+  animationEnabled: true,
   colorSet: "customColorSet",
   title: {
     text: "RAM & Garbage Use",
@@ -16,6 +17,7 @@ export const ramAndGarbageUseOptions: any = {
     titleFontSize: 10, // Taille de la police du titre de l'axe Y
     gridColor: "#e2e2e2",
     gridThickness: 0.5,
+    minimum: 0,
   },
   axisX: {
     labelFontSize: 12,
@@ -113,6 +115,7 @@ export const ramAndGarbageUseOptions: any = {
 };
 
 export const activeThreadsAndUsersOptions: any = {
+  animationEnabled: true,
   colorSet: "customColorSet",
   title: {
     text: "Active Threads & Connected Users",
@@ -366,6 +369,7 @@ export const activeThreadsAndUsersOptions: any = {
 };
 
 export const startupTimeOptions: any = {
+  animationEnabled: true,
   colorSet: "customColorSet",
   title: {
     text: "Startup Time Historic",
