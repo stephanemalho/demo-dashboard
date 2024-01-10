@@ -17,6 +17,7 @@ export const ramAndGarbageUseOptions: any = {
     titleFontSize: 10, // Taille de la police du titre de l'axe Y
     gridColor: "#e2e2e2",
     gridThickness: 0.5,
+    minimum: 0,
   },
   axisX: {
     labelFontSize: 12,
