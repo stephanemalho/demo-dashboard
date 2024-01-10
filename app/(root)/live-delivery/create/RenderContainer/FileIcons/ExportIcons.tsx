@@ -1,12 +1,7 @@
 import WrapIcon from '@/components/WrapIcon';
+import { AccordionProps } from '@/types';
 import React, { useState } from 'react';
 import { FaPlus, FaPlusCircle, FaPlusSquare } from 'react-icons/fa'; // Exemple d'icônes
-
-interface AccordionProps {
-  loadData: () => void;
-  loadChildren: () => void;
-  loadDescendants: () => void;
-}
 
 // Le composant d'accordéon
 const Accordion = ({ loadData, loadChildren, loadDescendants } : AccordionProps) => {

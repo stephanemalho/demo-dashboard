@@ -1,9 +1,6 @@
-import { DataTableProps } from "@/components/shared/tables/data-table";
-import * as XLSX from "xlsx";
 
-interface RowData {
-  [key: string]: string | number | boolean;
-}
+import { DataTableProps, RowData } from "@/types";
+import * as XLSX from "xlsx";
 
 export function copyRowToExcel(rowData: RowData) {
   const ws = XLSX.utils.json_to_sheet([rowData]);

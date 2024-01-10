@@ -9,15 +9,11 @@ import { Input } from "@/components/ui/input";
 
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { getContentHeight } from "@/lib/utils";
+import { FilterButtonProps } from "@/types";
 
-interface Props {
-  column: any;
-  label: string;
-  minSize?: string;
-  loadDataFunction: (columnId: string | undefined) => Promise<string[]>;
-}
 
-const FilterButton = ({ column, label, minSize, loadDataFunction  }: Props) => {
+
+const FilterButton = ({ column, label, minSize, loadDataFunction  }: FilterButtonProps) => {
   const [clickCount, setClickCount] = useState(0);
   const icons = [ArrowUpDown, ArrowUp, ArrowDown];
   const [filterPreview, setFilterPreview] = useState<string[]>([]);

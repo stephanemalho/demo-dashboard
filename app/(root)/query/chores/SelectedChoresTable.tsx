@@ -1,10 +1,9 @@
 "use client";
-import { QuerySelectedChore, selectedColumns } from "./columns";
+import { SelectedChoresTableProps } from "@/types";
+import { selectedColumns } from "./columns";
 import { DataTable } from "@/components/shared/tables/data-table";
 
-interface SelectedChoresTableProps {
-  data: QuerySelectedChore[];
-}
+
 
 const SelectedChoresTable = ({ data }: SelectedChoresTableProps) => {
   if (!data || data.length === 0)

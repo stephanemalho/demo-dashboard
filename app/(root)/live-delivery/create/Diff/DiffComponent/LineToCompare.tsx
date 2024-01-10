@@ -1,7 +1,7 @@
 import { diffWordsWithSpace } from "diff";
 import DiffLine from "./DiffLine";
 import { JSX } from "react";
-import { TextContent } from "./RenderDiffLines";
+import { TextContent } from "@/types";
 
 
 function LinesToCompare(renderNonModifiedBlock: { (start: number, end: number, position: any): JSX.Element; (arg0: any, arg1: any, arg2: string): any; }, oldTextElements: JSX.Element[], newTextElements: JSX.Element[], visibleLines: Set<unknown>, oldText: TextContent, newText: TextContent, isSmallScreen: boolean) {

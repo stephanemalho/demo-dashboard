@@ -1,9 +1,9 @@
 // Définir la fonction `toggleLines` en dehors du composant
 
 import { lineHasChanges } from "@/lib/utils/arrays";
+import { TextContent } from "@/types";
 import { diffWordsWithSpace } from "diff";
 import React from "react";
-import { TextContent } from "./RenderDiffLines";
 
 // Remarquez que nous passons `updateVisibleLines` au lieu de `setVisibleLines`
 export function toggleLines(

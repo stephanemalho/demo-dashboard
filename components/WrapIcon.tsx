@@ -1,9 +1,5 @@
+import { WrapIconProps } from '@/types'
 import React from 'react'
-
-interface WrapIconProps {
-  children: React.ReactNode
-  bgColorHover: string
-}
 
 const WrapIcon = ({ children, bgColorHover } : WrapIconProps) => {
   return (

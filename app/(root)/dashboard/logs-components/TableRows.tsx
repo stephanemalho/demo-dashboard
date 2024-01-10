@@ -2,10 +2,7 @@ import React from "react";
 import { dashboard } from "@/data/dashboard";
 import { TableHead, TableRow } from "@/components/ui/table";
 import { getLogEntryKeys } from "@/lib/utils/logUtils";
-
-interface TableRowsProps {
-  className?: string | undefined;
-}
+import { TableRowsProps } from "@/types";
 
 const TableRows = ({ className }: TableRowsProps) => {
   const logKeys = getLogEntryKeys(dashboard.Logs);
