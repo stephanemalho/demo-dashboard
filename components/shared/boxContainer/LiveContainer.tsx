@@ -1,7 +1,6 @@
 "use client";
 import IconInfo from "@/components/IconInfo";
 import IconMaximize from "@/components/IconMaximize";
-import IconResize from "@/components/IconResize";
 import { useFullscreen } from "@/context/ScreenSizeProvider";
 import React from "react";
 
@@ -32,7 +31,6 @@ const LiveContainer = ({ children, logHeight, title, label, showIcons = true }: 
         {label}
         {showIcons && (
           <div className="ml-auto flex px-1">
-            {isFullscreen === null ? <IconResize /> : ""}
             <IconMaximize title={title} />
           </div>
         )}
