@@ -26,7 +26,7 @@ const HeadLinks = ({ item }: AccordionItemsProps) => {
           alt={item.label}
           width={20}
           height={20}
-          className={` invert-colors mb-[2px] max-2xl:h-[15px] max-2xl:w-[15px]`}
+          className={`mb-[2px] max-2xl:h-[15px] max-2xl:w-[15px]`}
         />
       </div>
       <p

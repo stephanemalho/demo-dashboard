@@ -12,7 +12,7 @@ const IconInfo = ({ title }: IconInfoProps) => {
         width={16}
         height={16}
         title={title}
-        className="m-auto flex h-full w-full cursor-help justify-center p-[5px] hover:bg-[#7de899]"
+        className="m-auto flex h-full w-full cursor-help justify-center p-[5px] hover:bg-[#F2F2F2]"
       />
     </WrapIcon>
   );

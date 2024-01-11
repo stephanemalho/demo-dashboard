@@ -3,13 +3,14 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
+// eslint-disable-next-line tailwindcss/no-custom-classname
 const badgeVariants = cva(
-  "focus:ring-ring inline-flex h-[15px] items-center justify-center text-center rounded-full border  text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 max-2xl:h-[15px] max-2xl:text-[7px] ",
+  "focus:ring-ring inline-flex h-[15px] items-center justify-center rounded-full border text-center  text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 max-2xl:h-[15px] max-2xl:text-[7px] ",
   {
     variants: {
       variant: {
         default:
-          "border-green-500 bg-green-100 text-green-800 hover:bg-green-200 tracking-widest",
+          "border-green-500 bg-green-100 tracking-widest text-green-800 hover:bg-green-200",
         secondary:
           "border-blue-500 bg-blue-100 tracking-widest text-blue-800 hover:bg-blue-200",
         destructive:
