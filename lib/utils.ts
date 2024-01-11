@@ -8,6 +8,6 @@ export function cn(...inputs: ClassValue[]) {
 export function getContentHeight(state: string[]) {
   const itemCount = state.length;
   if (itemCount === 0) return "h-[0px]";
-  if (itemCount === 1) return "h-[30px]";
-  return "max-h-[75px]";
+  if (itemCount >= 1) return "h-[50px]";
+  return "max-h-[55px]";
 }

@@ -22,7 +22,7 @@ const IconMaximize = ({ title }: { title: string }) => {
         alt="resize"
         width={16}
         height={16}
-        className="m-auto flex h-full w-full p-[5px] hover:bg-[#7de899] "
+        className="m-auto flex h-full w-full p-[5px] hover:bg-[#F2F2F2]"
         onClick={handleClick}
       />
     </WrapIcon>

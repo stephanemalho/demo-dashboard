@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { ColumnDef } from "@tanstack/react-table";
-import Image from "next/image";
 import React from "react";
 import { FaEye } from "react-icons/fa";
 import { getClassForCell, getClassForHeader } from "./helpers";
 import FilterButton from "@/components/shared/button/FilterButton";
 import { getDeliveryListData } from "@/api/liveDelivery/getLiveDelivery";
 import { loadColumnData } from "@/lib/utils/formatTable";
+import { TbTruckDelivery } from "react-icons/tb";
+import { MdOutlineDeleteOutline } from "react-icons/md";
 
 export interface LiveDeliveryListEntry {
   PACKAGE_NAME: string;
@@ -52,7 +53,7 @@ export const columns: ColumnDef<LiveDeliveryListEntry>[] = [
     header: () => (
       <div
         className={
-          getClassForHeader("ACTIONS") + " text-center font-bold ml-auto"
+          getClassForHeader("ACTIONS") + "text-center font-bold ml-auto"
         }
       >
         ACTIONS
@@ -67,31 +68,21 @@ export const columns: ColumnDef<LiveDeliveryListEntry>[] = [
         >
           <Button
             onClick={() => {}}
-            className="h-full flex-1 rounded-none hover:bg-[#e2e2e2]"
+            className="h-full flex-1 rounded-none py-[1px] hover:bg-[#e2e2e2]"
           >
             <FaEye className="text-black" />
           </Button>
           <Button
             onClick={() => {}}
-            className="h-full flex-1 rounded-none hover:bg-[#e2e2e2]"
+            className=" h-full flex-1 rounded-none py-[1px] hover:bg-[#e2e2e2]"
           >
-            <Image
-              src="/assets/icons/delivery.svg"
-              width={16}
-              height={16}
-              alt="delivery "
-            />
+            <TbTruckDelivery className="text-black" />
           </Button>
           <Button
             onClick={() => {}}
-            className="h-full flex-1 rounded-none hover:bg-[#e2e2e2]"
+            className="h-full flex-1 rounded-none py-[1px] hover:bg-[#e2e2e2]"
           >
-            <Image
-              src="/assets/icons/trash.svg"
-              width={16}
-              height={16}
-              alt="trash "
-            />
+            <MdOutlineDeleteOutline className="text-red-500" />
           </Button>
         </div>
       );

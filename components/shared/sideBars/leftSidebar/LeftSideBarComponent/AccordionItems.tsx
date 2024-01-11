@@ -32,8 +32,8 @@ const AccordionItems = ({ item }: AccordionItemsProps) => {
               width={20}
               height={20}
               className={`${
-                isActive ? "invert-colors " : ""
-              } invert-colors  mb-1 mr-3 max-2xl:mr-4 max-2xl:h-[15px] max-2xl:w-[15px]`}
+                isActive ? "invert-colors" : ""
+              }  mb-1 mr-3 max-2xl:mr-4 max-2xl:h-[15px] max-2xl:w-[15px]`}
             />
           </div>
           <p
