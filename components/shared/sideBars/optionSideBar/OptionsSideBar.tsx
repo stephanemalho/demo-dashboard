@@ -29,10 +29,10 @@ const OptionsSideBar = () => {
   const searchParams = useSearchParams();
 
   const sidebarClasses = clsx(
-    "custom-scrollbar fixed left-0 top-0 z-0 flex h-screen flex-col justify-between overflow-y-auto bg-[#393939]  pt-[50px] dark:shadow-none",
+    "custom-scrollbar fixed left-0 top-0 z-0 flex h-screen w-[50px] flex-col justify-between overflow-y-auto bg-[#393939] pt-[50px] dark:shadow-none",
     {
       "slide-in-rightSidebar w-[450px]": toggleOptionsSideBar,
-      "flex w-[50px]": !toggleOptionsSideBar,
+      "": !toggleOptionsSideBar,
     }
   );
 

@@ -24,7 +24,7 @@ const LiveContainer = ({
   // context
   const { isFullscreen }: any = useFullscreen();
   // variables
-  const containerClasses = `h-full  ${!isFullscreen  && "max-2xl:w-[92vw]"} ${
+  const containerClasses = `h-full m-auto  ${!isFullscreen  && "max-2xl:w-[91vw]"} ${
     isFullscreen === title
       ? "z-50 fixed top-[45px] left-0 right-0 h-screen w-[100vw] bg-black"
       : ""
