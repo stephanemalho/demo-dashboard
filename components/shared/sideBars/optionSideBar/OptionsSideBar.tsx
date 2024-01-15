@@ -68,7 +68,7 @@ const OptionsSideBar = () => {
   const ComponentToRender = componentMapping[pathname] || "";
 
   return (
-    <div className="flex flex-row">
+    <div className="flex w-full flex-row">
       <section className={sidebarClasses}>
         {componentIconMappingUrl[pathname] ? (
           <button

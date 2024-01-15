@@ -6,7 +6,7 @@ const ContentContainer = ({ children }: ContentContainerProps) => {
   
   return (
     <div
-      className={`ml-[50px] flex h-[80vh] w-[96vw] flex-col justify-between gap-1 text-[#222222] transition-all max-2xl:w-[94vw]`}
+      className={`my-[50px] flex h-full w-full flex-col justify-between text-[#222222] transition-all`}
     >
       {children}
     </div>
