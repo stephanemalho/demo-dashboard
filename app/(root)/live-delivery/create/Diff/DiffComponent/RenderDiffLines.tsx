@@ -12,6 +12,7 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
+import DiffLineInfo from "./DiffLineInfo";
 
 const RenderDiffLines = ({
   oldText,
@@ -138,15 +139,7 @@ const RenderDiffLines = ({
     <div
       className={`m-auto flex h-full max-w-[92vw] flex-col transition-all duration-500 `}
     >
-      <div className="sticky top-0 z-10 flex w-full flex-row bg-[#fff] p-1 shadow-sm max-2xl:text-[10px]">
-        <div className="shrink grow-0 basis-1/2 pr-2 text-[#000]">
-          Target file:
-        </div>
-        <div className="shrink grow-0 basis-1/2 text-[#6FDC8C]">New file:</div>
-        <div className="ml-auto pl-[40px] text-[#434343]">
-          modified lines: {numberOfModifiedLines}
-        </div>
-      </div>
+      <DiffLineInfo numberOfModifiedLines={numberOfModifiedLines} />
       <ResizablePanelGroup direction="horizontal">
         <div className="mx-auto flex min-h-[60vh] w-full flex-row">
           <ResizablePanel className=" flex w-full shrink-0 grow-0 flex-col overflow-y-auto">
@@ -154,7 +147,7 @@ const RenderDiffLines = ({
               {oldTextElements}
             </div>
           </ResizablePanel>
-          <ResizableHandle withHandle className="w-[5px] bg-[#E2E2E2]" />
+          <ResizableHandle withHandle className="w-[8px] bg-[#39393999]" />
           <ResizablePanel className="custom-scrollbar flex w-full shrink-0 grow-0 flex-col overflow-y-auto">
             <div className="custom-scrollbar overflow-y-scroll">
               {newTextElements}
