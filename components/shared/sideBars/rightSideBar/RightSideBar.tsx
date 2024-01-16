@@ -21,7 +21,7 @@ const RightSideBar = () => {
       <section className={sidebarClasses}>
           <button
             onClick={handleClickRightSideBar}
-            className="flex h-[50px] w-[50px] items-center justify-center hover:bg-[#262626]"
+            className="ml-auto flex h-[50px] w-[50px] items-center justify-center hover:bg-[#262626]"
           >
             <Image
               src={"/assets/icons/help.svg"}
